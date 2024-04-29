@@ -1,0 +1,17 @@
+a.logo {
+    width: 120px;
+    height: 120px;
+    background-size: 120px 120px;
+    background-image: url(../images/casa-quest-logo.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    text-transform: capitalize;
+    cursor: pointer;
+    display: block;
+    text-indent: -9999px;
+    text-align: left;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+    transition: all .3s ease-in-out;
+}
