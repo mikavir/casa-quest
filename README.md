@@ -1,110 +1,758 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# [CASA QUEST](https://casa-quest-853d4c81f9b1.herokuapp.com)
 
-Welcome Mika Virtucio,
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/t/mikavir/casa-quest)](https://github.com/mikavir/casa-quest/commits/main)
+[![GitHub last commit](https://img.shields.io/github/last-commit/mikavir/casa-quest)](https://github.com/mikavir/casa-quest/commits/main)
+[![GitHub repo size](https://img.shields.io/github/repo-size/mikavir/casa-quest)](https://github.com/mikavir/casa-quest)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+🛑🛑🛑🛑🛑🛑🛑🛑🛑START OF NOTES (to be deleted)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+!! IMPORTANT !! RE: Table of Contents
 
-## Gitpod Reminders
+DO NOT add a Table of Contents to your README or TESTING!!
+These are outdated since 2021 when GitHub added them built-in to Markdown files automatically.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 20 2023:** Update Python version to 3.9.17.
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+Assessors see this as bad practice since it's outdated for a few years now,
+as if you've taken it from someone else's project that did the same thing.
 
 ---
 
-Happy coding!
+In this section, you will include a few paragraphs providing an overview of your project.
+Essentially, this part is your "sales pitch".
+
+At this stage, you should have a name for your project so use it!
+Don't introduce the project as a "portfolio project" for the diploma.
+
+In this section, describe what the project hopes to accomplish, who it is intended to target, and how it will be useful to the target audience.
+
+Consider adding a mockup image using the "Am I Responsive" website.
+Here's your deployed site as an example:
+https://ui.dev/amiresponsive?url=https://casa-quest-853d4c81f9b1.herokuapp.com
+
+Screenshots for the README and testing should not be inside of `assets/` or `static/` image folders.
+(reminder: `assets/` and `static/` are for files used on the live site, not documentation)
+Consider adding a new folder called `documentation`, and add the amiresponsive screenshot inside of that folder.
+To add the image into your README, use this format:
+(assuming you have a new folder called `documentation` with an image called "mockup.png")
+
+![screenshot](documentation/mockup.png)
+
+Note: Markdown files (.md) should not contain HTML elements like `img`, `br`, `div`, `a`, etc, only Markdown formatting.
+Find out more about using Markdown elements here:
+https://pandao.github.io/editor.md/en.html
+
+---
+
+GitHub now supports CALLOUTS in Markdown files.
+There are some callouts already embedded in this application for you.
+However, if you feel that you want to add more, there are certain ones you can use.
+
+NOTE: the preview for callouts isn't yet supported in Gitpod/Codeanywhere/VSCode/etc.
+You'll have to commit/push the changes to GitHub to see it in action.
+
+> [!NOTE]  
+> BLUE: Highlights information that users should take into account, even when skimming.
+
+> [!TIP]  
+> GREEN: Optional information to help a user be more successful.
+
+> [!IMPORTANT]  
+> PURPLE: Crucial information necessary for users to succeed.
+
+> [!WARNING]  
+> YELLOW: Critical content demanding immediate user attention due to potential risks.
+
+> [!CAUTION]  
+> RED: Negative potential consequences of an action.
+
+Source: https://github.com/orgs/community/discussions/16925
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+
+![screenshot](documentation/mockup.png)
+
+source: [amiresponsive](https://ui.dev/amiresponsive?url=https://casa-quest-853d4c81f9b1.herokuapp.com)
+
+## UX
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑START OF NOTES (to be deleted)
+
+In this section, you will briefly explain your design processes.
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+
+### Colour Scheme
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑START OF NOTES (to be deleted)
+
+Explain your colours and the colour scheme.
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+
+- `#000000` used for primary text.
+- `#E84610` used for primary highlights.
+- `#4A4A4F` used for secondary text.
+- `#009FE3` used for secondary highlights.
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑START OF NOTES (to be deleted)
+
+Consider adding a link and screenshot for your colour scheme using "coolors".
+https://coolors.co/generate
+
+When you add a colour to the palette, the URL is dynamically updated, making it easier for you to return back to your colour palette later if needed.
+
+Example:
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+
+I used [coolors.co](https://coolors.co/e84610-009fe3-4a4a4f-445261-d63649-e6ecf0-000000) to generate my colour palette.
+
+![screenshot](documentation/coolors.png)
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑START OF NOTES (to be deleted)
+
+⚠️ ONLY IF YOU ACTUALLY ADDED `:root` variables in CSS! ⚠️
+If you've used CSS `:root` variables, consider also including a code snippet here!
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+
+I've used CSS `:root` variables to easily update the global colour scheme by changing only one value, instead of everywhere in the CSS file.
+
+```css
+:root {
+    /* P = Primary | S = Secondary */
+    --p-text: #000000;
+    --p-highlight: #E84610;
+    --s-text: #4A4A4F;
+    --s-highlight: #009FE3;
+    --white: #FFFFFF;
+    --black: #000000;
+}
+```
+
+### Typography
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑START OF NOTES (to be deleted)
+
+Explain any fonts and icon libraries used, like Google Fonts and/or Font Awesome.
+
+Consider adding a link to each font used, and the Font Awesome site if used (or similar icon library).
+
+Example:
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+
+- [Montserrat](https://fonts.google.com/specimen/Montserrat) was used for the primary headers and titles.
+
+- [Lato](https://fonts.google.com/specimen/Lato) was used for all other secondary text.
+
+- [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the social media icons in the footer.
+
+## User Stories
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
+
+In this section, list all of your user stories for the project.
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+
+### New Site Users
+
+- As a new site user, I would like to ____________, so that I can ____________.
+- As a new site user, I would like to ____________, so that I can ____________.
+- As a new site user, I would like to ____________, so that I can ____________.
+- As a new site user, I would like to ____________, so that I can ____________.
+- As a new site user, I would like to ____________, so that I can ____________.
+
+### Returning Site Users
+
+- As a returning site user, I would like to ____________, so that I can ____________.
+- As a returning site user, I would like to ____________, so that I can ____________.
+- As a returning site user, I would like to ____________, so that I can ____________.
+- As a returning site user, I would like to ____________, so that I can ____________.
+- As a returning site user, I would like to ____________, so that I can ____________.
+
+### Site Admin
+
+- As a site administrator, I should be able to ____________, so that I can ____________.
+- As a site administrator, I should be able to ____________, so that I can ____________.
+- As a site administrator, I should be able to ____________, so that I can ____________.
+- As a site administrator, I should be able to ____________, so that I can ____________.
+- As a site administrator, I should be able to ____________, so that I can ____________.
+
+## Wireframes
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
+
+In this section, display your wireframe screenshots using a Markdown `table`.
+Instructions on how to do Markdown `tables` start on line #213 on this site: https://pandao.github.io/editor.md/en.html
+
+Alternatively, dropdowns are a way to condense several wireframes into a collapsible menu to save space.
+Dropdowns in Markdown are considered some of the only acceptable HTML components that are allowed for assessment purposes.
+
+⚠️ **IMPORTANT**! ⚠️ **IMPORTANT**! ⚠️ **IMPORTANT**! ⚠️
+The example below uses the `details` and `summary` code elements.
+However, for these scripts to work, I've had to add spaces within the `< >` elements.
+
+You MUST remove these spaces for it to work properly on your own README/TESTING files.
+Remove the spaces within the `< >` brackets for the `details` and `summary` code elements,
+for the Mobile, Tablet, and Desktop wireframes.
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+
+To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
+I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
+
+### Mobile Wireframes
+
+< details >
+< summary > Click here to see the Mobile Wireframes < / summary >
+
+Home
+  - ![screenshot](documentation/wireframes/mobile-home.png)
+
+About
+  - ![screenshot](documentation/wireframes/mobile-about.png)
+
+Contact
+  - ![screenshot](documentation/wireframes/mobile-contact.png)
+
+Gallery
+  - ![screenshot](documentation/wireframes/mobile-gallery.png)
+
+etc.
+  - repeat for any remaining mobile wireframes
+
+< / details >
+
+### Tablet Wireframes
+
+< details >
+< summary > Click here to see the Tablet Wireframes < / summary >
+
+Home
+  - ![screenshot](documentation/wireframes/tablet-home.png)
+
+About
+  - ![screenshot](documentation/wireframes/tablet-about.png)
+
+Contact
+  - ![screenshot](documentation/wireframes/tablet-contact.png)
+
+Gallery
+  - ![screenshot](documentation/wireframes/tablet-gallery.png)
+
+etc.
+  - repeat for any remaining tablet wireframes
+
+< / details >
+
+### Desktop Wireframes
+
+< details >
+< summary > Click here to see the Desktop Wireframes < / summary >
+
+Home
+  - ![screenshot](documentation/wireframes/desktop-home.png)
+
+About
+  - ![screenshot](documentation/wireframes/desktop-about.png)
+
+Contact
+  - ![screenshot](documentation/wireframes/desktop-contact.png)
+
+Gallery
+  - ![screenshot](documentation/wireframes/desktop-gallery.png)
+
+etc.
+  - repeat for any remaining desktop wireframes
+
+< / details >
+
+## Features
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
+
+In this section, you should go over the different parts of your project,
+and describe each in a sentence or so.
+
+You will need to explain what value each of the features provides for the user,
+focusing on who this website is for, what it is that they want to achieve,
+and how your project is the best way to help them achieve these things.
+
+For some/all of your features, you may choose to reference the specific project files that implement them.
+
+IMPORTANT: Remember to always include a screenshot of each individual feature!
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+
+### Existing Features
+
+- **YOUR-TITLE-FOR-FEATURE-#1**
+
+    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+
+![screenshot](documentation/features/feature01.png)
+
+- **YOUR-TITLE-FOR-FEATURE-#2**
+
+    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+
+![screenshot](documentation/features/feature02.png)
+
+- **YOUR-TITLE-FOR-FEATURE-#3**
+
+    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+
+![screenshot](documentation/features/feature03.png)
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
+
+Repeat as necessary for as many features as your site contains.
+
+Hint: the more, the merrier!
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+
+### Future Features
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
+
+Do you have additional ideas that you'd like to include on your project in the future?
+Fantastic! List them here!
+It's always great to have plans for future improvements!
+Consider adding any helpful links or notes to help remind you in the future, if you revisit the project in a couple years.
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+
+- YOUR-TITLE-FOR-FUTURE-FEATURE-#1
+    - Any additional notes about this feature.
+- YOUR-TITLE-FOR-FUTURE-FEATURE-#2
+    - Any additional notes about this feature.
+- YOUR-TITLE-FOR-FUTURE-FEATURE-#3
+    - Any additional notes about this feature.
+
+## Tools & Technologies Used
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
+
+In this section, you should explain the various tools and technologies used to develop the project.
+Make sure to put a link (where applicable) to the source, and explain what each was used for.
+Some examples have been provided, but this is just a sample only, your project might've used others.
+Feel free to delete any unused items below as necessary.
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+
+- ⚠️⚠️ REQUIRED <-- delete me ⚠️⚠️
+- [![Markdown Builder](https://img.shields.io/badge/Markdown_Builder-grey?logo=markdown&logoColor=000000)](https://tim.2bn.dev/markdown-builder) used to generate README and TESTING templates.
+- [![Git](https://img.shields.io/badge/Git-grey?logo=git&logoColor=F05032)](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
+- [![GitHub](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=181717)](https://github.com) used for secure online code storage.
+- ⚠️⚠️ CHOOSE ONLY ONE <-- delete me ⚠️⚠️
+- [![Gitpod](https://img.shields.io/badge/Gitpod-grey?logo=gitpod&logoColor=FFAE33)](https://gitpod.io) used as a cloud-based IDE for development.
+- [![Codeanywhere](https://img.shields.io/badge/Codeanywhere-grey?logo=ebox&logoColor=7F3F98)](https://codeanywhere.com) used as a cloud-based IDE for development.
+- [![VSCode](https://img.shields.io/badge/VSCode-grey?logo=visualstudiocode&logoColor=007ACC)](https://code.visualstudio.com) used as my local IDE for development.
+- ⚠️⚠️ CHOOSE ALL APPLICABLE <-- delete me ⚠️⚠️
+- [![HTML](https://img.shields.io/badge/HTML-grey?logo=html5&logoColor=E34F26)](https://en.wikipedia.org/wiki/HTML) used for the main site content.
+- [![CSS](https://img.shields.io/badge/CSS-grey?logo=css3&logoColor=1572B6)](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
+- [![JavaScript](https://img.shields.io/badge/JavaScript-grey?logo=javascript&logoColor=F7DF1E)](https://www.javascript.com) used for user interaction on the site.
+- [![jQuery](https://img.shields.io/badge/jQuery-grey?logo=jquery&logoColor=0769AD)](https://jquery.com) used for user interaction on the site.
+- [![Python](https://img.shields.io/badge/Python-grey?logo=python&logoColor=3776AB)](https://www.python.org) used as the back-end programming language.
+- ⚠️⚠️ CHOOSE ONLY ONE <-- delete me ⚠️⚠️
+- [![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-grey?logo=githubpages&logoColor=222222)](https://pages.github.com) used for hosting the deployed front-end site.
+- [![Heroku](https://img.shields.io/badge/Heroku-grey?logo=heroku&logoColor=430098)](https://www.heroku.com) used for hosting the deployed back-end site.
+- ⚠️⚠️ CHOOSE ONLY ONE (if applicable) <-- delete me ⚠️⚠️
+- [![Bootstrap](https://img.shields.io/badge/Bootstrap-grey?logo=bootstrap&logoColor=7952B3)](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
+- [![Materialize](https://img.shields.io/badge/Materialize-grey?logo=materialdesign&logoColor=F5A5A8)](https://materializecss.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
+- ⚠️⚠️ CHOOSE ALL APPLICABLE <-- delete me ⚠️⚠️
+- [![Google Sheets](https://img.shields.io/badge/Google_Sheets-grey?logo=googlesheets&logoColor=34A853)](https://docs.google.com/spreadsheets) used for storing data from my Python app.
+- [![Jest](https://img.shields.io/badge/Jest-grey?logo=jest&logoColor=c21325)](https://jestjs.io) used for automated JavaScript testing.
+- [![Flask](https://img.shields.io/badge/Flask-grey?logo=flask&logoColor=000000)](https://flask.palletsprojects.com) used as the Python framework for the site.
+- [![MongoDB](https://img.shields.io/badge/MongoDB-grey?logo=mongodb&logoColor=47A248)](https://www.mongodb.com) used as the non-relational database management with Flask.
+- [![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-grey?logo=sqlalchemy&logoColor=D71F00)](https://www.sqlalchemy.org) used as the relational database management with Flask.
+- [![Django](https://img.shields.io/badge/Django-grey?logo=django&logoColor=092E20)](https://www.djangoproject.com) used as the Python framework for the site.
+- [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-grey?logo=postgresql&logoColor=4169E1)](https://www.postgresql.org) used as the relational database management.
+- [![PostgreSQL by Code Institute](https://img.shields.io/badge/PostgreSQL_by_Code_Institute-grey?logo=okta&logoColor=F05223)](https://dbs.ci-dbs.net) used as the Postgres database from Code Institute.
+- [![ElephantSQL](https://img.shields.io/badge/ElephantSQL-grey?logo=postgresql&logoColor=36A6E2)](https://www.elephantsql.com) used as the Postgres database.
+- [![Cloudinary](https://img.shields.io/badge/Cloudinary-grey?logo=cloudinary&logoColor=3448C5)](https://cloudinary.com) used for online static file storage.
+- [![WhiteNoise](https://img.shields.io/badge/WhiteNoise-grey?logo=python&logoColor=FFFFFF)](https://whitenoise.readthedocs.io) used for serving static files with Heroku.
+- [![Stripe](https://img.shields.io/badge/Stripe-grey?logo=stripe&logoColor=008CDD)](https://stripe.com) used for online secure payments of ecommerce products/services.
+- [![Gmail API](https://img.shields.io/badge/Gmail_API-grey?logo=gmail&logoColor=EA4335)](https://mail.google.com) used for sending emails in my application.
+- [![MailChimp](https://img.shields.io/badge/MailChimp-grey?logo=mailchimp&logoColor=FFE01B)](https://mailchimp.com) used for sending newsletter subscriptions.
+- [![AWS S3](https://img.shields.io/badge/AWS_S3-grey?logo=amazons3&logoColor=569A31)](https://aws.amazon.com/s3) used for online static file storage.
+- [![Balsamiq](https://img.shields.io/badge/Balsamiq-grey?logo=barmenia&logoColor=CE0908)](https://balsamiq.com/wireframes) used for creating wireframes.
+- [![Canva](https://img.shields.io/badge/Canva-grey?logo=canva&logoColor=00C4CC)](https://www.canva.com/p/canvawireframes) used for creating wireframes.
+- [![Google Maps API](https://img.shields.io/badge/Google_Maps_API-grey?logo=googlemaps&logoColor=4285F4)](https://developers.google.com/maps) used as an interactive map on my site.
+- [![Leaflet](https://img.shields.io/badge/Leaflet-grey?logo=leaflet&logoColor=199900)](https://leafletjs.com) used as a free open-source interactive map on my site.
+- [![Font Awesome](https://img.shields.io/badge/Font_Awesome-grey?logo=fontawesome&logoColor=528DD7)](https://fontawesome.com) used for the icons.
+- [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to help debug, troubleshoot, and explain things.
+
+## Database Design
+
+My project uses a non-relational database with MongoDB, and therefore the database architecture
+doesn't have actual relationships like a relational database would.
+
+My database is called **task_manager**.
+
+It contains 3 collections:
+
+- **categories**
+    | Key | Type | Notes |
+    | --- | --- | --- |
+    | _id | ObjectId() | |
+    | category_name | String | |
+
+- **tasks**
+    | Key | Type | Notes |
+    | --- | --- | --- |
+    | _id | ObjectId() | |
+    | category_name | String | selected from *categories* collection |
+    | task_name | String | |
+    | task_description | String | |
+    | is_urgent | String | |
+    | due_date | String | |
+    | created_by | String | selected from the *users* collection |
+
+- **users**
+    | Key | Type | Notes |
+    | --- | --- | --- |
+    | _id | ObjectId() | |
+    | username | String | |
+    | password | String | uses Secure Hash Algorithm (SHA) |
+
+## Testing
+
+> [!NOTE]  
+> For all testing, please refer to the [TESTING.md](TESTING.md) file.
+
+## Deployment
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
+
+**IMPORTANT:**
+
+- Be sure to remove all instances of PostgreSQL/Flask-Migrate if you've only used a non-relational database with MongoDB
+- Be sure to remove all instances of MongoDB if you've only used a relational database with PostgreSQL
+- ⚠️ DO NOT update the environment variables to your own! These should NOT be included in this file; just demo values! ⚠️
+- ⚠️ DO NOT update the environment variables to your own! These should NOT be included in this file; just demo values! ⚠️
+- ⚠️ DO NOT update the environment variables to your own! These should NOT be included in this file; just demo values! ⚠️
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+
+The live deployed application can be found deployed on [Heroku](https://casa-quest-853d4c81f9b1.herokuapp.com).
+
+### PostgreSQL Relational Database
+
+This project uses a [Code Institute PostgreSQL Database](https://dbs.ci-dbs.net).
+
+To obtain my own Postgres Database from Code Institute, I followed these steps:
+
+- Signed-in to the CI LMS using my email address.
+- An email was sent to me with my new Postgres Database.
+
+> [!CAUTION]  
+> - PostgreSQL databases by Code Institute are only available to CI Students.
+> - You must acquire your own PostgreSQL database through some other method
+> if you plan to clone/fork this repository.
+> - Code Institute students are allowed a maximum of 8 databases.
+> - Databases are subject to deletion after 18 months.
+
+### MongoDB Non-Relational Database
+
+This project uses [MongoDB](https://www.mongodb.com) for the Non-Relational Database.
+
+To obtain your own MongoDB Database URI, sign-up on their site, then follow these steps:
+
+- The name of the database on MongoDB should be called **insert-your-database-name-here**.
+- The collection(s) needed for this database should be **insert-your-collection-names-here**.
+- Click on the **Cluster** name created for the project.
+- Click on the **Connect** button.
+- Click **Connect Your Application**.
+- Copy the connection string, and replace `password` with your own password (also remove the angle-brackets).
+
+### Heroku Deployment
+
+This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+
+Deployment steps are as follows, after account setup:
+
+- Select **New** in the top-right corner of your Heroku Dashboard, and select **Create new app** from the dropdown menu.
+- Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select **Create App**.
+- From the new app **Settings**, click **Reveal Config Vars**, and set your environment variables.
+
+> [!IMPORTANT]  
+> This is a sample only; you would replace the values with your own if cloning/forking my repository.
+
+| Key | Value |
+| --- | --- |
+| `DATABASE_URL` | user's own value |
+| `IP` | 0.0.0.0 |
+| `MONGO_DBNAME` | user's own value |
+| `MONGO_URI` | user's own value |
+| `PORT` | 5000 |
+| `SECRET_KEY` | user's own value |
+
+Heroku needs three additional files in order to deploy properly.
+
+- requirements.txt
+- Procfile
+- runtime.txt
+
+You can install this project's **requirements** (where applicable) using:
+
+- `pip3 install -r requirements.txt`
+
+If you have your own packages that have been installed, then the requirements file needs updated using:
+
+- `pip3 freeze --local > requirements.txt`
+
+The **Procfile** can be created with the following command:
+
+- `echo web: python app.py > Procfile`
+- *replace **app.py** with the name of your primary Flask app name; the one at the root-level*
+
+The **runtime.txt** file needs to know which Python version you're using:
+1. type: `python3 --version` in the terminal.
+2. in the **runtime.txt** file, add your Python version:
+	- `python-3.9.18`
+
+For Heroku deployment, follow these steps to connect your own GitHub repository to the newly created app:
+
+Either:
+
+- Select **Automatic Deployment** from the Heroku app.
+
+Or:
+
+- In the Terminal/CLI, connect to Heroku using this command: `heroku login -i`
+- Set the remote for Heroku: `heroku git:remote -a app_name` (replace *app_name* with your app name)
+- After performing the standard Git `add`, `commit`, and `push` to GitHub, you can now type:
+	- `git push heroku main`
+
+The project should now be connected and deployed to Heroku!
+
+### Local Deployment
+
+This project can be cloned or forked in order to make a local copy on your own system.
+
+For either method, you will need to install any applicable packages found within the *requirements.txt* file.
+
+- `pip3 install -r requirements.txt`.
+
+If you are using SQLAlchemy for your project, you need to create a local PostgreSQL database.
+In this example, the example database name is **db-name**.
+
+```shell
+workspace (branch) $ set_pg
+workspace (branch) $ psql
+
+... connection to postgres ...
+
+postgres=# CREATE DATABASE db-name;
+CREATE DATABASE
+postgres=# \c db-name;
+You are now connected to database "db-name" as user "foobar".
+db-name=# \q
+```
+
+Once that database is created, you must migrate the database changes from your models.py file.
+This example uses **app-name** for the name of the primary Flask application.
+
+```shell
+workspace (branch) $ python3
+
+... connection to Python CLI ...
+
+>>> from app-name import db
+>>> db.create_all()
+>>> exit()
+```
+
+To confirm that the database table(s) have been created, you can use the following:
+
+```shell
+workspace (branch) $ psql -d db-name
+
+... connection to postgres ...
+
+postgres=# \dt
+
+	List of relations
+Schema | Name | Type | Owner
+-------+------+------+--------
+public | blah1 | table | foobar
+public | blah2 | table | foobar
+public | blah3 | table | foobar
+
+db-name=# \q
+```
+
+You will need to create a new file called `env.py` at the root-level,
+and include the same environment variables listed above from the Heroku deployment steps, plus a few extras.
+
+> [!IMPORTANT]  
+> This is a sample only; you would replace the values with your own if cloning/forking my repository.
+
+Sample `env.py` file:
+
+```python
+import os
+
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("MONGO_DBNAME", "user's own value")
+os.environ.setdefault("MONGO_URI", "user's own value")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", "user's own value")
+
+# local environment only (do not include these in production/deployment!)
+os.environ.setdefault("DB_URL", "user's own value")
+os.environ.setdefault("DEBUG", "True")
+os.environ.setdefault("DEVELOPMENT", "True")
+```
+
+If using Flask-Migrate, make sure to include the following steps as well.
+
+During the course of development, it became necessary to update the PostgreSQL data models.
+In order to do this, [Flask-Migrate](https://flask-migrate.readthedocs.io) was used.
+
+- `pip3 install Flask-Migrate`
+- Import the newly installed package on your main `__init__.py` file:
+	- `from flask_migrate import Migrate`
+- Define **Migrate** in the same file after **app** and **db** are defined:
+	- `migrate = Migrate(app, db)`
+- Initiate the migration changes in the terminal:
+
+```shell
+workspace (branch) $ flask db init
+
+	... generating migrations ...
+
+workspace (branch) $ set_pg
+workspace (branch) $ flask db migrate -m "Add a commit message for this migration"
+
+	... migrating changes ...
+
+workspace (branch) $ flask db upgrade
+
+	... updating database ...
+```
+
+#### Cloning
+
+You can clone the repository by following these steps:
+
+1. Go to the [GitHub repository](https://github.com/mikavir/casa-quest) 
+2. Locate the Code button above the list of files and click it 
+3. Select if you prefer to clone using HTTPS, SSH, or GitHub CLI and click the copy button to copy the URL to your clipboard
+4. Open Git shell or Terminal
+5. Change the current working directory to the one where you want the cloned directory
+6. In your IDE Terminal, type the following command to clone my repository:
+	- `git clone https://github.com/mikavir/casa-quest.git`
+7. Press Enter to create your local clone.
+
+Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/mikavir/casa-quest)
+
+Please note that in order to directly open the project in Gitpod, you need to have the browser extension installed.
+A tutorial on how to do that can be found [here](https://www.gitpod.io/docs/configure/user-settings/browser-extension).
+
+#### Forking
+
+By forking the GitHub Repository, we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository.
+You can fork this repository by using the following steps:
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/mikavir/casa-quest)
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
+
+### Local VS Deployment
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
+
+Use this space to discuss any differences between the local version you've developed, and the live deployment site on Heroku.
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+
+## Credits
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
+
+In this section you need to reference where you got your content, media, and extra help from.
+It is common practice to use code from other repositories and tutorials,
+however, it is important to be very specific about these sources to avoid plagiarism.
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+
+### Content
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
+
+Use this space to provide attribution links to any borrowed code snippets, elements, or resources.
+A few examples have been provided below to give you some ideas.
+
+Ideally, you should provide an actual link to every resource used, not just a generic link to the main site!
+
+⚠️⚠️ EXAMPLE LINKS - REPLACE WITH YOUR OWN ⚠️⚠️
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+
+| Source | Location | Notes |
+| --- | --- | --- |
+| [Markdown Builder](https://tim.2bn.dev/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
+| [Chris Beams](https://chris.beams.io/posts/git-commit) | version control | "How to Write a Git Commit Message" |
+| [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
+| [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | contact page | interactive pop-up (modal) |
+| [W3Schools](https://www.w3schools.com/css/css3_variables.asp) | entire site | how to use CSS :root variables |
+| [Flexbox Froggy](https://flexboxfroggy.com/) | entire site | modern responsive layouts |
+| [Grid Garden](https://cssgridgarden.com) | entire site | modern responsive layouts |
+| [StackOverflow](https://stackoverflow.com/a/2450976) | quiz page | Fisher-Yates/Knuth shuffle in JS |
+| [YouTube](https://www.youtube.com/watch?v=YL1F4dCUlLc) | leaderboard | using `localStorage()` in JS for high scores |
+| [YouTube](https://www.youtube.com/watch?v=u51Zjlnui4Y) | PP3 terminal | tutorial for adding color to the Python terminal |
+| [strftime](https://strftime.org) | CRUD functionality | helpful tool to format date/time from string |
+| [WhiteNoise](http://whitenoise.evans.io) | entire site | hosting static files on Heroku temporarily |
+
+### Media
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
+
+Use this space to provide attribution links to any images, videos, or audio files borrowed from online.
+A few examples have been provided below to give you some ideas.
+
+If you're the owner (or a close acquaintance) of all media files, then make sure to specify this.
+Let the assessors know that you have explicit rights to use the media files within your project.
+
+Ideally, you should provide an actual link to every media file used, not just a generic link to the main site!
+The list below is by no means exhaustive. Within the Code Institute Slack community, you can find more "free media" links
+by sending yourself the following command: `!freemedia`.
+
+⚠️⚠️ EXAMPLE LINKS - REPLACE WITH YOUR OWN ⚠️⚠️
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+
+| Source | Location | Type | Notes |
+| --- | --- | --- | --- |
+| [Pexels](https://www.pexels.com) | entire site | image | favicon on all pages |
+| [Lorem Picsum](https://picsum.photos) | home page | image | hero image background |
+| [Unsplash](https://unsplash.com) | product page | image | sample of fake products |
+| [Pixabay](https://pixabay.com) | gallery page | image | group of photos for gallery |
+| [Wallhere](https://wallhere.com) | footer | image | background wallpaper image in the footer |
+| [This Person Does Not Exist](https://thispersondoesnotexist.com) | testimonials | image | headshots of fake testimonial images |
+| [Audio Micro](https://www.audiomicro.com/free-sound-effects) | game page | audio | free audio files to generate the game sounds |
+| [Videvo](https://www.videvo.net/) | home page | video | background video on the hero section |
+| [TinyPNG](https://tinypng.com) | entire site | image | tool for image compression |
+
+### Acknowledgements
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
+
+Use this space to provide attribution to any supports that helped, encouraged, or supported you throughout the development stages of this project.
+A few examples have been provided below to give you some ideas.
+
+⚠️⚠️ EXAMPLES ONLY - REPLACE WITH YOUR OWN ⚠️⚠️
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+
+- I would like to thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for his support throughout the development of this project.
+- I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
+- I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going during periods of self doubt and imposter syndrome.
+- I would like to thank my partner (John/Jane), for believing in me, and allowing me to make this transition into software development.
+- I would like to thank my employer, for supporting me in my career development change towards becoming a software developer.
