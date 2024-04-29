@@ -149,35 +149,29 @@ Example:
 
 ## User Stories
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
-
-In this section, list all of your user stories for the project.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
 ### New Site Users
 
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
+- As a new site user, I would like to see a clear logo, so that I can remember the brand.
+- As a new site user, I would like to see a clear message of the web app, so that I can understand the web applicatioon well.
+- As a new site user, I would like to see navigation bar, so that I can easily navigate around the site.
+- As a new site user, I would like to see a contact page, so that I can get in touch with the administrators of the application if I need help.
+- As a new site user, I would like to see social media icons so that I can reach out at the other sources.
 
 ### Returning Site Users
 
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-
+- As a returning site user, I would like to be able to register, so that I can have a personal account.
+- As a returning site user, I would like to be able to log in once registered, so that I can keep a track of properties visited.
+- As a returning site user, I would like to be able to make new entries of properties, so that I can keep a log of my properties.
+- As a returning site user, I would like to edit the information, so that I can have a more accurate information on the property.
+- As a returning site user, I would like to delete the entry, so that I can eliminate properties that I'm not interested.
+- As a returning site user, I would like to see a community of homebuyers, so that I can learn more about buying houses.
+- As a returning site user, I would like to be able to make a post in the community of homebuyers, so that I can share my experience.
+- As a returning site user, I would like to be able to make a comment in a post in the community of homebuyers, so that I can share my experience.
+- As a returning site user, I would like to be able to change my password, so that I can keep my account secure.
 ### Site Admin
 
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
+- As a site administrator, I would like to keep connected with my users , so that they can report any user experience.
+- As a site administrator, I should be able to delete posts that is against the rules, so that I can ensure that the community is safe.
 
 ## Wireframes
 
@@ -268,7 +262,7 @@ Blog
 
 </details>
 
-## Features
+## Featuresg
 
 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
 
