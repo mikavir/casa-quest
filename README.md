@@ -181,92 +181,92 @@ In this section, list all of your user stories for the project.
 
 ## Wireframes
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
-
-In this section, display your wireframe screenshots using a Markdown `table`.
-Instructions on how to do Markdown `tables` start on line #213 on this site: https://pandao.github.io/editor.md/en.html
-
-Alternatively, dropdowns are a way to condense several wireframes into a collapsible menu to save space.
-Dropdowns in Markdown are considered some of the only acceptable HTML components that are allowed for assessment purposes.
-
-⚠️ **IMPORTANT**! ⚠️ **IMPORTANT**! ⚠️ **IMPORTANT**! ⚠️
-The example below uses the `details` and `summary` code elements.
-However, for these scripts to work, I've had to add spaces within the `< >` elements.
-
-You MUST remove these spaces for it to work properly on your own README/TESTING files.
-Remove the spaces within the `< >` brackets for the `details` and `summary` code elements,
-for the Mobile, Tablet, and Desktop wireframes.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
 To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
 I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
 
 ### Mobile Wireframes
 
-< details >
-< summary > Click here to see the Mobile Wireframes < / summary >
+<details>
+<summary> Click here to see the Mobile Wireframes </summary>
 
-Home
-  - ![screenshot](documentation/wireframes/mobile-home.png)
+Landing Page
+  - ![screenshot](documentation/wireframes/landing-mobile.png)
 
-About
-  - ![screenshot](documentation/wireframes/mobile-about.png)
+Profile
+  - ![screenshot](documentation/wireframes/profile-mobile.png)
 
-Contact
+House Post
   - ![screenshot](documentation/wireframes/mobile-contact.png)
 
-Gallery
-  - ![screenshot](documentation/wireframes/mobile-gallery.png)
+Login
+  - ![screenshot](documentation/wireframes/login-mobile.png)
 
-etc.
-  - repeat for any remaining mobile wireframes
+Register
+  - ![screenshot](documentation/wireframes/register-mobile.png)
 
-< / details >
+Contact
+  - ![screenshot](documentation/wireframes/contact-mobile.png)
+
+Blog
+  - ![screenshot](documentation/wireframes/blog-mobile.png)
+</details>
 
 ### Tablet Wireframes
 
-< details >
-< summary > Click here to see the Tablet Wireframes < / summary >
+<details>
+<summary> Click here to see the Tablet Wireframes </summary>
 
-Home
-  - ![screenshot](documentation/wireframes/tablet-home.png)
+Landing Page
+  - ![screenshot](documentation/wireframes/landing-tablet.png)
 
-About
-  - ![screenshot](documentation/wireframes/tablet-about.png)
+Profile
+  - ![screenshot](documentation/wireframes/profile-tablet.png)
+
+House Post
+  - ![screenshot](documentation/wireframes/mobile-tablet.png)
+
+Login
+  - ![screenshot](documentation/wireframes/login-tablet.png)
+
+Register
+  - ![screenshot](documentation/wireframes/register-tablet.png)
 
 Contact
-  - ![screenshot](documentation/wireframes/tablet-contact.png)
+  - ![screenshot](documentation/wireframes/contact-tablet.png)
 
-Gallery
-  - ![screenshot](documentation/wireframes/tablet-gallery.png)
+Blog
+  - ![screenshot](documentation/wireframes/blog-tablet.png)
 
-etc.
-  - repeat for any remaining tablet wireframes
-
-< / details >
+</details>
 
 ### Desktop Wireframes
 
-< details >
-< summary > Click here to see the Desktop Wireframes < / summary >
+<details>
+<summary> Click here to see the Desktop Wireframes </summary>
 
-Home
-  - ![screenshot](documentation/wireframes/desktop-home.png)
+Landing Page
+  - ![screenshot](documentation/wireframes/landing-desktop.png)
 
-About
-  - ![screenshot](documentation/wireframes/desktop-about.png)
+Profile
+  - ![screenshot](documentation/wireframes/profile-desktop.png)
+
+House Post
+  - ![screenshot](documentation/wireframes/mobile-desktop.png)
+
+Login
+  - ![screenshot](documentation/wireframes/login-desktop.png)
+
+Register
+  - ![screenshot](documentation/wireframes/register-desktop.png)
 
 Contact
-  - ![screenshot](documentation/wireframes/desktop-contact.png)
+  - ![screenshot](documentation/wireframes/contact-desktop.png)
 
-Gallery
-  - ![screenshot](documentation/wireframes/desktop-gallery.png)
+Blog
+  - ![screenshot](documentation/wireframes/blog-desktop.png)
 
-etc.
-  - repeat for any remaining desktop wireframes
 
-< / details >
+</details>
 
 ## Features
 
