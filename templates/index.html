@@ -1,0 +1,14 @@
+     
+{% extends "base.html %}
+{% block content %}
+    <p>
+        {% for house in houses %}
+        {{ house.username }}<br>
+        {{ house.address }}<br>
+        {{ house.price }}<br>
+
+        {% endfor %}
+
+
+    </p>
+{% endblock %}
