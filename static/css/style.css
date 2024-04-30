@@ -97,6 +97,6 @@ input:checked~.hamburger span:nth-child(1) {
     transform: translateY(-12px) rotate(45deg);
   }
 
-  main.container {
+  section.flash {
     margin-top: 120px;
   }
