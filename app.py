@@ -3,8 +3,10 @@ from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for, g)
 from functools import wraps
-from flask_pymongo import PyMongo
+from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
+from pymongo import MongoClient
+from gridfs import GridFS
 from werkzeug.security import generate_password_hash, check_password_hash
 
 if os.path.exists("env.py"):
@@ -18,6 +20,10 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+client = pymongo.MongoClient(os.environ.get("MONGO_URI"))
+db = client["casa_quest"]
+fs = GridFS(db)
+
 
 """
 https://flask.palletsprojects.com/en/2.3.x/patterns/viewdecorators/
@@ -123,7 +129,51 @@ def profile(username):
 @app.route("/new_house",methods=["GET", "POST"])
 @login_required
 def new_house():
-    if request.method == "GET":
+    if request.method == "POST":
+        address = request.form.get("address")
+        agency = request.form.get("agency")
+        property_type = request.form.get("property_type")
+        chainfree = "yes" if request.form.get("chain_free") else "no"
+        bedrooms = request.form.get("no_bedrooms")
+        bathrooms = request.form.get("no_bathrooms")
+        price = request.form.get("house_price")
+        date_viewing = request.form.get("date_viewing")
+
+        #   # Check if the file is present in the request
+        # if 'image-file' in request.files:
+        #     image_file = request.files['image-file']
+        #     # if image_file.filename != '':
+        #         # A file has been uploaded so add to database
+        #     image_id = fs.put(image_file)
+        #     # else:
+        #     #     # No file uploaded
+        #     #     with open("static/images/house-placeholder.jpg") as image_placeholder:
+        #     #         image_id = fs.put(image_placeholder)
+        #     #         print("No file uploaded")
+        # else:
+        #     print("No file field in the request")
+        
+
+        house_entry = {
+            "username": session["user"],
+            "address": address,
+            "price": price,
+            "agency": agency,
+            "bathrooms": bathrooms,
+            "bedrooms": bedrooms,
+            "chainFree": chainfree,
+            "propertyType": property_type, 
+            "date_viewing": date_viewing
+        }
+
+        # # if image_id is not None:
+        # house_entry["image"] = image_id
+        
+        db.houses.insert_one(house_entry)
+        flash("house added!")
+        return redirect(url_for(
+                            "profile", username=session["user"]))
+    else:
         types = ["Detached", "Semi-Detached", "Terraced"]
         return render_template("new_house.html", types=types)
 
