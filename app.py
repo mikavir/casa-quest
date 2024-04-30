@@ -41,13 +41,6 @@ def index():
 
 
 
-@app.route("/profile")
-@login_required
-def get_profile():
-    houses = mongo.db.houses.find()
-    return render_template("profile.html", houses=houses)
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -118,9 +111,11 @@ def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+        
+    houses = mongo.db.houses.find()
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", username=username, houses=houses)
 
     return redirect(url_for("login"))
 
