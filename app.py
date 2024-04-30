@@ -1,7 +1,8 @@
 import os
 from flask import (
     Flask, flash, render_template,
-    redirect, request, session, url_for)
+    redirect, request, session, url_for, g)
+from functools import wraps
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -18,12 +19,33 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+"""
+https://flask.palletsprojects.com/en/2.3.x/patterns/viewdecorators/
+"""
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        username = session["user"]
+        if username is None:
+            return redirect("/login")
+        return f(*args, **kwargs)
+    return decorated_function
 
-@app.route("/")
-@app.route("/get_houses")
-def get_houses():
+
+@app.route("/", methods=["GET"])
+def index():
+    """
+    Function to render to homepage if not logged in
+    """
+    return render_template("index.html")
+
+
+
+@app.route("/profile")
+@login_required
+def get_profile():
     houses = mongo.db.houses.find()
-    return render_template("base.html", houses=houses)
+    return render_template("profile.html", houses=houses)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -80,7 +102,9 @@ def login():
 
     return render_template("login.html")
 
+
 @app.route("/logout")
+@login_required
 def logout():
     # remove user from session cookie
     flash("You have been logged out")
@@ -89,6 +113,7 @@ def logout():
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
+@login_required
 def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
