@@ -120,6 +120,12 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+@app.route("/new_house",methods=["GET", "POST"])
+@login_required
+def new_house():
+    if request.method == "GET":
+        types = ["Detached", "Semi-Detached", "Terraced"]
+        return render_template("new_house.html", types=types)
 
 
 if __name__ == "__main__":
