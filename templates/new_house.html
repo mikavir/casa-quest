@@ -1,52 +1,77 @@
-     
-{% extends "base.html" %}
-{% block content %}
-  <section class="card-panel green lighten-5">
-    <div class="row ">
-      <div class="col offset-s3">
-        <form action="">
-          <div class="row">
-              <div class="input-field col s12">
-                <i class="material-icons prefix">account_circle</i>
-                <input id="icon_prefix" type="text" class="validate">
-                <label for="icon_prefix">Address</label>
-              </div>
-          </div>
-          <div class="row">
-              <div class="input-field col s12">
-                <i class="material-icons prefix">account_circle</i>
-                <input id="icon_prefix" type="text" class="validate">
-                <label for="icon_prefix">Agency</label>
-              </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <select>
-                <option value="" disabled selected>Choose your option</option>
-                {% for type in types %}
-                <option value="{{ type }}">{{ type }}</option>
-                {% endfor %}
-              </select>
-              <label>Property Type</label>
-            </div>
-          </div>
-          <div class="row">
-              <div class="input-field col s6">
-                <i class="material-icons prefix">account_circle</i>
-                <input id="icon_prefix" type="text" class="validate">
-                <label for="icon_prefix">Bathrooms</label>
-            </div>
-            <div class="input-field col 6">
-              <i class="material-icons prefix">account_circle</i>
-              <input id="icon_prefix" type="text" class="validate">
-              <label for="icon_prefix">Bedrooms</label>
-          </div>
-          </div>
-  
-  
-        </form>
-      </div>
-    </div>
+     {% extends "base.html" %}
+     {% block content %}
+     <section class="card-panel green lighten-5">
+       <div class="row">
+         <div class="col s12">
+           <form action="" method="POST">
+             <div class="row">
+               <div class="input-field col s6">
+                 <i class="material-icons prefix">pin_drop</i>
+                 <input id="address" name="address" type="text" class="validate">
+                 <label for="addresss">Address</label>
+               </div>
+               <div class="input-field col s6">
+                 <i class="material-icons prefix">people</i>
+                 <input id="agency" name="agency" type="text" class="validate">
+                 <label for="agency">Agency</label>
+               </div>
+             </div>
 
-  </section>
-{% endblock %}
+             <div class="row">
+               <div class="input-field col s6">
+                 <i class="material-icons prefix">location_city</i>
+                 <select>
+                   <option value="" disabled selected>Choose your option</option>
+                   {% for type in types %}
+                   <option value="{{ type }}">{{ type }}</option>
+                   {% endfor %}
+                 </select>
+                 <label>Property Type</label>
+               </div>
+               <div class="input-field col s6">
+                  <label>
+                    <input type="checkbox" class="filled-in" checked="checked" />
+                    <span><i class="fa-solid fa-link"></i> Chain Free</span>
+                  </label>                  
+               </div>
+             </div>
+             <div class="row">
+               <div class="input-field col s6">
+                 <i class="fa-solid fa-bed prefix"></i>
+                 <input id="no_bedrooms" name="no_bedrooms" type="number" min="1" max="15" class="validate">
+                 <label for="no_bedrooms">Bedrooms</label>
+               </div>
+               <div class="input-field col s6">
+                 <i class="fa-solid fa-toilet prefix"></i>
+                 <input id="no_bathrooms" type="number" min="1" max="7" class="validate">
+                 <label for="no_bathrooms">Bathrooms</label>
+               </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <i class="fa-solid fa-sterling-sign prefix"></i>
+                  <input id="house_price" name="house_price" type="number" class="validate" min="50000" step="10000">
+                  <label for="house_price">Price</label>
+                </div>
+              </div>
+              <div class="row">               
+                <div class="file-field input-field col s12">
+                  <div class="btn">
+                    <span>Add image</span>
+                    <input type="file">
+                  </div>
+                  <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="row center">
+                <div class="col s12">
+                  <a class="waves-effect teal waves-green btn-flat">Save property</a>
+                </div>
+              </div>
+           </form>
+         </div>
+       </div>
+
+     </section>
+     {% endblock %}
