@@ -3,7 +3,7 @@
      <section class="card-panel green lighten-5">
        <div class="row">
          <div class="col s12">
-           <form action="" method="POST">
+           <form action="{{ url_for('new_house') }}" method="POST">
              <div class="row">
                <div class="input-field col s6">
                  <i class="material-icons prefix">pin_drop</i>
@@ -20,7 +20,7 @@
              <div class="row">
                <div class="input-field col s6">
                  <i class="material-icons prefix">location_city</i>
-                 <select>
+                 <select name="property_type" id="preoperty_type">
                    <option value="" disabled selected>Choose your option</option>
                    {% for type in types %}
                    <option value="{{ type }}">{{ type }}</option>
@@ -29,8 +29,8 @@
                  <label>Property Type</label>
                </div>
                <div class="input-field col s6">
-                  <label>
-                    <input type="checkbox" class="filled-in" checked="checked" />
+                  <label for="chain_free">
+                    <input name="chain_free" id="chain_free" type="checkbox" class="filled-in" checked="checked" />
                     <span><i class="fa-solid fa-link"></i> Chain Free</span>
                   </label>                  
                </div>
@@ -43,7 +43,7 @@
                </div>
                <div class="input-field col s6">
                  <i class="fa-solid fa-toilet prefix"></i>
-                 <input id="no_bathrooms" type="number" min="1" max="7" class="validate">
+                 <input id="no_bathrooms" name="no_bathrooms" type="number" min="1" max="7" class="validate">
                  <label for="no_bathrooms">Bathrooms</label>
                </div>
               <div class="row">
@@ -63,7 +63,7 @@
                 <div class="file-field input-field col s12">
                   <div class="btn">
                     <span>Add image</span>
-                    <input type="file">
+                    <input type="file" id="image-file" name="image-file">
                   </div>
                   <div class="file-path-wrapper">
                     <input class="file-path validate" type="text">
@@ -72,7 +72,9 @@
               </div>
               <div class="row center">
                 <div class="col s12">
-                  <a class="waves-effect teal waves-green btn-flat">Save property</a>
+                  <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                    Save Property <i class="fas fa-plus-square right"></i>
+                </button>
                 </div>
               </div>
            </form>
