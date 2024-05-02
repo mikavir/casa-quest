@@ -343,36 +343,26 @@ Feel free to delete any unused items below as necessary.
 
 ## Database Design
 
+Using [Lucid Chart](www.lucidchart.com), I have made an entity relatioonship diagram to show a physical data model.
+![erd](documentation/database/erd.png)
+
 My project uses a non-relational database with MongoDB, and therefore the database architecture
 doesn't have actual relationships like a relational database would.
 
-My database is called **task_manager**.
+My database is called **casa_quest**.
 
-It contains 3 collections:
-
-- **categories**
-    | Key | Type | Notes |
-    | --- | --- | --- |
-    | _id | ObjectId() | |
-    | category_name | String | |
-
-- **tasks**
-    | Key | Type | Notes |
-    | --- | --- | --- |
-    | _id | ObjectId() | |
-    | category_name | String | selected from *categories* collection |
-    | task_name | String | |
-    | task_description | String | |
-    | is_urgent | String | |
-    | due_date | String | |
-    | created_by | String | selected from the *users* collection |
+It contains 7 collections:
 
 - **users**
-    | Key | Type | Notes |
-    | --- | --- | --- |
-    | _id | ObjectId() | |
-    | username | String | |
-    | password | String | uses Secure Hash Algorithm (SHA) |
+- **house**
+- **houseInformation**
+- **houseChecks**
+- **houseViewing**
+- **blogPost**
+- **blogComment**
+
+
+
 
 ## Testing
 
