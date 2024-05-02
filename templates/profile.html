@@ -20,9 +20,9 @@
 </div>
 
 <div class="row">
-    <div class="col s6 card-panel teal lighten-2">
+    {% for house in houses %}
+    <div class="col s6 card-panel teal lighten-2 m4">
 
-        {% for house in houses %}
         <div class="row">
             <div class="col">
                 {{ house.address }}
@@ -41,12 +41,17 @@
             </div>
 
         </div>
+        <div class="row">
+            <div class="col">
+                <a href="{{ url_for('view_house', house_id=house._id) }}" class="btn white black-text">View More</a>
+            </div>
+        </div>
 
 
-        {% endfor %}
-
-
+        
+        
     </div>
+    {% endfor %}
 
 </div>
 
