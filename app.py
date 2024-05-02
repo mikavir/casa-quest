@@ -118,13 +118,39 @@ def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
         
-    houses = mongo.db.houses.find()
+    houses = mongo.db.houses.find({"username": username})
 
-    if session["user"]:
-        return render_template("profile.html", username=username, houses=houses)
+    return render_template("profile.html", username=username, houses=houses)
 
-    return redirect(url_for("login"))
 
+@app.route("/house/<house_id>", methods=["GET", "POST"])
+@login_required
+def view_house(house_id):
+    # grab the session user's username from db
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+        
+    house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
+
+    if house is None:
+        return redirect(url_for("profile", username=username))
+    if username != house["username"]:
+        return redirect(url_for("profile", username=username))
+    
+    # return redirect(url_for("view_house", house_id=house_id))
+
+    # user is correct house owner and has acces to house info
+    house_info = mongo.db.houseInformation.find_one({"_id": ObjectId(house_id)})
+
+    house_check = mongo.db.houseChecks.find_one({"_id": ObjectId(house_id)})
+
+    house_viewing = mongo.db.houseViewing.find_one({"_id": ObjectId(house_id)})
+
+
+    return render_template(
+        "house.html", username=username, house=house, house_info=house_info,
+        house_check=house_check, house_viewing=house_viewing
+    )
 
 @app.route("/new_house",methods=["GET", "POST"])
 @login_required
