@@ -31,9 +31,8 @@ https://flask.palletsprojects.com/en/2.3.x/patterns/viewdecorators/
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        username = session["user"]
-        if username is None:
-            return redirect("/login")
+        if session.get("user") is None:
+            return redirect(url_for("login"))
         return f(*args, **kwargs)
     return decorated_function
 
