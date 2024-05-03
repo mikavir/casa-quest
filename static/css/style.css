@@ -100,3 +100,10 @@ input:checked~.hamburger span:nth-child(1) {
   section.flash {
     margin-top: 120px;
   }
+
+  @media screen and (max-width: 400px) {
+    .mobile-menu.open {
+      left: 0;
+      width: 100%;     
+    }
+  }
