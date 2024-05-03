@@ -171,16 +171,11 @@ def new_house():
         bathrooms = request.form.get("no_bathrooms")
         price = request.form.get("house_price")
         date_viewing = request.form.get("date_viewing")
+        image = request.files["image-url"]
 
-          # Check if the file is present in the request
-        if 'image-file' in request.files:
-            image_file = request.files['image-file']
-            image_upload = cloudinary.uploader.upload(image_file)
-            image_url = image.upload.url  
-        else:
-            image_url = "https://img.freepik.com/free-psd/modern-house-isolated-transparent-background_191095-26815.jpg?w=1060&t=st=1714761886~exp=1714762486~hmac=06ef86763b85338418ee63bf4af880a8ad6fb240e8d1dea6ea48727e5299d436"
-            print("No file field in the request")
-        
+        # Upload to cloudinary
+        image_upload = cloudinary.uploader.upload(image)
+     
 
         house_entry = {
             "username": session["user"],
@@ -191,11 +186,10 @@ def new_house():
             "bedrooms": bedrooms,
             "chainFree": chainfree,
             "propertyType": property_type, 
-            "date_viewing": date_viewing
+            "date_viewing": date_viewing,
+            "image_url": image_upload["secure_url"]
         }
-
-        if image_url is not None:
-            house_entry["image"] = image_url
+   
         
         mongo.db.houses.insert_one(house_entry)
         flash("house added!")
