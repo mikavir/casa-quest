@@ -8,6 +8,9 @@ from bson.objectid import ObjectId
 from pymongo import MongoClient
 from gridfs import GridFS
 from werkzeug.security import generate_password_hash, check_password_hash
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 if os.path.exists("env.py"):
     import env
@@ -15,15 +18,20 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
+
+# Configurations for MONGO DB
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
-client = pymongo.MongoClient(os.environ.get("MONGO_URI"))
-db = client["casa_quest"]
-fs = GridFS(db)
 
+# Configurations for Cloudinary API
+cloudinary.config(
+    cloud_name = os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    api_key = os.environ.get('CLOUDINARY_API_KEY'),
+    api_secret = os.environ.get('CLOUDINARY_API_SECRET')
+)
 
 """
 https://flask.palletsprojects.com/en/2.3.x/patterns/viewdecorators/
@@ -164,19 +172,14 @@ def new_house():
         price = request.form.get("house_price")
         date_viewing = request.form.get("date_viewing")
 
-        #   # Check if the file is present in the request
-        # if 'image-file' in request.files:
-        #     image_file = request.files['image-file']
-        #     # if image_file.filename != '':
-        #         # A file has been uploaded so add to database
-        #     image_id = fs.put(image_file)
-        #     # else:
-        #     #     # No file uploaded
-        #     #     with open("static/images/house-placeholder.jpg") as image_placeholder:
-        #     #         image_id = fs.put(image_placeholder)
-        #     #         print("No file uploaded")
-        # else:
-        #     print("No file field in the request")
+          # Check if the file is present in the request
+        if 'image-file' in request.files:
+            image_file = request.files['image-file']
+            image_upload = cloudinary.uploader.upload(image_file)
+            image_url = image.upload.url  
+        else:
+            image_url = "https://img.freepik.com/free-psd/modern-house-isolated-transparent-background_191095-26815.jpg?w=1060&t=st=1714761886~exp=1714762486~hmac=06ef86763b85338418ee63bf4af880a8ad6fb240e8d1dea6ea48727e5299d436"
+            print("No file field in the request")
         
 
         house_entry = {
@@ -191,10 +194,10 @@ def new_house():
             "date_viewing": date_viewing
         }
 
-        # # if image_id is not None:
-        # house_entry["image"] = image_id
+        if image_url is not None:
+            house_entry["image"] = image_url
         
-        db.houses.insert_one(house_entry)
+        mongo.db.houses.insert_one(house_entry)
         flash("house added!")
         return redirect(url_for(
                             "profile", username=session["user"]))
