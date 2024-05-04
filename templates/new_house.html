@@ -5,12 +5,12 @@
          <div class="col s12">
            <form action="{{ url_for('new_house') }}" method="POST" enctype="multipart/form-data">
              <div class="row">
-               <div class="input-field col s6">
+               <div class="input-field col s12 m6 outlined m-2">
                  <i class="material-icons prefix">pin_drop</i>
                  <input id="address" name="address" type="text" class="validate">
                  <label for="addresss">Address</label>
                </div>
-               <div class="input-field col s6">
+               <div class="input-field col s12 m6 outlined m-2">
                  <i class="material-icons prefix">people</i>
                  <input id="agency" name="agency" type="text" class="validate">
                  <label for="agency">Agency</label>
@@ -18,9 +18,9 @@
              </div>
 
              <div class="row">
-               <div class="input-field col s6">
+               <div class="input-field col s12 m6 m-2">
                  <i class="material-icons prefix">location_city</i>
-                 <select name="property_type" id="preoperty_type">
+                 <select name="property_type" id="property_type">
                    <option value="" disabled selected>Choose your option</option>
                    {% for type in types %}
                    <option value="{{ type }}">{{ type }}</option>
@@ -28,7 +28,7 @@
                  </select>
                  <label>Property Type</label>
                </div>
-               <div class="input-field col s6">
+               <div class="input-field col s12 m6 m-2">
                   <label for="chain_free">
                     <input name="chain_free" id="chain_free" type="checkbox" class="filled-in" checked="checked" />
                     <span><i class="fa-solid fa-link"></i> Chain Free</span>
@@ -36,17 +36,18 @@
                </div>
              </div>
              <div class="row">
-               <div class="input-field col s6">
+               <div class="input-field outlined col s12 m6 m-2">
                  <i class="fa-solid fa-bed prefix"></i>
                  <input id="no_bedrooms" name="no_bedrooms" type="number" min="1" max="15" class="validate">
                  <label for="no_bedrooms">Bedrooms</label>
                </div>
-               <div class="input-field col s6">
+               <div class="input-field outlined col s12 m6 m-2">
                  <i class="fa-solid fa-toilet prefix"></i>
                  <input id="no_bathrooms" name="no_bathrooms" type="number" min="1" max="7" class="validate">
                  <label for="no_bathrooms">Bathrooms</label>
                </div>
                <!-- add helper text -->
+              </div>
               <div class="row">
                 <div class="input-field col s12">
                   <i class="fa-solid fa-sterling-sign prefix"></i>

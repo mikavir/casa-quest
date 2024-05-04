@@ -3,7 +3,9 @@ $(document).ready(function(){
     $('.hamburger').on("click", function(){
         $(".mobile-menu").toggleClass("open")
     });
-    $('select').formSelect();
+   
+    const elems = document.querySelectorAll('select');
+    M.FormSelect.init(elems)
     $(".datepicker").datepicker({
         format: "dd mmmm, yyyy",
         yearRange: 3,
