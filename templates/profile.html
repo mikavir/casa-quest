@@ -12,16 +12,16 @@
     </div>
 </div>
 <div class="row">
-    <div class="col">
-        <a href="{{ url_for('new_house') }}" class="btn waves-effect waves-light" type="submit" name="action">Add new entry
-            <i class="material-icons right"></i>
-          </a>
+    <div class="col s12 center">
+        <a class="btn filled icon-right rounded waves-effect waves-light teal lighten-2" href="{{ url_for('new_house') }}">
+        <i class="material-icons">add</i><span>Add new entry</span>
+        </a>
     </div>
 </div>
 
 <div class="row">
     {% for house in houses %}
-    <div class="col s6 card-panel teal lighten-2 m4">
+    <div class="col s12 card-panel teal lighten-2 white-text ">
 
         <div class="row">
             <div class="col">
