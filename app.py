@@ -203,10 +203,42 @@ def new_house():
 @app.route("/edit_new_house/<house_id>",methods=["GET", "POST"])
 @login_required
 def edit_new_house(house_id):
-    if request.method == "GET":
-        house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
-        types = ["Detached", "Semi-Detached", "Terraced"]
-        return render_template("edit_new_house.html", types=types, house=house)
+    if request.method == "POST":
+        address = request.form.get("address")
+        agency = request.form.get("agency")
+        property_type = request.form.get("property_type")
+        chainfree = "yes" if request.form.get("chain_free") else "no"
+        bedrooms = request.form.get("no_bedrooms")
+        bathrooms = request.form.get("no_bathrooms")
+        price = request.form.get("house_price")
+        date_viewing = request.form.get("date_viewing")
+        
+        edit_house_entry = {
+            "username": session["user"],
+            "address": address,
+            "price": price,
+            "agency": agency,
+            "bathrooms": bathrooms,
+            "bedrooms": bedrooms,
+            "chainFree": chainfree,
+            "propertyType": property_type, 
+            "date_viewing": date_viewing,
+            
+        }
+        
+        image = request.files["image-url"]
+        if image.filename != '':
+            image_upload = cloudinary.uploader.upload(image)
+            edit_house_entry["image_url"] = image_upload["secure_url"]
+        
+        mongo.db.houses.update_one({"_id": ObjectId(house_id)}, {"$set": edit_house_entry})
+        flash("House Successfully Updated")
+        return redirect(url_for(
+                            "profile", username=session["user"]))
+   
+    house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
+    types = ["Detached", "Semi-Detached", "Terraced"]
+    return render_template("edit_new_house.html", types=types, house=house)
 
 
 if __name__ == "__main__":
