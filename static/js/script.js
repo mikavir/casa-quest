@@ -4,6 +4,7 @@ $(document).ready(function(){
   selectForm();
   datepicker();
   // filePath();
+  console.log(isThereHouseContent())
   
 });
 
@@ -32,4 +33,14 @@ function sideNav() {
 
 function filePath(){
   M.Forms.InitFileInputPath(document.querySelector('#image-url'));
+}
+
+function isThereHouseContent (){
+  const houseInfoContent = document.querySelectorAll(".house-info-content")
+  for(const houseInfo of houseInfoContent){
+    if(houseInfo.innerText !== ""){
+      return true;     
+    }
+  }
+  return false;
 }
