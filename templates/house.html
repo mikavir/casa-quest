@@ -67,19 +67,93 @@
 
 <!-- house info -->
 <div class="row">
-    <div class="col">
-        <div class="card-panel teal">
-            {{ house_info.internet_speed }}<br>
-
-            <a href="#" class="btn waves-effect waves-light">
-                Add house info
-            </a>
-            <a href="#" class="btn waves-effect waves-light">
-                Edit house info
-            </a>
+    <div class="col s12">
+        <div class="card-panel teal row">
+            <div class="col s12 center" id="add-house-info" >
+                <a href="#addInfoModal" class="btn filled white black-text waves-effect waves-light modal-trigger" id="add-houseinfo-btn">
+                    Add house info
+                </a>
+            </div>
+            <div class="col s12">
+                <p class="house-info-content"></p>
+                <p class="house-info-content"></p>
+                <a href="#" class="btn waves-effect waves-light" id="edit-houseinfo-btn">
+                    Edit house info
+                </a>
+            </div>
         </div>
     </div>
 </div>
+
+<!-- Add house info modal -->
+<div id="addInfoModal" class="modal teal lighten-4">
+    <div class="modal-content">
+        <form action="#" method="POST">    
+            <!-- input field for EPC -->
+            <div class="row">
+                <div class="input-field col s12 outlined m-3">
+                <i class="material-icons prefix">bolt</i>
+                <input id="epc" name="epc" type="text" class="validate" required>
+                <label for="epc">
+                  EPC Rating:</label>
+                </div>
+            </div>
+            <!-- input field for Tax-Band -->
+            <div class="row">
+                <div class="input-field col s12 outlined m-3">
+                <i class="material-icons prefix">payments</i>
+                <input id="tax_band" name="tax_band" type="text" class="validate" required>
+                <label for="tax_band">Tax Band</label>
+                </div>
+
+            </div>
+        
+            <!-- input field for flood risk -->
+            <div class="row">
+                <div class="input-field outlined col s12 m-3">
+                <i class="material-icons prefix">flood</i>
+                <input id="flood_risk" name="flood_risk" type="text" class="validate" required>
+                <label for="flood_risk">Flood Risk</label>
+                </div>
+            
+            </div>
+
+            <!-- input field for wifi -->
+            <div class="row">
+                <div class="input-field outlined col s12 m-3">
+                <i class="material-icons prefix">wifi</i>
+                <input id="internet_speed" name="internet_speed" type="text" class="validate" required>
+                <label for="interned_speed">Internet Speed:</label>
+                </div>
+            
+            </div>
+            <!-- input field for parking -->
+            <div class="row">
+                <div class="col s12  center">
+                    <label for="dedicated_parking">
+                      <input name="dedicated_parking" id="dedicated_parking" type="checkbox" class="filled-in" checked="checked"
+                        required />
+                      <span>Dedicated Parking</span>
+                    </label>
+                  </div>
+            </div>
+            <div class="row center">
+                <div class="col s12 m-3">
+                  <button class="btn filled icon-left waves-effect waves-light teal white-text" type="submit">
+                    <i class="material-icons">add</i>Add House Info
+                  </button>
+                </div>
+              </div>
+          
+
+        </form>
+      
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect btn">Close</a>
+
+    </div>
+ </div>
 
 
 <!-- house checks -->
