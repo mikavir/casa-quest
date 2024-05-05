@@ -1,25 +1,67 @@
 {% extends "base.html" %}
 {% block content %}
-
-<div class="row">
-    <div class="col s12 m8 offset-m2">
-        <div class="card-panel">
-            <h3 class="center-align light-blue-text text-darken-4">
-                {{ house.address }}
-
-            </h3>
-        </div>
-
-
-    </div>
-  
-</div>
 <div class="row">
     <div class="col">
         <button class="btn waves-effect waves-light" onclick="history.go(-1)">
             Back
         </button>
     </div>
+</div>
+
+<div class="row">
+    <div class="col s12 ">
+        <div class="card-panel teal lighten-4 row p-5">
+            <div class="col s12 m6">
+                <img src="{{house.image_url}}" class="responsive-img">
+            </div>
+            <div class="col s12 m6 center m-2">
+                <div class="row">
+                    <div class="col s12">
+                        <h4 class="center-align green-text text-darken-4">
+                            {{ house.address }}    
+                        </h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <h5>{{ house.agency }} </h5>                  
+                    </div>
+                 
+                </div>
+                <div class="col s12">
+                    <h6 class="center-align black-text text-darken-4">
+                       {{ house.propertyType }}    
+                    </h6>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <h6 class="center-align black-text text-darken-4">
+                           £ {{ house.price }}    
+                        </h6>
+                    </div>
+                </div>
+             
+                <div class="row m-2">
+                    <div class="col s12">
+                        <span class="m-2"><i class="fa-solid fa-bed prefix"></i>{{ house.bedrooms }}</span>                      
+                        <span class="m-2"><i class="fa-solid fa-toilet prefix"></i>{{ house.bathrooms }}</span>
+                    </div>
+                    
+                </div>
+                <div class="row m-2">
+                    <div class="col s12">
+                        <span><i class="fa-solid fa-calendar-days prefix"></i> {{ house.date_viewing }}</span>                      
+                    </div>
+                 
+                </div>
+            
+            </div>
+
+        </div>
+
+
+    </div>
+  
 </div>
 
 <!-- house -->
