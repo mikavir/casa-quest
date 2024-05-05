@@ -22,36 +22,69 @@
 <div class="row">
     {% for house in houses %}
     <div class="col s12 card-panel teal lighten-2 white-text ">
-
         <div class="row">
-            <div class="col">
-                {{ house.address }}
+            <div class="col s12 m6">
+                <div class="house-image-container">
+                    <image src="{{ house.image_url }}" class="responsive-img"></image>
+                </div>
             </div>
-
-        </div>
-        <div class="row">
-            <div class="col">
-                {{ house.agency }}
-            </div>
-
-        </div>
-        <div class="row">
-            <div class="col">
-                {{ house.price }}
-            </div>
-
-        </div>
-        <div class="div">
-            <div class="col">
-                <image src="{{ house.image_url }}" width="30px" height="40px"></image>
-            </div>
-        </div>
+            <div class="col s12 m6 m-3">
+                <div class="row m-2">
+                    <div class="col s12">
+                        <h4>{{ house.address }}</h4>
+                        
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col s12">
+                        <span> Agency: </span>
+                        {{ house.agency }}
+                    </div>
         
-        <div class="row">
-            <div class="col">
-                <a href="{{ url_for('view_house', house_id=house._id) }}" class="btn white black-text">View More</a>
+                </div>
+                <div class="row m-2">
+                    <div class="col s12">
+                        {{ house.propertyType }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col s6">
+                        <span><i class="fa-solid fa-bed prefix"></i></span>
+                        {{ house.bedrooms }}
+                    </div>
+                    <div class="col s6">
+                        <span><i class="fa-solid fa-toilet prefix"></i></span>
+                        {{ house.bathrooms }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col s12">
+                        <span>Chain Free:</span>
+                        {{ house.chainFree }}
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col s12">
+                       <span>£</span> {{ house.price }}
+                    </div>       
+                </div>
+                
+                
+                
+                <div class="row m-2">
+                    <div class="col s6 center">
+                        <a href="{{ url_for('view_house', house_id=house._id) }}" class="btn white black-text rounded waves-effect waves-ligh">View More</a>
+                    </div>
+                    <div class="col s6">
+                        <a class="btn white black-text filled icon-right rounded waves-effect waves-light">
+                            <i class="material-icons">edit</i>Update
+                          </a>
+                          
+                    </div>
+                </div>
             </div>
         </div>
+
 
 
         
