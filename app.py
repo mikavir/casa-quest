@@ -255,7 +255,7 @@ def add_house_info(house_id):
         dedicated_parking = "yes" if request.form.get("dedicated_parking") else "no"
 
         house_info = {
-            "house_id": house,
+            "house_id": ObjectId(house_id),
             "epc": epc,
             "taxBand": tax_band,
             "floodRisk": flood_risk,
