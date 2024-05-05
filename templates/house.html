@@ -75,7 +75,7 @@
                 </a>
             </div>
             <div class="col s12">
-                <p class="house-info-content"></p>
+                <p class="house-info-content">{{ house_info.epc }}</p>
                 <p class="house-info-content"></p>
                 <a href="#" class="btn waves-effect waves-light" id="edit-houseinfo-btn">
                     Edit house info
@@ -88,7 +88,7 @@
 <!-- Add house info modal -->
 <div id="addInfoModal" class="modal teal lighten-4">
     <div class="modal-content">
-        <form action="#" method="POST">    
+        <form action="{{ url_for('add_house_info', house_id=house._id) }}" method="POST">    
             <!-- input field for EPC -->
             <div class="row">
                 <div class="input-field col s12 outlined m-3">
@@ -149,10 +149,10 @@
         </form>
       
     </div>
-    <div class="modal-footer">
+    <!-- <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect btn">Close</a>
 
-    </div>
+    </div> -->
  </div>
 
 
