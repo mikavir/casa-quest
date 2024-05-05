@@ -5,6 +5,7 @@ $(document).ready(function(){
   datepicker();
   // filePath();
   console.log(isThereHouseContent())
+  addInfoBtnDisplay();
   
 });
 
@@ -43,4 +44,17 @@ function isThereHouseContent (){
     }
   }
   return false;
+}
+
+function addInfoBtnDisplay (){
+  const addInfoBtn = document.querySelector("#add-houseinfo-btn");
+  const editInfoBtn = document.querySelector("#edit-houseinfo-btn")
+
+  if (isThereHouseContent) {
+    editInfoBtn.style.display = "none";
+    addInfoBtn.style.display = "block";
+  } else{
+    editInfoBtn.style.display = "block";
+    addInfoBtn.style.display = "none";
+  }
 }
