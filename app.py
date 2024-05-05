@@ -243,7 +243,7 @@ def edit_new_house(house_id):
         return render_template("edit_new_house.html", types=types, house=house)
 
 
-@app.route("/house/<house_id>", methods=["GET", "POST"])
+@app.route("/house/<house_id>#addInfoModal", methods=["GET", "POST"])
 @login_required
 def add_house_info(house_id):
     if request.method == "POST":
