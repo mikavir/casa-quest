@@ -123,3 +123,9 @@ input:checked~.hamburger span:nth-child(1) {
     border: 2px solid #17353B;
     color:  #17353B;
   }
+
+
+  .house-image-container {
+    width: auto;
+    height: auto;
+  }
