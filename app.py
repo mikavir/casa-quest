@@ -200,6 +200,15 @@ def new_house():
         return render_template("new_house.html", types=types)
 
 
+@app.route("/edit_new_house/<house_id>",methods=["GET", "POST"])
+@login_required
+def edit_new_house(house_id):
+    if request.method == "GET":
+        house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
+        types = ["Detached", "Semi-Detached", "Terraced"]
+        return render_template("edit_new_house.html", types=types, house=house)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
