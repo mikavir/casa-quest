@@ -1,3 +1,4 @@
+
 a.logo {
     width: 120px;
     height: 120px;
@@ -36,15 +37,19 @@ nav.custom-nav{
     top:0;
 }
 
-nav ul a {
-    -webkit-transition: background-color .3s;
-    transition: background-color .3s;
+nav ul:not(.dropdown-content)>li>a{
     font-size: 1rem;
     color: #17353B;
     display: block;
     padding: 0 15px;
     cursor: pointer;
+
 }
+nav:hover{
+  background-color: #FAECD9;
+}
+
+
 
 .mobile-menu {
     position: fixed;
@@ -60,8 +65,15 @@ nav ul a {
     box-sizing: border-box;
 }
 .mobile-menu.open {
+    margin-top: 50px;
     left: 70%;
     display:block;
+    color:#17353B;
+}
+
+
+nav ul:not(.dropdown-content)>li>a:hover:not(.active) {
+  background-color:rgba(88,126,123, 0.6)
 }
 /* inspired from The Great Wall of Gratitude https://github.com/VCGithubCode/Gratidudes */
 /* Mobile menu trigger button */
