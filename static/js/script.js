@@ -6,6 +6,7 @@ $(document).ready(function(){
   // filePath();
   console.log(isThereHouseContent())
   addInfoBtnDisplay();
+  initialiseModal();
   
 });
 
@@ -57,4 +58,11 @@ function addInfoBtnDisplay (){
     editInfoBtn.style.display = "block";
     addInfoBtn.style.display = "none";
   }
+}
+
+function initialiseModal(){
+  const elems = document.querySelectorAll('.modal');
+  const instances = M.Modal.init(elems, {
+    // specify options here
+  });
 }
