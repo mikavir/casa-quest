@@ -204,6 +204,8 @@ def new_house():
 @login_required
 def edit_new_house(house_id):
     if request.method == "POST":
+        
+
         address = request.form.get("address")
         agency = request.form.get("agency")
         property_type = request.form.get("property_type")
@@ -235,10 +237,48 @@ def edit_new_house(house_id):
         flash("House Successfully Updated")
         return redirect(url_for(
                             "profile", username=session["user"]))
-   
-    house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
-    types = ["Detached", "Semi-Detached", "Terraced"]
-    return render_template("edit_new_house.html", types=types, house=house)
+    else:
+        house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
+        types = ["Detached", "Semi-Detached", "Terraced"]
+        return render_template("edit_new_house.html", types=types, house=house)
+
+
+@app.route("/house/<house_id>", methods=["GET", "POST"])
+@login_required
+def add_house_info(house_id):
+    if request.method == "POST":
+        house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
+        epc = request.form.get("epc")
+        tax_band = request.form.get("tax_band")
+        flood_risk = request.form.get("flood_risk")
+        internet_speed = request.form.get("internet_speed")
+        dedicated_parking = "yes" if request.form.get("dedicated_parking") else "no"
+
+        house_info = {
+            "house_id": house,
+            "epc": epc,
+            "taxBand": tax_band,
+            "floodRisk": flood_risk,
+            "internetSpeed": internet_speed,
+            "dedicatedParking": dedicated_parking
+        }
+        mongo.db.houseInformation.insert_one(house_info)
+        flash("House info added")
+        return redirect(url_for("view_house", house_id=house_id))
+    else:
+        
+        house_info = mongo.db.houseInformation.find_one({"_id": ObjectId(house_id)})
+
+        house_check = mongo.db.houseChecks.find_one({"_id": ObjectId(house_id)})
+
+        house_viewing = mongo.db.houseViewing.find_one({"_id": ObjectId(house_id)})
+
+
+        return render_template(
+            "house.html", username=username, house=house, house_info=house_info,
+            house_check=house_check, house_viewing=house_viewing
+        )
+
 
 
 if __name__ == "__main__":
