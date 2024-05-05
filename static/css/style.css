@@ -107,3 +107,19 @@ input:checked~.hamburger span:nth-child(1) {
       width: 100%;     
     }
   }
+
+ 
+  input[type=file]::file-selector-button {
+    border: 2px solid #17353B;
+    border-radius: 15px;
+    padding: 10px;
+    background-color:#17353B;
+    transition: 1s;
+    color:#FAECD9
+  }
+  
+  input[type=file]::file-selector-button:hover {
+    background-color: #FAECD9;
+    border: 2px solid #17353B;
+    color:  #17353B;
+  }
