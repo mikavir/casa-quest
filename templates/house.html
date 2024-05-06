@@ -18,50 +18,50 @@
                 <div class="row">
                     <div class="col s12">
                         <h4 class="center-align green-text text-darken-4">
-                            {{ house.address }}    
+                            {{ house.address }}
                         </h4>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col s12">
-                        <h5>{{ house.agency }} </h5>                  
+                        <h5>{{ house.agency }} </h5>
                     </div>
-                 
+
                 </div>
                 <div class="col s12">
                     <h6 class="center-align black-text text-darken-4">
-                       {{ house.propertyType }}    
+                        {{ house.propertyType }}
                     </h6>
                 </div>
                 <div class="row">
                     <div class="col s12">
                         <h6 class="center-align black-text text-darken-4">
-                           £ {{ house.price }}    
+                            £ {{ house.price }}
                         </h6>
                     </div>
                 </div>
-             
+
                 <div class="row m-2">
                     <div class="col s12">
-                        <span class="m-2"><i class="fa-solid fa-bed prefix"></i>{{ house.bedrooms }}</span>                      
+                        <span class="m-2"><i class="fa-solid fa-bed prefix"></i>{{ house.bedrooms }}</span>
                         <span class="m-2"><i class="fa-solid fa-toilet prefix"></i>{{ house.bathrooms }}</span>
                     </div>
-                    
+
                 </div>
                 <div class="row m-2">
                     <div class="col s12">
-                        <span><i class="fa-solid fa-calendar-days prefix"></i> {{ house.date_viewing }}</span>                      
+                        <span><i class="fa-solid fa-calendar-days prefix"></i> {{ house.date_viewing }}</span>
                     </div>
-                 
+
                 </div>
-            
+
             </div>
 
         </div>
 
 
     </div>
-  
+
 </div>
 
 
@@ -69,15 +69,17 @@
 <div class="row">
     <div class="col s12">
         <div class="card-panel teal row">
-            <div class="col s12 center" id="add-house-info" >
-                <a href="#addInfoModal" class="btn filled white black-text waves-effect waves-light modal-trigger" id="add-houseinfo-btn">
+            <div class="col s12 center" id="add-house-info">
+                <a href="#addInfoModal" class="btn filled white black-text waves-effect waves-light modal-trigger"
+                    id="add-houseinfo-btn">
                     Add house info
                 </a>
             </div>
-            <div class="col s12">
+            <div class="col s12 center">
                 <p class="house-info-content">{{ house_info.epc }}</p>
                 <p class="house-info-content"></p>
-                <a href="#" class="btn waves-effect waves-light" id="edit-houseinfo-btn">
+                <a href="#" class="btn filled white black-text waves-effect waves-light modal-trigger"
+                    id="edit-houseinfo-btn">
                     Edit house info
                 </a>
             </div>
@@ -88,72 +90,72 @@
 <!-- Add house info modal -->
 <div id="addInfoModal" class="modal teal lighten-4">
     <div class="modal-content">
-        <form action="{{ url_for('add_house_info', house_id=house._id) }}" method="POST">    
+        <form action="{{ url_for('add_house_info', house_id=house._id) }}" method="POST">
             <!-- input field for EPC -->
             <div class="row">
                 <div class="input-field col s12 outlined m-3">
-                <i class="material-icons prefix">bolt</i>
-                <input id="epc" name="epc" type="text" class="validate" required>
-                <label for="epc">
-                  EPC Rating:</label>
+                    <i class="material-icons prefix">bolt</i>
+                    <input id="epc" name="epc" type="text" class="validate" required>
+                    <label for="epc">
+                        EPC Rating:</label>
                 </div>
             </div>
             <!-- input field for Tax-Band -->
             <div class="row">
                 <div class="input-field col s12 outlined m-3">
-                <i class="material-icons prefix">payments</i>
-                <input id="tax_band" name="tax_band" type="text" class="validate" required>
-                <label for="tax_band">Tax Band</label>
+                    <i class="material-icons prefix">payments</i>
+                    <input id="tax_band" name="tax_band" type="text" class="validate" required>
+                    <label for="tax_band">Tax Band</label>
                 </div>
 
             </div>
-        
+
             <!-- input field for flood risk -->
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
-                <i class="material-icons prefix">flood</i>
-                <input id="flood_risk" name="flood_risk" type="text" class="validate" required>
-                <label for="flood_risk">Flood Risk</label>
+                    <i class="material-icons prefix">flood</i>
+                    <input id="flood_risk" name="flood_risk" type="text" class="validate" required>
+                    <label for="flood_risk">Flood Risk</label>
                 </div>
-            
+
             </div>
 
             <!-- input field for wifi -->
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
-                <i class="material-icons prefix">wifi</i>
-                <input id="internet_speed" name="internet_speed" type="text" class="validate" required>
-                <label for="interned_speed">Internet Speed:</label>
+                    <i class="material-icons prefix">wifi</i>
+                    <input id="internet_speed" name="internet_speed" type="text" class="validate" required>
+                    <label for="interned_speed">Internet Speed:</label>
                 </div>
-            
+
             </div>
             <!-- input field for parking -->
             <div class="row">
                 <div class="col s12  center">
                     <label for="dedicated_parking">
-                      <input name="dedicated_parking" id="dedicated_parking" type="checkbox" class="filled-in" checked="checked"
-                        required />
-                      <span>Dedicated Parking</span>
+                        <input name="dedicated_parking" id="dedicated_parking" type="checkbox" class="filled-in"
+                            checked="checked" required />
+                        <span>Dedicated Parking</span>
                     </label>
-                  </div>
+                </div>
             </div>
             <div class="row center">
                 <div class="col s12 m-3">
-                  <button class="btn filled icon-left waves-effect waves-light teal white-text" type="submit">
-                    <i class="material-icons">add</i>Add House Information
-                  </button>
+                    <button class="btn filled icon-left waves-effect waves-light teal white-text" type="submit">
+                        <i class="material-icons">add</i>Add House Information
+                    </button>
                 </div>
-              </div>
-          
+            </div>
+
 
         </form>
-      
+
     </div>
     <!-- <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect btn">Close</a>
 
     </div> -->
- </div>
+</div>
 
 
 <!-- house checks -->
@@ -188,6 +190,36 @@
     </div>
 </div>
 
+<!-- script -->
+
+<script>
+    console.log(isThereHouseContent());
+    setInterval(addInfoBtnDisplay(), 300);
+
+
+    function isThereHouseContent() {
+        const houseInfoContent = document.querySelectorAll(".house-info-content")
+        for (const houseInfo of houseInfoContent) {
+            if (houseInfo.innerText !== "") {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function addInfoBtnDisplay() {
+        const addInfoBtn = document.getElementById("add-houseinfo-btn");
+        const editInfoBtn = document.getElementById("edit-houseinfo-btn");
+
+        if (isThereHouseContent) {
+            editInfoBtn.style.display = "block";
+            addInfoBtn.style.display = "none";
+        } else {
+            editInfoBtn.style.display = "none";
+            addInfoBtn.style.display = "block";
+        }
+    }
+</script>
 
 
 {% endblock %}
