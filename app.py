@@ -194,10 +194,12 @@ def view_house(house_id):
 
     property_facing = ["South Facing", "North Facing", "West Facing", "East Facing"]
 
+    noise = ["Quiet", "Some Noise", "Very Noisy"]
+
 
     return render_template(
         "house.html", username=username, house=house, house_info=house_info,
-        house_check=house_check, house_viewing=house_viewing, traffic=traffic, property_facing=property_facing
+        house_check=house_check, house_viewing=house_viewing, traffic=traffic, property_facing=property_facing, noise=noise
     )
 
 
