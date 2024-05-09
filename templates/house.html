@@ -9,7 +9,7 @@
 </div>
 
 <div class="row">
-    <div class="col s12 ">
+    <div class="col s12">
         <div class="card-panel teal lighten-4 row p-5">
             <div class="col s12 m6">
                 <img src="{{house.image_url}}" class="responsive-img">
@@ -79,7 +79,7 @@
                     <div class="col s6 m6 m-3">
                         <span> <i class="material-icons">payments</i> Tax Band: </span>
                         <span class="house-info-content">{{ house_info.taxBand }} </span>
-    
+
                     </div>
                 </div>
                 <div class="row left-align">
@@ -89,9 +89,9 @@
 
                     </div>
                     <div class="col s6 m6 m-3">
-                        <span><i class="material-icons prefix">wifi</i> Internet Speed:  </span>
+                        <span><i class="material-icons prefix">wifi</i> Internet Speed: </span>
                         <span class="house-info-content">{{ house_info.internetSpeed }} </span>
-    
+
                     </div>
                 </div>
                 <div class="row">
@@ -101,7 +101,7 @@
 
                     </div>
                 </div>
-                
+
             </div>
             <div class="col s12 center" id="add-house-info">
                 <a href="#addInfoModal" class="btn filled white black-text waves-effect waves-light modal-trigger"
@@ -116,6 +116,126 @@
                 </a>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- house viewing -->
+    <div class="col s12 m6 l6">
+        <div class="card-panel teal row">
+            <div class="col s12" id="add-house-check">
+                <a href="#addHouseViewingModal" class="btn filled white black-text waves-effect waves-light modal-trigger"
+                    id="add-houseviewing-btn">
+                    Add house viewing
+                </a>
+                <a href="#editHouseViewingModal" class="btn filled white black-text waves-effect waves-light modal-trigger"
+                    id="edit-houseviewing-btn">
+                    Edit house viewing
+                </a>
+
+            </div>
+        </div>
+        <!-- house checks -->
+    </div>
+    <div class="col s12 m6 l6">
+        <div class="card-panel teal  row">
+            <div class="col s12 " id="add-house-check">
+                <a href="#addHouseCheck" class="btn filled white black-text waves-effect waves-light modal-trigger"
+                    id="add-housecheck-btn">
+                    Add house checks
+                </a>
+                <a href="#editHouseCheck" class="btn filled white black-text waves-effect waves-light modal-trigger"
+                    id="edit-housecheck-btn">
+                    Edit house checks
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+<!--  MODALS -->
+
+
+<!-- Edit house info modal -->
+<div id="editInfoModal" class="modal teal lighten-4">
+    <div class="modal-content">
+        <form action="{{ url_for('edit_house_info', house_id=house._id) }}" method="POST">
+            <!-- input field for EPC -->
+            <div class="row">
+                <div class="input-field col s12 outlined m-3">
+                    <i class="material-icons prefix">bolt</i>
+                    <input id="epc" name="epc" type="text" class="validate" required value="{{ house_info.epc }}">
+                    <label for="epc">
+                        EPC Rating:</label>
+                </div>
+            </div>
+            <!-- input field for Tax-Band -->
+            <div class="row">
+                <div class="input-field col s12 outlined m-3">
+                    <i class="material-icons prefix">payments</i>
+                    <input id="tax_band" name="tax_band" type="text" class="validate" required
+                        value="{{ house_info.taxBand }}">
+                    <label for="tax_band">Tax Band</label>
+                </div>
+
+            </div>
+
+            <!-- input field for flood risk -->
+            <div class="row">
+                <div class="input-field outlined col s12 m-3">
+                    <i class="material-icons prefix">flood</i>
+                    <input id="flood_risk" name="flood_risk" type="text" class="validate"
+                        value="{{ house_info.floodRisk }}" required>
+                    <label for="flood_risk">Flood Risk</label>
+                </div>
+
+            </div>
+
+            <!-- input field for wifi -->
+            <div class="row">
+                <div class="input-field outlined col s12 m-3">
+                    <i class="material-icons prefix">wifi</i>
+                    <input id="internet_speed" name="internet_speed" type="text" class="validate"
+                        value="{{ house_info.internetSpeed }}" required>
+                    <label for="interned_speed">Internet Speed:</label>
+                </div>
+
+            </div>
+            <!-- input field for parking -->
+            <div class="row">
+                <div class="col s12  center">
+                    <label for="dedicated_parking">
+                        {% if house_info.dedicatedParking == "yes" %}
+                        <input name="dedicated_parking" id="dedicated_parking" type="checkbox" class="filled-in"
+                            checked="checked" required />
+                        {% else %}
+                        <input name="dedicated_parking" id="dedicated_parking" type="checkbox" class="filled-in"
+                            required />
+                        {% endif %}
+                        <span>Dedicated Parking</span>
+                    </label>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="col s12 m-3">
+                    <button class="btn filled icon-left waves-effect waves-light teal white-text" type="submit">
+                        <i class="material-icons">add</i>Update House Information
+                    </button>
+                </div>
+            </div>
+
+
+        </form>
+
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect btn">Close</a>
+
     </div>
 </div>
 
@@ -184,72 +304,19 @@
 
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect btn">Close</a>
+        <a href="#!" class="modal-close waves-effect btn">Close</a>
 
     </div>
 </div>
 
-<!-- Edit house info modal -->
-<div id="editInfoModal" class="modal teal lighten-4">
+<!-- Add house Viewing modal -->
+<div id="addHouseViewingModal" class="modal teal lighten-4">
     <div class="modal-content">
-        <form action="{{ url_for('edit_house_info', house_id=house._id) }}" method="POST">
-            <!-- input field for EPC -->
-            <div class="row">
-                <div class="input-field col s12 outlined m-3">
-                    <i class="material-icons prefix">bolt</i>
-                    <input id="epc" name="epc" type="text" class="validate" required value="{{ house_info.epc }}">
-                    <label for="epc">
-                        EPC Rating:</label>
-                </div>
-            </div>
-            <!-- input field for Tax-Band -->
-            <div class="row">
-                <div class="input-field col s12 outlined m-3">
-                    <i class="material-icons prefix">payments</i>
-                    <input id="tax_band" name="tax_band" type="text" class="validate" required value="{{ house_info.taxBand }}">
-                    <label for="tax_band">Tax Band</label>
-                </div>
-
-            </div>
-
-            <!-- input field for flood risk -->
-            <div class="row">
-                <div class="input-field outlined col s12 m-3">
-                    <i class="material-icons prefix">flood</i>
-                    <input id="flood_risk" name="flood_risk" type="text" class="validate" value="{{ house_info.floodRisk }}"required>
-                    <label for="flood_risk">Flood Risk</label>
-                </div>
-
-            </div>
-
-            <!-- input field for wifi -->
-            <div class="row">
-                <div class="input-field outlined col s12 m-3">
-                    <i class="material-icons prefix">wifi</i>
-                    <input id="internet_speed" name="internet_speed" type="text" class="validate" value="{{ house_info.internetSpeed }}" required>
-                    <label for="interned_speed">Internet Speed:</label>
-                </div>
-
-            </div>
-            <!-- input field for parking -->
-            <div class="row">
-                <div class="col s12  center">
-                    <label for="dedicated_parking">
-                        {% if house_info.dedicatedParking == "yes" %}
-                            <input name="dedicated_parking" id="dedicated_parking" type="checkbox" class="filled-in"
-                                checked="checked" required />
-                        {% else %}
-                            <input name="dedicated_parking" id="dedicated_parking" type="checkbox" class="filled-in"
-                            required />
-                        {% endif %}
-                        <span>Dedicated Parking</span>
-                    </label>
-                </div>
-            </div>
+        <form action="#" method="POST">
             <div class="row center">
                 <div class="col s12 m-3">
                     <button class="btn filled icon-left waves-effect waves-light teal white-text" type="submit">
-                        <i class="material-icons">add</i>Update House Information
+                        <i class="material-icons">add</i>Add House Viewing Information
                     </button>
                 </div>
             </div>
@@ -259,43 +326,31 @@
 
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect btn">Close</a>
+        <a href="#!" class="modal-close waves-effect btn">Close</a>
+
+    </div>
+</div>
+<div id="editHouseViewingModal" class="modal teal lighten-4">
+    <div class="modal-content">
+        <form action="#" method="POST">
+            <div class="row center">
+                <div class="col s12 m-3">
+                    <button class="btn filled icon-left waves-effect waves-light teal white-text" type="submit">
+                        <i class="material-icons">add</i>Edit House Viewing Information
+                    </button>
+                </div>
+            </div>
+
+
+        </form>
+
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect btn">Close</a>
 
     </div>
 </div>
 
-
-<!-- house checks -->
-<div class="row">
-    <div class="col">
-        <div class="card-panel teal">
-            {{ house_check.crack }}<br>
-
-            <a href="#" class="btn waves-effect waves-light">
-                Add house checks
-            </a>
-            <a href="#" class="btn waves-effect waves-light">
-                Edit house checks
-            </a>
-        </div>
-    </div>
-</div>
-
-
-<!-- house viewing -->
-<div class="row">
-    <div class="col">
-        <div class="card-panel teal">
-            {{ house_viewing.neighbours }}<br>
-            <a href="#" class="btn waves-effect waves-light">
-                Add house viewing
-            </a>
-            <a href="#" class="btn waves-effect waves-light">
-                Edit house viewings
-            </a>
-        </div>
-    </div>
-</div>
 
 <!-- script -->
 
