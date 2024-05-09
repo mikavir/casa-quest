@@ -448,7 +448,7 @@
 <!-- Edit house viewing Modal -->
 <div id="editHouseViewingModal" class="modal teal lighten-4">
     <div class="modal-content">
-        <form action="#" method="POST">
+        <form action="{{ url_for('edit_house_viewing', house_id=house._id) }}" method="POST">
        
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
