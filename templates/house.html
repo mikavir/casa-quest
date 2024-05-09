@@ -544,7 +544,7 @@
 
 <div id="addHouseCheckModal" class="modal teal lighten-4">
     <div class="modal-content">
-        <form action="#" method="POST">
+        <form action="{{ url_for('add_house_check', house_id=house._id) }}" method="POST">
        
            <div class="row">
                 <div class="col s12 ">
@@ -601,7 +601,7 @@
                             {% for amount in storage_space %}
                                 <span>
                                     <label>
-                                        <input name="boiler_noise" type="radio" value="{{ amount }}"/>
+                                        <input name="storage_space" type="radio" value="{{ amount }}"/>
                                         <span>{{ amount }}</span>
                                     </label>
                                 </span>
@@ -611,15 +611,13 @@
                     <div class="row">
                         <div class="col s12 m6 m-4">
                             <label for="attic">
-                                <input name="attic" id="attic" type="checkbox" class="filled-in"
-                                    required />
+                                <input name="attic" id="attic" type="checkbox" class="filled-in"/>
                                 <span>Is there easy access to the attic?</span>
                             </label>
                         </div>
                         <div class="col s12 m6 m-4">
                             <label for="electric_ports">
-                                <input name="electric_ports" id="electric_ports" type="checkbox" class="filled-in"
-                                    required />
+                                <input name="electric_ports" id="electric_ports" type="checkbox" class="filled-in"/>
                                 <span>Are there decent amounts of electric port?</span>
                             </label>
                         </div>
@@ -628,18 +626,26 @@
                         <div class="col s12 m6 m-4">
                             <label for="mould">
                                 <input name="mould" id="mould" type="checkbox" class="filled-in"
-                                    required />
+                                     />
                                 <span>Are there signs of mould?</span>
                             </label>
                         </div>
                         <div class="col s12 m6 m-4">
                             <label for="damp">
-                                <input name="damp" id="damp" type="checkbox" class="filled-in"
-                                    required />
+                                <input name="damp" id="damp" type="checkbox" class="filled-in"/>
                                 <span>Are there signs of damp in the walls?</span>
                             </label>
                         </div>
                        
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <label for="crack">
+                                <input name="crack" id="crack" type="checkbox" class="filled-in"/>
+                                <span>Are there signs of wall cracking?</span>
+                            </label>
+
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col s12">
@@ -652,7 +658,7 @@
                                     {% for condition in roof_condition %}
                                         <span class="m-2">
                                             <label>
-                                                <input name="roof-condition" type="radio" value="{{ condition[0] }}"/>
+                                                <input name="roof_condition" type="radio" value="{{ condition[0] }}"/>
                                                 <span>{{ condition[0] }} </span>
                                             </label>
                                             
