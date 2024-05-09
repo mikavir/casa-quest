@@ -5,6 +5,7 @@ $(document).ready(function(){
   datepicker();
   // filePath();
   initialiseModal();
+  initialiseToolTipped();
   
 });
 
@@ -40,4 +41,9 @@ function initialiseModal(){
   const instances = M.Modal.init(elems, {
     // specify options here
   });
+}
+
+function initialiseToolTipped(){
+  const elems = document.querySelectorAll('.tooltipped');
+  const instances = M.Tooltip.init(elems)
 }
