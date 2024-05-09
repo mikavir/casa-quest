@@ -196,10 +196,13 @@ def view_house(house_id):
 
     noise = ["Quiet", "Some Noise", "Very Noisy"]
 
+    storage_space = ["Minimal", "Moderate", "Abundant"]
+
 
     return render_template(
         "house.html", username=username, house=house, house_info=house_info,
-        house_check=house_check, house_viewing=house_viewing, traffic=traffic, property_facing=property_facing, noise=noise
+        house_check=house_check, house_viewing=house_viewing, traffic=traffic,
+        property_facing=property_facing, noise=noise, storage_space=storage_space
     )
 
 
