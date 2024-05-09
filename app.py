@@ -192,10 +192,12 @@ def view_house(house_id):
 
     traffic = ["Heavy Traffic", "Moderate Traffic", "No Traffic"]
 
+    property_facing = ["South Facing", "North Facing", "West Facing", "East Facing"]
+
 
     return render_template(
         "house.html", username=username, house=house, house_info=house_info,
-        house_check=house_check, house_viewing=house_viewing, traffic=traffic
+        house_check=house_check, house_viewing=house_viewing, traffic=traffic, property_facing=property_facing
     )
 
 
@@ -327,22 +329,7 @@ def add_house_info(house_id):
         flash("House info added")
         return redirect(url_for("view_house", house_id=house_id))
     else:
-        
-        house_info = mongo.db.houseInformation.find_one({"_id": ObjectId(house_id)})
-
-        house_check = mongo.db.houseChecks.find_one({"_id": ObjectId(house_id)})
-
-        house_viewing = mongo.db.houseViewing.find_one({"_id": ObjectId(house_id)})
-
-
-        traffic = ["Heavy Traffic", "Moderate Traffic", "No Traffic"]
-
-
-        return render_template(
-            "house.html", username=username, house=house, house_info=house_info,
-            house_check=house_check, house_viewing=house_viewing, traffic=traffic
-        )
-
+       return redirect(url_for("view_house", house_id=house_id))
 
 # EDIT HOUSE INFORMATION MODAL
 @app.route("/house/<house_id>#editInfoModal", methods=["GET", "POST"])
@@ -374,21 +361,8 @@ def edit_house_info(house_id):
         flash("House info edited")
         return redirect(url_for("view_house", house_id=house_id))
     else:
-        
-        house_info = mongo.db.houseInformation.find_one({"_id": ObjectId(house_id)})
+        return redirect(url_for("view_house", house_id=house_id))
 
-        house_check = mongo.db.houseChecks.find_one({"_id": ObjectId(house_id)})
-
-        house_viewing = mongo.db.houseViewing.find_one({"_id": ObjectId(house_id)})
-
-
-        traffic = ["Heavy Traffic", "Moderate Traffic", "No Traffic"]
-
-
-        return render_template(
-            "house.html", username=username, house=house, house_info=house_info,
-            house_check=house_check, house_viewing=house_viewing, traffic=traffic
-        )
 
 
 # ADD HOUSE VIEWING INFORMATION FROM MODAL
@@ -424,19 +398,21 @@ def add_house_viewing(house_id):
         return redirect(url_for("view_house", house_id=house_id))
     else:
         
-        house_info = mongo.db.houseInformation.find_one({"_id": ObjectId(house_id)})
+        # house_info = mongo.db.houseInformation.find_one({"_id": ObjectId(house_id)})
 
-        house_check = mongo.db.houseChecks.find_one({"_id": ObjectId(house_id)})
+        # house_check = mongo.db.houseChecks.find_one({"_id": ObjectId(house_id)})
 
-        house_viewing = mongo.db.houseViewing.find_one({"_id": ObjectId(house_id)})
+        # house_viewing = mongo.db.houseViewing.find_one({"_id": ObjectId(house_id)})
 
-        traffic = ["Heavy Traffic", "Moderate Traffic", "No Traffic"]
+        # traffic = ["Heavy Traffic", "Moderate Traffic", "No Traffic"]
 
 
-        return render_template(
-            "house.html", username=username, house=house, house_info=house_info,
-            house_check=house_check, house_viewing=house_viewing, traffic=traffic
-        )
+        # return render_template(
+        #     "house.html", username=username, house=house, house_info=house_info,
+        #     house_check=house_check, house_viewing=house_viewing, traffic=traffic
+        # )
+        return redirect(url_for("view_house", house_id=house_id))
+
 
 
 # EDIT HOUSE VIEWING INFORMATION FROM MODAL
@@ -471,21 +447,7 @@ def edit_house_viewing(house_id):
         flash("House viewing info edited")
         return redirect(url_for("view_house", house_id=house_id))
     else:
-        
-        house_info = mongo.db.houseInformation.find_one({"_id": ObjectId(house_id)})
-
-        house_check = mongo.db.houseChecks.find_one({"_id": ObjectId(house_id)})
-
-        house_viewing = mongo.db.houseViewing.find_one({"_id": ObjectId(house_id)})
-
-        traffic = ["Heavy Traffic", "Moderate Traffic", "No Traffic"]
-
-
-        return render_template(
-            "house.html", username=username, house=house, house_info=house_info,
-            house_check=house_check, house_viewing=house_viewing, traffic=traffic
-        )
-
+        return redirect(url_for("view_house", house_id=house_id))
 
 
 if __name__ == "__main__":
