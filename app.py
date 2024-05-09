@@ -397,6 +397,7 @@ def add_house_viewing(house_id):
         house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
         sellers_situation = request.form.get("sellers-sitaution")
         neighbours = request.form.get("neighbours")
+        facilities = request.form.get("facilities")
         traffic = request.form.get("traffic")
         other_offers = "yes" if request.form.get("offers") else "no"
         double_glazed_windows = "yes" if request.form.get("windows") else "no"
@@ -407,6 +408,7 @@ def add_house_viewing(house_id):
             "neighbours": neighbours,
             "traffic": traffic,
             "otherOffers": other_offers,
+            "facilities": facilities,
             "windows": double_glazed_windows
         }
         mongo.db.houseViewing.insert_one(house_viewing_info)
