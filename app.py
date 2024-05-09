@@ -190,10 +190,12 @@ def view_house(house_id):
 
     house_viewing = mongo.db.houseViewing.find_one({"_id": ObjectId(house_id)})
 
+    traffic = ["Heavy Traffic", "Moderate Traffic", "No Traffic"]
+
 
     return render_template(
         "house.html", username=username, house=house, house_info=house_info,
-        house_check=house_check, house_viewing=house_viewing
+        house_check=house_check, house_viewing=house_viewing, traffic=traffic
     )
 
 
@@ -333,9 +335,12 @@ def add_house_info(house_id):
         house_viewing = mongo.db.houseViewing.find_one({"_id": ObjectId(house_id)})
 
 
+        traffic = ["Heavy Traffic", "Moderate Traffic", "No Traffic"]
+
+
         return render_template(
             "house.html", username=username, house=house, house_info=house_info,
-            house_check=house_check, house_viewing=house_viewing
+            house_check=house_check, house_viewing=house_viewing, traffic=traffic
         )
 
 
@@ -377,9 +382,12 @@ def edit_house_info(house_id):
         house_viewing = mongo.db.houseViewing.find_one({"_id": ObjectId(house_id)})
 
 
+        traffic = ["Heavy Traffic", "Moderate Traffic", "No Traffic"]
+
+
         return render_template(
             "house.html", username=username, house=house, house_info=house_info,
-            house_check=house_check, house_viewing=house_viewing
+            house_check=house_check, house_viewing=house_viewing, traffic=traffic
         )
 
 
@@ -422,10 +430,12 @@ def add_house_viewing(house_id):
 
         house_viewing = mongo.db.houseViewing.find_one({"_id": ObjectId(house_id)})
 
+        traffic = ["Heavy Traffic", "Moderate Traffic", "No Traffic"]
+
 
         return render_template(
             "house.html", username=username, house=house, house_info=house_info,
-            house_check=house_check, house_viewing=house_viewing
+            house_check=house_check, house_viewing=house_viewing, traffic=traffic
         )
 
 
