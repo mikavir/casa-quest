@@ -303,7 +303,7 @@ def add_house_info(house_id):
     Renders template hoouse. 
 
     Add house information to MongoDB collection 'houseInformation' and adds the same '_id' of house.
-    
+
     """
     if request.method == "POST":
         house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
@@ -338,6 +338,49 @@ def add_house_info(house_id):
             house_check=house_check, house_viewing=house_viewing
         )
 
+
+# EDIT HOUSE INFORMATION MODAL
+@app.route("/house/<house_id>#editInfoModal", methods=["GET", "POST"])
+@login_required
+def edit_house_info(house_id):
+    """
+    Renders template house. 
+
+    Edits house information to MongoDB collection 'houseInformation' and adds the same '_id' of house.
+    
+    """
+    if request.method == "POST":
+        house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
+        epc = request.form.get("epc")
+        tax_band = request.form.get("tax_band")
+        flood_risk = request.form.get("flood_risk")
+        internet_speed = request.form.get("internet_speed")
+        dedicated_parking = "yes" if request.form.get("dedicated_parking") else "no"
+
+        edit_house_info = {
+            "_id": ObjectId(house_id),
+            "epc": epc,
+            "taxBand": tax_band,
+            "floodRisk": flood_risk,
+            "internetSpeed": internet_speed,
+            "dedicatedParking": dedicated_parking
+        }
+        mongo.db.houseInformation.update_one({"_id": ObjectId(house_id)}, {"$set": edit_house_info})
+        flash("House info edited")
+        return redirect(url_for("view_house", house_id=house_id))
+    else:
+        
+        house_info = mongo.db.houseInformation.find_one({"_id": ObjectId(house_id)})
+
+        house_check = mongo.db.houseChecks.find_one({"_id": ObjectId(house_id)})
+
+        house_viewing = mongo.db.houseViewing.find_one({"_id": ObjectId(house_id)})
+
+
+        return render_template(
+            "house.html", username=username, house=house, house_info=house_info,
+            house_check=house_check, house_viewing=house_viewing
+        )
 
 
 if __name__ == "__main__":
