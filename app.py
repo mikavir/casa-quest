@@ -56,6 +56,12 @@ def index():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """
+    Renders template for 'registration'
+
+    Adds new user to MongoDB collect 'Users' then redirects to profile
+
+    """
     if request.method == "POST":
         # check if username already exists in db
         existing_user = mongo.db.users.find_one(
@@ -80,8 +86,16 @@ def register():
     return render_template("registration.html")
 
 
+# LOGIN
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    """
+
+    Renders template for 'login'.
+
+    Finds user details in MongoDB collection users and redirect to user profile. Adds session for users.
+
+    """
     if request.method == "POST":
         # check if username exists in db
         existing_user = mongo.db.users.find_one(
@@ -109,18 +123,33 @@ def login():
     return render_template("login.html")
 
 
+#LOGOUT
 @app.route("/logout")
 @login_required
 def logout():
+    """
+    Removes user session. 
+
+    Redirects to login page
+
+    """
     # remove user from session cookie
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
 
 
+# USERS PROFILE/DASHBOARD
 @app.route("/profile/<username>", methods=["GET", "POST"])
 @login_required
 def profile(username):
+    """
+
+    Renders template profile.html when user is in session
+
+    Returns houses by the user.
+
+    """
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -130,9 +159,17 @@ def profile(username):
     return render_template("profile.html", username=username, houses=houses)
 
 
+# HOUSE
 @app.route("/house/<house_id>", methods=["GET", "POST"])
 @login_required
 def view_house(house_id):
+    """
+
+    Renders template house
+
+    Returns house information, house viewing, house personal checks of the house Object ID
+
+    """
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -159,9 +196,17 @@ def view_house(house_id):
         house_check=house_check, house_viewing=house_viewing
     )
 
+
+# ADD NEW HOUSE ENTRY
 @app.route("/new_house",methods=["GET", "POST"])
 @login_required
 def new_house():
+    """
+    Renders template add new house.
+     
+    Adds house information to MongDB collection 'house' with cloudinary url. Redirects back to Profile/dashboard
+
+    """
     if request.method == "POST":
         address = request.form.get("address")
         agency = request.form.get("agency")
@@ -200,12 +245,19 @@ def new_house():
         return render_template("new_house.html", types=types)
 
 
+# EDITS NEW HOUSE ENTRY
 @app.route("/edit_new_house/<house_id>",methods=["GET", "POST"])
 @login_required
 def edit_new_house(house_id):
+    """
+
+    Renders edit new house template.
+
+    Update house information to MongoDB collection 'house'. Redirects back to profile.
+
+    """
     if request.method == "POST":
         
-
         address = request.form.get("address")
         agency = request.form.get("agency")
         property_type = request.form.get("property_type")
@@ -243,9 +295,16 @@ def edit_new_house(house_id):
         return render_template("edit_new_house.html", types=types, house=house)
 
 
+# ADD HOUSE INFORMATION FROM MODAL
 @app.route("/house/<house_id>#addInfoModal", methods=["GET", "POST"])
 @login_required
 def add_house_info(house_id):
+    """
+    Renders template hoouse. 
+
+    Add house information to MongoDB collection 'houseInformation' and adds the same '_id' of house.
+    
+    """
     if request.method == "POST":
         house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
         epc = request.form.get("epc")
