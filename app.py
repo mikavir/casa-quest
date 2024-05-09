@@ -383,6 +383,51 @@ def edit_house_info(house_id):
         )
 
 
+# ADD HOUSE VIEWING INFORMATION FROM MODAL
+@app.route("/house/<house_id>#addHouseViewingModal", methods=["GET", "POST"])
+@login_required
+def add_house_viewing(house_id):
+    """
+    Renders template house. 
+
+    Add house viewing information to MongoDB collection 'houseViewing' and adds the same '_id' of house.
+
+    """
+    if request.method == "POST":
+        house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
+        sellers_situation = request.form.get("sellers-sitaution")
+        neighbours = request.form.get("neighbours")
+        traffic = request.form.get("traffic")
+        other_offers = "yes" if request.form.get("offers") else "no"
+        double_glazed_windows = "yes" if request.form.get("windows") else "no"
+
+        house_viewing_info = {
+            "_id": ObjectId(house_id),
+            "sellersSituation": sellers_situation,
+            "neighbours": neighbours,
+            "traffic": traffic,
+            "otherOffers": other_offers,
+            "windows": double_glazed_windows
+        }
+        mongo.db.houseViewing.insert_one(house_viewing_info)
+        flash("House viewing info added")
+        return redirect(url_for("view_house", house_id=house_id))
+    else:
+        
+        house_info = mongo.db.houseInformation.find_one({"_id": ObjectId(house_id)})
+
+        house_check = mongo.db.houseChecks.find_one({"_id": ObjectId(house_id)})
+
+        house_viewing = mongo.db.houseViewing.find_one({"_id": ObjectId(house_id)})
+
+
+        return render_template(
+            "house.html", username=username, house=house, house_info=house_info,
+            house_check=house_check, house_viewing=house_viewing
+        )
+
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
