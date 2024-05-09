@@ -463,6 +463,49 @@ def edit_house_viewing(house_id):
         return redirect(url_for("view_house", house_id=house_id))
 
 
+# Add HOUSE PERSONAL CHECK FROM MODAL
+@app.route("/house/<house_id>#addHouseCheckModal", methods=["GET", "POST"])
+@login_required
+def add_house_check(house_id):
+    """
+    Renders template house. 
+
+    Add house checks to MongoDB collection 'houseChecks and adds the same '_id' of house.
+
+    """
+    if request.method == "POST":
+        house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
+        property_facing = request.form.get("property_facing")
+        noise_level = request.form.get("noise_level")
+        boiler_noise = request.form.get("boiler_noise")
+        storage_space = request.form.get("storage_space")
+        attic_access = "yes" if request.form.get("attic") else "no"
+        electric_ports = "yes" if request.form.get("electric_ports") else "no"
+        mould = "yes" if request.form.get("mould") else "no"
+        damp = "yes" if request.form.get("damp") else "no"
+        crack = "yes" if request.form.get("crack") else "no"
+        roof_condition = request.form.get("roof_condition")
+
+        add_house_check_info = {
+            "_id": ObjectId(house_id),
+            "propertyFacing": property_facing,
+            "noisePollution": noise_level,
+            "boilerNoise": boiler_noise,
+            "storageSpace": storage_space,
+            "atticAccess": attic_access,
+            "electricPorts": electric_ports,
+            "mould": mould,
+            "damp": damp,
+            "crack": crack,
+            "roofCondition": roof_condition
+        }
+        mongo.db.houseChecks.insert_one(add_house_check_info)
+        flash("Personal House Checks Added")
+        return redirect(url_for("view_house", house_id=house_id))
+    else:
+        return redirect(url_for("view_house", house_id=house_id))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
