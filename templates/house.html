@@ -583,7 +583,7 @@
                     <label for="offers">
                         {% if house_viewing.otherOffers == "yes" %}
                             <input name="offers" id="offers" type="checkbox" class="filled-in"
-                                checked="checked" />
+                                checked="checked"/>
                         {% else %}
                             <input name="offers" id="offers" type="checkbox" class="filled-in"/>
                         {% endif %}
@@ -805,7 +805,7 @@
                                 <span>
                                     <label>
                                         {% if house_check.noisePollution == level %}
-                                            <input name="noise_level" type="radio" value="{{ level }}" checked/>
+                                            <input name="noise_level" type="radio" value="{{ level }}" checked="checked"/>
                                             <span>{{ level }}</span>
                                         {% else %}
                                             <input name="noise_level" type="radio" value="{{ level }}"/>
@@ -826,7 +826,7 @@
                                 <span>
                                     <label>
                                         {% if house_check.boilerNoise == level %}
-                                            <input name="boiler_noise" type="radio" value="{{ level }}" checked/>
+                                            <input name="boiler_noise" type="radio" value="{{ level }}" checked="checked"/>
                                             <span>{{ level }}</span>
                                         {% else %}
                                             <input name="boiler_noise" type="radio" value="{{ level }}"/>
@@ -847,7 +847,7 @@
                                 <span>
                                     <label>
                                         {% if house_check.storageSpace == amount %}
-                                            <input name="storage_space" type="radio" value="{{ amount }}" checked/>
+                                            <input name="storage_space" type="radio" value="{{ amount }}" checked="checked"/>
                                             <span>{{ amount }}</span>
                                         {% else %}
                                             <input name="storage_space" type="radio" value="{{ amount }}"/>
@@ -863,7 +863,7 @@
                         <div class="col s12 m6 m-4">
                             <label for="attic">
                                 {% if house_check.atticAccess == "yes" %}
-                                    <input name="attic" id="attic" type="checkbox" class="filled-in" checked/>
+                                    <input name="attic" id="attic" type="checkbox" class="filled-in" checked="checked"/>
                                     <span>Is there easy access to the attic?</span>
                                 {% else %}
                                     <input name="attic" id="attic" type="checkbox" class="filled-in"/>
@@ -887,7 +887,7 @@
                         <div class="col s12 m6 m-4">
                             <label for="mould">
                                 {% if house_check.mould == "yes" %}
-                                    <input name="mould" id="mould" type="checkbox" class="filled-in" checked/>
+                                    <input name="mould" id="mould" type="checkbox" class="filled-in" checked="checked"/>
                                     <span>Are there signs of mould?</span>
                                 {% else %}
                                     <input name="mould" id="mould" type="checkbox" class="filled-in"/>
@@ -898,7 +898,7 @@
                         <div class="col s12 m6 m-4">
                             <label for="damp">
                                 {% if house_check.damp == "yes" %}
-                                    <input name="damp" id="damp" type="checkbox" class="filled-in" checked/>
+                                    <input name="damp" id="damp" type="checkbox" class="filled-in" checked="checked"/>
                                     <span>Are there signs of damp in the walls?</span>
                                 {% else %}
                                     <input name="damp" id="damp" type="checkbox" class="filled-in"/>
@@ -912,7 +912,7 @@
                         <div class="col s12">
                             <label for="crack">
                                 {% if house_check.crack == "yes" %}
-                                    <input name="crack" id="crack" type="checkbox" class="filled-in" checked/>
+                                    <input name="crack" id="crack" type="checkbox" class="filled-in" checked="checked"/>
                                     <span>Are there signs of wall cracking?</span>
                                 {% else %}
                                     <input name="crack" id="crack" type="checkbox" class="filled-in"/>
@@ -934,7 +934,7 @@
                                         <span class="m-2">
                                             <label>
                                                 {% if house_check.roofCondition == condition[0] %}
-                                                    <input name="roof_condition" type="radio" value="{{ condition[0] }}" checked/>
+                                                    <input name="roof_condition" type="radio" value="{{ condition[0] }}" checked="checked"/>
                                                     <span>{{ condition[0] }} </span>
                                                 {% else %}
                                                     <input name="roof_condition" type="radio" value="{{ condition[0] }}"/>
