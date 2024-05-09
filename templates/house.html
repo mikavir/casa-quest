@@ -122,7 +122,7 @@
 <div class="row">
     <!-- house viewing -->
     <div class="col s12 m6 l6">
-        <div class="card-panel teal row">
+        <div class="card-panel teal row mx-auto">
             <div class="col s12">
                 <div class="row m-3">
                     <div class="col s12 m-2">
@@ -195,7 +195,90 @@
         <!-- house checks -->
     </div>
     <div class="col s12 m6 l6">
-        <div class="card-panel teal  row">
+        <div class="card-panel teal row mx-auto">
+            <div class="col s12">
+                <div class="row m-3">
+                    <div class="col s12 m-2">
+                        <span class="black-text">Which way does the property face? (Important for light)</span>                       
+                    </div>
+                    <div class="col s12 center">
+                        <span class="house-info-content white-text">{{ house_check.propertyFacing }}</span>
+
+                    </div>
+                </div>
+                <div class="row m-3">
+                    <div class="col s12 m-2">
+                        <span class="black-text">How much can you hear outside?</span>                       
+                    </div>
+                    <div class="col s12 center">
+                        <span class="house-info-content white-text">{{ house_check.noisePollution }}</span>
+
+                    </div>
+                </div>
+                <div class="row m-3">
+                    <div class="col s12 m-2">
+                        <span class="black-text">How is the storage space?</span>                       
+                    </div>
+                    <div class="col s12 center">
+                        <span class="house-info-content white-text">{{ house_check.storageSpace }}</span>
+
+                    </div>
+                </div>
+                <div class="row m-3">
+                    <div class="col s12 m-2">
+                        <span class="black-text">Is it easy to access the attic?</span>                       
+                    </div>
+                    <div class="col s12 center">
+                        <span class="house-info-content white-text">{{ house_check.atticAccess }}</span>
+
+                    </div>
+                </div>
+                <div class="row m-3">
+                    <div class="col s12 m-2">
+                        <span class="black-text">Is there a good amount of electric ports available?</span>                       
+                    </div>
+                    <div class="col s12 center">
+                        <span class="house-info-content white-text">{{ house_check.electricPorts }}</span>
+
+                    </div>
+                </div>
+                <div class="row m-3">
+                    <div class="col s12 m-2">
+                        <span class="black-text">Are there visible signs of mould?</span>                       
+                    </div>
+                    <div class="col s12 center">
+                        <span class="house-info-content white-text">{{ house_check.mould }}</span>
+
+                    </div>
+                </div>
+                <div class="row m-3">
+                    <div class="col s12 m-2">
+                        <span class="black-text">Are there visible signs of damp</span>                       
+                    </div>
+                    <div class="col s12 center">
+                        <span class="house-info-content white-text">{{ house_check.damp }}</span>
+
+                    </div>
+                </div>
+                <div class="row m-3">
+                    <div class="col s12 m-2">
+                        <span class="black-text">Are there visible signs of wall cracking?</span>                       
+                    </div>
+                    <div class="col s12 center">
+                        <span class="house-info-content white-text">{{ house_check.crack }}</span>
+
+                    </div>
+                </div>
+                <div class="row m-3">
+                    <div class="col s12 m-2">
+                        <span class="black-text">Codition of the roof?</span>                       
+                    </div>
+                    <div class="col s12 center">
+                        <span class="house-info-content white-text">{{ house_check.roofCondition }}</span>
+
+                    </div>
+                </div>
+            </div>
             <div class="col s12 " id="add-house-check">
                 <a href="#addHouseCheckModal" class="btn filled white black-text waves-effect waves-light modal-trigger"
                     id="add-housecheck-btn">
