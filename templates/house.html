@@ -400,24 +400,14 @@
                     <p>How's the traffic?</p>
                 </div>
                 <div class="input-field col s12 m-3 center">
-                    <span>
-                        <label>
-                            <input name="traffic" type="radio" value="Heavy Traffic" checked />
-                            <span>Heavy Traffic</span>
-                        </label>
-                    </span>
-                    <span>
-                        <label>
-                            <input name="traffic" type="radio" value="Moderate Traffic" />
-                            <span>Moderate traffic</span>
-                        </label>
-                    </span>
-                    <span>
-                        <label>
-                            <input name="traffic" type="radio" value="No Traffic"/>
-                            <span>No Traffic</span>
-                        </label>
-                    </span>
+                    {% for severity in traffic %}
+                        <span>
+                            <label>
+                                <input name="traffic" type="radio" value="{{ severity }}"/>
+                                <span>{{severity}}</span>
+                            </label>
+                        </span>
+                    {% endfor %}
                 </div>
 
             </div>
@@ -489,39 +479,46 @@
                     <p>How's the traffic?</p>
                 </div>
                 <div class="input-field col s12 m-3 center">
-                    <span>
-                        <label>
-                            <input name="traffic" type="radio" value="Heavy Traffic" checked />
-                            <span>Heavy Traffic</span>
-                        </label>
-                    </span>
-                    <span>
-                        <label>
-                            <input name="traffic" type="radio" value="Moderate Traffic" />
-                            <span>Moderate traffic</span>
-                        </label>
-                    </span>
-                    <span>
-                        <label>
-                            <input name="traffic" type="radio" value="No Traffic"/>
-                            <span>No Traffic</span>
-                        </label>
-                    </span>
+                    {% for severity in traffic %}
+                        <span>
+                            <label>
+                                {% if house_viewing.traffic == severity %}
+                                <input name="traffic" type="radio" value="{{ severity }}" checked/>
+                                <span>{{ severity }}</span>
+                                {% else %}
+                                <input name="traffic" type="radio" value="{{ severity }}"/>
+                                <span>{{ severity }}</span>
+                                {% endif %}
+
+                            </label>
+                        </span>
+                    {% endfor %}
                 </div>
 
             </div>
             <div class="row">
                 <div class="col s12 m6 m-4">
                     <label for="offers">
-                        <input name="offers" id="offers" type="checkbox" class="filled-in"
-                            checked="checked" required />
+                        {% if house_viewing.otherOffers == "yes" %}
+                            <input name="offers" id="offers" type="checkbox" class="filled-in"
+                                checked="checked" required />
+                        {% else %}
+                            <input name="offers" id="offers" type="checkbox" class="filled-in"
+                             required />
+                        {% endif %}
                         <span>Has there been other offers?</span>
                     </label>
                 </div>
                 <div class="col s12 m6 m-4">
                     <label for="windows">
-                        <input name="windows" id="windows" type="checkbox" class="filled-in"
-                            checked="checked" required />
+                        {% if house_viewing.windows == "yes" %}
+                            <input name="windows" id="windows" type="checkbox" class="filled-in"
+                                checked="checked" required />
+                        {% else %}
+                            <input name="windows" id="windows" type="checkbox" class="filled-in"
+                            required />
+                        {% endif %}
+
                         <span>Are the windows double-glazed?</span>
                     </label>
                 </div>
