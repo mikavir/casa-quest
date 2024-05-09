@@ -439,6 +439,54 @@ def add_house_viewing(house_id):
         )
 
 
+# EDIT HOUSE VIEWING INFORMATION FROM MODAL
+@app.route("/house/<house_id>#editHouseViewingModal", methods=["GET", "POST"])
+@login_required
+def edit_house_viewing(house_id):
+    """
+    Renders template house. 
+
+    Edit house viewing information to MongoDB collection 'houseViewing' and adds the same '_id' of house.
+
+    """
+    if request.method == "POST":
+        house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
+        sellers_situation = request.form.get("sellers-sitaution")
+        neighbours = request.form.get("neighbours")
+        facilities = request.form.get("facilities")
+        traffic = request.form.get("traffic")
+        other_offers = "yes" if request.form.get("offers") else "no"
+        double_glazed_windows = "yes" if request.form.get("windows") else "no"
+
+        edit_house_viewing_info = {
+            "_id": ObjectId(house_id),
+            "sellersSituation": sellers_situation,
+            "neighbours": neighbours,
+            "traffic": traffic,
+            "otherOffers": other_offers,
+            "facilities": facilities,
+            "windows": double_glazed_windows
+        }
+        mongo.db.houseViewing.update_one({"_id": ObjectId(house_id)}, {"$set": edit_house_viewing_info})
+        flash("House viewing info edited")
+        return redirect(url_for("view_house", house_id=house_id))
+    else:
+        
+        house_info = mongo.db.houseInformation.find_one({"_id": ObjectId(house_id)})
+
+        house_check = mongo.db.houseChecks.find_one({"_id": ObjectId(house_id)})
+
+        house_viewing = mongo.db.houseViewing.find_one({"_id": ObjectId(house_id)})
+
+        traffic = ["Heavy Traffic", "Moderate Traffic", "No Traffic"]
+
+
+        return render_template(
+            "house.html", username=username, house=house, house_info=house_info,
+            house_check=house_check, house_viewing=house_viewing, traffic=traffic
+        )
+
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
