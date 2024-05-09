@@ -524,8 +524,7 @@
                 </div>
             </div>
             <div class="row center">
-                <div class="col s12">
-                    
+                <div class="col s12">   
                     <button class="btn filled icon-left waves-effect waves-light teal white-text" type="submit">
                         <i class="material-icons">add</i>Edit House Viewing Information
                     </button>
@@ -548,8 +547,127 @@
         <form action="#" method="POST">
        
            <div class="row">
-                <div class="col s12">
-                    
+                <div class="col s12 ">
+                    <div class="row">
+                        <div class="col s12 left-align">
+                            <p>Which direction does the property face the sun?</p>
+                        </div>
+                        <div class="input-field col s12">
+                            {% for direction in property_facing %}
+                                <span>
+                                    <label>
+                                        <input name="property_facing" type="radio" value="{{ direction }}"/>
+                                        <span>{{ direction }}</span>
+                                    </label>
+                                </span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 left-align">
+                            <p>How much can you hear outside?</p>
+                        </div>
+                        <div class="input-field col s12">
+                            {% for level in noise %}
+                                <span>
+                                    <label>
+                                        <input name="noise_level" type="radio" value="{{ level }}"/>
+                                        <span>{{ level }}</span>
+                                    </label>
+                                </span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 left-align">
+                            <p>How noisy is the boiler?</p>
+                        </div>
+                        <div class="input-field col s12">
+                            {% for level in noise %}
+                                <span>
+                                    <label>
+                                        <input name="boiler_noise" type="radio" value="{{ level }}"/>
+                                        <span>{{ level }}</span>
+                                    </label>
+                                </span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 left-align">
+                            <p>How much storage space does the house have?</p>
+                        </div>
+                        <div class="input-field col s12">
+                            {% for amount in storage_space %}
+                                <span>
+                                    <label>
+                                        <input name="boiler_noise" type="radio" value="{{ amount }}"/>
+                                        <span>{{ amount }}</span>
+                                    </label>
+                                </span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m6 m-4">
+                            <label for="attic">
+                                <input name="attic" id="attic" type="checkbox" class="filled-in"
+                                    required />
+                                <span>Is there easy access to the attic?</span>
+                            </label>
+                        </div>
+                        <div class="col s12 m6 m-4">
+                            <label for="electric_ports">
+                                <input name="electric_ports" id="electric_ports" type="checkbox" class="filled-in"
+                                    required />
+                                <span>Are there decent amounts of electric port?</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m6 m-4">
+                            <label for="mould">
+                                <input name="mould" id="mould" type="checkbox" class="filled-in"
+                                    required />
+                                <span>Are there signs of mould?</span>
+                            </label>
+                        </div>
+                        <div class="col s12 m6 m-4">
+                            <label for="damp">
+                                <input name="damp" id="damp" type="checkbox" class="filled-in"
+                                    required />
+                                <span>Are there signs of damp in the walls?</span>
+                            </label>
+                        </div>
+                       
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="row">
+                                <div class="col s12">
+                                    <p>Condition of the roof:                                        
+                                    </p>                                    
+                                </div>
+                                <div class="input-field col s12">
+                                    {% for condition in roof_condition %}
+                                        <span class="m-2">
+                                            <label>
+                                                <input name="roof-condition" type="radio" value="{{ condition[0] }}"/>
+                                                <span>{{ condition[0] }} </span>
+                                            </label>
+                                            
+                                            <button class="btn p-1 rounded green tooltipped" data-position="bottom" data-tooltip="{{condition[1]}}"><i class="fa-sharp fa-solid fa-circle-info"></i></button>
+                                            
+                                        </span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                                
+            </div>
+            <div class="row">
+                <div class="col s12 center m-3">                    
                     <button class="btn filled icon-left waves-effect waves-light teal white-text" type="submit">
                         <i class="material-icons">add</i>Add Personal Checks
                     </button>
