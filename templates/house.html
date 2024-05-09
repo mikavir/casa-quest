@@ -644,6 +644,7 @@
                                     </label>
                                 </span>
                             {% endfor %}
+    
                         </div>
                     </div>
                     <div class="row">
@@ -774,18 +775,193 @@
 <!-- Edit personal house checks -->
 <div id="editHouseCheckModal" class="modal teal lighten-4">
     <div class="modal-content">
-        <form action="#" method="POST">
-       
-           <div class="row">
-                <div class="col s12">
-                    
+        <form action="#" method="POST">         
+            <div class="row">
+                <div class="col s12 ">
+                    <div class="row">
+                        <div class="col s12 left-align">
+                            <p>Which direction does the property face the sun?</p>
+                        </div>
+                        <div class="input-field col s12">
+                            {% for direction in property_facing %}                                
+                            <span>
+                                <label>
+                                    {% if house_check.propertyFacing == direction %}
+                                        <input name="property_facing" type="radio" value="{{ direction }}" checked/>
+                                        <span>{{ direction }}</span>
+                                    {% else %}
+                                        <input name="property_facing" type="radio" value="{{ direction }}"/>
+                                        <span>{{ direction }}</span>
+                                    {% endif %}
+
+                                </label>
+                            </span>                                       
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 left-align">
+                            <p>How much can you hear outside?</p>
+                        </div>
+                        <div class="input-field col s12">
+                            {% for level in noise %}
+                                <span>
+                                    <label>
+                                        {% if house_check.noisePollution == level %}
+                                            <input name="noise_level" type="radio" value="{{ level }}" checked/>
+                                            <span>{{ level }}</span>
+                                        {% else %}
+                                            <input name="noise_level" type="radio" value="{{ level }}"/>
+                                            <span>{{ level }}</span>
+                                        {% endif %}
+
+                                    </label>
+                                </span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 left-align">
+                            <p>How noisy is the boiler?</p>
+                        </div>
+                        <div class="input-field col s12">
+                            {% for level in noise %}
+                                <span>
+                                    <label>
+                                        {% if house_check.boilerNoise == level %}
+                                            <input name="boiler_noise" type="radio" value="{{ level }}" checked/>
+                                            <span>{{ level }}</span>
+                                        {% else %}
+                                            <input name="boiler_noise" type="radio" value="{{ level }}"/>
+                                            <span>{{ level }}</span>
+                                        {% endif %}
+
+                                    </label>
+                                </span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 left-align">
+                            <p>How much storage space does the house have?</p>
+                        </div>
+                        <div class="input-field col s12">
+                            {% for amount in storage_space %}
+                                <span>
+                                    <label>
+                                        {% if house_check.storageSpace == amount %}
+                                            <input name="storage_space" type="radio" value="{{ amount }}" checked/>
+                                            <span>{{ amount }}</span>
+                                        {% else %}
+                                            <input name="storage_space" type="radio" value="{{ amount }}"/>
+                                            <span>{{ amount }}</span>
+                                        {% endif %}
+
+                                    </label>
+                                </span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m6 m-4">
+                            <label for="attic">
+                                {% if house_check.atticAccess == "yes" %}
+                                    <input name="attic" id="attic" type="checkbox" class="filled-in" checked/>
+                                    <span>Is there easy access to the attic?</span>
+                                {% else %}
+                                    <input name="attic" id="attic" type="checkbox" class="filled-in"/>
+                                    <span>Is there easy access to the attic?</span>
+                                {% endif %}
+                            </label>
+                        </div>
+                        <div class="col s12 m6 m-4">
+                            <label for="electric_ports">
+                                {% if house_check.atticAccess == "yes" %}
+                                    <input name="electric_ports" id="electric_ports" type="checkbox" class="filled-in" checked/>
+                                    <span>Are there decent amounts of electric port?</span>
+                                {% else %}
+                                    <input name="electric_ports" id="electric_ports" type="checkbox" class="filled-in"/>
+                                    <span>Are there decent amounts of electric port?</span>
+                                {% endif %}
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m6 m-4">
+                            <label for="mould">
+                                {% if house_check.mould == "yes" %}
+                                    <input name="mould" id="mould" type="checkbox" class="filled-in" checked/>
+                                    <span>Are there signs of mould?</span>
+                                {% else %}
+                                    <input name="mould" id="mould" type="checkbox" class="filled-in"/>
+                                    <span>Are there signs of mould?</span>
+                                {% endif %}
+                            </label>
+                        </div>
+                        <div class="col s12 m6 m-4">
+                            <label for="damp">
+                                {% if house_check.damp == "yes" %}
+                                    <input name="damp" id="damp" type="checkbox" class="filled-in" checked/>
+                                    <span>Are there signs of damp in the walls?</span>
+                                {% else %}
+                                    <input name="damp" id="damp" type="checkbox" class="filled-in"/>
+                                    <span>Are there signs of damp in the walls?</span>
+                                {% endif %}
+                            </label>
+                        </div>
+                       
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <label for="crack">
+                                {% if house_check.crack == "yes" %}
+                                    <input name="crack" id="crack" type="checkbox" class="filled-in" checked/>
+                                    <span>Are there signs of wall cracking?</span>
+                                {% else %}
+                                    <input name="crack" id="crack" type="checkbox" class="filled-in"/>
+                                    <span>Are there signs of wall cracking?</span>
+                                {% endif %}
+                            </label>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="row">
+                                <div class="col s12">
+                                    <p>Condition of the roof:                                        
+                                    </p>                                    
+                                </div>
+                                <div class="input-field col s12">
+                                    {% for condition in roof_condition %}
+                                        <span class="m-2">
+                                            <label>
+                                                {% if house_check.roofCondition == condition[0] %}
+                                                    <input name="roof_condition" type="radio" value="{{ condition[0] }}" checked/>
+                                                    <span>{{ condition[0] }} </span>
+                                                {% else %}
+                                                    <input name="roof_condition" type="radio" value="{{ condition[0] }}"/>
+                                                    <span>{{ condition[0] }} </span>
+                                                {% endif %}
+                                            </label>
+                                            
+                                            <button class="btn p-1 rounded green tooltipped" data-position="bottom" data-tooltip="{{condition[1]}}"><i class="fa-sharp fa-solid fa-circle-info"></i></button>
+                                            
+                                        </span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                                
+            </div>
+            <div class="row">
+                <div class="col s12 center m-3">                    
                     <button class="btn filled icon-left waves-effect waves-light teal white-text" type="submit">
                         <i class="material-icons">add</i>Update Personal Checks
                     </button>
                 </div>
             </div>
-        </form>
-
     </div>
     <div class="modal-footer">
         <a href="#!" class="modal-close waves-effect btn">Close</a>
