@@ -198,11 +198,19 @@ def view_house(house_id):
 
     storage_space = ["Minimal", "Moderate", "Abundant"]
 
+    roof_condition = [
+            ('Excellent', 'Newly installed or recently replaced, no visible damage or wear'),
+            ('Good', 'Well-maintained, minor wear and tear, no significant issues'),
+            ('Fair', 'Some signs of aging or minor damage, may require maintenance or repairs.'),
+            ('Poor', 'Significant damage or deterioration, leaks, structural issues')
+            ]
+
+
 
     return render_template(
         "house.html", username=username, house=house, house_info=house_info,
         house_check=house_check, house_viewing=house_viewing, traffic=traffic,
-        property_facing=property_facing, noise=noise, storage_space=storage_space
+        property_facing=property_facing, noise=noise, storage_space=storage_space, roof_condition=roof_condition
     )
 
 
