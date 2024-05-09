@@ -123,6 +123,54 @@
     <!-- house viewing -->
     <div class="col s12 m6 l6">
         <div class="card-panel teal row">
+            <div class="col s12">
+                <div class="row m-3">
+                    <div class="col s12 m-2">
+                        <span class="black-text">What is the seller's situation?</span>                       
+                    </div>
+                    <div class="col s12 center">
+                        <span class="house-info-content white-text">{{ house_viewing.sellersSituation }}</span>
+
+                    </div>
+                </div>
+                <div class="row m-3">
+                    <div class="col s12 m-2">
+                        <span class="black-text">How are the nighbours?</span>                       
+                    </div>
+                    <div class="col s12 center">
+                        <span class="house-info-content white-text">{{ house_viewing.neighbours }}</span>
+
+                    </div>
+                </div>
+                <div class="row m-3">
+                    <div class="col s12 m-2">
+                        <span class="black-text">How is the traffic?</span>                       
+                    </div>
+                    <div class="col s12 center">
+                        <span class="house-info-content white-text">{{ house_viewing.traffic }}</span>
+
+                    </div>
+                </div>
+                <div class="row m-3">
+                    <div class="col s12 m-2">
+                        <span class="black-text">Have there been other offers?</span>                       
+                    </div>
+                    <div class="col s12 center">
+                        <span class="house-info-content white-text">{{ house_viewing.otherOffers }}</span>
+
+                    </div>
+                </div>
+                <div class="row m-3">
+                    <div class="col s12 m-2">
+                        <span class="black-text">Are the window's double glazed?</span>                       
+                    </div>
+                    <div class="col s12 center">
+                        <span class="house-info-content white-text">{{ house_viewing.windows }}</span>
+
+                    </div>
+                </div>
+            
+            </div>
             <div class="col s12" id="add-house-check">
                 <a href="#addHouseViewingModal" class="btn filled white black-text waves-effect waves-light modal-trigger"
                     id="add-houseviewing-btn">
