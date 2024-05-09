@@ -352,10 +352,9 @@
                     <label for="dedicated_parking">
                         {% if house_info.dedicatedParking == "yes" %}
                         <input name="dedicated_parking" id="dedicated_parking" type="checkbox" class="filled-in"
-                            checked="checked" required />
+                            checked="checked" />
                         {% else %}
-                        <input name="dedicated_parking" id="dedicated_parking" type="checkbox" class="filled-in"
-                            required />
+                        <input name="dedicated_parking" id="dedicated_parking" type="checkbox" class="filled-in"/>
                         {% endif %}
                         <span>Dedicated Parking</span>
                     </label>
@@ -426,7 +425,7 @@
                 <div class="col s12  center">
                     <label for="dedicated_parking">
                         <input name="dedicated_parking" id="dedicated_parking" type="checkbox" class="filled-in"
-                            checked="checked" required />
+                            checked="checked" />
                         <span>Dedicated Parking</span>
                     </label>
                 </div>
@@ -498,14 +497,14 @@
                 <div class="col s12 m6 m-4">
                     <label for="offers">
                         <input name="offers" id="offers" type="checkbox" class="filled-in"
-                            checked="checked" required />
+                            checked="checked"/>
                         <span>Has there been other offers?</span>
                     </label>
                 </div>
                 <div class="col s12 m6 m-4">
                     <label for="windows">
                         <input name="windows" id="windows" type="checkbox" class="filled-in"
-                            checked="checked" required />
+                            checked="checked"/>
                         <span>Are the windows double-glazed?</span>
                     </label>
                 </div>
@@ -584,10 +583,9 @@
                     <label for="offers">
                         {% if house_viewing.otherOffers == "yes" %}
                             <input name="offers" id="offers" type="checkbox" class="filled-in"
-                                checked="checked" required />
+                                checked="checked" />
                         {% else %}
-                            <input name="offers" id="offers" type="checkbox" class="filled-in"
-                             required />
+                            <input name="offers" id="offers" type="checkbox" class="filled-in"/>
                         {% endif %}
                         <span>Has there been other offers?</span>
                     </label>
@@ -596,10 +594,9 @@
                     <label for="windows">
                         {% if house_viewing.windows == "yes" %}
                             <input name="windows" id="windows" type="checkbox" class="filled-in"
-                                checked="checked" required />
+                                checked="checked"/>
                         {% else %}
-                            <input name="windows" id="windows" type="checkbox" class="filled-in"
-                            required />
+                            <input name="windows" id="windows" type="checkbox" class="filled-in"/>
                         {% endif %}
 
                         <span>Are the windows double-glazed?</span>
