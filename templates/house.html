@@ -68,7 +68,41 @@
 <!-- house info -->
 <div class="row">
     <div class="col s12">
-        <div class="card-panel teal row">
+        <div class="card-panel teal row white-text center">
+            <div class="col s12">
+                <div class="row left-align">
+                    <div class="col s6 m6 m-3 ">
+                        <span> <i class="material-icons">bolt</i> EPC: </span>
+                        <span class="house-info-content">{{ house_info.epc }}</span>
+
+                    </div>
+                    <div class="col s6 m6 m-3">
+                        <span> <i class="material-icons">payments</i> Tax Band: </span>
+                        <span class="house-info-content">{{ house_info.taxBand }} </span>
+    
+                    </div>
+                </div>
+                <div class="row left-align">
+                    <div class="col s6 m6 m-3">
+                        <span> <i class="material-icons prefix">flood</i> Flood Risk: </span>
+                        <span class="house-info-content">{{ house_info.floodRisk }}</span>
+
+                    </div>
+                    <div class="col s6 m6 m-3">
+                        <span><i class="material-icons prefix">wifi</i> Internet Speed:  </span>
+                        <span class="house-info-content">{{ house_info.internetSpeed }} </span>
+    
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m-3">
+                        <span> <i class="material-icons prefix">local_parking</i> Dedicated Parking </span>
+                        <span class="house-info-content">{{ house_info.dedicatedParking }}</span>
+
+                    </div>
+                </div>
+                
+            </div>
             <div class="col s12 center" id="add-house-info">
                 <a href="#addInfoModal" class="btn filled white black-text waves-effect waves-light modal-trigger"
                     id="add-houseinfo-btn">
@@ -76,8 +110,6 @@
                 </a>
             </div>
             <div class="col s12 center">
-                <p class="house-info-content">{{ house_info.epc }}</p>
-                <p class="house-info-content"></p>
                 <a href="#" class="btn filled white black-text waves-effect waves-light modal-trigger"
                     id="edit-houseinfo-btn">
                     Edit house info
@@ -151,10 +183,10 @@
         </form>
 
     </div>
-    <!-- <div class="modal-footer">
+    <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect btn">Close</a>
 
-    </div> -->
+    </div>
 </div>
 
 
