@@ -69,7 +69,7 @@
 <div class="row">
     <div class="col s12">
         <div class="card-panel teal row white-text center">
-            <div class="col s12">
+            <div class="col s12" id="house-info">
                 <div class="row left-align">
                     <div class="col s6 m6 m-3 ">
                         <span> <i class="material-icons">bolt</i> EPC: </span>
@@ -129,7 +129,7 @@
                         <span class="black-text">What is the seller's situation?</span>
                     </div>
                     <div class="col s12 center">
-                        <span class="house-info-content white-text">{{ house_viewing.sellersSituation }}</span>
+                        <span class="house-viewing-content white-text">{{ house_viewing.sellersSituation }}</span>
 
                     </div>
                 </div>
@@ -138,7 +138,7 @@
                         <span class="black-text">How are the nighbours?</span>
                     </div>
                     <div class="col s12 center">
-                        <span class="house-info-content white-text">{{ house_viewing.neighbours }}</span>
+                        <span class="house-viewing-content white-text">{{ house_viewing.neighbours }}</span>
 
                     </div>
                 </div>
@@ -147,7 +147,7 @@
                         <span class="black-text">What are the facilities?</span>
                     </div>
                     <div class="col s12 center">
-                        <span class="house-info-content white-text">{{ house_viewing.facilities }}</span>
+                        <span class="house-viewing-content white-text">{{ house_viewing.facilities }}</span>
 
                     </div>
                 </div>
@@ -156,7 +156,7 @@
                         <span class="black-text">How is the traffic?</span>
                     </div>
                     <div class="col s12 center">
-                        <span class="house-info-content white-text">{{ house_viewing.traffic }}</span>
+                        <span class="house-viewing-content white-text">{{ house_viewing.traffic }}</span>
 
                     </div>
                 </div>
@@ -165,7 +165,7 @@
                         <span class="black-text">Have there been other offers?</span>
                     </div>
                     <div class="col s12 center">
-                        <span class="house-info-content white-text">{{ house_viewing.otherOffers }}</span>
+                        <span class="house-viewing-content white-text">{{ house_viewing.otherOffers }}</span>
 
                     </div>
                 </div>
@@ -174,7 +174,7 @@
                         <span class="black-text">Are the window's double glazed?</span>
                     </div>
                     <div class="col s12 center">
-                        <span class="house-info-content white-text">{{ house_viewing.windows }}</span>
+                        <span class="house-viewing-content white-text">{{ house_viewing.windows }}</span>
 
                     </div>
                 </div>
@@ -204,7 +204,7 @@
                         <span class="black-text">Which way does the property face? (Important for light)</span>
                     </div>
                     <div class="col s12 center">
-                        <span class="house-info-content white-text">{{ house_check.propertyFacing }}</span>
+                        <span class="house-check-content white-text">{{ house_check.propertyFacing }}</span>
 
                     </div>
                 </div>
@@ -213,7 +213,7 @@
                         <span class="black-text">How much can you hear outside?</span>
                     </div>
                     <div class="col s12 center">
-                        <span class="house-info-content white-text">{{ house_check.noisePollution }}</span>
+                        <span class="house-check-content white-text">{{ house_check.noisePollution }}</span>
 
                     </div>
                 </div>
@@ -222,7 +222,7 @@
                         <span class="black-text">How is the storage space?</span>
                     </div>
                     <div class="col s12 center">
-                        <span class="house-info-content white-text">{{ house_check.storageSpace }}</span>
+                        <span class="house-check-content white-text">{{ house_check.storageSpace }}</span>
 
                     </div>
                 </div>
@@ -231,7 +231,7 @@
                         <span class="black-text">Is it easy to access the attic?</span>
                     </div>
                     <div class="col s12 center">
-                        <span class="house-info-content white-text">{{ house_check.atticAccess }}</span>
+                        <span class="house-check-content white-text">{{ house_check.atticAccess }}</span>
 
                     </div>
                 </div>
@@ -240,7 +240,7 @@
                         <span class="black-text">Is there a good amount of electric ports available?</span>
                     </div>
                     <div class="col s12 center">
-                        <span class="house-info-content white-text">{{ house_check.electricPorts }}</span>
+                        <span class="house-check-content white-text">{{ house_check.electricPorts }}</span>
 
                     </div>
                 </div>
@@ -249,7 +249,7 @@
                         <span class="black-text">Are there visible signs of mould?</span>
                     </div>
                     <div class="col s12 center">
-                        <span class="house-info-content white-text">{{ house_check.mould }}</span>
+                        <span class="house-check-content white-text">{{ house_check.mould }}</span>
 
                     </div>
                 </div>
@@ -258,7 +258,7 @@
                         <span class="black-text">Are there visible signs of damp</span>
                     </div>
                     <div class="col s12 center">
-                        <span class="house-info-content white-text">{{ house_check.damp }}</span>
+                        <span class="house-check-content white-text">{{ house_check.damp }}</span>
 
                     </div>
                 </div>
@@ -267,7 +267,7 @@
                         <span class="black-text">Are there visible signs of wall cracking?</span>
                     </div>
                     <div class="col s12 center">
-                        <span class="house-info-content white-text">{{ house_check.crack }}</span>
+                        <span class="house-check-content white-text">{{ house_check.crack }}</span>
 
                     </div>
                 </div>
@@ -276,7 +276,7 @@
                         <span class="black-text">Codition of the roof?</span>
                     </div>
                     <div class="col s12 center">
-                        <span class="house-info-content white-text">{{ house_check.roofCondition }}</span>
+                        <span class="house-check-content white-text">{{ house_check.roofCondition }}</span>
 
                     </div>
                 </div>
@@ -306,7 +306,7 @@
 <!-- Edit house info modal -->
 <div id="editInfoModal" class="modal teal lighten-4">
     <div class="modal-content">
-        <form action="{{ url_for('edit_house_info', house_id=house._id) }}" method="POST">
+        <form action="{{ url_for('edit_house_info', house_id=house._id) }}" method="POST" id="edit-info">
             <!-- input field for EPC -->
             <div class="row">
                 <div class="input-field col s12 outlined m-3">
@@ -828,7 +828,7 @@
 
 <div id="addHouseCheckModal" class="modal teal lighten-4">
     <div class="modal-content">
-        <form action="{{ url_for('add_house_check', house_id=house._id) }}" method="POST">
+        <form action="{{ url_for('add_house_check', house_id=house._id) }}" method="POST" id="add-info">
 
             <div class="row">
                 <div class="col s12 ">
@@ -977,14 +977,13 @@
 <!-- script -->
 
 <script>
-    console.log(isThereHouseContent());
-    setInterval(addInfoBtnDisplay(), 300);
+    addInfoBtnDisplay();
 
 
-    function isThereHouseContent() {
-        const houseInfoContent = document.querySelectorAll(".house-info-content")
-        for (const houseInfo of houseInfoContent) {
-            if (houseInfo.innerText !== "") {
+    function isThereHouseContent(houseContent) {
+       
+        for (const content of houseContent) {
+            if (content.innerText !== "") {
                 return true;
             }
         }
@@ -994,11 +993,16 @@
     function addInfoBtnDisplay() {
         const addInfoBtn = document.getElementById("add-houseinfo-btn");
         const editInfoBtn = document.getElementById("edit-houseinfo-btn");
+        const houseInfoDiv = document.getElementById("house-info");
+        const houseInfoContent = document.querySelectorAll(".house-info-content");
 
-        if (isThereHouseContent) {
+        if (isThereHouseContent(houseInfoContent)) {
+            houseInfoDiv.style.display = "block";
             editInfoBtn.style.display = "block";
             addInfoBtn.style.display = "none";
+
         } else {
+            houseInfoDiv.style.display = "none"
             editInfoBtn.style.display = "none";
             addInfoBtn.style.display = "block";
         }
