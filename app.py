@@ -251,8 +251,7 @@ def new_house():
             "date_viewing": date_viewing,
             "image_url": image_upload["secure_url"]
         }
-   
-        
+
         mongo.db.houses.insert_one(house_entry)
         flash("house added!")
         return redirect(url_for(
@@ -301,11 +300,18 @@ def edit_new_house(house_id):
         if image.filename != '':
             image_upload = cloudinary.uploader.upload(image)
             edit_house_entry["image_url"] = image_upload["secure_url"]
-        
-        mongo.db.houses.update_one({"_id": ObjectId(house_id)}, {"$set": edit_house_entry})
-        flash("House Successfully Updated")
-        return redirect(url_for(
-                            "profile", username=session["user"]))
+
+        # Check if the id exist:
+        house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
+
+        if house is None:
+            flash("404: Unable to edit a house that does not exist")
+        else:
+        # else add to database:
+            mongo.db.houses.update_one({"_id": ObjectId(house_id)}, {"$set": edit_house_entry})
+            flash("House Successfully Updated")
+            return redirect(url_for(
+                                "profile", username=session["user"]))
     else:
         house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
         types = ["Detached", "Semi-Detached", "Terraced"]
@@ -344,6 +350,8 @@ def add_house_info(house_id):
     else:
        return redirect(url_for("view_house", house_id=house_id))
 
+
+
 # EDIT HOUSE INFORMATION MODAL
 @app.route("/house/<house_id>#editInfoModal", methods=["GET", "POST"])
 @login_required
@@ -370,9 +378,16 @@ def edit_house_info(house_id):
             "internetSpeed": internet_speed,
             "dedicatedParking": dedicated_parking
         }
-        mongo.db.houseInformation.update_one({"_id": ObjectId(house_id)}, {"$set": edit_house_info})
-        flash("House info edited")
-        return redirect(url_for("view_house", house_id=house_id))
+
+        # Check if house data already exist:
+        house_data = mongo.db.house_info.find_one({"_id": ObjectId(house_id)})
+
+        if house_data is None:
+            flask("404: unable to update a house that does note exist")
+        else:        
+            mongo.db.houseInformation.update_one({"_id": ObjectId(house_id)}, {"$set": edit_house_info})
+            flash("House info edited")
+            return redirect(url_for("view_house", house_id=house_id))
     else:
         return redirect(url_for("view_house", house_id=house_id))
 
@@ -406,24 +421,11 @@ def add_house_viewing(house_id):
             "facilities": facilities,
             "windows": double_glazed_windows
         }
+        
         mongo.db.houseViewing.insert_one(house_viewing_info)
         flash("House viewing info added")
         return redirect(url_for("view_house", house_id=house_id))
     else:
-        
-        # house_info = mongo.db.houseInformation.find_one({"_id": ObjectId(house_id)})
-
-        # house_check = mongo.db.houseChecks.find_one({"_id": ObjectId(house_id)})
-
-        # house_viewing = mongo.db.houseViewing.find_one({"_id": ObjectId(house_id)})
-
-        # traffic = ["Heavy Traffic", "Moderate Traffic", "No Traffic"]
-
-
-        # return render_template(
-        #     "house.html", username=username, house=house, house_info=house_info,
-        #     house_check=house_check, house_viewing=house_viewing, traffic=traffic
-        # )
         return redirect(url_for("view_house", house_id=house_id))
 
 
@@ -456,9 +458,17 @@ def edit_house_viewing(house_id):
             "facilities": facilities,
             "windows": double_glazed_windows
         }
-        mongo.db.houseViewing.update_one({"_id": ObjectId(house_id)}, {"$set": edit_house_viewing_info})
-        flash("House viewing info edited")
-        return redirect(url_for("view_house", house_id=house_id))
+
+        # Check to ensure that there is a house entry in the database
+        house_data = mongo.db.houseViewing.find_one({"_id": ObjectId(house_id)})
+
+        if house_data is none:
+            flash("404: House Viewing Info not found")
+        else:
+            # else: Allow to update database
+            mongo.db.houseViewing.update_one({"_id": ObjectId(house_id)}, {"$set": edit_house_viewing_info})
+            flash("House viewing info edited")
+            return redirect(url_for("view_house", house_id=house_id))
     else:
         return redirect(url_for("view_house", house_id=house_id))
 
@@ -542,9 +552,15 @@ def edit_house_check(house_id):
             "crack": crack,
             "roofCondition": roof_condition
         }
-        mongo.db.houseChecks.update_one({"_id": ObjectId(house_id)}, {"$set": edit_house_check_info})
-        flash("House checks info edited")
-        return redirect(url_for("view_house", house_id=house_id))
+
+        house_data = mongo.db.houseChecks.find_one({"_id": ObjectId(house_id)})
+
+        if house_data is None:
+            flash("404: House Check Info not found")
+        else:
+            mongo.db.houseChecks.update_one({"_id": ObjectId(house_id)}, {"$set": edit_house_check_info})
+            flash("House checks info edited")
+            return redirect(url_for("view_house", house_id=house_id))
     else:
         return redirect(url_for("view_house", house_id=house_id))
 
