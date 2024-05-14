@@ -815,6 +815,7 @@
                     </button>
                 </div>
             </div>
+        </form>
     </div>
     <div class="modal-footer">
         <a href="#!" class="modal-close waves-effect btn">Close</a>
@@ -828,7 +829,7 @@
 
 <div id="addHouseCheckModal" class="modal teal lighten-4">
     <div class="modal-content">
-        <form action="{{ url_for('add_house_check', house_id=house._id) }}" method="POST" id="add-info">
+        <form action="{{ url_for('add_house_check', house_id=house._id) }}" method="POST">
 
             <div class="row">
                 <div class="col s12 ">
@@ -840,7 +841,7 @@
                             {% for direction in property_facing %}
                             <span>
                                 <label>
-                                    <input name="property_facing" type="radio" value="{{ direction }}" />
+                                    <input name="add_property_facing" type="radio" value="{{ direction }}" />
                                     <span>{{ direction }}</span>
                                 </label>
                             </span>
@@ -856,7 +857,7 @@
                             {% for level in noise %}
                             <span>
                                 <label>
-                                    <input name="noise_level" type="radio" value="{{ level }}" />
+                                    <input name="add_noise_level" type="radio" value="{{ level }}" />
                                     <span>{{ level }}</span>
                                 </label>
                             </span>
@@ -871,7 +872,7 @@
                             {% for level in noise %}
                             <span>
                                 <label>
-                                    <input name="boiler_noise" type="radio" value="{{ level }}" />
+                                    <input name="add_boiler_noise" type="radio" value="{{ level }}" />
                                     <span>{{ level }}</span>
                                 </label>
                             </span>
@@ -886,7 +887,7 @@
                             {% for amount in storage_space %}
                             <span>
                                 <label>
-                                    <input name="storage_space" type="radio" value="{{ amount }}" />
+                                    <input name="add_storage_space" type="radio" value="{{ amount }}" />
                                     <span>{{ amount }}</span>
                                 </label>
                             </span>
@@ -895,28 +896,28 @@
                     </div>
                     <div class="row">
                         <div class="col s12 m6 m-4">
-                            <label for="attic">
-                                <input name="attic" id="attic" type="checkbox" class="filled-in" />
+                            <label for="add_attic">
+                                <input name="add_attic" id="add_attic" type="checkbox" class="filled-in"/>
                                 <span>Is there easy access to the attic?</span>
                             </label>
                         </div>
                         <div class="col s12 m6 m-4">
-                            <label for="electric_ports">
-                                <input name="electric_ports" id="electric_ports" type="checkbox" class="filled-in" />
+                            <label for="add_electric_ports">
+                                <input name="add_electric_ports" id="add_electric_ports" type="checkbox" class="filled-in"/>
                                 <span>Are there decent amounts of electric port?</span>
                             </label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col s12 m6 m-4">
-                            <label for="mould">
-                                <input name="mould" id="mould" type="checkbox" class="filled-in" />
+                            <label for="add_mould">
+                                <input name="add_mould" id="add_mould" type="checkbox" class="filled-in" />
                                 <span>Are there signs of mould?</span>
                             </label>
                         </div>
                         <div class="col s12 m6 m-4">
-                            <label for="damp">
-                                <input name="damp" id="damp" type="checkbox" class="filled-in" />
+                            <label for="add_damp">
+                                <input name="add_damp" id="add_damp" type="checkbox" class="filled-in" />
                                 <span>Are there signs of damp in the walls?</span>
                             </label>
                         </div>
@@ -924,8 +925,8 @@
                     </div>
                     <div class="row">
                         <div class="col s12">
-                            <label for="crack">
-                                <input name="crack" id="crack" type="checkbox" class="filled-in" />
+                            <label for="add_crack">
+                                <input name="add_crack" id="add_crack" type="checkbox" class="filled-in" />
                                 <span>Are there signs of wall cracking?</span>
                             </label>
 
@@ -942,7 +943,7 @@
                                     {% for condition in roof_condition %}
                                     <span class="m-2">
                                         <label>
-                                            <input name="roof_condition" type="radio" value="{{ condition[0] }}" />
+                                            <input name="add_roof_condition" type="radio" value="{{ condition[0] }}" />
                                             <span>{{ condition[0] }} </span>
                                         </label>
 
