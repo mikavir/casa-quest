@@ -787,10 +787,10 @@
                                         <label for="{{ 'edit' + condition[0] }}">
                                             {% if house_check.roofCondition == condition[0] %}
                                             <input name="roof_condition" id="{{ 'edit' + condition[0] }}" type="radio" value="{{ condition[0] }}"
-                                                checked="checked" />
+                                                checked="checked" required/>
                                             <span>{{ condition[0] }} </span>
                                             {% else %}
-                                            <input name="roof_condition" id="{{'edit' + condition[0] }}"type="radio" value="{{ condition[0] }}" />
+                                            <input name="roof_condition" id="{{'edit' + condition[0] }}"type="radio" value="{{ condition[0] }}" required/>
                                             <span>{{ condition[0] }} </span>
                                             {% endif %}
                                         </label>
@@ -942,7 +942,7 @@
                                     {% for condition in roof_condition %}
                                     <span class="m-2">
                                         <label for="{{ 'addCondition' + condition[0] }}">
-                                            <input name="add_roof_condition" id="{{ 'addCondition' + condition[0] }}" type="radio" value="{{ condition[0] }}" />
+                                            <input name="add_roof_condition" id="{{ 'addCondition' + condition[0] }}" type="radio" value="{{ condition[0] }}" required/>
                                             <span>{{ condition[0] }} </span>
                                         </label>
 
