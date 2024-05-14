@@ -344,7 +344,7 @@
                     <i class="material-icons prefix">wifi</i>
                     <input id="internet_speed" name="internet_speed" type="text" class="validate"
                         value="{{ house_info.internetSpeed }}" required>
-                    <label for="interned_speed">Internet Speed:</label>
+                    <label for="internet_speed">Internet Speed:</label>
                 </div>
 
             </div>
@@ -418,7 +418,7 @@
                 <div class="input-field outlined col s12 m-3">
                     <i class="material-icons prefix">wifi</i>
                     <input id="add_internet_speed" name="add_internet_speed" type="text" class="validate" required>
-                    <label for="add_interned_speed">Internet Speed:</label>
+                    <label for="add_internet_speed">Internet Speed:</label>
                 </div>
 
             </div>
@@ -456,10 +456,10 @@
 
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
-                    <i class="material-icons prefix">people_outline</i>
-                    <input id="sellers-situation" name="sellers-sitaution" type="text" class="validate"
-                        value="{{ house_viewing.sellersSituation }} " required>
                     <label for="sellers-sitaution">What is the seller's situation?</label>
+                    <i class="material-icons prefix">people_outline</i>
+                    <input id="sellers-sitaution" name="sellers-sitaution" type="text" class="validate"
+                        value="{{ house_viewing.sellersSituation }} " required>
                 </div>
 
             </div>
@@ -488,12 +488,12 @@
                 <div class="input-field col s12 m-3 center">
                     {% for severity in traffic %}
                     <span>
-                        <label>
+                        <label for="{{severity}}">
                             {% if house_viewing.traffic == severity %}
-                            <input name="traffic" type="radio" value="{{ severity }}" checked />
+                            <input name="traffic" id="{{severity}}" type="radio" value="{{ severity }}" checked />
                             <span>{{ severity }}</span>
                             {% else %}
-                            <input name="traffic" type="radio" value="{{ severity }}" />
+                            <input name="traffic" id="{{severity}}" type="radio" value="{{ severity }}" />
                             <span>{{ severity }}</span>
                             {% endif %}
 
@@ -552,7 +552,7 @@
                 <div class="input-field outlined col s12 m-3">
                     <i class="material-icons prefix">people_outline</i>
                     <input id="add_sellers-situation" name="add_sellers-sitaution" type="text" class="validate" required>
-                    <label for="add_sellers-sitaution">What is the seller's situation?</label>
+                    <label for="add_sellers-situation">What is the seller's situation?</label>
                 </div>
 
             </div>
@@ -579,8 +579,8 @@
                 <div class="input-field col s12 m-3 center">
                     {% for severity in traffic %}
                     <span>
-                        <label>
-                            <input name="add_traffic" type="radio" value="{{ severity }}" />
+                        <label for="{{ severity }}">
+                            <input name="add_traffic" id="{{ severity }}type="radio" value="{{ severity }}" />
                             <span>{{severity}}</span>
                         </label>
                     </span>
@@ -634,15 +634,14 @@
                         <div class="input-field col s12">
                             {% for direction in property_facing %}
                             <span>
-                                <label>
+                                <label for="{{ direction }}">
                                     {% if house_check.propertyFacing == direction %}
-                                    <input name="property_facing" type="radio" value="{{ direction }}" checked />
+                                    <input name="property_facing" id="{{ direction }}" type="radio" value="{{ direction }}" checked />
                                     <span>{{ direction }}</span>
                                     {% else %}
-                                    <input name="property_facing" type="radio" value="{{ direction }}" />
+                                    <input name="property_facing" id="{{ direction }}" type="radio" value="{{ direction }}" />
                                     <span>{{ direction }}</span>
                                     {% endif %}
-
                                 </label>
                             </span>
                             {% endfor %}
@@ -655,12 +654,12 @@
                         <div class="input-field col s12">
                             {% for level in noise %}
                             <span>
-                                <label>
+                                <label for="{{ 'noisePollution' + level }}">
                                     {% if house_check.noisePollution == level %}
-                                    <input name="noise_level" type="radio" value="{{ level }}" checked="checked" />
+                                    <input name="noise_level" id="{{ 'noisePollution' + level }}" type="radio" value="{{ level }}" checked="checked" />
                                     <span>{{ level }}</span>
                                     {% else %}
-                                    <input name="noise_level" type="radio" value="{{ level }}" />
+                                    <input name="noise_level" id="{{ 'noisePollution' + level }}" type="radio" value="{{ level }}" />
                                     <span>{{ level }}</span>
                                     {% endif %}
 
@@ -676,12 +675,12 @@
                         <div class="input-field col s12">
                             {% for level in noise %}
                             <span>
-                                <label>
+                                <label for="{{ 'boiler' + level }}">
                                     {% if house_check.boilerNoise == level %}
-                                    <input name="boiler_noise" type="radio" value="{{ level }}" checked="checked" />
+                                    <input name="boiler_noise" id="{{'boiler' + level }}" type="radio" value="{{ level }}" checked="checked" />
                                     <span>{{ level }}</span>
                                     {% else %}
-                                    <input name="boiler_noise" type="radio" value="{{ level }}" />
+                                    <input name="boiler_noise" id="{{'boiler' + level }}" type="radio" value="{{ level }}" />
                                     <span>{{ level }}</span>
                                     {% endif %}
 
@@ -697,12 +696,12 @@
                         <div class="input-field col s12">
                             {% for amount in storage_space %}
                             <span>
-                                <label>
+                                <label for="{{ amount }}">
                                     {% if house_check.storageSpace == amount %}
-                                    <input name="storage_space" type="radio" value="{{ amount }}" checked="checked" />
+                                    <input name="storage_space" id="{{ amount }}" type="radio" value="{{ amount }}" checked="checked" />
                                     <span>{{ amount }}</span>
                                     {% else %}
-                                    <input name="storage_space" type="radio" value="{{ amount }}" />
+                                    <input name="storage_space" id="{{ amount }}" type="radio" value="{{ amount }}" />
                                     <span>{{ amount }}</span>
                                     {% endif %}
 
@@ -785,13 +784,13 @@
                                 <div class="input-field col s12">
                                     {% for condition in roof_condition %}
                                     <span class="m-2">
-                                        <label>
+                                        <label for="{{ 'edit' + condition[0] }}">
                                             {% if house_check.roofCondition == condition[0] %}
-                                            <input name="roof_condition" type="radio" value="{{ condition[0] }}"
+                                            <input name="roof_condition" id="{{ 'edit' + condition[0] }}" type="radio" value="{{ condition[0] }}"
                                                 checked="checked" />
                                             <span>{{ condition[0] }} </span>
                                             {% else %}
-                                            <input name="roof_condition" type="radio" value="{{ condition[0] }}" />
+                                            <input name="roof_condition" id="{{'edit' + condition[0] }}"type="radio" value="{{ condition[0] }}" />
                                             <span>{{ condition[0] }} </span>
                                             {% endif %}
                                         </label>
@@ -840,8 +839,8 @@
                         <div class="input-field col s12">
                             {% for direction in property_facing %}
                             <span>
-                                <label>
-                                    <input name="add_property_facing" type="radio" value="{{ direction }}" />
+                                <label for="{{ 'add' + direction }}">
+                                    <input name="add_property_facing" id="{{ 'add' + direction }}" type="radio" value="{{ direction }}" />
                                     <span>{{ direction }}</span>
                                 </label>
                             </span>
@@ -856,8 +855,8 @@
                         <div class="input-field col s12">
                             {% for level in noise %}
                             <span>
-                                <label>
-                                    <input name="add_noise_level" type="radio" value="{{ level }}" />
+                                <label for="{{ 'addnoise' + level }}">
+                                    <input name="add_noise_level"  id="{{ 'addnoise' + level }}" type="radio" value="{{ level }}" />
                                     <span>{{ level }}</span>
                                 </label>
                             </span>
@@ -871,8 +870,8 @@
                         <div class="input-field col s12">
                             {% for level in noise %}
                             <span>
-                                <label>
-                                    <input name="add_boiler_noise" type="radio" value="{{ level }}" />
+                                <label for="{{ 'addBoiler' + level }}">
+                                    <input name="add_boiler_noise" id="{{ 'addBoiler' + level }}" type="radio" value="{{ level }}" />
                                     <span>{{ level }}</span>
                                 </label>
                             </span>
@@ -886,8 +885,8 @@
                         <div class="input-field col s12">
                             {% for amount in storage_space %}
                             <span>
-                                <label>
-                                    <input name="add_storage_space" type="radio" value="{{ amount }}" />
+                                <label for="{{'addStorage' + amount}}">
+                                    <input name="add_storage_space" id="{{'addStorage' + amount}}" type="radio" value="{{ amount }}" />
                                     <span>{{ amount }}</span>
                                 </label>
                             </span>
@@ -942,8 +941,8 @@
                                 <div class="input-field col s12">
                                     {% for condition in roof_condition %}
                                     <span class="m-2">
-                                        <label>
-                                            <input name="add_roof_condition" type="radio" value="{{ condition[0] }}" />
+                                        <label for="{{ 'addCondition' + condition[0] }}">
+                                            <input name="add_roof_condition" id="{{ 'addCondition' + condition[0] }}" type="radio" value="{{ condition[0] }}" />
                                             <span>{{ condition[0] }} </span>
                                         </label>
 
