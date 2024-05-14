@@ -305,7 +305,8 @@ def edit_new_house(house_id):
         house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
 
         if house is None:
-            flash("404: Unable to edit a house that does not exist")
+            error_message = "Unable to edit a house that does not"
+            return render_template("404.html", error_message=error_message)
      
         mongo.db.houses.update_one({"_id": ObjectId(house_id)}, {"$set": edit_house_entry})
         flash("House Successfully Updated")
@@ -387,8 +388,10 @@ def edit_house_info(house_id):
 
         house_data = mongo.db.houseInformation.find_one({"_id": ObjectId(house_id)})
 
+       
         if house_data is None:
-            flash("404: unable to update a house that does not exist")
+            error_message = "Unable to edit a house that does not exist"
+            return render_template("404.html", error_message=error_message)
         else:        
             mongo.db.houseInformation.update_one({"_id": ObjectId(house_id)}, {"$set": edit_house_info})
             flash("House info edited")
@@ -474,8 +477,9 @@ def edit_house_viewing(house_id):
         # Check to ensure that there is a house entry in the database
         house_data = mongo.db.houseViewing.find_one({"_id": ObjectId(house_id)})
 
-        if house_data is none:
-            flash("404: House Viewing Info not found")
+        if house_data is None:
+            error_message = "Unable to edit a house that does not exist"
+            return render_template("404.html", error_message=error_message)
         else:
             # else: Allow to update database
             mongo.db.houseViewing.update_one({"_id": ObjectId(house_id)}, {"$set": edit_house_viewing_info})
@@ -575,7 +579,8 @@ def edit_house_check(house_id):
         house_data = mongo.db.houseChecks.find_one({"_id": ObjectId(house_id)})
 
         if house_data is None:
-            flash("404: House Check Info not found")
+            error_message = "Unable to edit a house that does not exist"
+            return render_template("404.html", error_message=error_message)
         else:
             mongo.db.houseChecks.update_one({"_id": ObjectId(house_id)}, {"$set": edit_house_check_info})
             flash("House checks info edited")
