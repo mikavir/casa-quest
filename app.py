@@ -610,6 +610,39 @@ def edit_house_check(house_id):
         return redirect(url_for("view_house", house_id=house_id))
 
 
+@app.errorhandler(404)
+def page_not_found(e):
+    """ 
+    https://flask-docs-ja.readthedocs.io/en/latest/patterns/errorpages/
+
+    Renders to 404 page.
+    """
+    # note that we set the 404 status explicitly
+    return render_template('404.html'), 404
+
+
+@app.errorhandler(500)
+def internal_server(e):
+    """ 
+    https://flask-docs-ja.readthedocs.io/en/latest/patterns/errorpages/
+
+    Renders to 500 page.
+    """
+    # note that we set the 500 status explicitly
+    return render_template('500.html'), 500
+
+
+@app.errorhandler(403)
+def page_forbidden(e):
+    """ 
+    https://flask-docs-ja.readthedocs.io/en/latest/patterns/errorpages/
+
+    Renders to 403 page.
+    """
+    # note that we set the 403 status explicitly
+    return render_template('403.html'), 403
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
