@@ -352,8 +352,8 @@ def add_house_info(house_id):
             flash("House info added")
             return redirect(url_for("view_house", house_id=house_id))
         else: 
-            flash("Duplicate request: House information already exist")
-            return redirect(url_for("view_house", house_id=house_id))
+            error_message = "House Information already exists"
+            return render_template("500.html", error_message=error_message)
     else:
        return redirect(url_for("view_house", house_id=house_id))
 
@@ -437,8 +437,8 @@ def add_house_viewing(house_id):
             flash("House viewing info added")
             return redirect(url_for("view_house", house_id=house_id))
         else: 
-            flash("Duplicate request: House information already exist")
-            return redirect(url_for("view_house", house_id=house_id))
+            error_message = "House viewing information already exists"
+            return render_template("500.html", error_message=error_message)
 
     else:
         return redirect(url_for("view_house", house_id=house_id))
@@ -534,7 +534,8 @@ def add_house_check(house_id):
             flash("Personal House Checks Added")
             return redirect(url_for("view_house", house_id=house_id))
         else:
-            flash("Duplicate request: House information already exist")
+            error_message = "House Check Information already exists"
+            return render_template("500.html", error_message=error_message)
     else:
         return redirect(url_for("view_house", house_id=house_id))
 
