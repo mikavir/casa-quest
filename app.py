@@ -329,11 +329,11 @@ def add_house_info(house_id):
     """
     if request.method == "POST":
         house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
-        epc = request.form.get("epc")
-        tax_band = request.form.get("tax_band")
-        flood_risk = request.form.get("flood_risk")
-        internet_speed = request.form.get("internet_speed")
-        dedicated_parking = "yes" if request.form.get("dedicated_parking") else "no"
+        epc = request.form.get("add_epc")
+        tax_band = request.form.get("add_tax_band")
+        flood_risk = request.form.get("add_flood_risk")
+        internet_speed = request.form.get("add_internet_speed")
+        dedicated_parking = "yes" if request.form.get("add_dedicated_parking") else "no"
 
         house_info = {
             "_id": ObjectId(house_id),
@@ -410,12 +410,12 @@ def add_house_viewing(house_id):
     """
     if request.method == "POST":
         house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
-        sellers_situation = request.form.get("sellers-sitaution")
-        neighbours = request.form.get("neighbours")
-        facilities = request.form.get("facilities")
-        traffic = request.form.get("traffic")
-        other_offers = "yes" if request.form.get("offers") else "no"
-        double_glazed_windows = "yes" if request.form.get("windows") else "no"
+        sellers_situation = request.form.get("add_sellers-sitaution")
+        neighbours = request.form.get("add_neighbours")
+        facilities = request.form.get("add_facilities")
+        traffic = request.form.get("add_traffic")
+        other_offers = "yes" if request.form.get("add_offers") else "no"
+        double_glazed_windows = "yes" if request.form.get("add_windows") else "no"
 
         house_viewing_info = {
             "_id": ObjectId(house_id),
