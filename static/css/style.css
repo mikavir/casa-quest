@@ -1,179 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Questrial&display=swap');
 
 a.logo {
-    width: 120px;
-    height: 120px;
-    background-size: 120px 120px;
-    background-image: url(../images/casa-quest-logo.png);
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    text-transform: capitalize;
-    cursor: pointer;
-    display: block;
-    text-indent: -9999px;
-    text-align: left;
-    overflow: hidden;
-    position: absolute;
-    z-index: 1;
-    transition: all .3s ease-in-out;
+  width: 120px;
+  height: 120px;
+  background-size: 120px 120px;
+  background-image: url(../images/casa-quest-logo.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  text-transform: capitalize;
+  cursor: pointer;
+  display: block;
+  text-indent: -9999px;
+  text-align: left;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  transition: all .3s ease-in-out;
 }
 
-nav.mobile-nav{
-    background-color: #FAECD9;
-    display: block;
-    color: #17353B;
+nav.mobile-nav {
+  background-color: #FAECD9;
+  display: block;
+  color: #17353B;
 
 }
+
 .mobile-list {
-    display: flex;
-    flex-direction: column; 
+  display: flex;
+  flex-direction: column;
 }
 
 
-nav.custom-nav{
-    background-color: #FAECD9;
-    color: #17353B;
-    z-index: 500;
-    position: fixed;
-    top:0;
+nav.custom-nav {
+  background-color: #FAECD9;
+  color: #17353B;
+  z-index: 500;
+  position: fixed;
+  top: 0;
 }
 
-nav ul:not(.dropdown-content)>li>a{
-    font-size: 1rem;
-    color: #17353B;
-    display: block;
-    padding: 0 15px;
-    cursor: pointer;
+nav ul:not(.dropdown-content)>li>a {
+  font-size: 1rem;
+  color: #17353B;
+  display: block;
+  padding: 0 15px;
+  cursor: pointer;
 
 }
-nav:hover{
+
+nav:hover {
   background-color: #FAECD9;
 }
 
 
-
 .mobile-menu {
-    position: fixed;
-    top: 0;
-    left: 100%;
-    width: 30%;
-    height: 100vh;
-    z-index: 300;
-    background-color: #587E7B;
-    transition: left .3s;
-    display: none;
-    padding-top: 70px;
-    box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 30%;
+  height: 100vh;
+  z-index: 300;
+  background-color: #587E7B;
+  transition: left .3s;
+  display: none;
+  padding-top: 70px;
+  box-sizing: border-box;
 }
+
 .mobile-menu.open {
-    margin-top: 50px;
-    left: 70%;
-    display:block;
-    color:#17353B;
+  margin-top: 50px;
+  left: 70%;
+  display: block;
+  color: #17353B;
 }
 
 
 nav ul:not(.dropdown-content)>li>a:hover:not(.active) {
-  background-color:rgba(88,126,123, 0.6)
+  background-color: rgba(88, 126, 123, 0.6)
 }
+
 /* inspired from The Great Wall of Gratitude https://github.com/VCGithubCode/Gratidudes */
 /* Mobile menu trigger button */
 .hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    position: relative;
-    width: 36px;
-    height: 36px;
-    margin-right: 15px;
-    margin-top: 10px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  width: 36px;
+  height: 36px;
+  margin-right: 15px;
+  margin-top: 10px;
+}
+
 /* Trigger bars */
 .hamburger span {
-    display: block;
-    background: #17353B;
-    width: 100%;
-    height: 5px;
-    transform-origin: center;
-    transition: all 0.2s ease-in-out;
-  }
+  display: block;
+  background: #17353B;
+  width: 100%;
+  height: 5px;
+  transform-origin: center;
+  transition: all 0.2s ease-in-out;
+}
 
 
 input:checked~.hamburger span:nth-child(1) {
-    transform: translateY(11px) rotate(-45deg);
-  }
-  
-  input:checked~.hamburger span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  input:checked~.hamburger span:nth-child(3) {
-    transform: translateY(-12px) rotate(45deg);
-  }
+  transform: translateY(11px) rotate(-45deg);
+}
 
-  section.flash {
-    margin-top: 120px;
-  }
+input:checked~.hamburger span:nth-child(2) {
+  opacity: 0;
+}
 
-  @media screen and (max-width: 400px) {
-    .mobile-menu.open {
-      left: 0;
-      width: 100%;     
-    }
-  }
+input:checked~.hamburger span:nth-child(3) {
+  transform: translateY(-12px) rotate(45deg);
+}
 
- 
-  input[type=file]::file-selector-button {
-    border: 2px solid #17353B;
-    border-radius: 15px;
-    padding: 10px;
-    background-color:#17353B;
-    transition: 1s;
-    color:#FAECD9
+section.flash {
+  margin-top: 120px;
+}
+
+@media screen and (max-width: 400px) {
+  .mobile-menu.open {
+    left: 0;
+    width: 100%;
   }
-  
-  input[type=file]::file-selector-button:hover {
-    background-color: #FAECD9;
-    border: 2px solid #17353B;
-    color:  #17353B;
-  }
+}
 
 
-  .house-image-container {
-    width: auto;
-    height: auto;
-  }
+input[type=file]::file-selector-button {
+  border: 2px solid #17353B;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: #17353B;
+  transition: 1s;
+  color: #FAECD9
+}
 
-  main {
-    overflow-x: hidden;
-  }
+input[type=file]::file-selector-button:hover {
+  background-color: #FAECD9;
+  border: 2px solid #17353B;
+  color: #17353B;
+}
 
-  /*  Validation styles from materrialize */
-    /* label color */
-    .input-field label {
-      color: #000;
-    }
-    /* label focus color */
-    .input-field input[type=text]:focus + label {
-      color: #000;
-    }
-    /* label underline focus color */
-    .input-field input[type=text]:focus {
-      border-bottom: 1px solid #000;
-      box-shadow: 0 1px 0 0 #000;
-    }
-    /* valid color */
-    .input-field input[type=text].valid {
-      border-bottom: 1px solid green;
-      box-shadow: 0 1px 0 0 #000;
-    }
-    /* invalid color */
-    .input-field input[type=text].invalid {
-      border-bottom: 1px solid red;
-      box-shadow: 0 1px 0 0 #000;
-    }
-    /* icon prefix focus color */
-    .input-field .prefix.active {
-      color: #000;
-    }
-         
+
+.house-image-container {
+  width: auto;
+  height: auto;
+}
+
+main {
+  overflow-x: hidden;
+}
+
+/*  Validation styles from materrialize */
+/* label color */
+.input-field label {
+  color: #000;
+}
+
+/* label focus color */
+.input-field input[type=text]:focus+label {
+  color: #000;
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+
+/* valid color */
+.input-field input[type=text].valid {
+  border-bottom: 1px solid green;
+  box-shadow: 0 1px 0 0 #000;
+}
+
+/* invalid color */
+.input-field input[type=text].invalid {
+  border-bottom: 1px solid red;
+  box-shadow: 0 1px 0 0 #000;
+}
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Domine", serif;
+  ;
+}
+
+p, a, button {
+  font-family: "Questrial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
