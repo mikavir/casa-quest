@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="row p-5">
+    <div class="col s12 card-panel green lighten-5 m8 offset-m2 center">
+        <div class="row">
+            <div class="col s12 green-text">
+                <h3>500</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <h4>INTERNAL ERROR SERVER</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <p>{{ error_message }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 center">
+                <a class="btn filled green white-text icon-right rounded waves-effect waves-light" href="{{url_for('index')}}">Home</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
