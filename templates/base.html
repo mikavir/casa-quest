@@ -32,7 +32,6 @@
             <ul class="right hide-on-med-and-down">
                 {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Dashboard</a></li>
-                <li><a href="#">Blog</a></li>
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                 {% else %}
                 <li><a href="{{ url_for('register') }}">Register</a></li>
