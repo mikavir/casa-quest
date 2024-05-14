@@ -200,3 +200,12 @@ p, a, button {
   font-weight: 400;
   font-style: normal;
 }
+
+div#hero-image {
+  background-image: url(../images/hero-image.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
