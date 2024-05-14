@@ -344,9 +344,16 @@ def add_house_info(house_id):
             "internetSpeed": internet_speed,
             "dedicatedParking": dedicated_parking
         }
-        mongo.db.houseInformation.insert_one(house_info)
-        flash("House info added")
-        return redirect(url_for("view_house", house_id=house_id))
+
+        # Defensive program to prevent duplicate request.
+        house_data = mongo.db.houseInformation.find_one({"_id": ObjectId(house_id)})
+
+        if house_data is None:
+            mongo.db.houseInformation.insert_one(house_info)
+            flash("House info added")
+            return redirect(url_for("view_house", house_id=house_id))
+        else: 
+            flash("Duplicate request: House information already exist")
     else:
        return redirect(url_for("view_house", house_id=house_id))
 
@@ -421,10 +428,16 @@ def add_house_viewing(house_id):
             "facilities": facilities,
             "windows": double_glazed_windows
         }
+
+        house_data = mongo.db.houseViewing.find_one({"_id": ObjectId(house_id)})
         
-        mongo.db.houseViewing.insert_one(house_viewing_info)
-        flash("House viewing info added")
-        return redirect(url_for("view_house", house_id=house_id))
+        if house_data is None:
+            mongo.db.houseViewing.insert_one(house_viewing_info)
+            flash("House viewing info added")
+            return redirect(url_for("view_house", house_id=house_id))
+        else: 
+            flash("Duplicate request: House information already exist")
+
     else:
         return redirect(url_for("view_house", house_id=house_id))
 
@@ -509,9 +522,16 @@ def add_house_check(house_id):
             "crack": crack,
             "roofCondition": roof_condition
         }
-        mongo.db.houseChecks.insert_one(add_house_check_info)
-        flash("Personal House Checks Added")
-        return redirect(url_for("view_house", house_id=house_id))
+
+        # Check to ensure that there is a house entry in the database
+        house_data = mongo.db.houseChecks.find_one({"_id": ObjectId(house_id)})
+
+        if house_data is None:
+            mongo.db.houseChecks.insert_one(add_house_check_info)
+            flash("Personal House Checks Added")
+            return redirect(url_for("view_house", house_id=house_id))
+        else:
+            flash("Duplicate request: House information already exist")
     else:
         return redirect(url_for("view_house", house_id=house_id))
 
