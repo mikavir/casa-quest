@@ -71,17 +71,37 @@ def register():
             flash("Username already exists")
             return redirect(url_for("register"))
 
-        register = {
-            "name": request.form.get("name").lower(),
-            "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
-        }
-        mongo.db.users.insert_one(register)
+        # Grab variables from form:
+        name = request.form.get("name").lower()
+        username = request.form.get("username").lower()
+        password = request.form.get("password")
+        confirm_password = request.form.get("confirm_password")
 
-        # put the new user into 'session' cookie
-        session["user"] = request.form.get("username").lower()
-        flash("Registration Successful!")
-        return redirect(url_for("profile", username=session["user"]))
+        #  Registration form validation 
+        if [name, username, password, confirm_password] is None:
+            flash("Registration failed: Please complete the required fields")
+            return redirect(url_for("register"))
+        elif len(username) < 5 or len(username) > 30:
+            flash("Registration failed: Please complete the required fields")
+            return redirect(url_for("register"))
+        elif not password.isalpha() and len(password) < 8:
+            flash("Registration failed: Please complete the required fields")
+            return redirect(url_for("register"))
+        elif password != confirm_password:
+            flash("Registration failed: Please complete the required fields")
+            return redirect(url_for("register"))
+        else:
+            register = {
+                "name": name,
+                "username": username,
+                "password": generate_password_hash("password")
+            }
+            mongo.db.users.insert_one(register)
+
+            # put the new user into 'session' cookie
+            session["user"] = request.form.get("username").lower()
+            flash("Registration Successful!")
+            return redirect(url_for("profile", username=session["user"]))
 
     return render_template("registration.html")
 
