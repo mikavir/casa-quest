@@ -388,8 +388,8 @@
             <div class="row">
                 <div class="input-field col s12 outlined m-3">
                     <i class="material-icons prefix">bolt</i>
-                    <input id="epc" name="epc" type="text" class="validate" required>
-                    <label for="epc">
+                    <input id="add_epc" name="add_epc" type="text" class="validate" required>
+                    <label for="add_epc">
                         EPC Rating:</label>
                 </div>
             </div>
@@ -397,8 +397,8 @@
             <div class="row">
                 <div class="input-field col s12 outlined m-3">
                     <i class="material-icons prefix">payments</i>
-                    <input id="tax_band" name="tax_band" type="text" class="validate" required>
-                    <label for="tax_band">Tax Band</label>
+                    <input id="add_tax_band" name="add_tax_band" type="text" class="validate" required>
+                    <label for="add_tax_band">Tax Band</label>
                 </div>
 
             </div>
@@ -407,8 +407,8 @@
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
                     <i class="material-icons prefix">flood</i>
-                    <input id="flood_risk" name="flood_risk" type="text" class="validate" required>
-                    <label for="flood_risk">Flood Risk</label>
+                    <input id="add_flood_risk" name="add_flood_risk" type="text" class="validate" required>
+                    <label for="add_flood_risk">Flood Risk</label>
                 </div>
 
             </div>
@@ -417,16 +417,16 @@
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
                     <i class="material-icons prefix">wifi</i>
-                    <input id="internet_speed" name="internet_speed" type="text" class="validate" required>
-                    <label for="interned_speed">Internet Speed:</label>
+                    <input id="add_internet_speed" name="add_internet_speed" type="text" class="validate" required>
+                    <label for="add_interned_speed">Internet Speed:</label>
                 </div>
 
             </div>
             <!-- input field for parking -->
             <div class="row">
                 <div class="col s12  center">
-                    <label for="dedicated_parking">
-                        <input name="dedicated_parking" id="dedicated_parking" type="checkbox" class="filled-in"
+                    <label for="add_dedicated_parking">
+                        <input name="add_dedicated_parking" id="add_dedicated_parking" type="checkbox" class="filled-in"
                             checked="checked" />
                         <span>Dedicated Parking</span>
                     </label>
@@ -551,24 +551,24 @@
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
                     <i class="material-icons prefix">people_outline</i>
-                    <input id="sellers-situation" name="sellers-sitaution" type="text" class="validate" required>
-                    <label for="sellers-sitaution">What is the seller's situation?</label>
+                    <input id="add_sellers-situation" name="add_sellers-sitaution" type="text" class="validate" required>
+                    <label for="add_sellers-sitaution">What is the seller's situation?</label>
                 </div>
 
             </div>
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
                     <i class="material-icons prefix">person_search</i>
-                    <input id="neighbours" name="neighbours" type="text" class="validate" required>
-                    <label for="neighbours">How are the neighbours?</label>
+                    <input id="add_neighbours" name="add_neighbours" type="text" class="validate" required>
+                    <label for="add_neighbours">How are the neighbours?</label>
                 </div>
 
             </div>
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
                     <i class="material-icons prefix">explore</i>
-                    <input id="facilities" name="facilities" type="text" class="validate" required>
-                    <label for="facilities">What are the facilities nearby?</label>
+                    <input id="add_facilities" name="add_facilities" type="text" class="validate" required>
+                    <label for="add_facilities">What are the facilities nearby?</label>
                 </div>
 
             </div>
@@ -580,7 +580,7 @@
                     {% for severity in traffic %}
                     <span>
                         <label>
-                            <input name="traffic" type="radio" value="{{ severity }}" />
+                            <input name="add_traffic" type="radio" value="{{ severity }}" />
                             <span>{{severity}}</span>
                         </label>
                     </span>
@@ -590,14 +590,14 @@
             </div>
             <div class="row">
                 <div class="col s12 m6 m-4">
-                    <label for="offers">
-                        <input name="offers" id="offers" type="checkbox" class="filled-in" checked="checked" />
+                    <label for="add_offers">
+                        <input name="add_offers" id="add_offers" type="checkbox" class="filled-in" checked="checked" />
                         <span>Has there been other offers?</span>
                     </label>
                 </div>
                 <div class="col s12 m6 m-4">
-                    <label for="windows">
-                        <input name="windows" id="windows" type="checkbox" class="filled-in" checked="checked" />
+                    <label for="add_windows">
+                        <input name="add_windows" id="add_windows" type="checkbox" class="filled-in" checked="checked" />
                         <span>Are the windows double-glazed?</span>
                     </label>
                 </div>
