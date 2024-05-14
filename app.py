@@ -306,12 +306,11 @@ def edit_new_house(house_id):
 
         if house is None:
             flash("404: Unable to edit a house that does not exist")
-        else:
-        # else add to database:
-            mongo.db.houses.update_one({"_id": ObjectId(house_id)}, {"$set": edit_house_entry})
-            flash("House Successfully Updated")
-            return redirect(url_for(
-                                "profile", username=session["user"]))
+     
+        mongo.db.houses.update_one({"_id": ObjectId(house_id)}, {"$set": edit_house_entry})
+        flash("House Successfully Updated")
+        return redirect(url_for(
+                            "profile", username=session["user"]))
     else:
         house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
         types = ["Detached", "Semi-Detached", "Terraced"]
@@ -345,7 +344,6 @@ def add_house_info(house_id):
             "dedicatedParking": dedicated_parking
         }
 
-        # Defensive program to prevent duplicate request.
         house_data = mongo.db.houseInformation.find_one({"_id": ObjectId(house_id)})
 
         if house_data is None:
@@ -354,6 +352,7 @@ def add_house_info(house_id):
             return redirect(url_for("view_house", house_id=house_id))
         else: 
             flash("Duplicate request: House information already exist")
+            return redirect(url_for("view_house", house_id=house_id))
     else:
        return redirect(url_for("view_house", house_id=house_id))
 
@@ -386,11 +385,10 @@ def edit_house_info(house_id):
             "dedicatedParking": dedicated_parking
         }
 
-        # Check if house data already exist:
-        house_data = mongo.db.house_info.find_one({"_id": ObjectId(house_id)})
+        house_data = mongo.db.houseInformation.find_one({"_id": ObjectId(house_id)})
 
         if house_data is None:
-            flask("404: unable to update a house that does note exist")
+            flash("404: unable to update a house that does not exist")
         else:        
             mongo.db.houseInformation.update_one({"_id": ObjectId(house_id)}, {"$set": edit_house_info})
             flash("House info edited")
@@ -428,15 +426,16 @@ def add_house_viewing(house_id):
             "facilities": facilities,
             "windows": double_glazed_windows
         }
-
+      
         house_data = mongo.db.houseViewing.find_one({"_id": ObjectId(house_id)})
-        
+
         if house_data is None:
             mongo.db.houseViewing.insert_one(house_viewing_info)
             flash("House viewing info added")
             return redirect(url_for("view_house", house_id=house_id))
         else: 
             flash("Duplicate request: House information already exist")
+            return redirect(url_for("view_house", house_id=house_id))
 
     else:
         return redirect(url_for("view_house", house_id=house_id))
@@ -471,7 +470,7 @@ def edit_house_viewing(house_id):
             "facilities": facilities,
             "windows": double_glazed_windows
         }
-
+      
         # Check to ensure that there is a house entry in the database
         house_data = mongo.db.houseViewing.find_one({"_id": ObjectId(house_id)})
 
@@ -498,16 +497,16 @@ def add_house_check(house_id):
     """
     if request.method == "POST":
         house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
-        property_facing = request.form.get("property_facing")
-        noise_level = request.form.get("noise_level")
-        boiler_noise = request.form.get("boiler_noise")
-        storage_space = request.form.get("storage_space")
-        attic_access = "yes" if request.form.get("attic") else "no"
-        electric_ports = "yes" if request.form.get("electric_ports") else "no"
-        mould = "yes" if request.form.get("mould") else "no"
-        damp = "yes" if request.form.get("damp") else "no"
-        crack = "yes" if request.form.get("crack") else "no"
-        roof_condition = request.form.get("roof_condition")
+        property_facing = request.form.get("add_property_facing")
+        noise_level = request.form.get("add_noise_level")
+        boiler_noise = request.form.get("add_boiler_noise")
+        storage_space = request.form.get("add_storage_space")
+        attic_access = "yes" if request.form.get("add_attic") else "no"
+        electric_ports = "yes" if request.form.get("add_electric_ports") else "no"
+        mould = "yes" if request.form.get("add_mould") else "no"
+        damp = "yes" if request.form.get("add_damp") else "no"
+        crack = "yes" if request.form.get("add_crack") else "no"
+        roof_condition = request.form.get("add_roof_condition")
 
         add_house_check_info = {
             "_id": ObjectId(house_id),
