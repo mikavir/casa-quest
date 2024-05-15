@@ -1,314 +1,316 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="row">
-    <div class="col">
-        <button class="btn waves-effect waves-light" onclick="history.go(-1)">
-            Back
-        </button>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <button class="btn waves-effect waves-light" onclick="history.go(-1)">
+                Back
+            </button>
+        </div>
     </div>
-</div>
-
-<div class="row">
-    <div class="col s12">
-        <div class="card-panel teal lighten-4 row p-5">
-            <div class="col s12 m6">
-                <img src="{{house.image_url}}" class="responsive-img">
-            </div>
-            <div class="col s12 m6 center m-2">
-                <div class="row">
-                    <div class="col s12">
-                        <h4 class="center-align green-text text-darken-4">
-                            {{ house.address }}
-                        </h4>
+    
+    <div class="row">
+        <div class="col s12">
+            <div class="card-panel teal lighten-4 row p-5">
+                <div class="col s12 m6">
+                    <img src="{{house.image_url}}" class="responsive-img">
+                </div>
+                <div class="col s12 m6 center m-2">
+                    <div class="row">
+                        <div class="col s12">
+                            <h4 class="center-align green-text text-darken-4">
+                                {{ house.address }}
+                            </h4>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col s12">
-                        <h5>{{ house.agency }} </h5>
+                    <div class="row">
+                        <div class="col s12">
+                            <h5>{{ house.agency }} </h5>
+                        </div>
+    
                     </div>
-
-                </div>
-                <div class="col s12">
-                    <h6 class="center-align black-text text-darken-4">
-                        {{ house.propertyType }}
-                    </h6>
-                </div>
-                <div class="row">
                     <div class="col s12">
                         <h6 class="center-align black-text text-darken-4">
-                            £ {{ house.price }}
+                            {{ house.propertyType }}
                         </h6>
                     </div>
-                </div>
-
-                <div class="row m-2">
-                    <div class="col s12">
-                        <span class="m-2"><i class="fa-solid fa-bed prefix"></i>{{ house.bedrooms }}</span>
-                        <span class="m-2"><i class="fa-solid fa-toilet prefix"></i>{{ house.bathrooms }}</span>
+                    <div class="row">
+                        <div class="col s12">
+                            <h6 class="center-align black-text text-darken-4">
+                                £ {{ house.price }}
+                            </h6>
+                        </div>
                     </div>
-
-                </div>
-                <div class="row m-2">
-                    <div class="col s12">
-                        <span><i class="fa-solid fa-calendar-days prefix"></i> {{ house.date_viewing }}</span>
+    
+                    <div class="row m-2">
+                        <div class="col s12">
+                            <span class="m-2"><i class="fa-solid fa-bed prefix"></i>{{ house.bedrooms }}</span>
+                            <span class="m-2"><i class="fa-solid fa-toilet prefix"></i>{{ house.bathrooms }}</span>
+                        </div>
+    
                     </div>
-
+                    <div class="row m-2">
+                        <div class="col s12">
+                            <span><i class="fa-solid fa-calendar-days prefix"></i> {{ house.date_viewing }}</span>
+                        </div>
+    
+                    </div>
+    
                 </div>
-
+    
             </div>
-
+    
+    
         </div>
-
-
+    
     </div>
-
+    <div class="row">
+        <div class="col s12">
+            <div class="card-panel teal row">
+                <div class="col s12">
+                    <iframe src="{{house.mapsUrl}}"></iframe>
+                </div>
+    
+            </div>
+        </div>
+    
+    </div>
+    
+    
+    <!-- house info -->
+    <div class="row">
+        <div class="col s12">
+            <div class="card-panel teal row white-text center">
+                <div class="col s12" id="house-info">
+                    <div class="row left-align">
+                        <div class="col s6 m6 m-3 ">
+                            <span> <i class="material-icons">bolt</i> EPC: </span>
+                            <span class="house-info-content">{{ house_info.epc }}</span>
+    
+                        </div>
+                        <div class="col s6 m6 m-3">
+                            <span> <i class="material-icons">payments</i> Tax Band: </span>
+                            <span class="house-info-content">{{ house_info.taxBand }} </span>
+    
+                        </div>
+                    </div>
+                    <div class="row left-align">
+                        <div class="col s6 m6 m-3">
+                            <span> <i class="material-icons prefix">flood</i> Flood Risk: </span>
+                            <span class="house-info-content">{{ house_info.floodRisk }}</span>
+    
+                        </div>
+                        <div class="col s6 m6 m-3">
+                            <span><i class="material-icons prefix">wifi</i> Internet Speed: </span>
+                            <span class="house-info-content">{{ house_info.internetSpeed }} </span>
+    
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m-3">
+                            <span> <i class="material-icons prefix">local_parking</i> Dedicated Parking </span>
+                            <span class="house-info-content">{{ house_info.dedicatedParking }}</span>
+    
+                        </div>
+                    </div>
+    
+                </div>
+                <div class="col s12 center" id="add-house-info">
+                    <a href="#addInfoModal" class="btn filled white black-text waves-effect waves-light modal-trigger"
+                        id="add-houseinfo-btn">
+                        Add house info
+                    </a>
+                </div>
+                <div class="col s12 center">
+                    <a href="#editInfoModal" class="btn filled white black-text waves-effect waves-light modal-trigger"
+                        id="edit-houseinfo-btn">
+                        Edit house info
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <!-- house viewing -->
+        <div class="col s12 m6 l6">
+            <div class="card-panel teal row mx-auto">
+                <div class="col s12" id="house-viewing">
+                    <div class="row m-3">
+                        <div class="col s12 m-2">
+                            <span class="black-text">What is the seller's situation?</span>
+                        </div>
+                        <div class="col s12 center">
+                            <span class="house-viewing-content white-text">{{ house_viewing.sellersSituation }}</span>
+    
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="col s12 m-2">
+                            <span class="black-text">How are the nighbours?</span>
+                        </div>
+                        <div class="col s12 center">
+                            <span class="house-viewing-content white-text">{{ house_viewing.neighbours }}</span>
+    
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="col s12 m-2">
+                            <span class="black-text">What are the facilities?</span>
+                        </div>
+                        <div class="col s12 center">
+                            <span class="house-viewing-content white-text">{{ house_viewing.facilities }}</span>
+    
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="col s12 m-2">
+                            <span class="black-text">How is the traffic?</span>
+                        </div>
+                        <div class="col s12 center">
+                            <span class="house-viewing-content white-text">{{ house_viewing.traffic }}</span>
+    
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="col s12 m-2">
+                            <span class="black-text">Have there been other offers?</span>
+                        </div>
+                        <div class="col s12 center">
+                            <span class="house-viewing-content white-text">{{ house_viewing.otherOffers }}</span>
+    
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="col s12 m-2">
+                            <span class="black-text">Are the window's double glazed?</span>
+                        </div>
+                        <div class="col s12 center">
+                            <span class="house-viewing-content white-text">{{ house_viewing.windows }}</span>
+    
+                        </div>
+                    </div>
+    
+                </div>
+                <div class="col s12" id="add-house-check">
+                    <a href="#addHouseViewingModal"
+                        class="btn filled white black-text waves-effect waves-light modal-trigger"
+                        id="add-houseviewing-btn">
+                        Add house viewing
+                    </a>
+                    <a href="#editHouseViewingModal"
+                        class="btn filled white black-text waves-effect waves-light modal-trigger"
+                        id="edit-houseviewing-btn">
+                        Edit house viewing
+                    </a>
+    
+                </div>
+            </div>
+            <!-- house checks -->
+        </div>
+        <div class="col s12 m6 l6">
+            <div class="card-panel teal row mx-auto">
+                <div class="col s12" id="house-check">
+                    <div class="row m-3">
+                        <div class="col s12 m-2">
+                            <span class="black-text">Which way does the property face? (Important for light)</span>
+                        </div>
+                        <div class="col s12 center">
+                            <span class="house-check-content white-text">{{ house_check.propertyFacing }}</span>
+    
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="col s12 m-2">
+                            <span class="black-text">How much can you hear outside?</span>
+                        </div>
+                        <div class="col s12 center">
+                            <span class="house-check-content white-text">{{ house_check.noisePollution }}</span>
+    
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="col s12 m-2">
+                            <span class="black-text">How is the storage space?</span>
+                        </div>
+                        <div class="col s12 center">
+                            <span class="house-check-content white-text">{{ house_check.storageSpace }}</span>
+    
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="col s12 m-2">
+                            <span class="black-text">Is it easy to access the attic?</span>
+                        </div>
+                        <div class="col s12 center">
+                            <span class="house-check-content white-text">{{ house_check.atticAccess }}</span>
+    
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="col s12 m-2">
+                            <span class="black-text">Is there a good amount of electric ports available?</span>
+                        </div>
+                        <div class="col s12 center">
+                            <span class="house-check-content white-text">{{ house_check.electricPorts }}</span>
+    
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="col s12 m-2">
+                            <span class="black-text">Are there visible signs of mould?</span>
+                        </div>
+                        <div class="col s12 center">
+                            <span class="house-check-content white-text">{{ house_check.mould }}</span>
+    
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="col s12 m-2">
+                            <span class="black-text">Are there visible signs of damp</span>
+                        </div>
+                        <div class="col s12 center">
+                            <span class="house-check-content white-text">{{ house_check.damp }}</span>
+    
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="col s12 m-2">
+                            <span class="black-text">Are there visible signs of wall cracking?</span>
+                        </div>
+                        <div class="col s12 center">
+                            <span class="house-check-content white-text">{{ house_check.crack }}</span>
+    
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="col s12 m-2">
+                            <span class="black-text">Codition of the roof?</span>
+                        </div>
+                        <div class="col s12 center">
+                            <span class="house-check-content white-text">{{ house_check.roofCondition }}</span>
+    
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 " id="add-house-check">
+                    <a href="#addHouseCheckModal" class="btn filled white black-text waves-effect waves-light modal-trigger"
+                        id="add-housecheck-btn">
+                        Add house checks
+                    </a>
+                    <a href="#editHouseCheckModal"
+                        class="btn filled white black-text waves-effect waves-light modal-trigger" id="edit-housecheck-btn">
+                        Edit house checks
+                    </a>
+    
+                </div>
+            </div>
+        </div>
+    
+    
+    </div>
+    
 </div>
-<div class="row">
-    <div class="col s12">
-        <div class="card-panel teal row">
-            <div class="col s12">
-                <iframe src="{{house.mapsUrl}}"></iframe>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
-
-<!-- house info -->
-<div class="row">
-    <div class="col s12">
-        <div class="card-panel teal row white-text center">
-            <div class="col s12" id="house-info">
-                <div class="row left-align">
-                    <div class="col s6 m6 m-3 ">
-                        <span> <i class="material-icons">bolt</i> EPC: </span>
-                        <span class="house-info-content">{{ house_info.epc }}</span>
-
-                    </div>
-                    <div class="col s6 m6 m-3">
-                        <span> <i class="material-icons">payments</i> Tax Band: </span>
-                        <span class="house-info-content">{{ house_info.taxBand }} </span>
-
-                    </div>
-                </div>
-                <div class="row left-align">
-                    <div class="col s6 m6 m-3">
-                        <span> <i class="material-icons prefix">flood</i> Flood Risk: </span>
-                        <span class="house-info-content">{{ house_info.floodRisk }}</span>
-
-                    </div>
-                    <div class="col s6 m6 m-3">
-                        <span><i class="material-icons prefix">wifi</i> Internet Speed: </span>
-                        <span class="house-info-content">{{ house_info.internetSpeed }} </span>
-
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s12 m-3">
-                        <span> <i class="material-icons prefix">local_parking</i> Dedicated Parking </span>
-                        <span class="house-info-content">{{ house_info.dedicatedParking }}</span>
-
-                    </div>
-                </div>
-
-            </div>
-            <div class="col s12 center" id="add-house-info">
-                <a href="#addInfoModal" class="btn filled white black-text waves-effect waves-light modal-trigger"
-                    id="add-houseinfo-btn">
-                    Add house info
-                </a>
-            </div>
-            <div class="col s12 center">
-                <a href="#editInfoModal" class="btn filled white black-text waves-effect waves-light modal-trigger"
-                    id="edit-houseinfo-btn">
-                    Edit house info
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <!-- house viewing -->
-    <div class="col s12 m6 l6">
-        <div class="card-panel teal row mx-auto">
-            <div class="col s12" id="house-viewing">
-                <div class="row m-3">
-                    <div class="col s12 m-2">
-                        <span class="black-text">What is the seller's situation?</span>
-                    </div>
-                    <div class="col s12 center">
-                        <span class="house-viewing-content white-text">{{ house_viewing.sellersSituation }}</span>
-
-                    </div>
-                </div>
-                <div class="row m-3">
-                    <div class="col s12 m-2">
-                        <span class="black-text">How are the nighbours?</span>
-                    </div>
-                    <div class="col s12 center">
-                        <span class="house-viewing-content white-text">{{ house_viewing.neighbours }}</span>
-
-                    </div>
-                </div>
-                <div class="row m-3">
-                    <div class="col s12 m-2">
-                        <span class="black-text">What are the facilities?</span>
-                    </div>
-                    <div class="col s12 center">
-                        <span class="house-viewing-content white-text">{{ house_viewing.facilities }}</span>
-
-                    </div>
-                </div>
-                <div class="row m-3">
-                    <div class="col s12 m-2">
-                        <span class="black-text">How is the traffic?</span>
-                    </div>
-                    <div class="col s12 center">
-                        <span class="house-viewing-content white-text">{{ house_viewing.traffic }}</span>
-
-                    </div>
-                </div>
-                <div class="row m-3">
-                    <div class="col s12 m-2">
-                        <span class="black-text">Have there been other offers?</span>
-                    </div>
-                    <div class="col s12 center">
-                        <span class="house-viewing-content white-text">{{ house_viewing.otherOffers }}</span>
-
-                    </div>
-                </div>
-                <div class="row m-3">
-                    <div class="col s12 m-2">
-                        <span class="black-text">Are the window's double glazed?</span>
-                    </div>
-                    <div class="col s12 center">
-                        <span class="house-viewing-content white-text">{{ house_viewing.windows }}</span>
-
-                    </div>
-                </div>
-
-            </div>
-            <div class="col s12" id="add-house-check">
-                <a href="#addHouseViewingModal"
-                    class="btn filled white black-text waves-effect waves-light modal-trigger"
-                    id="add-houseviewing-btn">
-                    Add house viewing
-                </a>
-                <a href="#editHouseViewingModal"
-                    class="btn filled white black-text waves-effect waves-light modal-trigger"
-                    id="edit-houseviewing-btn">
-                    Edit house viewing
-                </a>
-
-            </div>
-        </div>
-        <!-- house checks -->
-    </div>
-    <div class="col s12 m6 l6">
-        <div class="card-panel teal row mx-auto">
-            <div class="col s12" id="house-check">
-                <div class="row m-3">
-                    <div class="col s12 m-2">
-                        <span class="black-text">Which way does the property face? (Important for light)</span>
-                    </div>
-                    <div class="col s12 center">
-                        <span class="house-check-content white-text">{{ house_check.propertyFacing }}</span>
-
-                    </div>
-                </div>
-                <div class="row m-3">
-                    <div class="col s12 m-2">
-                        <span class="black-text">How much can you hear outside?</span>
-                    </div>
-                    <div class="col s12 center">
-                        <span class="house-check-content white-text">{{ house_check.noisePollution }}</span>
-
-                    </div>
-                </div>
-                <div class="row m-3">
-                    <div class="col s12 m-2">
-                        <span class="black-text">How is the storage space?</span>
-                    </div>
-                    <div class="col s12 center">
-                        <span class="house-check-content white-text">{{ house_check.storageSpace }}</span>
-
-                    </div>
-                </div>
-                <div class="row m-3">
-                    <div class="col s12 m-2">
-                        <span class="black-text">Is it easy to access the attic?</span>
-                    </div>
-                    <div class="col s12 center">
-                        <span class="house-check-content white-text">{{ house_check.atticAccess }}</span>
-
-                    </div>
-                </div>
-                <div class="row m-3">
-                    <div class="col s12 m-2">
-                        <span class="black-text">Is there a good amount of electric ports available?</span>
-                    </div>
-                    <div class="col s12 center">
-                        <span class="house-check-content white-text">{{ house_check.electricPorts }}</span>
-
-                    </div>
-                </div>
-                <div class="row m-3">
-                    <div class="col s12 m-2">
-                        <span class="black-text">Are there visible signs of mould?</span>
-                    </div>
-                    <div class="col s12 center">
-                        <span class="house-check-content white-text">{{ house_check.mould }}</span>
-
-                    </div>
-                </div>
-                <div class="row m-3">
-                    <div class="col s12 m-2">
-                        <span class="black-text">Are there visible signs of damp</span>
-                    </div>
-                    <div class="col s12 center">
-                        <span class="house-check-content white-text">{{ house_check.damp }}</span>
-
-                    </div>
-                </div>
-                <div class="row m-3">
-                    <div class="col s12 m-2">
-                        <span class="black-text">Are there visible signs of wall cracking?</span>
-                    </div>
-                    <div class="col s12 center">
-                        <span class="house-check-content white-text">{{ house_check.crack }}</span>
-
-                    </div>
-                </div>
-                <div class="row m-3">
-                    <div class="col s12 m-2">
-                        <span class="black-text">Codition of the roof?</span>
-                    </div>
-                    <div class="col s12 center">
-                        <span class="house-check-content white-text">{{ house_check.roofCondition }}</span>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 " id="add-house-check">
-                <a href="#addHouseCheckModal" class="btn filled white black-text waves-effect waves-light modal-trigger"
-                    id="add-housecheck-btn">
-                    Add house checks
-                </a>
-                <a href="#editHouseCheckModal"
-                    class="btn filled white black-text waves-effect waves-light modal-trigger" id="edit-housecheck-btn">
-                    Edit house checks
-                </a>
-
-            </div>
-        </div>
-    </div>
-
-
-</div>
-
 
 
 <!--  MODALS -->

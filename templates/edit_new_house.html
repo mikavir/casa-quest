@@ -1,113 +1,115 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="card-panel green lighten-5 row">
-
-  <div class="col s12 p-4">
-    <form action="{{ url_for('edit_new_house', house_id=house._id) }}" method="POST" enctype="multipart/form-data">
-      <!-- input field for address of the house -->
-      <div class="row">
-        <div class="input-field col s12 m6 outlined m-3">
-          <i class="material-icons prefix">pin_drop</i>
-          <input id="address" name="address" type="text" class="validate" value="{{house.address}}" required>
-          <label for="addresss">Address</label>
+<div class="container">
+  <section class="card-panel green lighten-5 row">
+  
+    <div class="col s12 p-4">
+      <form action="{{ url_for('edit_new_house', house_id=house._id) }}" method="POST" enctype="multipart/form-data">
+        <!-- input field for address of the house -->
+        <div class="row">
+          <div class="input-field col s12 m6 outlined m-3">
+            <i class="material-icons prefix">pin_drop</i>
+            <input id="address" name="address" type="text" class="validate" value="{{house.address}}" required>
+            <label for="addresss">Address</label>
+          </div>
+          <!-- input field for agency -->
+          <div class="input-field col s12 m6 outlined m-3">
+            <i class="material-icons prefix">people</i>
+            <input id="agency" name="agency" type="text" class="validate" value="{{house.agency}}" required>
+            <label for="agency">Agency</label>
+          </div>
         </div>
-        <!-- input field for agency -->
-        <div class="input-field col s12 m6 outlined m-3">
-          <i class="material-icons prefix">people</i>
-          <input id="agency" name="agency" type="text" class="validate" value="{{house.agency}}" required>
-          <label for="agency">Agency</label>
+        <!-- input field for property type -->
+        <div class="row">
+          <div class="input-field outlined col s12 m6 m-3">
+            <i class="material-icons prefix">location_city</i>
+            <select name="property_type" id="property_type" required>
+              <option value="" disabled selected>Choose your option</option>
+              {% for type in types %}
+              {% if type == house.propertyType %}
+              <option value="{{ type }}" selected>{{ type }}</option>
+              {% else %}
+              <option value="{{ type }}">{{ type }}</option>
+              {% endif %}
+              {% endfor %}
+  
+  
+            </select>
+            <label>Property Type</label>
+          </div>
+          <!-- input field for chain free -->
+          <div class="col s12 m6 m-3 center">
+            <label for="chain_free">
+              {% if house.chainFree == "yes" %}
+              <input name="chain_free" id="chain_free" type="checkbox" class="filled-in" checked="checked"
+                required />
+              {% else %}
+              <input name="chain_free" id="chain_free" type="checkbox" class="filled-in" required />
+              {% endif %}
+              <span><i class="fa-solid fa-link"></i> Chain Free</span>
+            </label>
+          </div>
         </div>
-      </div>
-      <!-- input field for property type -->
-      <div class="row">
-        <div class="input-field outlined col s12 m6 m-3">
-          <i class="material-icons prefix">location_city</i>
-          <select name="property_type" id="property_type" required>
-            <option value="" disabled selected>Choose your option</option>
-            {% for type in types %}
-            {% if type == house.propertyType %}
-            <option value="{{ type }}" selected>{{ type }}</option>
-            {% else %}
-            <option value="{{ type }}">{{ type }}</option>
-            {% endif %}
-            {% endfor %}
-
-
-          </select>
-          <label>Property Type</label>
+        <!-- input field for number of bedrooms -->
+        <div class="row">
+          <div class="input-field outlined col s6 m6 m-3">
+            <i class="fa-solid fa-bed prefix"></i>
+            <input id="no_bedrooms" name="no_bedrooms" type="number" min="1" max="15" class="validate"
+              value="{{house.bedrooms}}" required>
+            <label for="no_bedrooms">Bedrooms</label>
+          </div>
+          <!-- input field for number of toilets -->
+          <div class="input-field outlined col s6 m6 m-3">
+            <i class="fa-solid fa-toilet prefix"></i>
+            <input id="no_bathrooms" name="no_bathrooms" type="number" min="1" max="7" step=".5" class="validate"
+              value="{{house.bathrooms}}" required>
+            <label for="no_bathrooms">Bathrooms</label>
+          </div>
+          <!-- add helper text -->
         </div>
-        <!-- input field for chain free -->
-        <div class="col s12 m6 m-3 center">
-          <label for="chain_free">
-            {% if house.chainFree == "yes" %}
-            <input name="chain_free" id="chain_free" type="checkbox" class="filled-in" checked="checked"
-              required />
-            {% else %}
-            <input name="chain_free" id="chain_free" type="checkbox" class="filled-in" required />
-            {% endif %}
-            <span><i class="fa-solid fa-link"></i> Chain Free</span>
-          </label>
+        <!-- input field for price -->
+        <div class="row">
+          <div class="input-field outlined col s6 m6 m-3">
+            <i class="fa-solid fa-sterling-sign prefix"></i>
+            <input id="house_price" name="house_price" type="number" class="validate" min="50000" step="10000"
+              value="{{house.price}}" required>
+            <label for="house_price">Price</label>
+          </div>
+          <!-- input field for date of viewing -->
+          <div class="input-field col s6 m6 m-3">
+            <i class="fa-solid fa-calendar-days prefix"></i>
+            <input type="text" class="datepicker" id="date_viewing" name="date_viewing"
+              value="{{house.date_viewing}}" required>
+            <label for="date_viewing">Viewing date:</label>
+          </div>
         </div>
-      </div>
-      <!-- input field for number of bedrooms -->
-      <div class="row">
-        <div class="input-field outlined col s6 m6 m-3">
-          <i class="fa-solid fa-bed prefix"></i>
-          <input id="no_bedrooms" name="no_bedrooms" type="number" min="1" max="15" class="validate"
-            value="{{house.bedrooms}}" required>
-          <label for="no_bedrooms">Bedrooms</label>
+  
+        <!-- input field for file image upload -->
+        <div class="row">
+          <div class="col s12 m-3">
+            <input accept="image/*" name="image-url" id="image-url" type="file">
+  
+          </div>
         </div>
-        <!-- input field for number of toilets -->
-        <div class="input-field outlined col s6 m6 m-3">
-          <i class="fa-solid fa-toilet prefix"></i>
-          <input id="no_bathrooms" name="no_bathrooms" type="number" min="1" max="7" step=".5" class="validate"
-            value="{{house.bathrooms}}" required>
-          <label for="no_bathrooms">Bathrooms</label>
+  
+        <!-- submit button -->
+        <div class="row center">
+          <div class="col s12 m-3">
+            <button class="btn filled icon-left waves-effect waves-light teal white-text" type="submit">
+              <i class="material-icons">add</i>Save Property
+            </button>
+            <a href="{{ url_for('profile', username=session['user']) }}"
+              class="btn icon-left red waves-effect waves-light text-shadow">
+              Cancel <i class="fas fa-times-circle right"></i>
+            </a>
+          </div>
         </div>
-        <!-- add helper text -->
-      </div>
-      <!-- input field for price -->
-      <div class="row">
-        <div class="input-field outlined col s6 m6 m-3">
-          <i class="fa-solid fa-sterling-sign prefix"></i>
-          <input id="house_price" name="house_price" type="number" class="validate" min="50000" step="10000"
-            value="{{house.price}}" required>
-          <label for="house_price">Price</label>
-        </div>
-        <!-- input field for date of viewing -->
-        <div class="input-field col s6 m6 m-3">
-          <i class="fa-solid fa-calendar-days prefix"></i>
-          <input type="text" class="datepicker" id="date_viewing" name="date_viewing"
-            value="{{house.date_viewing}}" required>
-          <label for="date_viewing">Viewing date:</label>
-        </div>
-      </div>
-
-      <!-- input field for file image upload -->
-      <div class="row">
-        <div class="col s12 m-3">
-          <input accept="image/*" name="image-url" id="image-url" type="file">
-
-        </div>
-      </div>
-
-      <!-- submit button -->
-      <div class="row center">
-        <div class="col s12 m-3">
-          <button class="btn filled icon-left waves-effect waves-light teal white-text" type="submit">
-            <i class="material-icons">add</i>Save Property
-          </button>
-          <a href="{{ url_for('profile', username=session['user']) }}"
-            class="btn icon-left red waves-effect waves-light text-shadow">
-            Cancel <i class="fas fa-times-circle right"></i>
-          </a>
-        </div>
-      </div>
-    </form>
-  </div>
-
-
-</section>
+      </form>
+    </div>
+  
+  
+  </section>
+</div>
 <script async src="https://maps.googleapis.com/maps/api/js?key={{maps_api}}&loading=async&libraries=places&callback=initAutocomplete">
 </script>
 <script> 
