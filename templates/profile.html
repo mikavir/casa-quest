@@ -30,6 +30,13 @@
             </div>
             <div class="col s12 m6 m-3">
                 <div class="row m-2">
+                    <div class="col s12 right-align">
+                        <a class="waves-effect waves-light btn modal-trigger red rounded" href="#deleteModal{{house._id}}"><span class="material-symbols-outlined">
+                            cancel
+                            </span></a>
+                    </div>
+                </div>
+                <div class="row m-2">
                     <div class="col s12">
                         <h4>{{ house.address }}</h4>
                         
@@ -83,13 +90,35 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-
-
-        
-        
+        </div>                
     </div>
+    <div id="deleteModal{{ house._id }}" class="modal card-panel rounded white-text center">
+     
+        <div class="modal-content rounded">
+            <div class="row">
+                <div class="col s12 red-text">
+                    <h4>Caution</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 black-text">
+                    <p>Deleting the house will also delete all other informaion related to this house. If you wish to proceed, click the button below or cancel</p>
+                </div>
+        
+            </div>
+          
+          <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+            <div class="row">
+                <div class="col s12 center">
+                    <a href="#" class="modal-close btn waves-effect rounded red m-2">Delete</a>
+                    <a href="#" class="modal-close btn  waves-effect rounded orange m-2 ">Cancel</a>
+                </div>
+            </div>
+        </div>
+      </div>
+              
     {% endfor %}
 
 </div>
