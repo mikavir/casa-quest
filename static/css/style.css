@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Questrial&display=swap');
 
+html, body {
+  width: 100%;
+  height: 100%;
+
+}
 a.logo {
   width: 120px;
   height: 120px;
@@ -16,6 +21,16 @@ a.logo {
   position: absolute;
   z-index: 1;
   transition: all .3s ease-in-out;
+}
+
+aside#hero-image {
+  width: 100vw;
+  height: 50vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url(../images/hero-image.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 nav.mobile-nav {
@@ -116,7 +131,8 @@ input:checked~.hamburger span:nth-child(3) {
 }
 
 section.flash {
-  margin-top: 120px;
+  margin-top: 65px;
+  z-index: 600;
 }
 
 @media screen and (max-width: 400px) {
@@ -201,11 +217,4 @@ p, a, button {
   font-style: normal;
 }
 
-div#hero-image {
-  background-image: url(../images/hero-image.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
-}
+
