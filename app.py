@@ -272,6 +272,22 @@ def new_house():
             "image_url": image_upload["secure_url"]
         }
 
+        # Google maps API:
+        maps_api = os.environ.get('MAPS_API') 
+
+        # Seperate address in order to put replace characters
+        address_list = address.split(" ")
+
+        # Add characters
+        parameters = "+".join(address_list)
+
+        # Google maps embed:
+        embed_url = f"https://www.google.com/maps/embed/v1/place?key={maps_api}&q={parameters}"
+
+        # Add embedded url to the insert     
+        house_entry["mapsUrl"] = embed_url
+
+
         mongo.db.houses.insert_one(house_entry)
         flash("house added!")
         return redirect(url_for(
