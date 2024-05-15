@@ -263,3 +263,7 @@ p, a, button {
 }
 
 
+.footer-container {
+  background-color: #17353B;
+  height: 50vh;
+}
