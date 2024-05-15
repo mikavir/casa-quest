@@ -293,8 +293,9 @@ def new_house():
         return redirect(url_for(
                             "profile", username=session["user"]))
     else:
+        maps_api = os.environ.get('MAPS_API') 
         types = ["Detached", "Semi-Detached", "Terraced"]
-        return render_template("new_house.html", types=types)
+        return render_template("new_house.html", types=types, maps_api=maps_api)
 
 
 # EDITS NEW HOUSE ENTRY
@@ -349,9 +350,10 @@ def edit_new_house(house_id):
         return redirect(url_for(
                             "profile", username=session["user"]))
     else:
+        maps_api = os.environ.get('MAPS_API') 
         house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
         types = ["Detached", "Semi-Detached", "Terraced"]
-        return render_template("edit_new_house.html", types=types, house=house)
+        return render_template("edit_new_house.html", types=types, house=house, maps_api=maps_api)
 
 
 # ADD HOUSE INFORMATION FROM MODAL
