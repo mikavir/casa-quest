@@ -628,6 +628,51 @@ def edit_house_check(house_id):
         return redirect(url_for("view_house", house_id=house_id))
 
 
+
+@app.route("/profile/<username>#deleteModal<house_id>", methods=["GET", "POST"])
+@login_required
+def delete_house(username, house_id):
+    if request.method == "POST":
+        username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+        house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
+
+        if house is None:
+            return redirect(url_for("profile", username=username))
+        if username != house["username"]:
+            return redirect(url_for("profile", username=username))
+    
+
+        house_info = mongo.db.houseInformation.find_one({"_id": ObjectId(house_id)})
+
+        house_check = mongo.db.houseChecks.find_one({"_id": ObjectId(house_id)})
+
+        house_viewing = mongo.db.houseViewing.find_one({"_id": ObjectId(house_id)})
+
+        if house_info is not None:
+            mongo.db.houseInformation.delete_one({"_id": ObjectId(house_id)})
+
+        if house_check is not None:
+            mongo.db.houseChecks.delete_one({"_id": ObjectId(house_id)})
+
+        if house_viewing is not None:
+            mongo.db.houseViewing.delete_one({"_id": ObjectId(house_id)})   
+            
+        if house is not None:
+            mongo.db.houses.delete_one({"_id": ObjectId(house_id)})
+            flash("House Deleted")
+        return redirect(url_for("profile", username=username))
+    else:
+        return redirect(url_for("profile", username=username))    
+
+        
+
+
+
+
+
+
 @app.errorhandler(404)
 def page_not_found(e):
     """ 
@@ -659,6 +704,8 @@ def page_forbidden(e):
     """
     # note that we set the 403 status explicitly
     return render_template('403.html'), 403
+
+
 
 
 if __name__ == "__main__":
