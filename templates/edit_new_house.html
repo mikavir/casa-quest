@@ -108,4 +108,33 @@
 
 
 </section>
+<script async src="https://maps.googleapis.com/maps/api/js?key={{maps_api}}&loading=async&libraries=places&callback=initAutocomplete">
+</script>
+<script> 
+  let autocomplete;
+
+  function initAutocomplete(){
+    autocomplete = new google.maps.places.Autocomplete(
+      document.getElementById("address"),
+      {
+        types: ['street_address', 'street_number'],
+        fields: ["address_components"],
+        componentRestrictions: { country: "uk" },
+
+      }
+    );
+    autocomplete.addListener('place_changed', onPlaceChanged);
+  }
+
+  function onPlaceChanged() {
+    let place = autocomplete.getPlace();
+
+    if (!place.geometry){
+      document.getElementById('address').placeholder = "Enter an address"
+    } else {
+      document.getElementById('address').value = place.name;
+    }
+  }
+</script>
+
 {% endblock %}
