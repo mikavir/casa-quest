@@ -57,6 +57,24 @@ aside#hero-image {
  
 }
 
+
+.hero-review {
+  background-color: #FAECD9;
+  padding: 40px; 
+  color: #333;
+
+}
+
+.hero-review h6{
+  font-weight: 700;
+  color:  #17353B;
+}
+
+.hero-review img {
+  border-radius: 15px;
+
+}
+
 nav.mobile-nav {
   background-color: #FAECD9;
   display: block;
@@ -232,7 +250,8 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6  {
   font-family: "Domine", serif;
   ;
 }
