@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="col s12 m6 m-3">
-                <div class="row m-2">
+                <div class="row">
                     <div class="col s12 right-align">
                         <a class="waves-effect waves-light btn modal-trigger red rounded" href="#deleteModal{{house._id}}"><span class="material-symbols-outlined">
                             cancel
@@ -112,8 +112,10 @@
         <div class="modal-footer">
             <div class="row">
                 <div class="col s12 center">
-                    <a href="#" class="modal-close btn waves-effect rounded red m-2">Delete</a>
-                    <a href="#" class="modal-close btn  waves-effect rounded orange m-2 ">Cancel</a>
+                    <form action="{{ url_for('delete_house', username=username, house_id=house._id) }}" method="POST">
+                        <button class="modal-close btn waves-effect rounded red m-2">Delete</button>
+                        <a href="#" class="modal-close btn waves-effect rounded orange m-2" type="button">Cancel</a>
+                    </form>
                 </div>
             </div>
         </div>
