@@ -58,6 +58,20 @@ aside#hero-image {
 
 }
 
+.reverse-btn {
+  border: 2px solid#FAECD9;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: #FAECD9;
+  transition: .5s;
+  color: #17353B;
+}
+
+.reverse-btn:hover {
+  background-color:#17353B;
+  color:  #FAECD9;
+}
+
 
 .hero-review {
   background-color: #FAECD9;
@@ -260,6 +274,7 @@ button {
 .footer-container {
   background-color: #17353B;
   height: 30vh;
+  color: #FAECD9;
 }
 
 ul.social-media-icons {
