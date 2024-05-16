@@ -1,15 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
+<div class="container page-container">
     <div class="row">
         <div class="col s12">
-            <h3 class="center-align">Log in</h3>
+            <h5 class="center-align">Continue Your Casa Adventure: Log In Here!</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <p class="center-align">
+                New Here?
+                <a href="{{ url_for('register') }}" class="green-text text-darken-4 link">Register Account</a>
+            </p>
         </div>
     </div>
     
 
     <div class="row">
-        <form class="card-panel green lighten-5 col s12 m8 offset-m2 p-6" method="POST" action="{{ url_for('login') }}">        
+        <form class="card-panel custom-card col s12 m8 offset-m2 p-5" method="POST" action="{{ url_for('login') }}">        
             <!-- username -->
             <div class="row">
                 <div class="input-field col s12 m-3">
@@ -24,28 +32,19 @@
                 <div class="input-field col s12 m-3">
                     <i class="fas fa-user-lock prefix green-text text-darken-4"></i>
                     <input id="password" name="password" type="password" minlength="5"
-                        maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                     <label for="password">Password</label>
                 </div>
             </div>
             <!-- login -->
             <div class="row">
                 <div class="col s12 center m-5">
-                    <button type="submit" class="btn filled icon-right rounded waves-effect waves-light green white-text text-shadow">
+                    <button type="submit" class="icon-right rounded waves-effect waves-light callout-btn text-shadow">
                         Log In <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
             </div>
         </form>
-    </div>
-
-    <div class="row">
-        <div class="col s12">
-            <p class="center-align">
-                New Here?
-                <a href="{{ url_for('register') }}" class="green-text">Register Account</a>
-            </p>
-        </div>
     </div>
 </div>
 
