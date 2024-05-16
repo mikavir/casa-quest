@@ -41,6 +41,7 @@
             </select>
             <label>Property Type</label>
           </div>
+          <!-- input field for chain free -->
           <div class="col s12 m6 m-3 center">
             <label for="chain_free">
               <input name="chain_free" id="chain_free" type="checkbox" class="filled-in" checked="checked"
@@ -48,17 +49,16 @@
               <span><i class="fa-solid fa-link"></i> Chain Free</span>
             </label>
           </div>
-          <!-- input field for chain free -->
         </div>
         <!-- input field for number of bedrooms -->
         <div class="row">
-          <div class="input-field outlined col s6 m6 m-3">
+          <div class="input-field outlined col s12 m6 m-3">
             <i class="fa-solid fa-bed prefix"></i>
             <input id="no_bedrooms" name="no_bedrooms" type="number" min="1" max="15" class="validate" required>
             <label for="no_bedrooms">Bedrooms</label>
           </div>
           <!-- input field for number of toilets -->
-          <div class="input-field outlined col s6 m6 m-3">
+          <div class="input-field outlined col s12 m6 m-3">
             <i class="fa-solid fa-toilet prefix"></i>
             <input id="no_bathrooms" name="no_bathrooms" type="number" min="1" max="7" step=".5" class="validate"
               required>
@@ -68,14 +68,14 @@
         </div>
         <!-- input field for price -->
         <div class="row">
-          <div class="input-field outlined col s6 m6 m-3">
+          <div class="input-field outlined col s12 m6 m-3">
             <i class="fa-solid fa-sterling-sign prefix"></i>
             <input id="house_price" name="house_price" type="number" class="validate" min="50000" step="10000"
               required>
             <label for="house_price">Price</label>
           </div>
           <!-- input field for date of viewing -->
-          <div class="input-field col s6 m6 m-3">
+          <div class="input-field col s12 m6 m-3">
             <i class="fa-solid fa-calendar-days prefix"></i>
             <input type="text" class="datepicker" id="date_viewing" name="date_viewing" required>
             <label for="date_viewing">Viewing date:</label>
@@ -93,7 +93,7 @@
         <!-- submit button -->
         <div class="row center">
           <div class="col s12 m-3">
-            <button class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4" type="submit">
+            <button class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2" type="submit">
               <i class="material-icons">add</i>Save Property
             </button>
           </div>
