@@ -259,7 +259,7 @@ h4,
 h5,
 h6 {
   font-family: "Domine", serif;
-  
+  letter-spacing: 1.5px;  
 }
 
 p,
@@ -275,6 +275,7 @@ button {
   background-color: #17353B;
   height: 30vh;
   color: #FAECD9;
+  margin-top: 3rem;
 }
 
 ul.social-media-icons {
@@ -291,6 +292,22 @@ ul.social-media-icons {
 .social-media-icons i {
   color: #FAECD9;
   font-size: 30px;
+}
+
+
+.page-container {
+  margin-top: 5rem;
+
+}
+
+.custom-card {
+  background-color: #FAECD9;
+}
+
+.link {
+  text-decoration: underline;
+  color: rgba(88, 126, 123, 0.6);
+  font-weight: bolder;
 }
 
 @media screen and (max-width: 650px) {
@@ -317,3 +334,4 @@ ul.social-media-icons {
   }
 
 }
+
