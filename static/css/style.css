@@ -212,6 +212,11 @@ input[type=file]::file-selector-button:hover {
 .house-image-container {
   width: auto;
   height: auto;
+
+}
+
+.house-image-container img{
+  border-radius: 10px;
 }
 
 main {
@@ -259,7 +264,8 @@ h4,
 h5,
 h6 {
   font-family: "Domine", serif;
-  letter-spacing: 1.5px;  
+  letter-spacing: 1.5px; 
+  margin: 5px; 
 }
 
 p,
