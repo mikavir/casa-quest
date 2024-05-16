@@ -1,9 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="container">
-  <div class="card-panel green lighten-5 row">
+<section class="container page-container">
+  <div class="row my-4">
+    <div class="col s12 center-align teal-text text-darken-4">
+      <h4>Add a New Entry to Your Dream Home Selection</h4>
+    </div>
+  </div>
+  <div class="row my-4">
+    <div class="col s12">
+      <a href="{{ url_for('profile', username=session['user']) }}" class="btn icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4"><i class="material-icons">arrow_back</i>Back to Dashboard</a>
+    </div>
+  </div>
+  <div class="card-panel custom-card row">
     <div class="col s12 p-4">
-      <form action="{{ url_for('new_house') }}" method="POST" enctype="multipart/form-data">
+      <form action="{{ url_for('new_house') }}" method="POST" enctype="multipart/form-data" class="teal-text text-darken-4">
         <!-- input field for address of the house -->
         <div class="row">
           <div class="input-field col s12 m6 outlined m-3">
@@ -82,7 +92,7 @@
         <!-- submit button -->
         <div class="row center">
           <div class="col s12 m-3">
-            <button class="btn filled icon-left waves-effect waves-light teal white-text" type="submit">
+            <button class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4" type="submit">
               <i class="material-icons">add</i>Save Property
             </button>
           </div>
