@@ -293,7 +293,14 @@ ul.social-media-icons {
   font-size: 30px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 650px) {
+  section.flash {
+    margin-top: 40px;
+  }
+}
+
+
+@media screen and (max-width: 450px) {
   .mobile-menu.open {
     left: 0;
     width: 100%;
@@ -304,6 +311,9 @@ ul.social-media-icons {
     font-size: 15px;
     margin: 5px;
     
+  }
+  section.flash {
+    margin-top: 50px;
   }
 
 }
