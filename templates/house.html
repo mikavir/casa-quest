@@ -1,128 +1,152 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <button class="btn waves-effect waves-light" onclick="history.go(-1)">
-                Back
-            </button>
+<div class=" page-container">
+    <div class="row mx-4">
+        <div class="col s12">
+            <a href="{{ url_for('profile', username=session['user']) }}"
+                class="btn icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4"><i
+                    class="material-icons">arrow_back</i>Back to Dashboard</a>
         </div>
     </div>
-    
-    <div class="row">
-        <div class="col s12">
-            <div class="card-panel teal lighten-4 row p-5">
-                <div class="col s12 m6">
-                    <img src="{{house.image_url}}" class="responsive-img">
-                </div>
-                <div class="col s12 m6 center m-2">
-                    <div class="row">
-                        <div class="col s12">
-                            <h4 class="center-align green-text text-darken-4">
-                                {{ house.address }}
-                            </h4>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12">
-                            <h5>{{ house.agency }} </h5>
-                        </div>
-    
-                    </div>
-                    <div class="col s12">
-                        <h6 class="center-align black-text text-darken-4">
-                            {{ house.propertyType }}
-                        </h6>
-                    </div>
-                    <div class="row">
-                        <div class="col s12">
-                            <h6 class="center-align black-text text-darken-4">
-                                £ {{ house.price }}
-                            </h6>
-                        </div>
-                    </div>
-    
-                    <div class="row m-2">
-                        <div class="col s12">
-                            <span class="m-2"><i class="fa-solid fa-bed prefix"></i>{{ house.bedrooms }}</span>
-                            <span class="m-2"><i class="fa-solid fa-toilet prefix"></i>{{ house.bathrooms }}</span>
-                        </div>
-    
-                    </div>
-                    <div class="row m-2">
-                        <div class="col s12">
-                            <span><i class="fa-solid fa-calendar-days prefix"></i> {{ house.date_viewing }}</span>
-                        </div>
-    
-                    </div>
-    
-                </div>
-    
-            </div>
-    
-    
+
+    <div class="row p-5">
+        <div class="col s12 m6">
+            <img src="{{house.image_url}}" class="responsive-img">
         </div>
-    
-    </div>
-    <div class="row">
-        <div class="col s12">
-            <div class="card-panel teal row">
+        <div class="col s12 m6 center m-2">
+            <div class="row">
                 <div class="col s12">
+                    <h3 class="center-align green-text text-darken-4">
+                        {{ house.address }}
+                    </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <h5>{{ house.agency }} </h5>
+                </div>
+
+            </div>
+            <div class="col s12">
+                <h6 class="center-align black-text text-darken-4">
+                    {{ house.propertyType }}
+                </h6>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <h6 class="center-align black-text text-darken-4">
+                        £ {{ house.price }}
+                    </h6>
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col s12">
+                    <span><i class="fa-solid fa-calendar-days prefix"></i> {{ house.date_viewing }}</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="row teal darken-2 p-5">
+        <div class="col s12 p-5">
+            <div class="row">
+                <div class="col s12 m6 orange-text text-lighten-1 center">
+                    <div class="row m-4">
+                        <div class="col s6">
+                            <div class="row">
+                                <div class="col s12">
+                                    <h1>{{ house.bedrooms }}</h1>
+
+                                </div>
+                                <div class="col s12">
+                                    <h6>Bedrooms</h6>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="row">
+                                <div class="col s12">
+                                    <h1>{{ house.bathrooms }}</h1>
+                                    
+                                </div>
+                                <div class="col s12">
+                                    <h6>Bathrooms</h6>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        {% if house_info.dedicatedParking == "yes" %}
+                            <div class="col s4">
+                                <h1>1</h1>
+                                <i class="material-icons prefix">local_parking</i>
+                            </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+                <div class="col s12 m6">
                     <iframe src="{{house.mapsUrl}}"></iframe>
                 </div>
-    
+
             </div>
         </div>
-    
+
     </div>
-    
-    
+
+
     <!-- house info -->
-    <div class="row">
+    <div class="row house-container p-5">
         <div class="col s12">
-            <div class="card-panel teal row white-text center">
+            <div class="row white-text center">
                 <div class="col s12" id="house-info">
                     <div class="row left-align">
                         <div class="col s6 m6 m-3 ">
                             <span> <i class="material-icons">bolt</i> EPC: </span>
                             <span class="house-info-content">{{ house_info.epc }}</span>
-    
+
                         </div>
                         <div class="col s6 m6 m-3">
                             <span> <i class="material-icons">payments</i> Tax Band: </span>
                             <span class="house-info-content">{{ house_info.taxBand }} </span>
-    
+
                         </div>
                     </div>
                     <div class="row left-align">
                         <div class="col s6 m6 m-3">
                             <span> <i class="material-icons prefix">flood</i> Flood Risk: </span>
                             <span class="house-info-content">{{ house_info.floodRisk }}</span>
-    
+
                         </div>
                         <div class="col s6 m6 m-3">
                             <span><i class="material-icons prefix">wifi</i> Internet Speed: </span>
                             <span class="house-info-content">{{ house_info.internetSpeed }} </span>
-    
+
                         </div>
                     </div>
                     <div class="row">
                         <div class="col s12 m-3">
                             <span> <i class="material-icons prefix">local_parking</i> Dedicated Parking </span>
                             <span class="house-info-content">{{ house_info.dedicatedParking }}</span>
-    
+
                         </div>
                     </div>
-    
+
                 </div>
-                <div class="col s12 center" id="add-house-info">
-                    <a href="#addInfoModal" class="btn filled white black-text waves-effect waves-light modal-trigger"
+                <div class="col s12 p-5 mx-auto" id="add-house-info">
+                    <a href="#addInfoModal" class="add-modal modal-trigger"
                         id="add-houseinfo-btn">
-                        Add house info
+                        
+                        <div class="add-modal-content teal-text text-darken-4">
+                            <i class="small material-icons">add_circle_outline</i>
+                            <p>Details of Your Dream Home</p>
+                        </div>
                     </a>
                 </div>
                 <div class="col s12 center">
-                    <a href="#editInfoModal" class="btn filled white black-text waves-effect waves-light modal-trigger"
+                    <a href="#editInfoModal" class="btn filled teal white black-text waves-effect waves-light modal-trigger"
                         id="edit-houseinfo-btn">
                         Edit house info
                     </a>
@@ -130,7 +154,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="row">
         <!-- house viewing -->
         <div class="col s12 m6 l6">
@@ -142,7 +166,7 @@
                         </div>
                         <div class="col s12 center">
                             <span class="house-viewing-content white-text">{{ house_viewing.sellersSituation }}</span>
-    
+
                         </div>
                     </div>
                     <div class="row m-3">
@@ -151,7 +175,7 @@
                         </div>
                         <div class="col s12 center">
                             <span class="house-viewing-content white-text">{{ house_viewing.neighbours }}</span>
-    
+
                         </div>
                     </div>
                     <div class="row m-3">
@@ -160,7 +184,7 @@
                         </div>
                         <div class="col s12 center">
                             <span class="house-viewing-content white-text">{{ house_viewing.facilities }}</span>
-    
+
                         </div>
                     </div>
                     <div class="row m-3">
@@ -169,7 +193,7 @@
                         </div>
                         <div class="col s12 center">
                             <span class="house-viewing-content white-text">{{ house_viewing.traffic }}</span>
-    
+
                         </div>
                     </div>
                     <div class="row m-3">
@@ -178,7 +202,7 @@
                         </div>
                         <div class="col s12 center">
                             <span class="house-viewing-content white-text">{{ house_viewing.otherOffers }}</span>
-    
+
                         </div>
                     </div>
                     <div class="row m-3">
@@ -187,10 +211,10 @@
                         </div>
                         <div class="col s12 center">
                             <span class="house-viewing-content white-text">{{ house_viewing.windows }}</span>
-    
+
                         </div>
                     </div>
-    
+
                 </div>
                 <div class="col s12" id="add-house-check">
                     <a href="#addHouseViewingModal"
@@ -203,7 +227,7 @@
                         id="edit-houseviewing-btn">
                         Edit house viewing
                     </a>
-    
+
                 </div>
             </div>
             <!-- house checks -->
@@ -217,7 +241,7 @@
                         </div>
                         <div class="col s12 center">
                             <span class="house-check-content white-text">{{ house_check.propertyFacing }}</span>
-    
+
                         </div>
                     </div>
                     <div class="row m-3">
@@ -226,7 +250,7 @@
                         </div>
                         <div class="col s12 center">
                             <span class="house-check-content white-text">{{ house_check.noisePollution }}</span>
-    
+
                         </div>
                     </div>
                     <div class="row m-3">
@@ -235,7 +259,7 @@
                         </div>
                         <div class="col s12 center">
                             <span class="house-check-content white-text">{{ house_check.storageSpace }}</span>
-    
+
                         </div>
                     </div>
                     <div class="row m-3">
@@ -244,7 +268,7 @@
                         </div>
                         <div class="col s12 center">
                             <span class="house-check-content white-text">{{ house_check.atticAccess }}</span>
-    
+
                         </div>
                     </div>
                     <div class="row m-3">
@@ -253,7 +277,7 @@
                         </div>
                         <div class="col s12 center">
                             <span class="house-check-content white-text">{{ house_check.electricPorts }}</span>
-    
+
                         </div>
                     </div>
                     <div class="row m-3">
@@ -262,7 +286,7 @@
                         </div>
                         <div class="col s12 center">
                             <span class="house-check-content white-text">{{ house_check.mould }}</span>
-    
+
                         </div>
                     </div>
                     <div class="row m-3">
@@ -271,7 +295,7 @@
                         </div>
                         <div class="col s12 center">
                             <span class="house-check-content white-text">{{ house_check.damp }}</span>
-    
+
                         </div>
                     </div>
                     <div class="row m-3">
@@ -280,7 +304,7 @@
                         </div>
                         <div class="col s12 center">
                             <span class="house-check-content white-text">{{ house_check.crack }}</span>
-    
+
                         </div>
                     </div>
                     <div class="row m-3">
@@ -289,27 +313,29 @@
                         </div>
                         <div class="col s12 center">
                             <span class="house-check-content white-text">{{ house_check.roofCondition }}</span>
-    
+
                         </div>
                     </div>
                 </div>
                 <div class="col s12 " id="add-house-check">
-                    <a href="#addHouseCheckModal" class="btn filled white black-text waves-effect waves-light modal-trigger"
+                    <a href="#addHouseCheckModal"
+                        class="btn filled white black-text waves-effect waves-light modal-trigger"
                         id="add-housecheck-btn">
                         Add house checks
                     </a>
                     <a href="#editHouseCheckModal"
-                        class="btn filled white black-text waves-effect waves-light modal-trigger" id="edit-housecheck-btn">
+                        class="btn filled white black-text waves-effect waves-light modal-trigger"
+                        id="edit-housecheck-btn">
                         Edit house checks
                     </a>
-    
+
                 </div>
             </div>
         </div>
-    
-    
+
+
     </div>
-    
+
 </div>
 
 
@@ -564,7 +590,8 @@
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
                     <i class="material-icons prefix">people_outline</i>
-                    <input id="add_sellers-situation" name="add_sellers-sitaution" type="text" class="validate" required>
+                    <input id="add_sellers-situation" name="add_sellers-sitaution" type="text" class="validate"
+                        required>
                     <label for="add_sellers-situation">What is the seller's situation?</label>
                 </div>
 
@@ -593,7 +620,7 @@
                     {% for severity in traffic %}
                     <span>
                         <label for="{{ severity }}">
-                            <input name="add_traffic" id="{{ severity }}type="radio" value="{{ severity }}" />
+                            <input name="add_traffic" id="{{ severity }}type=" radio" value="{{ severity }}" />
                             <span>{{severity}}</span>
                         </label>
                     </span>
@@ -610,7 +637,8 @@
                 </div>
                 <div class="col s12 m6 m-4">
                     <label for="add_windows">
-                        <input name="add_windows" id="add_windows" type="checkbox" class="filled-in" checked="checked" />
+                        <input name="add_windows" id="add_windows" type="checkbox" class="filled-in"
+                            checked="checked" />
                         <span>Are the windows double-glazed?</span>
                     </label>
                 </div>
@@ -649,10 +677,12 @@
                             <span>
                                 <label for="{{ direction }}">
                                     {% if house_check.propertyFacing == direction %}
-                                    <input name="property_facing" id="{{ direction }}" type="radio" value="{{ direction }}" checked />
+                                    <input name="property_facing" id="{{ direction }}" type="radio"
+                                        value="{{ direction }}" checked />
                                     <span>{{ direction }}</span>
                                     {% else %}
-                                    <input name="property_facing" id="{{ direction }}" type="radio" value="{{ direction }}" />
+                                    <input name="property_facing" id="{{ direction }}" type="radio"
+                                        value="{{ direction }}" />
                                     <span>{{ direction }}</span>
                                     {% endif %}
                                 </label>
@@ -669,10 +699,12 @@
                             <span>
                                 <label for="{{ 'noisePollution' + level }}">
                                     {% if house_check.noisePollution == level %}
-                                    <input name="noise_level" id="{{ 'noisePollution' + level }}" type="radio" value="{{ level }}" checked="checked" />
+                                    <input name="noise_level" id="{{ 'noisePollution' + level }}" type="radio"
+                                        value="{{ level }}" checked="checked" />
                                     <span>{{ level }}</span>
                                     {% else %}
-                                    <input name="noise_level" id="{{ 'noisePollution' + level }}" type="radio" value="{{ level }}" />
+                                    <input name="noise_level" id="{{ 'noisePollution' + level }}" type="radio"
+                                        value="{{ level }}" />
                                     <span>{{ level }}</span>
                                     {% endif %}
 
@@ -690,10 +722,12 @@
                             <span>
                                 <label for="{{ 'boiler' + level }}">
                                     {% if house_check.boilerNoise == level %}
-                                    <input name="boiler_noise" id="{{'boiler' + level }}" type="radio" value="{{ level }}" checked="checked" />
+                                    <input name="boiler_noise" id="{{'boiler' + level }}" type="radio"
+                                        value="{{ level }}" checked="checked" />
                                     <span>{{ level }}</span>
                                     {% else %}
-                                    <input name="boiler_noise" id="{{'boiler' + level }}" type="radio" value="{{ level }}" />
+                                    <input name="boiler_noise" id="{{'boiler' + level }}" type="radio"
+                                        value="{{ level }}" />
                                     <span>{{ level }}</span>
                                     {% endif %}
 
@@ -711,7 +745,8 @@
                             <span>
                                 <label for="{{ amount }}">
                                     {% if house_check.storageSpace == amount %}
-                                    <input name="storage_space" id="{{ amount }}" type="radio" value="{{ amount }}" checked="checked" />
+                                    <input name="storage_space" id="{{ amount }}" type="radio" value="{{ amount }}"
+                                        checked="checked" />
                                     <span>{{ amount }}</span>
                                     {% else %}
                                     <input name="storage_space" id="{{ amount }}" type="radio" value="{{ amount }}" />
@@ -799,11 +834,12 @@
                                     <span class="m-2">
                                         <label for="{{ 'edit' + condition[0] }}">
                                             {% if house_check.roofCondition == condition[0] %}
-                                            <input name="roof_condition" id="{{ 'edit' + condition[0] }}" type="radio" value="{{ condition[0] }}"
-                                                checked="checked" required/>
+                                            <input name="roof_condition" id="{{ 'edit' + condition[0] }}" type="radio"
+                                                value="{{ condition[0] }}" checked="checked" required />
                                             <span>{{ condition[0] }} </span>
                                             {% else %}
-                                            <input name="roof_condition" id="{{'edit' + condition[0] }}"type="radio" value="{{ condition[0] }}" required/>
+                                            <input name="roof_condition" id="{{'edit' + condition[0] }}" type="radio"
+                                                value="{{ condition[0] }}" required />
                                             <span>{{ condition[0] }} </span>
                                             {% endif %}
                                         </label>
@@ -853,7 +889,8 @@
                             {% for direction in property_facing %}
                             <span>
                                 <label for="{{ 'add' + direction }}">
-                                    <input name="add_property_facing" id="{{ 'add' + direction }}" type="radio" value="{{ direction }}" />
+                                    <input name="add_property_facing" id="{{ 'add' + direction }}" type="radio"
+                                        value="{{ direction }}" />
                                     <span>{{ direction }}</span>
                                 </label>
                             </span>
@@ -869,7 +906,8 @@
                             {% for level in noise %}
                             <span>
                                 <label for="{{ 'addnoise' + level }}">
-                                    <input name="add_noise_level"  id="{{ 'addnoise' + level }}" type="radio" value="{{ level }}" />
+                                    <input name="add_noise_level" id="{{ 'addnoise' + level }}" type="radio"
+                                        value="{{ level }}" />
                                     <span>{{ level }}</span>
                                 </label>
                             </span>
@@ -884,7 +922,8 @@
                             {% for level in noise %}
                             <span>
                                 <label for="{{ 'addBoiler' + level }}">
-                                    <input name="add_boiler_noise" id="{{ 'addBoiler' + level }}" type="radio" value="{{ level }}" />
+                                    <input name="add_boiler_noise" id="{{ 'addBoiler' + level }}" type="radio"
+                                        value="{{ level }}" />
                                     <span>{{ level }}</span>
                                 </label>
                             </span>
@@ -899,7 +938,8 @@
                             {% for amount in storage_space %}
                             <span>
                                 <label for="{{'addStorage' + amount}}">
-                                    <input name="add_storage_space" id="{{'addStorage' + amount}}" type="radio" value="{{ amount }}" />
+                                    <input name="add_storage_space" id="{{'addStorage' + amount}}" type="radio"
+                                        value="{{ amount }}" />
                                     <span>{{ amount }}</span>
                                 </label>
                             </span>
@@ -909,13 +949,14 @@
                     <div class="row">
                         <div class="col s12 m6 m-4">
                             <label for="add_attic">
-                                <input name="add_attic" id="add_attic" type="checkbox" class="filled-in"/>
+                                <input name="add_attic" id="add_attic" type="checkbox" class="filled-in" />
                                 <span>Is there easy access to the attic?</span>
                             </label>
                         </div>
                         <div class="col s12 m6 m-4">
                             <label for="add_electric_ports">
-                                <input name="add_electric_ports" id="add_electric_ports" type="checkbox" class="filled-in"/>
+                                <input name="add_electric_ports" id="add_electric_ports" type="checkbox"
+                                    class="filled-in" />
                                 <span>Are there decent amounts of electric port?</span>
                             </label>
                         </div>
@@ -955,7 +996,8 @@
                                     {% for condition in roof_condition %}
                                     <span class="m-2">
                                         <label for="{{ 'addCondition' + condition[0] }}">
-                                            <input name="add_roof_condition" id="{{ 'addCondition' + condition[0] }}" type="radio" value="{{ condition[0] }}" required/>
+                                            <input name="add_roof_condition" id="{{ 'addCondition' + condition[0] }}"
+                                                type="radio" value="{{ condition[0] }}" required />
                                             <span>{{ condition[0] }} </span>
                                         </label>
 
@@ -996,7 +1038,7 @@
 
 
     function isThereHouseContent(houseContent) {
-       
+
         for (const content of houseContent) {
             if (content.innerText !== "") {
                 return true;
