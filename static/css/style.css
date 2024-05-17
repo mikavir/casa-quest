@@ -356,9 +356,12 @@ iframe {
   background-color: rgba(250,236,217, 0.4);
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 700px) {
   section.flash {
     margin-top: 40px;
+  }
+  .rooms {
+    font-size: smaller;
   }
 }
 
