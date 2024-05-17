@@ -117,17 +117,27 @@ def login():
 
     """
     if request.method == "POST":
+        # Validate that username and password is not an empty string:
+        username = request.form.get("username").lower()
+        password = request.form.get("password")
+        if username is None:
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("login"))
+        if password is None:
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("login"))
+
         # check if username exists in db
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+            {"username": username })
+        
 
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                    existing_user["password"], request.form.get("password")):
-                        session["user"] = request.form.get("username").lower()
-                        flash("Welcome, {}".format(
-                            request.form.get("username")))
+                    existing_user["password"], password):
+                        session["user"] = username
+                        flash("Welcome, {}".format(username))
                         return redirect(url_for(
                             "profile", username=session["user"]))
             else:
