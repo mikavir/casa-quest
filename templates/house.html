@@ -558,12 +558,12 @@
                 <div class="input-field col s12 m-3 center">
                     {% for severity in traffic %}
                     <span>
-                        <label for="{{severity}}">
+                        <label for="edit{{severity}}">
                             {% if house_viewing.traffic == severity %}
-                            <input name="traffic" id="{{severity}}" type="radio" value="{{ severity }}" checked />
+                            <input name="traffic" id="edit{{severity}}" type="radio" value="{{ severity }}" checked />
                             <span>{{ severity }}</span>
                             {% else %}
-                            <input name="traffic" id="{{severity}}" type="radio" value="{{ severity }}" />
+                            <input name="traffic" id="edit{{severity}}" type="radio" value="{{ severity }}" />
                             <span>{{ severity }}</span>
                             {% endif %}
 
