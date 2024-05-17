@@ -426,9 +426,16 @@
 </div>
 
 <!-- Add house info modal -->
-<div id="addInfoModal" class="modal teal lighten-4">
-    <div class="modal-content">
-        <form action="{{ url_for('add_house_info', house_id=house._id) }}" method="POST">
+<div id="addInfoModal" class="modal custom-card">
+    <div class="modal-content row my-3">
+        <div class="col s10 left-align">
+            <h5>Capture Your Future Home's Details</h5>
+        </div>
+        <div class="col s2 right-align">
+            <a href="#!" class="modal-close waves-effect btn rounded red darken-4"> <i class="material-icons">close</i></a>
+
+        </div>
+        <form action="{{ url_for('add_house_info', house_id=house._id) }}" method="POST" class="teal-text text-darken-2 col s12">
             <!-- input field for EPC -->
             <div class="row">
                 <div class="input-field col s12 outlined m-3">
@@ -479,7 +486,7 @@
             </div>
             <div class="row center">
                 <div class="col s12 m-3">
-                    <button class="btn filled icon-left waves-effect waves-light teal white-text" type="submit">
+                    <button class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2" type="submit">
                         <i class="material-icons">add</i>Add House Information
                     </button>
                 </div>
@@ -487,10 +494,6 @@
 
 
         </form>
-
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect btn">Close</a>
 
     </div>
 </div>
