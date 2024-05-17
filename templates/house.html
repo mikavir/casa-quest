@@ -597,8 +597,20 @@
 
 <!-- Add house Viewing modal -->
 <div id="addHouseViewingModal" class="modal custom-card">
-    <div class="modal-content">
-        <form action="{{ url_for('add_house_viewing', house_id=house._id) }}" method="POST">
+    <div class="modal-content row">
+        <div class="col s12 my-2">
+            <div class="row">
+                <div class="col s10 left-align">
+                    <h6 class="m-0">Navigate Your Home Search</h6>
+                    <p>Your Key Questions</p>
+                </div>
+                <div class="col s2 right-align">
+                    <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i class="material-icons">close</i></a>
+        
+                </div>
+            </div>
+        </div>
+        <form action="{{ url_for('add_house_viewing', house_id=house._id) }}" method="POST" class="col s12 teal-text text-darken-2">
 
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
@@ -633,7 +645,7 @@
                     {% for severity in traffic %}
                     <span>
                         <label for="{{ severity }}">
-                            <input name="add_traffic" id="{{ severity }}" type="radio" value="{{ severity }}" />
+                            <input name="add_traffic" id="{{ severity }}" type="radio" value="{{ severity }}" required/>
                             <span>{{severity}}</span>
                         </label>
                     </span>
@@ -659,16 +671,12 @@
             <div class="row center">
                 <div class="col s12">
 
-                    <button class="btn filled icon-left waves-effect waves-light teal white-text" type="submit">
+                    <button class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2" type="submit">
                         <i class="material-icons">add</i>Add House Viewing Information
                     </button>
                 </div>
             </div>
         </form>
-
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect btn">Close</a>
 
     </div>
 </div>
