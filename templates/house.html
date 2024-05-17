@@ -427,13 +427,17 @@
 
 <!-- Add house info modal -->
 <div id="addInfoModal" class="modal custom-card">
-    <div class="modal-content row my-3">
-        <div class="col s10 left-align">
-            <h5>Capture Your Future Home's Details</h5>
-        </div>
-        <div class="col s2 right-align">
-            <a href="#!" class="modal-close waves-effect btn rounded red darken-4"> <i class="material-icons">close</i></a>
-
+    <div class="modal-content row">
+        <div class="col s12 my-2">
+            <div class="row">
+                <div class="col s10 left-align">
+                    <h6>Capture Your Future Home's Details</h6>
+                </div>
+                <div class="col s2 right-align">
+                    <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i class="material-icons">close</i></a>
+        
+                </div>
+            </div>
         </div>
         <form action="{{ url_for('add_house_info', house_id=house._id) }}" method="POST" class="teal-text text-darken-2 col s12">
             <!-- input field for EPC -->
@@ -592,7 +596,7 @@
 
 
 <!-- Add house Viewing modal -->
-<div id="addHouseViewingModal" class="modal teal lighten-4">
+<div id="addHouseViewingModal" class="modal custom-card">
     <div class="modal-content">
         <form action="{{ url_for('add_house_viewing', house_id=house._id) }}" method="POST">
 
@@ -629,7 +633,7 @@
                     {% for severity in traffic %}
                     <span>
                         <label for="{{ severity }}">
-                            <input name="add_traffic" id="{{ severity }}type=" radio" value="{{ severity }}" />
+                            <input name="add_traffic" id="{{ severity }}" type="radio" value="{{ severity }}" />
                             <span>{{severity}}</span>
                         </label>
                     </span>
