@@ -632,6 +632,10 @@ def edit_house_check(house_id):
 @app.route("/profile/<username>#deleteModal<house_id>", methods=["GET", "POST"])
 @login_required
 def delete_house(username, house_id):
+    """
+    Deletes any house entry with the same id from the database and redirects back to the profile
+
+    """
     if request.method == "POST":
         username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -667,11 +671,6 @@ def delete_house(username, house_id):
         return redirect(url_for("profile", username=username))    
 
         
-
-
-
-
-
 
 @app.errorhandler(404)
 def page_not_found(e):
