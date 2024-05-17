@@ -171,59 +171,76 @@
         <!-- house viewing -->
         <div class="col s12 m12 l6 mx-2">
             <div class="card-panel teal darken-2 row mx-auto">
+                <div class="col s12 right-align"> 
+                    <div class="row">
+                        <div class="col s1 offset-s11 ">
+                            <a href="#editHouseViewingModal" class="center btn rounded waves-effect waves-light orange teal-text text-darken-4 p-1 modal-trigger"
+                                id="edit-houseviewing-btn">
+                                <i class="material-icons">edit</i>
+                            </a>
+                        </div>
+                    </div>                 
+
+                </div>
                 <div class="col s12" id="house-viewing">
                     <div class="row m-3">
                         <div class="col s12 m-2">
-                            <span class="black-text">What is the seller's situation?</span>
+                            <h6 class="orange-text text-lighten-4">The seller is...</h6>
                         </div>
                         <div class="col s12 center">
-                            <span class="house-viewing-content white-text">{{ house_viewing.sellersSituation }}</span>
+                            <p class="house-viewing-content white-text">{{ house_viewing.sellersSituation }}</p>
 
                         </div>
                     </div>
                     <div class="row m-3">
                         <div class="col s12 m-2">
-                            <span class="black-text">How are the nighbours?</span>
+                            <h6 class="orange-text text-lighten-4">The neighbours are...</h6>
                         </div>
                         <div class="col s12 center">
-                            <span class="house-viewing-content white-text">{{ house_viewing.neighbours }}</span>
+                            <p class="house-viewing-content white-text">{{ house_viewing.neighbours }}</p>
 
                         </div>
                     </div>
                     <div class="row m-3">
                         <div class="col s12 m-2">
-                            <span class="black-text">What are the facilities?</span>
+                            <h6 class="orange-text text-lighten-4">The facilities are...</h6>
                         </div>
                         <div class="col s12 center">
-                            <span class="house-viewing-content white-text">{{ house_viewing.facilities }}</span>
+                            <p class="house-viewing-content white-text">{{ house_viewing.facilities }}</p>
 
                         </div>
                     </div>
                     <div class="row m-3">
+                        {% if house_viewing.traffic == 'No Traffic' %}
                         <div class="col s12 m-2">
-                            <span class="black-text">How is the traffic?</span>
+                            <h6 class="orange-text text-lighten-4">There is no traffic <i class="fa-regular fa-face-smile"></i></h6>
+                        </div>
+                        {% else %}
+                        <div class="col s12 m-2">
+                            <h6 class="orange-text text-lighten-4">The traffic is...</h6>
                         </div>
                         <div class="col s12 center">
-                            <span class="house-viewing-content white-text">{{ house_viewing.traffic }}</span>
+                            <p class="house-viewing-content white-text">{{ house_viewing.traffic }}</p>
 
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="row m-3">
+                        <div class="col s12 m-2">
+                            {% if house_viewing.otherOffers == "yes" %}
+                            <h6 class="orange-text text-lighten-4">There have been other offers made. <i class="fa-solid fa-circle-exclamation"></i></h6>
+                            {% else %}
+                            <h6 class="orange-text text-lighten-4">No offers have been made yet</h6>
+                            {% endif %}
                         </div>
                     </div>
                     <div class="row m-3">
                         <div class="col s12 m-2">
-                            <span class="black-text">Have there been other offers?</span>
-                        </div>
-                        <div class="col s12 center">
-                            <span class="house-viewing-content white-text">{{ house_viewing.otherOffers }}</span>
-
-                        </div>
-                    </div>
-                    <div class="row m-3">
-                        <div class="col s12 m-2">
-                            <span class="black-text">Are the window's double glazed?</span>
-                        </div>
-                        <div class="col s12 center">
-                            <span class="house-viewing-content white-text">{{ house_viewing.windows }}</span>
-
+                            {% if house_viewing.windows == "yes" %}
+                            <h6 class="orange-text text-lighten-4">There windows are double-glazed <i class="fa-regular fa-face-smile"></i></h6>
+                            {% else %}
+                            <h6 class="orange-text text-lighten-4">The windows are not double glazed <i class="fa-solid fa-circle-exclamation"></i></h6>
+                            {% endif %}
                         </div>
                     </div>
 
@@ -237,12 +254,6 @@
                             <p>Share Your Viewing Experience</p>
                         </div>
                     </a>
-                    <a href="#editHouseViewingModal"
-                        class="btn filled white black-text waves-effect waves-light modal-trigger"
-                        id="edit-houseviewing-btn">
-                        Edit house viewing
-                    </a>
-
                 </div>
             </div>
             <!-- house checks -->
