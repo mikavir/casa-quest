@@ -1,56 +1,64 @@
-     {% extends "base.html" %}
-     {% block content %}
-     <aside id="hero-image" class="center">
-         <div class="row p-5">
-             <div class="col s12 m8 offset-m2 card-panel hero-callout mt-5">
-                <div class="row">
-                    <div class="col s12">
-                        <h5> Your Shortcut to Dream Home Bliss</h5>
-                        <p>Experience the ease of house hunting with Casa Quest! Our interactive checklist keeps you organized,
-                            letting you track property visits, jot down notes, and compare listings effortlessly. Say goodbye
-                            to overwhelm and hello to simplicity as Casa Quest empowers you to make informed decisions with
-                            confidence. Start your journey today!</p>
-                    </div>
+{% extends "base.html" %}
+{% block header %}
+  <title>{% block title %}Casa Quest{% endblock %}</title>
+{% endblock %}
+
+{% block content %}
+<aside id="hero-image" class="center">
+    <div class="row p-5">
+        <div class="col s12 m8 offset-m2 card-panel hero-callout mt-5">
+            <div class="row">
+                <div class="col s12">
+                    <h5> Your Shortcut to Dream Home Bliss</h5>
+                    <p>Experience the ease of house hunting with Casa Quest! Our interactive checklist keeps you
+                        organized,
+                        letting you track property visits, jot down notes, and compare listings effortlessly. Say
+                        goodbye
+                        to overwhelm and hello to simplicity as Casa Quest empowers you to make informed decisions
+                        with
+                        confidence. Start your journey today!</p>
                 </div>
+            </div>
 
-                 <div class="row mt-4 mb-4">
-                     <div class="col s12">
-                        {% if session.user %}
-                        <a href="{{ url_for('profile', username=session['user']) }}" class="callout-btn"> Start Your Casa Quest Now</a>
-                        {% else %}
-                        <a href="{{ url_for('register') }}" class="callout-btn"> Start Your Casa Quest Now</a>
-                        {% endif %}
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </aside>
-     <aside class="hero-review">
-         <div class="row center">
-             <div class="col s12 m6 p-4">
-                 <div class="row mt-4">
-                     <div class="col s12">
-                         <h6>
-                             "Thanks to Casa Quest, house hunting became a pleasure rather than a chore. The interactive
-                             checklist feature kept me organized, while the seamless experience made decision-making a
-                             breeze.
-                             Highly recommended for anyone on the hunt for their dream home!"
-                         </h6>
-                     </div>
-                 </div>
-                 <div class="row mt-3">
-                     <div class="col s12">
-                         <em>
-                             John Smith, satisfied Casa Quest user, House Hunter Extraordinaire
-                         </em>
-                     </div>
-                 </div>
+            <div class="row mt-4 mb-4">
+                <div class="col s12">
+                    {% if session.user %}
+                    <a href="{{ url_for('profile', username=session['user']) }}" class="callout-btn"> Start Your
+                        Casa Quest Now</a>
+                    {% else %}
+                    <a href="{{ url_for('register') }}" class="callout-btn"> Start Your Casa Quest Now</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+<aside class="hero-review">
+    <div class="row center">
+        <div class="col s12 m6 p-4">
+            <div class="row mt-4">
+                <div class="col s12">
+                    <h6>
+                        "Thanks to Casa Quest, house hunting became a pleasure rather than a chore. The interactive
+                        checklist feature kept me organized, while the seamless experience made decision-making a
+                        breeze.
+                        Highly recommended for anyone on the hunt for their dream home!"
+                    </h6>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col s12">
+                    <em>
+                        John Smith, satisfied Casa Quest user, House Hunter Extraordinaire
+                    </em>
+                </div>
+            </div>
 
-             </div>
-             <div class="col s12 m6 p-4">
-                 <img src="{{ url_for('static', filename='images/hero-image2.jpg')}}" class="responsive-img">
-             </div>
+        </div>
+        <div class="col s12 m6 p-4">
+            <img src="{{ url_for('static', filename='images/hero-image2.jpg')}}" class="responsive-img">
+        </div>
 
-         </div>
-     </aside>
-     {% endblock %}
+    </div>
+</aside>
+{% endblock %}

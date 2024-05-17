@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+{% block header %}
+  <title>{% block title %}{{house.address}}{% endblock %}</title>
+{% endblock %}
 {% block content %}
 <div class=" page-container">
     <div class="row mx-4">

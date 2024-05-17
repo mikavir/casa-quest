@@ -20,7 +20,7 @@
     <!-- FavIvon -->
     <link rel="shortcut icon" type ='image/x-icon' href="{{ url_for('static', filename='favicon.ico') }}">
     
-    <title>Houses</title>
+    <title>{% block title %}{% endblock %}</title>
 </head>
 
 <body>
