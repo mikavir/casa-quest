@@ -260,88 +260,115 @@
         </div>
         <div class="col s12 m12 l6 mx-2">
             <div class="card-panel teal darken-2 row mx-auto">
+                <div class="col s12 right-align"> 
+                    <div class="row">
+                        <div class="col s1 offset-s11 ">
+                            <a href="#editHouseCheckModal"
+                            class="center btn rounded waves-effect waves-light orange teal-text text-darken-4 p-1 modal-trigger"
+                            id="edit-housecheck-btn">
+                            <i class="material-icons">edit</i>
+                            </a>
+                        </div>
+                    </div>                 
+
+                </div>
                 <div class="col s12" id="house-check">
                     <div class="row m-3">
                         <div class="col s12 m-2">
-                            <span class="black-text">Which way does the property face? (Important for light)</span>
+                            <h6 class="orange-text text-lighten-4"><i class="fa-regular fa-sun"></i> The property is...</h6>
                         </div>
                         <div class="col s12 center">
-                            <span class="house-check-content white-text">{{ house_check.propertyFacing }}</span>
+                            <p class="house-check-content white-text">{{ house_check.propertyFacing }}</p>
 
                         </div>
                     </div>
                     <div class="row m-3">
                         <div class="col s12 m-2">
-                            <span class="black-text">How much can you hear outside?</span>
+                            <h6 class="orange-text text-lighten-4"> <span class="material-symbols-outlined">
+                                roofing
+                                </span> The condition of the roof is...</h6>
+            
                         </div>
                         <div class="col s12 center">
-                            <span class="house-check-content white-text">{{ house_check.noisePollution }}</span>
+                            <p class="house-check-content white-text">{{ house_check.roofCondition }}</p>
 
                         </div>
                     </div>
                     <div class="row m-3">
                         <div class="col s12 m-2">
-                            <span class="black-text">How is the storage space?</span>
+                            <h6 class="orange-text text-lighten-4"> The storage space is...</h6>
                         </div>
                         <div class="col s12 center">
-                            <span class="house-check-content white-text">{{ house_check.storageSpace }}</span>
+                            <p class="house-check-content white-text">{{ house_check.storageSpace }}</p>
 
                         </div>
                     </div>
                     <div class="row m-3">
+                        {% if house_check.noisePollution == "Some Noise" %}
                         <div class="col s12 m-2">
-                            <span class="black-text">Is it easy to access the attic?</span>
+                            <h6 class="orange-text text-lighten-4"> The outside can be noisy.</h6>
+
+                        </div>
+                        {% else %}
+                        <div class="col s12 m-2">
+                            <h6 class="orange-text text-lighten-4"> The outside is...</h6>
+
                         </div>
                         <div class="col s12 center">
-                            <span class="house-check-content white-text">{{ house_check.atticAccess }}</span>
+                            <p class="house-check-content white-text">{{ house_check.noisePollution }}</p>
 
+                        </div>
+                        {% endif %}
+                    </div>
+                  
+                    <div class="row m-3">
+                        
+                        <div class="col s12 m-2">
+                            {% if house_check.atticAccess == "yes" %}
+                            <h6 class="orange-text text-lighten-4"> It is easy to access the attic <i class="fa-regular fa-face-smile"></i></h6>
+                            {% else %}
+                            <h6 class="orange-text text-lighten-4"> It is not easy to access the attic </h6>
+                            {% endif %}
                         </div>
                     </div>
                     <div class="row m-3">
                         <div class="col s12 m-2">
-                            <span class="black-text">Is there a good amount of electric ports available?</span>
-                        </div>
-                        <div class="col s12 center">
-                            <span class="house-check-content white-text">{{ house_check.electricPorts }}</span>
-
-                        </div>
-                    </div>
-                    <div class="row m-3">
-                        <div class="col s12 m-2">
-                            <span class="black-text">Are there visible signs of mould?</span>
-                        </div>
-                        <div class="col s12 center">
-                            <span class="house-check-content white-text">{{ house_check.mould }}</span>
-
+                            {% if house_check.electricPorts == "yes" %}
+                            <h6 class="orange-text text-lighten-4"> There is a good amount of electric ports <i class="fa-regular fa-face-smile"></i></h6>
+                            {% else %}
+                            <h6 class="orange-text text-lighten-4"> The are a limited amount of electric ports <i class="fa-solid fa-circle-exclamation"></i></h6>
+                            {% endif %}
                         </div>
                     </div>
                     <div class="row m-3">
                         <div class="col s12 m-2">
-                            <span class="black-text">Are there visible signs of damp</span>
-                        </div>
-                        <div class="col s12 center">
-                            <span class="house-check-content white-text">{{ house_check.damp }}</span>
-
-                        </div>
-                    </div>
-                    <div class="row m-3">
-                        <div class="col s12 m-2">
-                            <span class="black-text">Are there visible signs of wall cracking?</span>
-                        </div>
-                        <div class="col s12 center">
-                            <span class="house-check-content white-text">{{ house_check.crack }}</span>
-
+                            {% if house_check.mould == "yes" %}
+                            <h6 class="orange-text text-lighten-4"> The are visible signs of mould. <i class="fa-solid fa-circle-exclamation"></i></h6>
+                            {% else %}
+                            <h6 class="orange-text text-lighten-4"> There are no signs of mould. <i class="fa-regular fa-face-smile"></i></h6>
+                            {% endif %}
                         </div>
                     </div>
                     <div class="row m-3">
                         <div class="col s12 m-2">
-                            <span class="black-text">Codition of the roof?</span>
+                            {% if house_check.damp == "yes" %}
+                            <h6 class="orange-text text-lighten-4"> The are visible signs of damp. <i class="fa-solid fa-circle-exclamation"></i></h6>
+                            {% else %}
+                            <h6 class="orange-text text-lighten-4"> There are no signs of damp. <i class="fa-regular fa-face-smile"></i></h6>
+                            {% endif %}
                         </div>
-                        <div class="col s12 center">
-                            <span class="house-check-content white-text">{{ house_check.roofCondition }}</span>
-
+    
+                    </div>
+                    <div class="row m-3">
+                        <div class="col s12 m-2">
+                            {% if house_check.crack == "yes" %}
+                            <h6 class="orange-text text-lighten-4"> The are visible signs of the wall cracking <i class="fa-solid fa-circle-exclamation"></i></h6>
+                            {% else %}
+                            <h6 class="orange-text text-lighten-4"> There are no signs of wall cracking <i class="fa-regular fa-face-smile"></i></h6>
+                            {% endif %}
                         </div>
                     </div>
+                    
                 </div>
                 <div class="col s12 mx-auto p-5" id="add-house-check">
                     <a href="#addHouseCheckModal"
@@ -352,11 +379,7 @@
                             <p>Share Your Home Inspection Insights</p>
                         </div>
                     </a>
-                    <a href="#editHouseCheckModal"
-                        class="btn filled white black-text waves-effect waves-light modal-trigger"
-                        id="edit-housecheck-btn">
-                        Edit house checks
-                    </a>
+                  
 
                 </div>
             </div>
