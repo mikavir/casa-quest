@@ -683,6 +683,60 @@ def delete_house(username, house_id):
     else:
         return redirect(url_for("profile", username=username))    
 
+
+
+@app.route("/change_password", methods=["GET", "POST"])
+@login_required
+def change_password():
+    """
+    Renders 'change_password.html' when request method is get.
+
+    When request method is POST, current password from user and 
+    their chosen new password is acquired and checked with their 
+    current password with werkzeug.security check_password_hash 
+    If succesful, a new hash is generated and database is updated.
+
+    Inspired from my project Health Diary Keeper 
+    (https://github.com/mikavir/health-diary-keeper/blob/main/app.py)
+
+    """
+    if request.method == "POST":
+        # Find username
+        username = mongo.db.users.find_one(
+        {"username": session["user"]})
+
+        # Acquire form fields
+        current_password = request.form.get("current_password")
+        new_password = request.form.get("new_password")
+        confirm_password = request.form.get("confirm_new_password")
+
+        # Validate that input is not empty
+        if current_password and new_password and confirm_password is None:
+            flash("Please complete the required fields")
+            return redirect(url_for('change_password'))
+        
+        # Check to see if new_password and confirm_password is same
+        if new_password == confirm_password:
+
+            # Use check_password_hash to ensure tha current password is the same as database
+            if check_password_hash(username["password"], current_password):
+
+                # Generate a new password hash:
+                new_hash_password = generate_password_hash(new_password)
+
+                # New entry to the database
+                new_password_entry = {"password": new_hash_password}
+
+                # Update database and return
+                mongo.db.users.update_one({"username": session["user"]}, {"$set": new_password_entry})
+                flash("Password succesfully changed!")
+                return redirect(url_for('change_password'))
+
+        flash("Changing password failed!")   
+        return render_template("change_password.html")
+        
+    return render_template("change_password.html")
+
         
 
 @app.errorhandler(404)
