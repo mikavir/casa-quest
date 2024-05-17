@@ -53,7 +53,7 @@
             <div class="row">
                 <div class="col s12 m6 orange-text text-lighten-1 center">
                     <div class="row m-4">
-                        <div class="col s6">
+                        <div class="col s4">
                             <div class="row">
                                 <div class="col s12">
                                     <h1>{{ house.bedrooms }}</h1>
@@ -65,7 +65,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col s6">
+                        <div class="col s4">
                             <div class="row">
                                 <div class="col s12">
                                     <h1>{{ house.bathrooms }}</h1>
@@ -81,7 +81,8 @@
                         {% if house_info.dedicatedParking == "yes" %}
                             <div class="col s4">
                                 <h1>1</h1>
-                                <i class="material-icons prefix">local_parking</i>
+                                <h6>Parking</h6>
+
                             </div>
                         {% endif %}
 
@@ -99,37 +100,45 @@
 
     <!-- house info -->
     <div class="row house-container p-5">
-        <div class="col s12">
-            <div class="row white-text center">
-                <div class="col s12" id="house-info">
+        <div class="col s12 mx-4 ">
+            <div class="row teal-text text-darken-4 center">
+                <div class="col s12 right-align"> 
+                    <div class="row">
+                        <div class="col s1 offset-s11 ">
+                            <a href="#editInfoModal" class="center btn rounded waves-effect waves-light teal darken-4 orange-text text-lighten-4 p-1"
+                                id="edit-houseinfo-btn">
+                                <i class="material-icons">edit</i>
+                            </a>
+                        </div>
+                    </div>                 
+
+                </div>
+                
+                <div class="col s12 offset-m2" id="house-info">
                     <div class="row left-align">
                         <div class="col s6 m6 m-3 ">
-                            <span> <i class="material-icons">bolt</i> EPC: </span>
-                            <span class="house-info-content">{{ house_info.epc }}</span>
+                            <span> <i class="medium material-icons orange-text">bolt</i></span>
+                            <h6>EPC: <span class="house-info-content">{{ house_info.epc }}</span>
+                            </h6>
 
                         </div>
                         <div class="col s6 m6 m-3">
-                            <span> <i class="material-icons">payments</i> Tax Band: </span>
-                            <span class="house-info-content">{{ house_info.taxBand }} </span>
+                            <span> <i class="medium material-icons orange-text">payments</i></span>
+                            <h6>Tax Band: <span class="house-info-content">{{ house_info.taxBand }}</span>
+                            </h6>
 
                         </div>
                     </div>
                     <div class="row left-align">
                         <div class="col s6 m6 m-3">
-                            <span> <i class="material-icons prefix">flood</i> Flood Risk: </span>
-                            <span class="house-info-content">{{ house_info.floodRisk }}</span>
-
+                            <span> <i class="medium material-icons orange-text">flood</i></span>
+                            <h6>Flood Risk:<span class="house-info-content">{{ house_info.floodRisk }}</span>
+                            </h6>
                         </div>
                         <div class="col s6 m6 m-3">
-                            <span><i class="material-icons prefix">wifi</i> Internet Speed: </span>
-                            <span class="house-info-content">{{ house_info.internetSpeed }} </span>
-
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12 m-3">
-                            <span> <i class="material-icons prefix">local_parking</i> Dedicated Parking </span>
-                            <span class="house-info-content">{{ house_info.dedicatedParking }}</span>
+                            <span><i class="medium material-icons orange-text">wifi</i></span>
+                            <h6>Intenet Speed: <span class="house-info-content">{{ house_info.internetSpeed }}</span>
+                            </h6>
 
                         </div>
                     </div>
@@ -143,12 +152,6 @@
                             <i class="small material-icons">add_circle_outline</i>
                             <p>Details of Your Dream Home</p>
                         </div>
-                    </a>
-                </div>
-                <div class="col s12 center">
-                    <a href="#editInfoModal" class="btn filled teal white black-text waves-effect waves-light modal-trigger"
-                        id="edit-houseinfo-btn">
-                        Edit house info
                     </a>
                 </div>
             </div>
