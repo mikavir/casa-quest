@@ -378,7 +378,7 @@ iframe {
   section.flash {
     margin-top: 50px;
   }
-  .add-modal {
+  .add-modal, .add-modal-view {
     width: 250px; 
   }
 
