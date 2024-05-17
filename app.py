@@ -180,11 +180,14 @@ def profile(username):
     Returns houses by the user.
 
     """
-    # grab the session user's username from db
     username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-        
-    houses = mongo.db.houses.find({"username": username})
+    {"username": session["user"]})["username"]
+    
+    if username == "systemadmin":
+        houses = mongo.db.houses.find()        
+    # grab the session user's username from db    
+    else: 
+        houses = mongo.db.houses.find({"username": username})   
 
     return render_template("profile.html", username=username, houses=houses)
 
@@ -208,7 +211,7 @@ def view_house(house_id):
 
     if house is None:
         return redirect(url_for("profile", username=username))
-    if username != house["username"]:
+    if username != house["username"] and username != "systemadmin":
         return redirect(url_for("profile", username=username))
     
     # return redirect(url_for("view_house", house_id=house_id))
