@@ -896,9 +896,21 @@
 
 <!-- Add house checks modal -->
 
-<div id="addHouseCheckModal" class="modal teal lighten-4">
-    <div class="modal-content">
-        <form action="{{ url_for('add_house_check', house_id=house._id) }}" method="POST">
+<div id="addHouseCheckModal" class="modal custom-card">
+    <div class="modal-content row">
+        <div class="col s12 my-2">
+            <div class="row">
+                <div class="col s10 left-align">
+                    <h6 class="m-0">Unlock Your Home's Secrets</h6>
+                    <p> Inspection Checklist</p>
+                </div>
+                <div class="col s2 right-align">
+                    <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i class="material-icons">close</i></a>
+        
+                </div>
+            </div>
+        </div>
+        <form action="{{ url_for('add_house_check', house_id=house._id) }}" method="POST" class="col s12 teal-text text-darken-2">
 
             <div class="row">
                 <div class="col s12 ">
@@ -1022,7 +1034,7 @@
                                             <span>{{ condition[0] }} </span>
                                         </label>
 
-                                        <button class="btn p-1 rounded green tooltipped" type="button" clickable="false"
+                                        <button class="btn p-3 rounded teal darken-2 tooltipped" type="button" clickable="false"
                                             data-position="bottom" data-tooltip="{{condition[1]}}"><i
                                                 class="fa-sharp fa-solid fa-circle-info"></i></button>
 
@@ -1036,16 +1048,12 @@
             </div>
             <div class="row">
                 <div class="col s12 center m-3">
-                    <button class="btn filled icon-left waves-effect waves-light teal white-text" type="submit">
+                    <button class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2" type="submit">
                         <i class="material-icons">add</i>Add Personal Checks
                     </button>
                 </div>
             </div>
         </form>
-
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect btn">Close</a>
 
     </div>
 </div>
