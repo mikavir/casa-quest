@@ -802,6 +802,16 @@ def favourites(username):
     return render_template("favourites.html", username=username, houses=houses)
 
 
+
+@app.route("/manage_users/<username>", methods=["GET", "POST"])
+@login_required
+def manage_users(username):
+    username = mongo.db.users.find_one(
+    {"username": session["user"]})["username"]
+    if username == "systemadmin":
+        users = mongo.db.users.find()
+        return render_template("manage_users.html", users=users)
+    return redirect( url_for(403) )
       
 
 @app.errorhandler(404)
