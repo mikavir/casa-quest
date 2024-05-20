@@ -744,45 +744,17 @@ def add_to_favourites(username, house_id):
     if request.method == "POST":
         username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
+        
         house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
 
-        favourites_entry = {
-            "_id": ObjectId(house_id),
-            "username": username,            
-        }
-
-        mongo.db.favourites.insert_one(favourites_entry)
-        houses = mongo.db.favourites.find({"username": username})
-        # Convert mongo curser into a dict
-        fave_house_dict = []
-        for house in houses:
-            fave_house_dict.append(house)
-        
-        favourite_houses = []
-        # Access dict and find it through house
-        for house in fave_house_dict:
-            fave_house = mongo.db.houses.find_one(house)
-            print(fave_house)
-            favourite_houses.append(fave_house)
-
-
-            
+        # Update is favourite in the house
+        update_favourite = {"is_favourite": "yes"}
+        mongo.db.houses.update_one({"_id": ObjectId(house_id)}, {"$set": update_favourite})    
+        houses = mongo.db.houses.find({"username": username})          
      
-        return render_template("favourites.html", username=username, favourite_houses=favourite_houses)
+        return render_template("favourites.html", username=username, houses=houses)
     
-    houses = mongo.db.favourites.find({"username": username})
-    # Convert mongo curser into a dict
-    fave_house_dict = []
-    for house in houses:
-        fave_house_dict.append(house)
-    
-    favourite_houses = []
-    # Access dict and find it through house
-    for house in fave_house_dict:
-        fave_house = mongo.db.houses.find_one(house)
-        print(fave_house)
-        favourite_houses.append(fave_house)
-
+    houses = mongo.db.houses.find({"username": username})   
     return render_template("favourites.html", username=username, favourite_houses=favourite_houses)
 
         
@@ -792,20 +764,9 @@ def favourites(username):
     username = mongo.db.users.find_one(
     {"username": session["user"]})["username"]
 
-    houses = mongo.db.favourites.find({"username": username})
-    # Convert mongo curser into a dict
-    fave_house_dict = []
-    for house in houses:
-        fave_house_dict.append(house)
+    houses = mongo.db.favourites.find({"username": username}) 
     
-    favourite_houses = []
-    # Access dict and find it through house
-    for house in fave_house_dict:
-        fave_house = mongo.db.houses.find_one(house)
-        print(fave_house)
-        favourite_houses.append(fave_house)
-
-    return render_template("favourites.html", username=username, favourite_houses=favourite_houses)
+    return render_template("favourites.html", username=username, houses=houses)
 
 
       
