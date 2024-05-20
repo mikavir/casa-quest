@@ -65,15 +65,15 @@ def register():
     if request.method == "POST":
         # check if username already exists in db
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+            {"username": request.form.get("username")})
 
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
 
         # Grab variables from form:
-        name = request.form.get("name").lower()
-        username = request.form.get("username").lower()
+        name = request.form.get("name")
+        username = request.form.get("username")
         password = request.form.get("password")
         confirm_password = request.form.get("confirm_password")
 
@@ -94,12 +94,12 @@ def register():
             register = {
                 "name": name,
                 "username": username,
-                "password": generate_password_hash("password")
+                "password": generate_password_hash(password)
             }
             mongo.db.users.insert_one(register)
 
             # put the new user into 'session' cookie
-            session["user"] = request.form.get("username").lower()
+            session["user"] = request.form.get("username")
             flash("Registration Successful!")
             return redirect(url_for("profile", username=session["user"]))
 
@@ -118,7 +118,7 @@ def login():
     """
     if request.method == "POST":
         # Validate that username and password is not an empty string:
-        username = request.form.get("username").lower()
+        username = request.form.get("username")
         password = request.form.get("password")
         if username is None:
             flash("Incorrect Username and/or Password")
@@ -134,16 +134,15 @@ def login():
 
         if existing_user:
             # ensure hashed password matches user input
-            if check_password_hash(
-                    existing_user["password"], password):
-                        session["user"] = username
-                        flash("Welcome, {}".format(username))
-                        return redirect(url_for(
-                            "profile", username=session["user"]))
-            else:
+            if check_password_hash(existing_user["password"], password):
+                session["user"] = username
+                flash("Welcome, {}".format(username))
+                return redirect(url_for(
+                    "profile", username=session["user"]))
+        
                 # invalid password match
-                flash("Incorrect Username and/or Password")
-                return redirect(url_for("login"))
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("login"))
 
         else:
             # username doesn't exist
