@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+{% block header %}
+  <title>{% block title %}Favourites{% endblock %}</title>
+{% endblock %}
+{% block content %}
+<div class="container page-container">
+    <div class="row">
+        <div class="col s12 m8 offset-m2">
+            <div class="card-panel teal darken-4">
+                
+                <h4 class="center-align orange-text text-lighten-5">
+                    {{ username }}'s Favourite Properties
+                </h4>
+                <p class="center-align orange-text text-lighten-5"> Saved Properties Awaiting Exploration!</p>
+            </div>
+    
+        </div>
+    </div>
+
+    
+    <div class="row">
+        {% for house in favourite_houses %}
+        <div class="col s12 card-panel custom-card ">
+            {% if username == "systemadmin" %}
+                <div class="row">
+                    <div class="col s12">
+                        <h6>Created By: {{house.username}}</h6>
+                    </div>
+                </div>
+            {% endif %}
+            <div class="row">
+                <div class="col s12 m5">
+                    <div class="row">
+                        <div class="col s12 house-image-container">
+                            <img src="{{ house.image_url }}" class="responsive-img"></img>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 center">
+                            <h6>{{ house.agency }}</h6>
+                        </div>
+            
+                    </div>
+                </div>
+                <div class="col s12 m6 m-3">
+                    <div class="row mb-0">
+                        <div class="col s12">
+                            <h4>{{ house.address }}</h4>
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">                           
+                            <h6><span>£</span> {{ house.price }}</h6>
+                        </div>       
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <h6>{{ house.bedrooms }} Bedroom {{ house.propertyType }} House</h6>
+                        </div>
+                    </div>
+                    <div class="row teal-text text-darken-4 mx-auto center">
+                        <div class="col s3">
+                            <h6>{{ house.bedrooms }}</h6>
+                            <span><i class="fa-solid fa-bed fa-lg prefix"></i></span>
+                            
+                        </div>
+                        <div class="col s3">
+                            <h6>{{ house.bathrooms }}</h6>
+                            <span><i class="fa-solid fa-toilet fa-lg prefix"></i></span>
+                            
+                        </div>
+                    </div>
+                  
+                    <div class="row m-2">
+                        <div class="col s12">
+                            {% if house.chainFree == "yes"%}
+                                <p>Chain Free</p>
+                            {% else %}
+                                <p> Chain </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                 
+
+                    
+                    
+                    
+                    <div class="row m-2 center">
+                        <div class="col s5">
+                            <a href="{{ url_for('view_house', house_id=house._id) }}" class="btn teal darken-2 white-text rounded waves-effect waves-light">View More</a>
+                        </div>
+                        <div class="col s5">
+                            <a href="{{ url_for('edit_new_house', house_id=house._id) }}" class="btn teal darken-2 white-text icon-right rounded waves-effect waves-light">
+                                <i class="material-icons">edit</i>Update
+                              </a>
+                              
+                        </div>
+                        <div class="col s2">
+                            <a href="#" class="btn teal darken-2 white-text rounded waves-effect waves-light"><i class="fa-regular fa-heart"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m1 right-align">
+                    <a class="waves-effect waves-light btn modal-trigger red darken-4 rounded" href="#deleteModal{{house._id}}"><span class="material-symbols-outlined">
+                        cancel
+                        </span></a>
+                </div>
+            </div>                
+        </div>
+        <div id="deleteModal{{ house._id }}" class="modal card-panel rounded white-text center p-5">
+         
+            <div class="modal-content rounded">
+                <div class="row">
+                    <div class="col s12 red-text text-darken-4">
+                        <i class="fa-solid fa-triangle-exclamation fa-lg"></i><h4>Caution</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 black-text">
+                        <p> Deleting this house will erase all associated data. Are you sure you want to proceed? Click below to confirm or cancel to preserve data.</p>
+                    </div>
+            
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col s12 center">
+                        <form action="{{ url_for('delete_house', username=username, house_id=house._id) }}" method="POST">
+                            <button class="modal-close btn waves-effect rounded red darken-4 m-2">Delete</button>
+                            <a href="#" class="modal-close btn waves-effect rounded orange m-2" type="button">Cancel</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+          </div>
+                  
+        {% endfor %}
+    
+    </div>
+</div>
+
+
+{% endblock %}
