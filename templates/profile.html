@@ -103,14 +103,25 @@
                               </a>
                               
                         </div>
+                        {% if house.is_favourite == "yes"%}
                         <div class="col s2">
-                            <form action="{{ url_for('add_to_favourites', username=username, house_id=house._id) }}" method="POST" >
-                                <button class="btn teal darken-2 white-text rounded waves-effect waves-light"><i class="fa-regular fa-heart"></i></button>
+                            <form action="{{ url_for('remove_from_favourites', username=username, house_id=house._id) }}" method="POST">
+                                <button class="btn teal darken-2 white-text rounded waves-effect waves-light"><i class="fa-solid fa-heart"></i></i></button>
+
                             </form>
                         </div>
+                        {% else %}
+                        <div class="col s2">
+                            <form action="{{ url_for('add_to_favourites', username=username, house_id=house._id) }}" method="POST" >
+                                <button class="btn teal darken-2 white-text rounded waves-effect waves-light"><i class="fa-regular fa-heart"></i></i></button>
+                            </form>
+                        </div>
+                        {% endif %}
+                          
                     </div>
                 </div>
                 <div class="col s12 m1 right-align">
+                    
                     <a class="waves-effect waves-light btn modal-trigger red darken-4 rounded" href="#deleteModal{{house._id}}"><span class="material-symbols-outlined">
                         cancel
                         </span></a>
