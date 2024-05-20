@@ -6,6 +6,7 @@ $(document).ready(function(){
   // filePath();
   initialiseModal();
   initialiseToolTipped();
+  initialiseDropdown();
   
 });
 
@@ -46,4 +47,11 @@ function initialiseModal(){
 function initialiseToolTipped(){
   const elems = document.querySelectorAll('.tooltipped');
   const instances = M.Tooltip.init(elems)
+}
+
+function initialiseDropdown(){
+  const elems = document.querySelectorAll('.dropdown-trigger');
+  const instances = M.Dropdown.init(elems,{
+    coverTrigger: false,
+  });
 }
