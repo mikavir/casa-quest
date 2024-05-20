@@ -657,7 +657,7 @@ def delete_house(username, house_id):
 
         if house is None:
             return redirect(url_for("profile", username=username))
-        if username != house["username"]:
+        if username != house["username"] and username != "systemadmin":
             return redirect(url_for("profile", username=username))
     
 
