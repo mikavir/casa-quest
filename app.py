@@ -741,6 +741,14 @@ def change_password():
 @app.route("/favourites/<username>/<house_id>", methods=["GET", "POST"])
 @login_required
 def add_to_favourites(username, house_id):
+    """
+
+    Renders template of 'favourites.html'
+
+    When request is POST. It updates database that house is 'is_favourite' and
+    returns to favourites.html
+
+    """
     if request.method == "POST":
         username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
@@ -749,13 +757,38 @@ def add_to_favourites(username, house_id):
 
         # Update is favourite in the house
         update_favourite = {"is_favourite": "yes"}
-        mongo.db.houses.update_one({"_id": ObjectId(house_id)}, {"$set": update_favourite})    
+        mongo.db.houses.update_one({"_id": ObjectId(house_id)}, {"$set": update_favourite})
+        flash("House added to favourites")    
         houses = mongo.db.houses.find({"username": username})          
      
         return render_template("favourites.html", username=username, houses=houses)
-    
     houses = mongo.db.houses.find({"username": username})   
-    return render_template("favourites.html", username=username, favourite_houses=favourite_houses)
+    return render_template("favourites.html", username=username, houses=houses)
+
+
+@app.route("/favourites/<username>/remove/<house_id>", methods=["GET", "POST"])
+@login_required
+def remove_from_favourites(username, house_id):
+    """
+
+    Renders template of 'profile'
+
+    When request is POST. It updates database that house is 'is_favourite' and
+    returns baxck to profile.
+
+    """
+    if request.method == "POST":
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        
+        house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
+
+        # Update is favourite in the house
+        update_favourite = {"is_favourite": "no"}
+        mongo.db.houses.update_one({"_id": ObjectId(house_id)}, {"$set": update_favourite})         
+        flash("Removed from favourites")
+        return redirect(url_for("profile", username=session["user"]))
+    return redirect(url_for("profile", username=session["user"]))
 
         
 @app.route("/favourites/<username>", methods=["GET", "POST"])
@@ -764,8 +797,8 @@ def favourites(username):
     username = mongo.db.users.find_one(
     {"username": session["user"]})["username"]
 
-    houses = mongo.db.favourites.find({"username": username}) 
-    
+    houses = mongo.db.houses.find({"username": username}) 
+
     return render_template("favourites.html", username=username, houses=houses)
 
 
