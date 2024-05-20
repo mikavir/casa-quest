@@ -811,8 +811,14 @@ def manage_users(username):
     if username == "systemadmin":
         users = mongo.db.users.find()
         return render_template("manage_users.html", users=users)
-    return redirect( url_for(403) )
+    return render_template('403.html'), 403
+
+
       
+# @app.route("/manage_users/<username>/#delete_user<user_id>", methods=["GET", "POST"])
+# @login_required
+# def delete_user(username, user_id):
+
 
 @app.errorhandler(404)
 def page_not_found(e):
