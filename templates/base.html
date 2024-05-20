@@ -26,7 +26,6 @@
 <body>
     <header>
         <nav class="custom-nav">
-            <div></div>
             <a href="{{url_for('index')}}" class="brand-logo center logo">Casa Quest</a>
 
             <ul class="right hide-on-med-and-down">
@@ -34,12 +33,16 @@
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Dashboard</a></li>
                 <li><a href="{{ url_for('favourites', username=session['user']) }}">Favourites</a></li>
                 <li><a class="dropdown-trigger" href="#" data-target="manage_account"><i class="material-icons left">manage_accounts</i>Manage Account<i class="material-icons right">arrow_drop_down</i></a></li>
+
                 {% else %}
                 <li><a href="{{ url_for('register') }}">Register</a></li>
                 <li><a href="{{ url_for('login') }}">Log In</a></li>
                 {% endif %}
             </ul>
             <ul id="manage_account" class="dropdown-content custom-card">
+                {% if session.user == "systemadmin" %}
+                <li><a href="{{ url_for('manage_users', username=session['user']) }}" class="teal-text text-darken-4">Manage users</a></li>
+                {% endif %}
                 <li><a href="{{ url_for('change_password') }}" class="teal-text text-darken-4">Change Password</a></li>
                 <li><a href="{{ url_for('logout') }}" class="teal-text text-darken-4">Log Out</a></li>
             </ul>
@@ -62,6 +65,9 @@
                             <li><a href="{{ url_for('favourites', username=session['user']) }}">Favourites</a></li>
                             <li><a href="#">Manage Account</a></li>
                             <ul class="mobile-list">
+                                {% if session.user == "systemadmin" %}
+                                <li><a href="{{ url_for('manage_users', username=session['user']) }}" class="teal-text text-darken-4">Manage users</a></li>
+                                {% endif %}
                                 <li><a href="{{ url_for('change_password') }}">Change Password</a></li>
                                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                             </ul>
