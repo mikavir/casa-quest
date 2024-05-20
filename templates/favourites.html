@@ -19,7 +19,8 @@
 
     
     <div class="row">
-        {% for house in favourite_houses %}
+        {% for house in houses %}
+        {% if house.is_favourite == "yes" %}
         <div class="col s12 card-panel custom-card ">
             {% if username == "systemadmin" %}
                 <div class="row">
@@ -134,6 +135,7 @@
                 </div>
             </div>
           </div>
+            {% endif %}
                   
         {% endfor %}
     
