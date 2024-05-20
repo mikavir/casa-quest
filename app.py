@@ -168,6 +168,7 @@ def logout():
     return redirect(url_for("login"))
 
 
+
 # USERS PROFILE/DASHBOARD
 @app.route("/profile/<username>", methods=["GET", "POST"])
 @login_required
@@ -736,7 +737,78 @@ def change_password():
         
     return render_template("change_password.html")
 
+
+@app.route("/favourites/<username>/<house_id>", methods=["GET", "POST"])
+@login_required
+def add_to_favourites(username, house_id):
+    if request.method == "POST":
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
+
+        favourites_entry = {
+            "_id": ObjectId(house_id),
+            "username": username,            
+        }
+
+        mongo.db.favourites.insert_one(favourites_entry)
+        houses = mongo.db.favourites.find({"username": username})
+        # Convert mongo curser into a dict
+        fave_house_dict = []
+        for house in houses:
+            fave_house_dict.append(house)
         
+        favourite_houses = []
+        # Access dict and find it through house
+        for house in fave_house_dict:
+            fave_house = mongo.db.houses.find_one(house)
+            print(fave_house)
+            favourite_houses.append(fave_house)
+
+
+            
+     
+        return render_template("favourites.html", username=username, favourite_houses=favourite_houses)
+    
+    houses = mongo.db.favourites.find({"username": username})
+    # Convert mongo curser into a dict
+    fave_house_dict = []
+    for house in houses:
+        fave_house_dict.append(house)
+    
+    favourite_houses = []
+    # Access dict and find it through house
+    for house in fave_house_dict:
+        fave_house = mongo.db.houses.find_one(house)
+        print(fave_house)
+        favourite_houses.append(fave_house)
+
+    return render_template("favourites.html", username=username, favourite_houses=favourite_houses)
+
+        
+@app.route("/favourites/<username>", methods=["GET", "POST"])
+@login_required
+def favourites(username):
+    username = mongo.db.users.find_one(
+    {"username": session["user"]})["username"]
+
+    houses = mongo.db.favourites.find({"username": username})
+    # Convert mongo curser into a dict
+    fave_house_dict = []
+    for house in houses:
+        fave_house_dict.append(house)
+    
+    favourite_houses = []
+    # Access dict and find it through house
+    for house in fave_house_dict:
+        fave_house = mongo.db.houses.find_one(house)
+        print(fave_house)
+        favourite_houses.append(fave_house)
+
+    return render_template("favourites.html", username=username, favourite_houses=favourite_houses)
+
+
+      
 
 @app.errorhandler(404)
 def page_not_found(e):
