@@ -7,6 +7,7 @@ $(document).ready(function(){
   initialiseModal();
   initialiseToolTipped();
   initialiseDropdown();
+  M.Forms.InitTextarea(document.querySelector('#message'));
   
 });
 
