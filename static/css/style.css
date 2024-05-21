@@ -361,6 +361,9 @@ iframe {
   margin-top: 5vh;
 }
 
+#thank-you-feedback {
+  display: none;
+}
 @media screen and (max-width: 700px) {
   section.flash {
     margin-top: 40px;
