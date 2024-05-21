@@ -32,9 +32,11 @@
                 {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Dashboard</a></li>
                 <li><a href="{{ url_for('favourites', username=session['user']) }}">Favourites</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact us</a></li>
                 <li><a class="dropdown-trigger" href="#" data-target="manage_account"><i class="material-icons left">manage_accounts</i>Manage Account<i class="material-icons right">arrow_drop_down</i></a></li>
 
                 {% else %}
+                <li><a href="{{ url_for('contact') }}">Contact us</a></li>
                 <li><a href="{{ url_for('register') }}">Register</a></li>
                 <li><a href="{{ url_for('login') }}">Log In</a></li>
                 {% endif %}
@@ -63,6 +65,7 @@
                             {% if session.user %}
                             <li><a href="{{ url_for('profile', username=session['user']) }}">Dashboard</a></li>
                             <li><a href="{{ url_for('favourites', username=session['user']) }}">Favourites</a></li>
+                            <li><a href="{{ url_for('contact') }}">Contact us</a></li>
                             <li><a href="#">Manage Account</a></li>
                             <ul class="mobile-list">
                                 {% if session.user == "systemadmin" %}
@@ -72,6 +75,7 @@
                                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                             </ul>
                             {% else %}
+                            li><a href="{{ url_for('contact') }}">Contact us!</a></li>
                             <li><a href="{{ url_for('register') }}">Register</a></li>
                             <li><a href="{{ url_for('login') }}">Log In</a></li>
                             {% endif %}
