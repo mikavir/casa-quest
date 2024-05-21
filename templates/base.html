@@ -24,7 +24,7 @@
     <script>   
     (function () {
         emailjs.init({
-            publicKey: "{{email_api}}",
+            publicKey: "{{maps_api}}",
         });
         })();
     </script>
@@ -84,7 +84,7 @@
                                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                             </ul>
                             {% else %}
-                            li><a href="{{ url_for('contact') }}">Contact us!</a></li>
+                            <li><a href="{{ url_for('contact') }}">Contact us!</a></li>
                             <li><a href="{{ url_for('register') }}">Register</a></li>
                             <li><a href="{{ url_for('login') }}">Log In</a></li>
                             {% endif %}
