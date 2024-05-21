@@ -4,27 +4,28 @@
 {% endblock %}
 {% block content %}
 
-<div class="container">
+<div class="container-fluid push-container center">
     <div class="row p-5">
-        <div class="col s12 card-panel green lighten-5 m8 offset-m2 center">
+        <div class="col s12 card-panel teal darken-4 m8 offset-m2 center">
             <div class="row">
-                <div class="col s12 green-text">
+                <div class="col s12 orange-text text-lighten-4">
                     <h3>404</h3>
                 </div>
             </div>
-            <div class="row">
-                <div class="col s12">
-                    <h4>Not Found</h4>
+            <div class="row mb-4">
+                <div class="col s12 orange-text text-lighten-2">
+                    <h4>Lost in the Neighborhood!</h4>
                 </div>
             </div>
-            <div class="row">
+            <div class="row mb-4">
                 <div class="col s12">
-                    <p>{{ error_message }}</p>
+                    <p class="white-text">Looks like the page you're searching for is off the grid. Use the navigation menu to
+                        find your way back or head to our homepage. Happy house hunting! 🏡</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col s12 center">
-                    <a class="btn filled green white-text icon-right rounded waves-effect waves-light" href="{{url_for('index')}}">Home</a>
+                    <a class="btn orange lighten-4 teal-text text-darken-4 rounded waves-effect waves-light" href="{{url_for('index')}}">Home</a>
                 </div>
             </div>
     
