@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block header %}
+  <title>{% block title %}Get in touch!{% endblock %}</title>
+{% endblock %}
+{% block content %}
+<div class="container page-container">
+    <div class="row">
+        <div class="col s12">
+            <h5>Get in Touch </h5>
+            <p> We're Here to Help You Find Your Dream Home!</p>
+        </div>
+    </div>
+   
+    <div class="row">
+        <form class="card-panel custom-card col s12 m8 offset-m2 p-5" method="POST" action="{{ url_for('login') }}"> 
+            <div class="row my-4">
+                <div class="col s12 input-field">
+                    <i class="fas fa-user-plus prefix green-text text-darken-4"></i>
+                    <input id="name" name="name" type="text" class="validate" required>
+                    <label for="name">Name</label>
+                    <small>(It will be helpful if you provide us with your username)</small>
+                    
+                </div>
+            </div>
+            <div class="row my-4">
+                <div class="col s12 input-field">
+                    <i class="fas fa-user-plus prefix green-text text-darken-4"></i>
+                    <input id="email" name="email" type="text" class="validate" required>
+                    <label for="email">Email</label>
+                    <small>(Share Your Email, and We'll Reach Out to You ASAP!)</small>
+                    
+                </div>
+            </div>
+            <div class="row my-4">
+                <div class="input-field col s12">
+                  <textarea id="message" class="materialize-textarea" placeholder="Your message:"></textarea>
+                  <label for="message"><i class="fa-solid fa-message green-text text-darken-4"></i> </label>
+                  <small>(How Can We Assist You Today? Let Us Know!)</small>
+                </div>
+              </div>
+              <div class="row my-5">
+                <div class="col s12 center">
+                    <a class="btn teal darken-4 orange-text orange-llighten-4 rounded waves-effect waves-light" href="#">Get in touch!</a>
+                </div>
+            </div>             
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}
