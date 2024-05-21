@@ -50,19 +50,14 @@ This was the colour taken from materialize web for cancel buttons:
 
 ### Typography
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑START OF NOTES (to be deleted)
+After researching other home buying websites and gathering ideas, I found significant inspiration in the design of the [Mr and Mrs Clarke](https://www.mrandmrsclarke.com/) website. The fonts used in the website have been inspired the fonts that they have used.
 
-Explain any fonts and icon libraries used, like Google Fonts and/or Font Awesome.
 
-Consider adding a link to each font used, and the Font Awesome site if used (or similar icon library).
+- [Domine](https://fonts.google.com/specimen/Domine) was used for the primary headers and titles.
 
-Example:
+- [Questrial](https://fonts.google.com/specimen/Questrial) was used for all other secondary text.
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-- [Montserrat](https://fonts.google.com/specimen/Montserrat) was used for the primary headers and titles.
-
-- [Lato](https://fonts.google.com/specimen/Lato) was used for all other secondary text.
+- [Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons) was used for icons from Materialize web.
 
 - [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the social media icons in the footer.
 
