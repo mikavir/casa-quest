@@ -58,7 +58,8 @@ def contact():
     """
     Render's contact page template
     """
-    return render_template("contact.html")
+    email_api = os.environ.get("EMAIL_API")
+    return render_template("contact.html", email_api=email_api)
 
 
 
