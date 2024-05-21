@@ -803,9 +803,15 @@ def favourites(username):
 
 
 
-@app.route("/manage_users/<username>", methods=["GET", "POST"])
+@app.route("/manage_users/<username>", method=["GET", "POST"])
 @login_required
 def manage_users(username):
+    """
+    Renders the manage_users.html only if username is equals to 
+    "systemadmin"
+
+    returns a 403 page if not system admin
+    """
     username = mongo.db.users.find_one(
     {"username": session["user"]})["username"]
     if username == "systemadmin":
@@ -815,9 +821,88 @@ def manage_users(username):
 
 
       
-# @app.route("/manage_users/<username>/#delete_user<user_id>", methods=["GET", "POST"])
-# @login_required
-# def delete_user(username, user_id):
+@app.route("/manage_users/<username>#deleteModal<user_name>", methods=["GET", "POST"])
+@login_required
+def delete_user(username, user_name):
+    """
+
+    Admin function: (delete users)
+    1) Using the username, it checks if it is truly the admin account
+    2) Using the user_name it finds all the houses of under the user_name
+    3) As find(), returns a curser, we make a list using a for loop of the houses
+    4) Using .get(), we acquire the house_id of the houses.
+    (https://www.codecademy.com/learn/dscp-python-fundamentals/modules/
+    dscp-python-dictionaries/cheatsheet)
+    5) With the house_id, we check if the id exist in the other collections and 
+    it deletes it.
+    6) once all the houses have been deleted, the user is safely deleted.
+
+    Returns a 403 if user is not 'systemadmin'
+
+    """
+    if request.method == "POST":
+        # Find username and make sure username is "systemadmin"
+        username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+        
+
+        # find the houses by made by the user:
+        if username == "systemadmin":
+            user = mongo.db.users.find_one({"username": user_name})
+
+            # As find users a pointer, we need to convert it to a list by appneding
+            houses = mongo.db.houses.find({"username": user_name})
+            # user_houses list
+            user_houses = []
+
+            for house in houses:
+                user_houses.append(house)
+            
+            for house in user_houses:
+                # Find the data per house
+                one_house = mongo.db.houses.find_one(house)
+
+                # extract the id:
+                house_id = one_house.get("_id")
+
+                # Check the other database:
+
+                house_info = mongo.db.houseInformation.find_one({"_id": ObjectId(house_id)})
+
+                house_check = mongo.db.houseChecks.find_one({"_id": ObjectId(house_id)})
+
+                house_viewing = mongo.db.houseViewing.find_one({"_id": ObjectId(house_id)})
+
+                
+                # delete any house_info if it exist
+                if house_info is not None:
+                    mongo.db.houseInformation.delete_one({"_id": ObjectId(house_id)})
+                    
+                # delete any house_check if it exist
+                if house_check is not None:
+                    mongo.db.houseChecks.delete_one({"_id": ObjectId(house_id)})
+                    
+                # delete any house_check if it exist
+                if house_viewing is not None:
+                    mongo.db.houseViewing.delete_one({"_id": ObjectId(house_id)})  
+
+                # delete any house if it exist
+                if house is not None:
+                    mongo.db.houses.delete_one({"_id": ObjectId(house_id)})
+
+            # Delete user once all the houses have been deleted
+            # Additional defensive programming to make sure admin account is
+            # not deleted.   
+            if user and user_name != "systemadmin":
+                mongo.db.users.delete_one({"username": user_name})
+                return redirect(url_for("manage_users",  username=session["user"]))
+                flash("user deleted!")
+            return redirect(url_for("manage_users",  username=session["user"]))
+    
+        return render_template('403.html'), 403        
+
+    return redirect(url_for("manage_users",  username=session["user"]))
+
 
 
 @app.errorhandler(404)
