@@ -19,6 +19,15 @@
 
     <!-- FavIvon -->
     <link rel="shortcut icon" type ='image/x-icon' href="{{ url_for('static', filename='favicon.ico') }}">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script>   
+    (function () {
+        emailjs.init({
+            publicKey: "{{email_api}}",
+        });
+        })();
+    </script>
     
     <title>{% block title %}{% endblock %}</title>
 </head>
