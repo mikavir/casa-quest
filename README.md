@@ -18,7 +18,7 @@ Introducing a responsive web app for house-hunters to efficiently organize and t
 
 ### Colour Scheme
 
-Initially, These colours were 
+Initially, these colors were selected to complement our logo. The shades of green and their corresponding hues were chosen for their association with tranquility and harmony. This makes them ideal for a website dedicated to house hunters searching for their perfect, peaceful home.
 
 - Primary Color: rgb(250, 236, 217) - Hex: #FAECD9
 - Secondary Color: rgb(88, 126, 123) - Hex: #587E7B
@@ -30,6 +30,23 @@ I used [coolors.co](https://coolors.co/faecd9-587e7b-fdfdfd-17353b) to generate 
 
 ![screenshot](documentation/casa-quest-colour-scheme.png)
 
+As I developed my project, I discovered additional colors from the Materialize library that complemented my existing color scheme.
+
+- #004d40 teal darken-4
+- #00796b teal darken-2
+- #ffe0b2 orange lighten-4
+
+In total, these were the colours that made the website.
+
+[coolors.co](https://coolors.co/fdfdfd-faecd9-ffe0b2-587e7b-00796b-004d40-17353b)
+![screenshot](documentation/casa-quest-full-colours.png)
+
+This was the colour taken from materialize web for cancel buttons: 
+
+-#b71c1c red darken-4
+
+![screenshot](documentation/casa-quest-colour-red.png)
+[coolors.co](https://coolors.co/b71c1c)
 
 ### Typography
 
