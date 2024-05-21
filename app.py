@@ -803,7 +803,7 @@ def favourites(username):
 
 
 
-@app.route("/manage_users/<username>", method=["GET", "POST"])
+@app.route("/manage_users/<username>", methods=["GET", "POST"])
 @login_required
 def manage_users(username):
     """
