@@ -37,12 +37,12 @@
           <div class="input-field outlined col s12 m6 m-3">
             <i class="material-icons prefix">location_city</i>
             <select name="property_type" id="property_type" required>
-              <option value="" disabled selected>Choose your option</option>
+              <option value="" disabled selected>Property Type</option>
               {% for type in types %}
               <option value="{{ type }}">{{ type }}</option>
               {% endfor %}
             </select>
-            <label>Property Type</label>
+            <label for="{{type}}">{{type}}</label>
           </div>
           <!-- input field for chain free -->
           <div class="col s12 m6 m-3 center">

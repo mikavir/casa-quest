@@ -38,18 +38,17 @@
           <div class="input-field outlined col s12 m6 m-3">
             <i class="material-icons prefix">location_city</i>
             <select name="property_type" id="property_type" required>
-              <option value="" disabled selected>Choose your option</option>
+              <option value="" disabled selected>Property Type</option>
               {% for type in types %}
-              {% if type == house.propertyType %}
-              <option value="{{ type }}" selected>{{ type }}</option>
-              {% else %}
-              <option value="{{ type }}">{{ type }}</option>
-              {% endif %}
+                {% if type == house.propertyType %}
+                <option value="{{ type }}" selected>{{ type }}</option>
+                {% else %}
+                <option value="{{ type }}">{{ type }}</option>
+                {% endif %}
+                          
               {% endfor %}
-  
-  
+              <label for="{{type}}">{{type}}</label>
             </select>
-            <label>Property Type</label>
           </div>
           <!-- input field for chain free -->
           <div class="col s12 m6 m-3 center">
