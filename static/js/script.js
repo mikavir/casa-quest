@@ -7,7 +7,8 @@ $(document).ready(function(){
   initialiseModal();
   initialiseToolTipped();
   initialiseDropdown();
-  M.Forms.InitTextarea(document.querySelector('#message'));
+  initialiseTextArea();
+
   
 });
 
@@ -55,4 +56,9 @@ function initialiseDropdown(){
   const instances = M.Dropdown.init(elems,{
     coverTrigger: false,
   });
+}
+
+function initialiseTextArea() {
+  const elems = document.querySelector('#message');
+  const instances = M.Forms.InitTextarea(elems);
 }
