@@ -1,6 +1,8 @@
 /* jshint esversion: 11, jquery: true */
 // Implemented from my(Mikaela)'s project https://github.com/mikavir/rx-decoder/blob/main/assets/scripts/email.js from email js.
 
+const form = document.getElementById("contactForm");
+const feedback = document.getElementById("thank-you-feedback")
 
 /** Function to send mail once validated using emailjs */
 function sendMail(contactForm){
@@ -11,6 +13,8 @@ function sendMail(contactForm){
             reply_to: contactForm.email.value
             }).then(
                 (response) => {
+                    form.style.display = "none";
+                    feedback.style.display = "block";
                     console.log("Success")
                 },
                 (error) => {
