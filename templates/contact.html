@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 {% block header %}
   <title>{% block title %}Get in touch!{% endblock %}</title>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+  <script>   
+    (function () {
+      emailjs.init({
+        publicKey: "jF3TFR3SKXK5RbOcj",
+      });
+    })();
+  </script>
 {% endblock %}
 {% block content %}
 <div class="container page-container">
@@ -12,7 +21,7 @@
     </div>
    
     <div class="row">
-        <form class="card-panel custom-card col s12 m8 offset-m2 p-5" method="POST" action="{{ url_for('login') }}"> 
+        <form class="card-panel custom-card col s12 m8 offset-m2 p-5" name="contactForm" id="contactForm" onsubmit="return sendMail(this);"> 
             <div class="row my-4">
                 <div class="col s12 input-field">
                     <i class="fas fa-user-plus prefix green-text text-darken-4"></i>
@@ -33,19 +42,21 @@
             </div>
             <div class="row my-4">
                 <div class="input-field col s12">
-                  <textarea id="message" class="materialize-textarea" placeholder="Your message:"></textarea>
+                  <textarea id="message" name="message" class="materialize-textarea" placeholder="Your message:"></textarea>
                   <label for="message"><i class="fa-solid fa-message green-text text-darken-4"></i> </label>
                   <small>(How Can We Assist You Today? Let Us Know!)</small>
                 </div>
               </div>
-              <div class="row my-5">
+            <div class="row my-5">
                 <div class="col s12 center">
-                    <a class="btn teal darken-4 orange-text orange-llighten-4 rounded waves-effect waves-light" href="#">Get in touch!</a>
+                    <button class="btn teal darken-4 orange-text orange-llighten-4 rounded waves-effect waves-light" href="#" role="submit">Get in touch!</button>
                 </div>
             </div>             
 
         </form>
     </div>
 </div>
+<script src="{{ url_for('static', filename='js/email.js') }}">
 
+</script>
 {% endblock %}
