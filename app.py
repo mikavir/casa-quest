@@ -53,6 +53,15 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/contact", methods=["GET"])
+def contact():
+    """
+    Render's contact page template
+    """
+    return render_template("contact.html")
+
+
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
