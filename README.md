@@ -304,18 +304,6 @@ With this, the mongo database have been updated to 5 collections:
 
 ## Deployment
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-**IMPORTANT:**
-
-- Be sure to remove all instances of PostgreSQL/Flask-Migrate if you've only used a non-relational database with MongoDB
-- Be sure to remove all instances of MongoDB if you've only used a relational database with PostgreSQL
-- ⚠️ DO NOT update the environment variables to your own! These should NOT be included in this file; just demo values! ⚠️
-- ⚠️ DO NOT update the environment variables to your own! These should NOT be included in this file; just demo values! ⚠️
-- ⚠️ DO NOT update the environment variables to your own! These should NOT be included in this file; just demo values! ⚠️
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
 The live deployed application can be found deployed on [Heroku](https://casa-quest-853d4c81f9b1.herokuapp.com).
 
 ### MongoDB Non-Relational Database
@@ -392,6 +380,112 @@ Or:
 
 The project should now be connected and deployed to Heroku!
 
+### Obtaining EmailJS API 
+
+1. Sign up for a [EmailJS](https://www.emailjs.com/docs/) account in the EmailJS website.
+2. Create an email service in your EmailJS dashboard.
+3. Install EmailJS Library. You can do this by including the EmailJS script in your HTML file or by installing it via npm if you're using a package manager like npm or yarn.
+
+```
+npm install --save @emailjs/browser
+```
+
+or
+
+```
+$ yarn add @emailjs/browser
+```
+
+4. In your EmailJS dashboard, navigate to the "API Keys" section and copy your API key.
+5. Add this code snippet before your closing tags. Making sure you have added your public key.
+
+```js
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+  (function(){
+      emailjs.init({
+        publicKey: "YOUR_PUBLIC_KEY",
+      });
+  })();
+</script>
+```
+
+6.  Create an email template in your EmailJS dashboard. This template will define the content and structure of the emails you'll send.
+7. Write JavaScript function to send email using EmailJS. Below is a basic syntax for the code: 
+
+```
+emailjs.send(serviceID, templateID, templateParams, options);
+```
+
+8. Call your function whenever you want to send an email.
+
+### Obtaining EmbedMaps API 
+
+1. Create a Google Cloud Platform account at [Google Cloud](https://cloud.google.com/?hl=en)
+2. Set up a new project in the Google Cloud Console.
+3. Enable the required Google Maps APIs from the “API & Services” dashboard.
+4. Create API credentials and generate an API key and enable 'Embed Maps API'
+5. Optionally restrict the API key for security under “Application restrictions” and “API restrictions.”
+6. Set up billing in the Google Cloud Console.
+7. Set up your API Key in your env.py
+```python
+
+os.eviron.get("MAPS_API", "user's own value")
+
+```
+8. Integrate it into your Flask app:
+```python
+
+parameters = address
+
+maps_api = os.environ.get('MAPS_API')
+
+embed_url = f"https://www.google.com/maps/embed/v1/place?key={maps_api}&q={parameters}"
+
+```
+9. If deployed to Heroku, Add the API key to the config vars
+
+### Obtaining Cloudinary API
+1. Sign Up at Cloudinary and verify your email.
+2. Log In to your Cloudinary account.
+3. Find Your API Credentials in the dashboard (Cloud name, API Key, and API Secret).
+4. Install the Cloudinary Python SDK
+```sh
+pip3 install cloudinary
+```
+5. Add your Cloudinary API key to your env.py
+```python
+import os 
+
+os.environ.setdefault("CLOUDINARY_CLOUD_NAME", "user's own value")
+os.environ.setdefault("CLOUDINARY_API_KEY", "user's own value")
+os.environ.setdefault("CLOUDINARY_API_SECRET", "user's own value")
+
+
+```
+
+6. Configure Cloudinary in your Python application:
+```python
+import os
+import cloudinary 
+
+cloudinary.config(
+    cloud_name = os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    api_key = os.environ.get('CLOUDINARY_API_KEY'),
+    api_secret = os.environ.get('CLOUDINARY_API_SECRET')
+)
+```
+7. Integrate it with your flask app
+```python
+file = request.files["file"]
+
+# Upload to cloudinary
+file_upload = cloudinary.uploader.upload(file)
+
+```
+
 ### Local Deployment
 
 This project can be cloned or forked in order to make a local copy on your own system.
@@ -399,54 +493,6 @@ This project can be cloned or forked in order to make a local copy on your own s
 For either method, you will need to install any applicable packages found within the *requirements.txt* file.
 
 - `pip3 install -r requirements.txt`.
-
-If you are using SQLAlchemy for your project, you need to create a local PostgreSQL database.
-In this example, the example database name is **db-name**.
-
-```shell
-workspace (branch) $ set_pg
-workspace (branch) $ psql
-
-... connection to postgres ...
-
-postgres=# CREATE DATABASE db-name;
-CREATE DATABASE
-postgres=# \c db-name;
-You are now connected to database "db-name" as user "foobar".
-db-name=# \q
-```
-
-Once that database is created, you must migrate the database changes from your models.py file.
-This example uses **app-name** for the name of the primary Flask application.
-
-```shell
-workspace (branch) $ python3
-
-... connection to Python CLI ...
-
->>> from app-name import db
->>> db.create_all()
->>> exit()
-```
-
-To confirm that the database table(s) have been created, you can use the following:
-
-```shell
-workspace (branch) $ psql -d db-name
-
-... connection to postgres ...
-
-postgres=# \dt
-
-	List of relations
-Schema | Name | Type | Owner
--------+------+------+--------
-public | blah1 | table | foobar
-public | blah2 | table | foobar
-public | blah3 | table | foobar
-
-db-name=# \q
-```
 
 You will need to create a new file called `env.py` at the root-level,
 and include the same environment variables listed above from the Heroku deployment steps, plus a few extras.
@@ -471,32 +517,6 @@ os.environ.setdefault("DEBUG", "True")
 os.environ.setdefault("DEVELOPMENT", "True")
 ```
 
-If using Flask-Migrate, make sure to include the following steps as well.
-
-During the course of development, it became necessary to update the PostgreSQL data models.
-In order to do this, [Flask-Migrate](https://flask-migrate.readthedocs.io) was used.
-
-- `pip3 install Flask-Migrate`
-- Import the newly installed package on your main `__init__.py` file:
-	- `from flask_migrate import Migrate`
-- Define **Migrate** in the same file after **app** and **db** are defined:
-	- `migrate = Migrate(app, db)`
-- Initiate the migration changes in the terminal:
-
-```shell
-workspace (branch) $ flask db init
-
-	... generating migrations ...
-
-workspace (branch) $ set_pg
-workspace (branch) $ flask db migrate -m "Add a commit message for this migration"
-
-	... migrating changes ...
-
-workspace (branch) $ flask db upgrade
-
-	... updating database ...
-```
 
 #### Cloning
 
