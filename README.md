@@ -264,7 +264,12 @@ Consider adding any helpful links or notes to help remind you in the future, if 
 - [![Email JS](https://img.shields.io/badge/EmailJs-grey?logo=javascript&logoColor=75A99C)](https://www.emailjs.com/) used to send automatic replies to user after contacting.
 ## Database Design
 
-Using [Lucid Chart](www.lucidchart.com), I have made an entity relatioonship diagram to show a physical data model.
+The data used for Casa Quest was inspired by a list of questions my partner and I compiled while viewing houses. Initially, we organized these questions into a comprehensive table shown below. 
+The idea emerged to transform the table into a more digital, user-friendly format with organized data.
+
+![screenshot](documentation/database/table-questions.png)
+
+Using [Lucid Chart](www.lucidchart.com), I have made an entity relationship diagram to show a physical data model.
 ![erd](documentation/database/erd.png)
 
 My project uses a non-relational database with MongoDB, and therefore the database architecture
@@ -282,6 +287,13 @@ It contains 7 collections:
 - **blogPost**
 - **blogComment**
 
+During the course of developing my project, I realized that the Minimum Viable Product (MVP) should focus on organizing house information rather than creating blog posts. This insight led me to eliminate the blog post feature and concentrate on achieving the core MVP. Below is the updated ERD of my project.
+
+![screenshot](documentation/database/updated_erd.png)
+
+With this, the mongo database have been updated to 5 collections:
+
+![screenshot](documentation/database/mongo-collections.png)
 
 
 
@@ -305,22 +317,6 @@ It contains 7 collections:
 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 The live deployed application can be found deployed on [Heroku](https://casa-quest-853d4c81f9b1.herokuapp.com).
-
-### PostgreSQL Relational Database
-
-This project uses a [Code Institute PostgreSQL Database](https://dbs.ci-dbs.net).
-
-To obtain my own Postgres Database from Code Institute, I followed these steps:
-
-- Signed-in to the CI LMS using my email address.
-- An email was sent to me with my new Postgres Database.
-
-> [!CAUTION]  
-> - PostgreSQL databases by Code Institute are only available to CI Students.
-> - You must acquire your own PostgreSQL database through some other method
-> if you plan to clone/fork this repository.
-> - Code Institute students are allowed a maximum of 8 databases.
-> - Databases are subject to deletion after 18 months.
 
 ### MongoDB Non-Relational Database
 
