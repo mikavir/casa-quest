@@ -276,11 +276,6 @@ def new_house():
         bathrooms = request.form.get("no_bathrooms")
         price = request.form.get("house_price")
         date_viewing = request.form.get("date_viewing")
-        image = request.files["image-url"]
-
-        # Upload to cloudinary
-        image_upload = cloudinary.uploader.upload(image)
-     
 
         house_entry = {
             "username": session["user"],
@@ -292,9 +287,8 @@ def new_house():
             "chainFree": chainfree,
             "propertyType": property_type, 
             "date_viewing": date_viewing,
-            "image_url": image_upload["secure_url"]
         }
-
+            
         # Google maps API:
         maps_api = os.environ.get('MAPS_API') 
 
@@ -310,6 +304,33 @@ def new_house():
         # Add embedded url to the insert     
         house_entry["mapsUrl"] = embed_url
 
+        # Upload to cloudinary 
+        # Check the size of image file nefore uploading          
+        #  Move the file pointer to the end of the image_file
+        # https://stackoverflow.com/questions/67937305/how-to-get-the-size-of-a-multipart-form-data-binary-file
+        image = request.files["image-url"]
+
+        image.seek(0, os.SEEK_END)
+
+        # Get the current position of the pointer, which is the size of the file
+        image_size = image.tell()
+
+        # Move the file pointer back to the beginning of the file
+        image.seek(0, os.SEEK_SET)
+
+        # Convert file size to MB
+        image_size_mb = image_size / (1024 * 1024)
+
+        # if image name is not an emoty string and less than 10mb, to upload to cloudinary
+        if image.filename != '' and image_size_mb < 10:
+            image_upload = cloudinary.uploader.upload(image)
+            house_entry["image_url"] = image_upload["secure_url"]
+        else:        
+            flash("Image unable to be uploaded")
+            temp_image_url = "https://res.cloudinary.com/dpqnw6tkn/image/upload/v1715774209/vnxhz63wmo25sthxvsst.jpg"
+            house_entry["image_url"] = temp_image_url
+       
+        
 
         mongo.db.houses.insert_one(house_entry)
         flash("house added!")
