@@ -2,7 +2,18 @@
 // Implemented from my(Mikaela)'s project https://github.com/mikavir/rx-decoder/blob/main/assets/scripts/email.js from email js.
 
 const form = document.getElementById("contactForm");
-const feedback = document.getElementById("thank-you-feedback")
+const feedback = document.getElementById("thank-you-feedback");
+
+
+initTextArea();
+
+function initTextArea(){
+    message = document.querySelector('#message')
+    M.Forms.InitTextarea(message);
+    M.Forms.textareaAutoResize(message);
+}
+
+
 
 /** Function to send mail once validated using emailjs */
 function sendMail(contactForm){
