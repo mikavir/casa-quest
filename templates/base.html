@@ -72,21 +72,21 @@
                     <nav class="mobile-nav">
                         <ul class="mobile-list">
                             {% if session.user %}
-                            <li><a href="{{ url_for('profile', username=session['user']) }}">Dashboard</a></li>
-                            <li><a href="{{ url_for('favourites', username=session['user']) }}">Favourites</a></li>
-                            <li><a href="{{ url_for('contact') }}">Contact us</a></li>
-                            <li><a href="#">Manage Account</a></li>
+                            <li class="nav-link"><a href="{{ url_for('profile', username=session['user']) }}">Dashboard</a></li>
+                            <li class="nav-link"><a href="{{ url_for('favourites', username=session['user']) }}">Favourites</a></li>
+                            <li class="nav-link"><a href="{{ url_for('contact') }}">Contact us</a></li>
+                            <li class="nav-link"><a href="#">Manage Account</a></li>
                             <ul class="mobile-list">
                                 {% if session.user == "systemadmin" %}
-                                <li><a href="{{ url_for('manage_users', username=session['user']) }}" class="teal-text text-darken-4">Manage users</a></li>
+                                <li class="nav-link"><a href="{{ url_for('manage_users', username=session['user']) }}" class="teal-text text-darken-4">Manage users</a></li>
                                 {% endif %}
-                                <li><a href="{{ url_for('change_password') }}">Change Password</a></li>
-                                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                                <li class="nav-link"><a href="{{ url_for('change_password') }}">Change Password</a></li>
+                                <li class="nav-link"><a href="{{ url_for('logout') }}">Log Out</a></li>
                             </ul>
                             {% else %}
-                            <li><a href="{{ url_for('contact') }}">Contact us!</a></li>
-                            <li><a href="{{ url_for('register') }}">Register</a></li>
-                            <li><a href="{{ url_for('login') }}">Log In</a></li>
+                            <li class="nav-link"><a href="{{ url_for('contact') }}">Contact us!</a></li>
+                            <l class="nav-link"i><a href="{{ url_for('register') }}">Register</a></li>
+                            <li class="nav-link"><a href="{{ url_for('login') }}">Log In</a></li>
                             {% endif %}
                         </ul>
                     </nav>
