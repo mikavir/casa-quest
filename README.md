@@ -262,6 +262,9 @@ Consider adding any helpful links or notes to help remind you in the future, if 
 
 - [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to make the writing content.
 - [![Email JS](https://img.shields.io/badge/EmailJs-grey?logo=javascript&logoColor=75A99C)](https://www.emailjs.com/) used to send automatic replies to user after contacting.
+## User Pathway
+Using Lucidchart, I have illustrated the user pathways as shown below.
+![screenshot](documentation/database/user-flow-pathway.png)
 ## Database Design
 
 The data used for Casa Quest was inspired by a list of questions my partner and I compiled while viewing houses. Initially, we organized these questions into a comprehensive table shown below. 
