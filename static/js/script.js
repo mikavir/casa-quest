@@ -3,11 +3,9 @@ $(document).ready(function(){
   sideNav();
   selectForm();
   datepicker();
-  // filePath();
   initialiseModal();
   initialiseToolTipped();
   initialiseDropdown();
-  initialiseTextArea();
 
   
 });
@@ -56,9 +54,4 @@ function initialiseDropdown(){
   const instances = M.Dropdown.init(elems,{
     coverTrigger: false,
   });
-}
-
-function initialiseTextArea() {
-  const elems = document.querySelector('#message');
-  const instances = M.Forms.InitTextarea(elems);
 }
