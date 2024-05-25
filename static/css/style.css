@@ -131,7 +131,7 @@ nav ul:not(.dropdown-content)>li>a {
   position: fixed;
   top: 0;
   left: 100%;
-  width: 30%;
+  width: 50%;
   height: 100vh;
   z-index: 300;
   background-color: #587E7B;
@@ -383,16 +383,16 @@ iframe {
   .rooms {
     font-size: smaller;
   }
-}
-
-
-@media screen and (max-width: 450px) {
   .mobile-menu.open {
     left: 0;
     width: 100%;
 
   }
+}
 
+
+@media screen and (max-width: 450px) {
+  
   .social-media-icons i {
     font-size: 15px;
     margin: 5px;
