@@ -379,8 +379,19 @@ def edit_new_house(house_id):
         
         image = request.files["image-url"]
         if image.filename != '':
-            image_upload = cloudinary.uploader.upload(image)
-            edit_house_entry["image_url"] = image_upload["secure_url"]
+            image.seek(0, os.SEEK_END)
+
+            # Get the current position of the pointer, which is the size of the file
+            image_size = image.tell()
+
+            # Move the file pointer back to the beginning of the file
+            image.seek(0, os.SEEK_SET)
+
+            # Convert file size to MB
+            image_size_mb = image_size / (1024 * 1024)
+            if image_size_mb < 10:
+                image_upload = cloudinary.uploader.upload(image)
+                edit_house_entry["image_url"] = image_upload["secure_url"]
 
         # Check if the id exist:
         house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
