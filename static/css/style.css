@@ -1,12 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Questrial&display=swap');
 
+/*  HTML CSS */
 html,
 body {
   width: 100%;
   height: 100%;
 
 }
+main {
+  overflow-x: hidden;
+}
 
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Domine", serif;
+  letter-spacing: 1.5px; 
+  margin: 5px; 
+}
+
+p,
+a,
+button {
+  font-family: "Questrial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.push-container {
+  height: 70vh;
+  margin-top: 5vh;
+}
+
+
+.page-container {
+  margin-top: 5rem;
+}
+
+
+/* LOGO  */
 a.logo {
   width: 100px;
   height: 100px;
@@ -22,9 +58,119 @@ a.logo {
   overflow: hidden;
   position: absolute;
   z-index: 1;
-  transition: all .3s ease-in-out;
 }
 
+
+/*  NAVIGATION BAR*/
+
+.custom-nav {
+  background-color: #FAECD9;
+  z-index: 500;
+  position: fixed;
+  top: 0;
+}
+
+nav ul:not(.dropdown-content)>li>a {
+  font-size: 1rem;
+  color: #17353B;
+  display: block;
+  padding: 0 15px;
+  cursor: pointer;
+
+}
+
+.mobile-menu nav ul:not(.dropdown-content)>li>a {
+  color:#FAECD9;
+}
+
+.mobile-menu nav ul:not(.dropdown-content)>li>a:hover{
+  color:#004d40;
+}
+
+.mobile-nav {
+  height: 0px;
+}
+
+.mobile-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 50%;
+  height: 100vh;
+  z-index: 300;
+  background-color: #587E7B;
+  transition: left .3s;
+  display: none;
+  padding-top: 70px;
+  box-sizing: border-box;
+}
+
+.mobile-menu.open {
+  margin-top: 50px;
+  left: 70%;
+  display: block;
+  color: #17353B;
+}
+
+
+nav ul:not(.dropdown-content)>li>a:hover:not(.active) {
+  background-color: rgba(88, 126, 123, 0.6)
+}
+
+.nav-link:hover{
+  background-color: #FAECD9;
+  color:#17353B;
+}
+/* inspired from The Great Wall of Gratitude https://github.com/VCGithubCode/Gratidudes */
+/* Mobile menu trigger button */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  width: 36px;
+  height: 36px;
+  margin-right: 15px;
+  margin-top: 10px;
+}
+
+/* Trigger bars */
+.hamburger span {
+  display: block;
+  background: #17353B;
+  width: 100%;
+  height: 5px;
+  transform-origin: center;
+  transition: all 0.2s ease-in-out;
+}
+
+input:checked~.hamburger span:nth-child(1) {
+  transform: translateY(11px) rotate(-45deg);
+}
+
+input:checked~.hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+input:checked~.hamburger span:nth-child(3) {
+  transform: translateY(-12px) rotate(45deg);
+}
+
+/* FLASH MESSAGES */
+
+section.flash {
+  margin-top: 65px;
+  z-index: 600;
+}
+
+
+
+/* LANDING PAGE */
 aside#hero-image {
   width: 100vw;
   height: 60vh;
@@ -90,111 +236,8 @@ aside#hero-image {
 
 }
 
-.mobile-nav {
-  height: 0px;
-}
 
-.mobile-list {
-  display: flex;
-  flex-direction: column;
-}
-
-
-.custom-nav {
-  background-color: #FAECD9;
-  /* color: #17353B; */
-  z-index: 500;
-  position: fixed;
-  top: 0;
- 
-}
-
-nav ul:not(.dropdown-content)>li>a {
-  font-size: 1rem;
-  color: #17353B;
-  display: block;
-  padding: 0 15px;
-  cursor: pointer;
-
-}
-
-.mobile-menu nav ul:not(.dropdown-content)>li>a {
-  color:#FAECD9;
-}
-
-.mobile-menu nav ul:not(.dropdown-content)>li>a:hover{
-  color:#004d40;
-}
-
-
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  left: 100%;
-  width: 50%;
-  height: 100vh;
-  z-index: 300;
-  background-color: #587E7B;
-  transition: left .3s;
-  display: none;
-  padding-top: 70px;
-  box-sizing: border-box;
-}
-
-.mobile-menu.open {
-  margin-top: 50px;
-  left: 70%;
-  display: block;
-  color: #17353B;
-}
-
-
-nav ul:not(.dropdown-content)>li>a:hover:not(.active) {
-  background-color: rgba(88, 126, 123, 0.6)
-}
-
-/* inspired from The Great Wall of Gratitude https://github.com/VCGithubCode/Gratidudes */
-/* Mobile menu trigger button */
-.hamburger {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  position: relative;
-  width: 36px;
-  height: 36px;
-  margin-right: 15px;
-  margin-top: 10px;
-}
-
-/* Trigger bars */
-.hamburger span {
-  display: block;
-  background: #17353B;
-  width: 100%;
-  height: 5px;
-  transform-origin: center;
-  transition: all 0.2s ease-in-out;
-}
-
-
-input:checked~.hamburger span:nth-child(1) {
-  transform: translateY(11px) rotate(-45deg);
-}
-
-input:checked~.hamburger span:nth-child(2) {
-  opacity: 0;
-}
-
-input:checked~.hamburger span:nth-child(3) {
-  transform: translateY(-12px) rotate(45deg);
-}
-
-section.flash {
-  margin-top: 65px;
-  z-index: 600;
-}
-
-
+/*  HOUSE  */
 input[type=file]::file-selector-button {
   border: 2px solid #17353B;
   border-radius: 15px;
@@ -221,9 +264,6 @@ input[type=file]::file-selector-button:hover {
   border-radius: 10px;
 }
 
-main {
-  overflow-x: hidden;
-}
 
 /*  Validation styles from materrialize */
 /* label color */
@@ -259,24 +299,6 @@ main {
   color: #000;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Domine", serif;
-  letter-spacing: 1.5px; 
-  margin: 5px; 
-}
-
-p,
-a,
-button {
-  font-family: "Questrial", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
 
 
 .footer-container {
@@ -299,12 +321,6 @@ ul.social-media-icons {
 .social-media-icons i {
   color: #FAECD9;
   font-size: 30px;
-}
-
-
-.page-container {
-  margin-top: 5rem;
-
 }
 
 .custom-card {
@@ -358,10 +374,7 @@ iframe {
   background-color: rgba(250,236,217, 0.4);
 }
 
-.push-container {
-  height: 70vh;
-  margin-top: 5vh;
-}
+/* CONTACT PAGE */
 
 #thank-you-feedback {
   display: none;
@@ -371,11 +384,8 @@ iframe {
   display: none;
 }
 
-.nav-link:hover{
-  background-color: #FAECD9;
-  color:#17353B;
-}
 
+/* MEDIA QUERIES FOR RESPONSIVENESS */
 @media screen and (max-width: 700px) {
   section.flash {
     margin-top: 40px;
