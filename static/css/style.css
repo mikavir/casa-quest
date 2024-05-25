@@ -7,8 +7,11 @@ body {
   height: 100%;
 
 }
+
+/* https://stackoverflow.com/questions/42294/how-do-you-get-the-footer-to-stay-at-the-bottom-of-a-web-page */
 main {
   overflow-x: hidden;
+  min-height: calc(100vh - 20vh);
 }
 
 
