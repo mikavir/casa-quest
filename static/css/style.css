@@ -90,11 +90,8 @@ aside#hero-image {
 
 }
 
-nav.mobile-nav {
-  background-color: #FAECD9;
-  display: block;
-  color: #17353B;
-
+.mobile-nav {
+  height: 0px;
 }
 
 .mobile-list {
@@ -103,12 +100,13 @@ nav.mobile-nav {
 }
 
 
-nav.custom-nav {
+.custom-nav {
   background-color: #FAECD9;
-  color: #17353B;
+  /* color: #17353B; */
   z-index: 500;
   position: fixed;
   top: 0;
+ 
 }
 
 nav ul:not(.dropdown-content)>li>a {
@@ -120,8 +118,12 @@ nav ul:not(.dropdown-content)>li>a {
 
 }
 
-nav:hover {
-  background-color: #FAECD9;
+.mobile-menu nav ul:not(.dropdown-content)>li>a {
+  color:#FAECD9;
+}
+
+.mobile-menu nav ul:not(.dropdown-content)>li>a:hover{
+  color:#004d40;
 }
 
 
@@ -367,6 +369,11 @@ iframe {
 
 #no-card-display {
   display: none;
+}
+
+.nav-link:hover{
+  background-color: #FAECD9;
+  color:#17353B;
 }
 
 @media screen and (max-width: 700px) {
