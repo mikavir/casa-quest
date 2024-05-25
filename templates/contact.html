@@ -83,7 +83,10 @@
         </form>
     </div>
 </div>
-<script src="{{ url_for('static', filename='js/email.js') }}">
 
-</script>
+{% endblock %}
+{% block javascript %}
+    <script src="{{ url_for('static', filename='js/email.js') }}">
+    </script>
+   
 {% endblock %}
