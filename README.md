@@ -570,32 +570,31 @@ however, it is important to be very specific about these sources to avoid plagia
 
 ### Content
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Use this space to provide attribution links to any borrowed code snippets, elements, or resources.
-A few examples have been provided below to give you some ideas.
-
-Ideally, you should provide an actual link to every resource used, not just a generic link to the main site!
-
-⚠️⚠️ EXAMPLE LINKS - REPLACE WITH YOUR OWN ⚠️⚠️
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
 | Source | Location | Notes |
 | --- | --- | --- |
 | [Markdown Builder](https://tim.2bn.dev/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
-| [Chris Beams](https://chris.beams.io/posts/git-commit) | version control | "How to Write a Git Commit Message" |
-| [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
-| [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | contact page | interactive pop-up (modal) |
-| [W3Schools](https://www.w3schools.com/css/css3_variables.asp) | entire site | how to use CSS :root variables |
-| [Flexbox Froggy](https://flexboxfroggy.com/) | entire site | modern responsive layouts |
-| [Grid Garden](https://cssgridgarden.com) | entire site | modern responsive layouts |
-| [StackOverflow](https://stackoverflow.com/a/2450976) | quiz page | Fisher-Yates/Knuth shuffle in JS |
-| [YouTube](https://www.youtube.com/watch?v=YL1F4dCUlLc) | leaderboard | using `localStorage()` in JS for high scores |
-| [YouTube](https://www.youtube.com/watch?v=u51Zjlnui4Y) | PP3 terminal | tutorial for adding color to the Python terminal |
-| [strftime](https://strftime.org) | CRUD functionality | helpful tool to format date/time from string |
-| [WhiteNoise](http://whitenoise.evans.io) | entire site | hosting static files on Heroku temporarily |
-
+| [StackOverflow](https://stackoverflow.com/questions/67937305/how-to-get-the-size-of-a-multipart-form-data-binary-file) | app.py: `add_new_house()` and `edit_new_house()` | "How to find the size of an image upload" |
+| [StackOver Flow](https://stackoverflow.com/questions/42294/how-do-you-get-the-footer-to-stay-at-the-bottom-of-a-web-page) | entire site | How to bring the footer at the bottom of the HTML |
+| [Mr and Mrs Clarke](https://www.mrandmrsclarke.com/) | entire site | Inspiration on the design |
+| [study.com](https://study.com/learn/lesson/python-not-equal-conditional-operators.html#:~:text=Python%20Not%20Equal%20Operator,the%20return%20value%20is%20true.) | app.py | Conditional operations |
+| [Code Academy](https://www.codecademy.com/learn/dscp-python-fundamentals/modules/dscp-python-dictionaries/cheatsheet) | app.py: `delete_user(username, user_name)` | To access the house_id key in the dictionary |
+| [Geek for geeks](https://www.geeksforgeeks.org/how-to-search-for-an-object-by-its-objectid-in-the-mongo-console/) | app.py | How to searh for object id in mongo |
+| [w3 schools](https://www.w3schools.com/python/ref_list_append.asp) | app.py | How to append to make a list |
+| [Flasks docs](https://flask-docs-ja.readthedocs.io/en/latest/patterns/errorpages/) | app.py | Making routes for error pages |
+| [Google Cloud](https://developers.google.com/maps/documentation/embed/get-started) | app.py | Documentation on Embed maps API |
+| [Flask](https://flask.palletsprojects.com/en/2.3.x/tutorial/templates/) | All templates | Adding titles using jinja syntax on templates |
+| [W3 Schools](https://www.w3schools.com/tags/att_input_pattern.asp) | Registration page, login page and change password page | Adding pattern requirements on passwords |
+| [StackOverflow](https://stackoverflow.com/questions/3974985/update-mongodb-field-using-value-of-another-field) | app.py | Updating mongodb using field of another field|
+| [Tedboy](https://tedboy.github.io/flask/generated/werkzeug.check_password_hash.html) | app.py | Documentation on check_password_hash|
+| [StackOverflow](https://stackoverflow.com/questions/28968660/how-to-convert-a-pymongo-cursor-cursor-into-a-dict) | app.py | How to convert a mongodb curser to a list of dictionary|
+| [w3 schools](https://www.w3schools.com/tags/ref_urlencode.ASP) | entire site | used to debug url and the routes|
+of dictionary|
+| [Migelgrinberg](https://blog.miguelgrinberg.com/post/handling-file-uploads-with-flask) | app.py | Handling File Uploads With Flask|
+| [StackOverflow](https://stackoverflow.com/questions/572768/styling-an-input-type-file-button) | styles.css | Styling an input type file button|
+| [Youtube](https://www.youtube.com/watch?v=J39KJ5jzH3E) | app.py | How to add google autocomplete |
+| [shecodes.io](https://www.shecodes.io/athena/264269-how-to-order-a-list-vertically-using-css#:~:text=list%20and%20set%20the%20display,items%20vertically%20in%20a%20column.&text=This%20will%20order%20the%20list%20items%20vertically%20instead%20of%20horizontally.) | styles.css | How to order a list vertically |
+| [Great Wall of Gratitude](https://github.com/VCGithubCode/Gratidudes) | styles.css | How to create a toggle animation of hamburger to x sign. |
+| [mikavir](https://github.com/mikavir/rx-decoder) | contact page, email.js | Setting up the emailjs and contact page |
 ### Media
 
 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
