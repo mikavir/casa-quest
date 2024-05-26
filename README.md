@@ -597,33 +597,14 @@ of dictionary|
 | [mikavir](https://github.com/mikavir/rx-decoder) | contact page, email.js | Setting up the emailjs and contact page |
 ### Media
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Use this space to provide attribution links to any images, videos, or audio files borrowed from online.
-A few examples have been provided below to give you some ideas.
-
-If you're the owner (or a close acquaintance) of all media files, then make sure to specify this.
-Let the assessors know that you have explicit rights to use the media files within your project.
-
-Ideally, you should provide an actual link to every media file used, not just a generic link to the main site!
-The list below is by no means exhaustive. Within the Code Institute Slack community, you can find more "free media" links
-by sending yourself the following command: `!freemedia`.
-
-⚠️⚠️ EXAMPLE LINKS - REPLACE WITH YOUR OWN ⚠️⚠️
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
 | Source | Location | Type | Notes |
 | --- | --- | --- | --- |
-| [Pexels](https://www.pexels.com) | entire site | image | favicon on all pages |
-| [Lorem Picsum](https://picsum.photos) | home page | image | hero image background |
-| [Unsplash](https://unsplash.com) | product page | image | sample of fake products |
-| [Pixabay](https://pixabay.com) | gallery page | image | group of photos for gallery |
-| [Wallhere](https://wallhere.com) | footer | image | background wallpaper image in the footer |
-| [This Person Does Not Exist](https://thispersondoesnotexist.com) | testimonials | image | headshots of fake testimonial images |
-| [Audio Micro](https://www.audiomicro.com/free-sound-effects) | game page | audio | free audio files to generate the game sounds |
-| [Videvo](https://www.videvo.net/) | home page | video | background video on the hero section |
-| [TinyPNG](https://tinypng.com) | entire site | image | tool for image compression |
+| [FreePik](https://www.freepik.com/free-photo/back-view-family-hugging-admiring-their-home_22426721.htm#query=house&position=49&from_view=keyword&track=sph&uuid=6f9398b1-ef01-41fa-912d-7c88cb9c1d84") | Landing Page |Image | Hero image background- Image by zinkevych |
+| [FreePik](https://www.freepik.com/free-photo/full-shot-woman-with-cute-greyhound-dog_38898080.htm#fromView=search&page=1&position=52&uuid=9ddc6669-3e79-4dc2-a09c-c84210518efc) | Landing Page | image | Image |
+| [Pexels]( https://www.pexels.com/photo/house-lights-turned-on-106399/) | House | placeholder image of a house | Photo by Binyamin Mellish |
+| [Pexels](https://www.pexels.com/photo/beige-bungalow-house-259588/) | House | Placeolder | Photo by Pixabay |
+| [Canvas](https://www.canva.com/) | Logo | Logo | Personalised logo |
+
 
 ### Acknowledgements
 
