@@ -833,7 +833,7 @@ def remove_from_favourites(username, house_id):
     return redirect(url_for("profile", username=session["user"]))
 
         
-@app.route("/favourites/<username>", methods=["GET", "POST"])
+@app.route("/favourites/<username>", methods=["GET"])
 @login_required
 def favourites(username):
     username = mongo.db.users.find_one(
@@ -845,7 +845,7 @@ def favourites(username):
 
 
 
-@app.route("/manage_users/<username>", methods=["GET", "POST"])
+@app.route("/manage_users/<username>", methods=["GET"])
 @login_required
 def manage_users(username):
     """
