@@ -176,61 +176,30 @@ Blog
 
 </details>
 
-## Featuresg
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
-
-In this section, you should go over the different parts of your project,
-and describe each in a sentence or so.
-
-You will need to explain what value each of the features provides for the user,
-focusing on who this website is for, what it is that they want to achieve,
-and how your project is the best way to help them achieve these things.
-
-For some/all of your features, you may choose to reference the specific project files that implement them.
-
-IMPORTANT: Remember to always include a screenshot of each individual feature!
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+## Features
 
 ### Existing Features
 
-- **YOUR-TITLE-FOR-FEATURE-#1**
+- **Landing Page**
+
+    - The landing page creates the first impression of the website, conveying the core message and purpose of the web application. It establishes the theme for the entire site and strengthens the brand image. Featuring a hero image of a family, it suggests the idea of families finding a home together, enhancing the emotional connection with visitors.
+
+![screenshot](documentation/feature/casa-quest-feature-landing.png)
+
+- **Call out message and button**
 
     - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
 
-![screenshot](documentation/features/feature01.png)
+![screenshot](documentation/feature/casa-quest-feature-callout.png)
 
-- **YOUR-TITLE-FOR-FEATURE-#2**
-
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
-
-![screenshot](documentation/features/feature02.png)
-
-- **YOUR-TITLE-FOR-FEATURE-#3**
+- **Dashboard**
 
     - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
 
-![screenshot](documentation/features/feature03.png)
+![screenshot](documentation/feature/casa-quest-feature-dashboard.png)
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
-
-Repeat as necessary for as many features as your site contains.
-
-Hint: the more, the merrier!
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 ### Future Features
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
-
-Do you have additional ideas that you'd like to include on your project in the future?
-Fantastic! List them here!
-It's always great to have plans for future improvements!
-Consider adding any helpful links or notes to help remind you in the future, if you revisit the project in a couple years.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 - YOUR-TITLE-FOR-FUTURE-FEATURE-#1
     - Any additional notes about this feature.
