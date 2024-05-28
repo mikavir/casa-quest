@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block header %}
-  <title>{% block title %}Edit new house{% endblock %}</title>
+<title>{% block title %}Edit new house{% endblock %}</title>
 {% endblock %}
 {% block content %}
 <div class="container page-container">
@@ -12,13 +12,16 @@
   </div>
   <div class="row my-4">
     <div class="col s12">
-      <a href="{{ url_for('profile', username=session['user']) }}" class="btn icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4"><i class="material-icons">arrow_back</i>Back to Dashboard</a>
+      <a href="{{ url_for('profile', username=session['user']) }}"
+        class="btn icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4"><i
+          class="material-icons">arrow_back</i>Back to Dashboard</a>
     </div>
   </div>
   <section class="card-panel custom-card row">
-  
+
     <div class="col s12 p-4">
-      <form action="{{ url_for('edit_new_house', house_id=house._id) }}" method="POST" enctype="multipart/form-data" class="teal-text text-darken-4">
+      <form action="{{ url_for('edit_new_house', house_id=house._id) }}" method="POST" enctype="multipart/form-data"
+        class="teal-text text-darken-4">
         <!-- input field for address of the house -->
         <div class="row">
           <div class="input-field col s12 m6 outlined m-3">
@@ -40,12 +43,12 @@
             <select name="property_type" id="property_type" required>
               <option value="" disabled selected>Property Type</option>
               {% for type in types %}
-                {% if type == house.propertyType %}
-                <option value="{{ type }}" selected>{{ type }}</option>
-                {% else %}
-                <option value="{{ type }}">{{ type }}</option>
-                {% endif %}
-                          
+              {% if type == house.propertyType %}
+              <option value="{{ type }}" selected>{{ type }}</option>
+              {% else %}
+              <option value="{{ type }}">{{ type }}</option>
+              {% endif %}
+
               {% endfor %}
               <label for="{{type}}">{{type}}</label>
             </select>
@@ -54,8 +57,7 @@
           <div class="col s12 m6 m-3 center">
             <label for="chain_free">
               {% if house.chainFree == "yes" %}
-              <input name="chain_free" id="chain_free" type="checkbox" class="filled-in" checked="checked"
-                required />
+              <input name="chain_free" id="chain_free" type="checkbox" class="filled-in" checked="checked" required />
               {% else %}
               <input name="chain_free" id="chain_free" type="checkbox" class="filled-in" required />
               {% endif %}
@@ -79,7 +81,6 @@
             <label for="no_bathrooms">Bathrooms</label>
             <small>(Bathrooms go up to .5 to accomodate toilets without baths)</small>
           </div>
-          <!-- add helper text -->
         </div>
         <!-- input field for price -->
         <div class="row">
@@ -93,24 +94,25 @@
           <!-- input field for date of viewing -->
           <div class="input-field col s12 m6 m-3">
             <i class="fa-solid fa-calendar-days prefix"></i>
-            <input type="text" class="datepicker" id="date_viewing" name="date_viewing"
-              value="{{house.date_viewing}}" required>
+            <input type="text" class="datepicker" id="date_viewing" name="date_viewing" value="{{house.date_viewing}}"
+              required>
             <label for="date_viewing">Viewing date:</label>
           </div>
         </div>
-  
+
         <!-- input field for file image upload -->
         <div class="row">
           <div class="col s12 m-3">
             <input accept="image/*" name="image-url" id="image-url" type="file">
-  
+
           </div>
         </div>
-  
+
         <!-- submit button -->
         <div class="row center">
           <div class="col s12 m-3">
-            <button class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2" type="submit">
+            <button class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2"
+              type="submit">
               <i class="material-icons">add</i>Save Property
             </button>
             <a href="{{ url_for('profile', username=session['user']) }}"
@@ -121,22 +123,27 @@
         </div>
       </form>
     </div>
-  
-  
+
+
   </section>
 </div>
-<script async src="https://maps.googleapis.com/maps/api/js?key={{maps_api}}&loading=async&libraries=places&callback=initAutocomplete">
+
+{% endblock %}
+{% block javascript %}
+<script async
+  src="https://maps.googleapis.com/maps/api/js?key={{maps_api}}&loading=async&libraries=places&callback=initAutocomplete">
 </script>
-<script> 
+<script>
   let autocomplete;
 
-  function initAutocomplete(){
+  function initAutocomplete() {
     autocomplete = new google.maps.places.Autocomplete(
-      document.getElementById("address"),
-      {
+      document.getElementById("address"), {
         types: ['street_address', 'street_number'],
         fields: ["address_components"],
-        componentRestrictions: { country: "uk" },
+        componentRestrictions: {
+          country: "uk"
+        },
 
       }
     );
@@ -146,12 +153,11 @@
   function onPlaceChanged() {
     let place = autocomplete.getPlace();
 
-    if (!place.geometry){
+    if (!place.geometry) {
       document.getElementById('address').placeholder = "Enter an address"
     } else {
       document.getElementById('address').value = place.name;
     }
   }
 </script>
-
 {% endblock %}

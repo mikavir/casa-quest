@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block header %}
-  <title>{% block title %}Add New Entry{% endblock %}</title>
+<title>{% block title %}Add New Entry{% endblock %}</title>
 {% endblock %}
 {% block content %}
 <section class="container page-container">
@@ -12,12 +12,15 @@
   </div>
   <div class="row my-4">
     <div class="col s12">
-      <a href="{{ url_for('profile', username=session['user']) }}" class="btn icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4"><i class="material-icons">arrow_back</i>Back to Dashboard</a>
+      <a href="{{ url_for('profile', username=session['user']) }}"
+        class="btn icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4"><i
+          class="material-icons">arrow_back</i>Back to Dashboard</a>
     </div>
   </div>
   <div class="card-panel custom-card row">
     <div class="col s12 p-4">
-      <form action="{{ url_for('new_house') }}" method="POST" enctype="multipart/form-data" class="teal-text text-darken-4">
+      <form action="{{ url_for('new_house') }}" method="POST" enctype="multipart/form-data"
+        class="teal-text text-darken-4">
         <!-- input field for address of the house -->
         <div class="row">
           <div class="input-field col s12 m6 outlined m-3">
@@ -47,7 +50,7 @@
           <!-- input field for chain free -->
           <div class="col s12 m6 m-3 center">
             <label for="chain_free">
-              <input name="chain_free" id="chain_free" type="checkbox" class="filled-in" checked="checked"/>
+              <input name="chain_free" id="chain_free" type="checkbox" class="filled-in" checked="checked" />
               <span><i class="fa-solid fa-link"></i> Chain Free</span>
             </label>
           </div>
@@ -73,8 +76,7 @@
         <div class="row">
           <div class="input-field outlined col s12 m6 m-3">
             <i class="fa-solid fa-sterling-sign prefix"></i>
-            <input id="house_price" name="house_price" type="number" class="validate" min="50000" step="1000"
-              required>
+            <input id="house_price" name="house_price" type="number" class="validate" min="50000" step="1000" required>
             <label for="house_price">Price</label>
             <small>House prices start from 50,000 and go up by £1000</small>
           </div>
@@ -85,19 +87,20 @@
             <label for="date_viewing">Viewing date:</label>
           </div>
         </div>
-  
+
         <!-- input field for file image upload -->
         <div class="row">
           <div class="col s12 m-3">
             <input accept="image/*" name="image-url" id="image-url" type="file" required>
-  
+
           </div>
         </div>
-  
+
         <!-- submit button -->
         <div class="row center">
           <div class="col s12 m-3">
-            <button class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2" type="submit">
+            <button class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2"
+              type="submit">
               <i class="material-icons">add</i>Save Property
             </button>
           </div>
@@ -106,18 +109,22 @@
     </div>
   </div>
 </section>
-<script async src="https://maps.googleapis.com/maps/api/js?key={{maps_api}}&loading=async&libraries=places&callback=initAutocomplete">
+{% endblock %}
+{% block javascript %}
+<script async
+  src="https://maps.googleapis.com/maps/api/js?key={{maps_api}}&loading=async&libraries=places&callback=initAutocomplete">
 </script>
-<script> 
+<script>
   let autocomplete;
 
-  function initAutocomplete(){
+  function initAutocomplete() {
     autocomplete = new google.maps.places.Autocomplete(
-      document.getElementById("address"),
-      {
+      document.getElementById("address"), {
         types: ['street_address', 'street_number'],
         fields: ["address_components"],
-        componentRestrictions: { country: "uk" },
+        componentRestrictions: {
+          country: "uk"
+        },
 
       }
     );
@@ -127,13 +134,11 @@
   function onPlaceChanged() {
     let place = autocomplete.getPlace();
 
-    if (!place.geometry){
+    if (!place.geometry) {
       document.getElementById('address').placeholder = "Enter an address"
     } else {
       document.getElementById('address').value = place.name;
     }
   }
 </script>
-
-
 {% endblock %}
