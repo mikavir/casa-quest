@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block header %}
-  <title>{% block title %}{{house.address}}{% endblock %}</title>
+<title>{% block title %}{{house.address}}{% endblock %}</title>
 {% endblock %}
 {% block content %}
 <div class=" page-container">
@@ -65,7 +65,7 @@
                                 <div class="col s12">
                                     <h6 class="hide-on-small-only rooms">Bedrooms</h6>
                                     <span class="hide-on-med-and-up"><i class="fa-solid fa-bed fa-2x"></i></span>
-                                    
+
 
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                             <div class="row">
                                 <div class="col s12">
                                     <h1>{{ house.bathrooms }}</h1>
-                                    
+
                                 </div>
                                 <div class="col s12">
                                     <h6 class="hide-on-small-only rooms">Bathrooms</h6>
@@ -86,21 +86,22 @@
 
                         </div>
                         {% if house_info.dedicatedParking == "yes" %}
-                            <div class="col s4">
-                                <div class="row">
-                                    <div class="col s12">
-                                        <h1>1</h1>
-                                        
-                                    </div>
-                                    <div class="col s12">
-                                        <h6 class="hide-on-small-only rooms">Parking</h6>
-                                        <span class="hide-on-med-and-up"><i class="fa-solid fa-square-parking fa-2x"></i></span>
-    
-                                    </div>
+                        <div class="col s4">
+                            <div class="row">
+                                <div class="col s12">
+                                    <h1>1</h1>
+
+                                </div>
+                                <div class="col s12">
+                                    <h6 class="hide-on-small-only rooms">Parking</h6>
+                                    <span class="hide-on-med-and-up"><i
+                                            class="fa-solid fa-square-parking fa-2x"></i></span>
+
                                 </div>
                             </div>
+                        </div>
 
-                            
+
                         {% endif %}
 
                     </div>
@@ -119,18 +120,19 @@
     <div class="row house-container p-5">
         <div class="col s12 mx-4 ">
             <div class="row teal-text text-darken-4 center">
-                <div class="col s12 right-align"> 
+                <div class="col s12 right-align">
                     <div class="row">
                         <div class="col s1 offset-s11 ">
-                            <a href="#editInfoModal" class="center btn rounded waves-effect waves-light teal darken-4 orange-text text-lighten-4 p-1 modal-trigger"
+                            <a href="#editInfoModal"
+                                class="center btn rounded waves-effect waves-light teal darken-4 orange-text text-lighten-4 p-1 modal-trigger"
                                 id="edit-houseinfo-btn">
                                 <i class="material-icons">edit</i>
                             </a>
                         </div>
-                    </div>                 
+                    </div>
 
                 </div>
-                
+
                 <div class="col s12 offset-m2" id="house-info">
                     <div class="row left-align">
                         <div class="col s6 m6 m-3 ">
@@ -162,9 +164,8 @@
 
                 </div>
                 <div class="col s12 p-5 mx-auto" id="add-house-info">
-                    <a href="#addInfoModal" class="add-modal modal-trigger"
-                        id="add-houseinfo-btn">
-                        
+                    <a href="#addInfoModal" class="add-modal modal-trigger" id="add-houseinfo-btn">
+
                         <div class="add-modal-content teal-text text-darken-4">
                             <i class="small material-icons">add_circle_outline</i>
                             <p>Details of Your Dream Home</p>
@@ -179,15 +180,16 @@
         <!-- house viewing -->
         <div class="col s12 m12 l6 mx-2">
             <div class="card-panel teal darken-2 row mx-auto">
-                <div class="col s12 right-align"> 
+                <div class="col s12 right-align">
                     <div class="row">
                         <div class="col s1 offset-s11 ">
-                            <a href="#editHouseViewingModal" class="center btn rounded waves-effect waves-light orange teal-text text-darken-4 p-1 modal-trigger"
+                            <a href="#editHouseViewingModal"
+                                class="center btn rounded waves-effect waves-light orange teal-text text-darken-4 p-1 modal-trigger"
                                 id="edit-houseviewing-btn">
                                 <i class="material-icons">edit</i>
                             </a>
                         </div>
-                    </div>                 
+                    </div>
 
                 </div>
                 <div class="col s12" id="house-viewing">
@@ -221,7 +223,8 @@
                     <div class="row m-3">
                         {% if house_viewing.traffic == 'No Traffic' %}
                         <div class="col s12 m-2">
-                            <h6 class="orange-text text-lighten-4">There is no traffic <i class="fa-regular fa-face-smile"></i></h6>
+                            <h6 class="orange-text text-lighten-4">There is no traffic <i
+                                    class="fa-regular fa-face-smile"></i></h6>
                         </div>
                         {% else %}
                         <div class="col s12 m-2">
@@ -236,7 +239,8 @@
                     <div class="row m-3">
                         <div class="col s12 m-2">
                             {% if house_viewing.otherOffers == "yes" %}
-                            <h6 class="orange-text text-lighten-4">There have been other offers made. <i class="fa-solid fa-circle-exclamation"></i></h6>
+                            <h6 class="orange-text text-lighten-4">There have been other offers made. <i
+                                    class="fa-solid fa-circle-exclamation"></i></h6>
                             {% else %}
                             <h6 class="orange-text text-lighten-4">No offers have been made yet</h6>
                             {% endif %}
@@ -245,18 +249,19 @@
                     <div class="row m-3">
                         <div class="col s12 m-2">
                             {% if house_viewing.windows == "yes" %}
-                            <h6 class="orange-text text-lighten-4">There windows are double-glazed <i class="fa-regular fa-face-smile"></i></h6>
+                            <h6 class="orange-text text-lighten-4">There windows are double-glazed <i
+                                    class="fa-regular fa-face-smile"></i></h6>
                             {% else %}
-                            <h6 class="orange-text text-lighten-4">The windows are not double glazed <i class="fa-solid fa-circle-exclamation"></i></h6>
+                            <h6 class="orange-text text-lighten-4">The windows are not double glazed <i
+                                    class="fa-solid fa-circle-exclamation"></i></h6>
                             {% endif %}
                         </div>
                     </div>
 
                 </div>
                 <div class="col s12 p-5 mx-auto" id="add-house-check">
-                    <a href="#addHouseViewingModal"
-                        class="add-modal-view modal-trigger row center"
-                        id="add-houseviewing-btn">                       
+                    <a href="#addHouseViewingModal" class="add-modal-view modal-trigger row center"
+                        id="add-houseviewing-btn">
                         <div class="add-modal-content orange-text text-lighten-4 col s12">
                             <i class="small material-icons">add_circle_outline</i>
                             <p>Share Your Viewing Experience</p>
@@ -268,22 +273,23 @@
         </div>
         <div class="col s12 m12 l6 mx-2">
             <div class="card-panel teal darken-2 row mx-auto">
-                <div class="col s12 right-align"> 
+                <div class="col s12 right-align">
                     <div class="row">
                         <div class="col s1 offset-s11 ">
                             <a href="#editHouseCheckModal"
-                            class="center btn rounded waves-effect waves-light orange teal-text text-darken-4 p-1 modal-trigger"
-                            id="edit-housecheck-btn">
-                            <i class="material-icons">edit</i>
+                                class="center btn rounded waves-effect waves-light orange teal-text text-darken-4 p-1 modal-trigger"
+                                id="edit-housecheck-btn">
+                                <i class="material-icons">edit</i>
                             </a>
                         </div>
-                    </div>                 
+                    </div>
 
                 </div>
                 <div class="col s12" id="house-check">
                     <div class="row m-3">
                         <div class="col s12 m-2">
-                            <h6 class="orange-text text-lighten-4"><i class="fa-regular fa-sun"></i> The property is...</h6>
+                            <h6 class="orange-text text-lighten-4"><i class="fa-regular fa-sun"></i> The property is...
+                            </h6>
                         </div>
                         <div class="col s12 center">
                             <p class="house-check-content white-text">{{ house_check.propertyFacing }}</p>
@@ -293,9 +299,9 @@
                     <div class="row m-3">
                         <div class="col s12 m-2">
                             <h6 class="orange-text text-lighten-4"> <span class="material-symbols-outlined">
-                                roofing
+                                    roofing
                                 </span> The condition of the roof is...</h6>
-            
+
                         </div>
                         <div class="col s12 center">
                             <p class="house-check-content white-text">{{ house_check.roofCondition }}</p>
@@ -328,12 +334,13 @@
                         </div>
                         {% endif %}
                     </div>
-                  
+
                     <div class="row m-3">
-                        
+
                         <div class="col s12 m-2">
                             {% if house_check.atticAccess == "yes" %}
-                            <h6 class="orange-text text-lighten-4"> It is easy to access the attic <i class="fa-regular fa-face-smile"></i></h6>
+                            <h6 class="orange-text text-lighten-4"> It is easy to access the attic <i
+                                    class="fa-regular fa-face-smile"></i></h6>
                             {% else %}
                             <h6 class="orange-text text-lighten-4"> It is not easy to access the attic </h6>
                             {% endif %}
@@ -342,52 +349,59 @@
                     <div class="row m-3">
                         <div class="col s12 m-2">
                             {% if house_check.electricPorts == "yes" %}
-                            <h6 class="orange-text text-lighten-4"> There is a good amount of electric ports <i class="fa-regular fa-face-smile"></i></h6>
+                            <h6 class="orange-text text-lighten-4"> There is a good amount of electric ports <i
+                                    class="fa-regular fa-face-smile"></i></h6>
                             {% else %}
-                            <h6 class="orange-text text-lighten-4"> The are a limited amount of electric ports <i class="fa-solid fa-circle-exclamation"></i></h6>
+                            <h6 class="orange-text text-lighten-4"> The are a limited amount of electric ports <i
+                                    class="fa-solid fa-circle-exclamation"></i></h6>
                             {% endif %}
                         </div>
                     </div>
                     <div class="row m-3">
                         <div class="col s12 m-2">
                             {% if house_check.mould == "yes" %}
-                            <h6 class="orange-text text-lighten-4"> The are visible signs of mould. <i class="fa-solid fa-circle-exclamation"></i></h6>
+                            <h6 class="orange-text text-lighten-4"> The are visible signs of mould. <i
+                                    class="fa-solid fa-circle-exclamation"></i></h6>
                             {% else %}
-                            <h6 class="orange-text text-lighten-4"> There are no signs of mould. <i class="fa-regular fa-face-smile"></i></h6>
+                            <h6 class="orange-text text-lighten-4"> There are no signs of mould. <i
+                                    class="fa-regular fa-face-smile"></i></h6>
                             {% endif %}
                         </div>
                     </div>
                     <div class="row m-3">
                         <div class="col s12 m-2">
                             {% if house_check.damp == "yes" %}
-                            <h6 class="orange-text text-lighten-4"> The are visible signs of damp. <i class="fa-solid fa-circle-exclamation"></i></h6>
+                            <h6 class="orange-text text-lighten-4"> The are visible signs of damp. <i
+                                    class="fa-solid fa-circle-exclamation"></i></h6>
                             {% else %}
-                            <h6 class="orange-text text-lighten-4"> There are no signs of damp. <i class="fa-regular fa-face-smile"></i></h6>
+                            <h6 class="orange-text text-lighten-4"> There are no signs of damp. <i
+                                    class="fa-regular fa-face-smile"></i></h6>
                             {% endif %}
                         </div>
-    
+
                     </div>
                     <div class="row m-3">
                         <div class="col s12 m-2">
                             {% if house_check.crack == "yes" %}
-                            <h6 class="orange-text text-lighten-4"> The are visible signs of the wall cracking <i class="fa-solid fa-circle-exclamation"></i></h6>
+                            <h6 class="orange-text text-lighten-4"> The are visible signs of the wall cracking <i
+                                    class="fa-solid fa-circle-exclamation"></i></h6>
                             {% else %}
-                            <h6 class="orange-text text-lighten-4"> There are no signs of wall cracking <i class="fa-regular fa-face-smile"></i></h6>
+                            <h6 class="orange-text text-lighten-4"> There are no signs of wall cracking <i
+                                    class="fa-regular fa-face-smile"></i></h6>
                             {% endif %}
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="col s12 mx-auto p-5" id="add-house-check">
-                    <a href="#addHouseCheckModal"
-                        class="add-modal-view modal-trigger row center"
+                    <a href="#addHouseCheckModal" class="add-modal-view modal-trigger row center"
                         id="add-housecheck-btn">
                         <div class="add-modal-content orange-text text-lighten-4">
                             <i class="small material-icons col s12">add_circle_outline</i>
                             <p>Share Your Home Inspection Insights</p>
                         </div>
                     </a>
-                  
+
 
                 </div>
             </div>
@@ -411,12 +425,14 @@
                     <h6>Refine Your Future Home's Details</h6>
                 </div>
                 <div class="col s2 right-align">
-                    <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i class="material-icons">close</i></a>
-        
+                    <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i
+                            class="material-icons">close</i></a>
+
                 </div>
             </div>
         </div>
-        <form action="{{ url_for('edit_house_info', house_id=house._id) }}" method="POST" id="edit-info" class="col s12 teal-text text-darken-2">
+        <form action="{{ url_for('edit_house_info', house_id=house._id) }}" method="POST" id="edit-info"
+            class="col s12 teal-text text-darken-2">
             <!-- input field for EPC -->
             <div class="row">
                 <div class="input-field col s12 outlined m-3">
@@ -474,7 +490,9 @@
             </div>
             <div class="row center">
                 <div class="col s12 m-3">
-                    <button class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2" type="submit">
+                    <button
+                        class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2"
+                        type="submit">
                         <i class="material-icons">add</i>Update House Information
                     </button>
                 </div>
@@ -494,12 +512,14 @@
                     <h6>Capture Your Future Home's Details</h6>
                 </div>
                 <div class="col s2 right-align">
-                    <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i class="material-icons">close</i></a>
-        
+                    <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i
+                            class="material-icons">close</i></a>
+
                 </div>
             </div>
         </div>
-        <form action="{{ url_for('add_house_info', house_id=house._id) }}" method="POST" class="teal-text text-darken-2 col s12">
+        <form action="{{ url_for('add_house_info', house_id=house._id) }}" method="POST"
+            class="teal-text text-darken-2 col s12">
             <!-- input field for EPC -->
             <div class="row">
                 <div class="input-field col s12 outlined m-3">
@@ -550,7 +570,9 @@
             </div>
             <div class="row center">
                 <div class="col s12 m-3">
-                    <button class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2" type="submit">
+                    <button
+                        class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2"
+                        type="submit">
                         <i class="material-icons">add</i>Add House Information
                     </button>
                 </div>
@@ -571,15 +593,17 @@
                     <p>Edit the answers</p>
                 </div>
                 <div class="col s2 right-align">
-                    <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i class="material-icons">close</i></a>
-        
+                    <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i
+                            class="material-icons">close</i></a>
+
                 </div>
             </div>
         </div>
-        <form action="{{ url_for('edit_house_viewing', house_id=house._id) }}" method="POST" class="col s12 teal-text text-darken-2">
+        <form action="{{ url_for('edit_house_viewing', house_id=house._id) }}" method="POST"
+            class="col s12 teal-text text-darken-2">
 
             <div class="row">
-                <div class="input-field outlined col s12 m-3">                    
+                <div class="input-field outlined col s12 m-3">
                     <i class="material-icons prefix">people_outline</i>
                     <input id="sellers-sitaution" name="sellers-sitaution" type="text" class="validate"
                         value="{{ house_viewing.sellersSituation }} " required>
@@ -652,7 +676,9 @@
             </div>
             <div class="row center">
                 <div class="col s12">
-                    <button class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2" type="submit">
+                    <button
+                        class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2"
+                        type="submit">
                         <i class="material-icons">add</i>Edit House Viewing Information
                     </button>
                 </div>
@@ -673,12 +699,14 @@
                     <p>Your Key Questions</p>
                 </div>
                 <div class="col s2 right-align">
-                    <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i class="material-icons">close</i></a>
-        
+                    <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i
+                            class="material-icons">close</i></a>
+
                 </div>
             </div>
         </div>
-        <form action="{{ url_for('add_house_viewing', house_id=house._id) }}" method="POST" class="col s12 teal-text text-darken-2">
+        <form action="{{ url_for('add_house_viewing', house_id=house._id) }}" method="POST"
+            class="col s12 teal-text text-darken-2">
 
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
@@ -713,7 +741,8 @@
                     {% for severity in traffic %}
                     <span>
                         <label for="{{ severity }}">
-                            <input name="add_traffic" id="{{ severity }}" type="radio" value="{{ severity }}" required/>
+                            <input name="add_traffic" id="{{ severity }}" type="radio" value="{{ severity }}"
+                                required />
                             <span>{{severity}}</span>
                         </label>
                     </span>
@@ -739,7 +768,9 @@
             <div class="row center">
                 <div class="col s12">
 
-                    <button class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2" type="submit">
+                    <button
+                        class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2"
+                        type="submit">
                         <i class="material-icons">add</i>Add House Viewing Information
                     </button>
                 </div>
@@ -761,12 +792,14 @@
                     <p>Inspection Checklist</p>
                 </div>
                 <div class="col s2 right-align">
-                    <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i class="material-icons">close</i></a>
-        
+                    <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i
+                            class="material-icons">close</i></a>
+
                 </div>
             </div>
         </div>
-        <form action="{{ url_for('edit_house_check', house_id=house._id) }}" method="POST" class="col s12 teal-text text-darken-4">
+        <form action="{{ url_for('edit_house_check', house_id=house._id) }}" method="POST"
+            class="col s12 teal-text text-darken-4">
             <div class="row">
                 <div class="col s12 ">
                     <div class="row">
@@ -931,26 +964,31 @@
                                     </p>
                                 </div>
                                 <div class="input-field col s12">
-                                    {% for condition in roof_condition %}
-                                    <span class="m-2">
-                                        <label for="{{ 'edit' + condition[0] }}">
-                                            {% if house_check.roofCondition == condition[0] %}
-                                            <input name="roof_condition" id="{{ 'edit' + condition[0] }}" type="radio"
-                                                value="{{ condition[0] }}" checked="checked" required />
-                                            <span>{{ condition[0] }} </span>
-                                            {% else %}
-                                            <input name="roof_condition" id="{{'edit' + condition[0] }}" type="radio"
-                                                value="{{ condition[0] }}" required />
-                                            <span>{{ condition[0] }} </span>
-                                            {% endif %}
-                                        </label>
+                                    <div class="row">
+                                        {% for condition in roof_condition %}
+                                        <span class="col s12 m6 l3">
 
-                                        <button class="btn p-3 rounded teal darken-2 tooltipped" type="button" clickable="false"
-                                            data-position="bottom" data-tooltip="{{condition[1]}}"><i
-                                                class="fa-sharp fa-solid fa-circle-info"></i></button>
+                                            <label for="{{ 'edit' + condition[0] }}">
 
-                                    </span>
-                                    {% endfor %}
+                                                <button class="btn p-3 rounded teal darken-2 tooltipped" type="button"
+                                                    clickable="false" data-position="bottom"
+                                                    data-tooltip="{{condition[1]}}"><i
+                                                        class="fa-sharp fa-solid fa-circle-info"></i></button>
+                                                {% if house_check.roofCondition == condition[0] %}
+                                                <input name="roof_condition" id="{{ 'edit' + condition[0] }}"
+                                                    type="radio" value="{{ condition[0] }}" checked="checked"
+                                                    required />
+                                                <span>{{ condition[0] }} </span>
+                                                {% else %}
+                                                <input name="roof_condition" id="{{'edit' + condition[0] }}"
+                                                    type="radio" value="{{ condition[0] }}" required />
+                                                <span>{{ condition[0] }} </span>
+                                                {% endif %}
+                                            </label>
+
+                                        </span>
+                                        {% endfor %}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -959,7 +997,9 @@
             </div>
             <div class="row">
                 <div class="col s12 center m-3">
-                    <button class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2" type="submit">
+                    <button
+                        class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2"
+                        type="submit">
                         <i class="material-icons">add</i>Update Personal Checks
                     </button>
                 </div>
@@ -982,12 +1022,14 @@
                     <p> Inspection Checklist</p>
                 </div>
                 <div class="col s2 right-align">
-                    <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i class="material-icons">close</i></a>
-        
+                    <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i
+                            class="material-icons">close</i></a>
+
                 </div>
             </div>
         </div>
-        <form action="{{ url_for('add_house_check', house_id=house._id) }}" method="POST" class="col s12 teal-text text-darken-2">
+        <form action="{{ url_for('add_house_check', house_id=house._id) }}" method="POST"
+            class="col s12 teal-text text-darken-2">
 
             <div class="row">
                 <div class="col s12 ">
@@ -1103,20 +1145,24 @@
                                     </p>
                                 </div>
                                 <div class="input-field col s12">
-                                    {% for condition in roof_condition %}
-                                    <span class="m-2">
-                                        <label for="{{ 'addCondition' + condition[0] }}">
-                                            <input name="add_roof_condition" id="{{ 'addCondition' + condition[0] }}"
-                                                type="radio" value="{{ condition[0] }}" required />
-                                            <span>{{ condition[0] }} </span>
-                                        </label>
+                                    <div class="row">
+                                        {% for condition in roof_condition %}
+                                        <span class="col s12 m6 l3">
+                                            <label for="{{ 'addCondition' + condition[0] }}">
 
-                                        <button class="btn p-3 rounded teal darken-2 tooltipped" type="button" clickable="false"
-                                            data-position="bottom" data-tooltip="{{condition[1]}}"><i
-                                                class="fa-sharp fa-solid fa-circle-info"></i></button>
+                                                <button class="btn p-3 rounded teal darken-2 tooltipped" type="button"
+                                                    clickable="false" data-position="bottom"
+                                                    data-tooltip="{{condition[1]}}"><i
+                                                        class="fa-sharp fa-solid fa-circle-info"></i></button>
+                                                <input name="add_roof_condition"
+                                                    id="{{ 'addCondition' + condition[0] }}" type="radio"
+                                                    value="{{ condition[0] }}" required />
+                                                <span>{{ condition[0] }} </span>
+                                            </label>
 
-                                    </span>
-                                    {% endfor %}
+                                        </span>
+                                        {% endfor %}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1125,7 +1171,9 @@
             </div>
             <div class="row">
                 <div class="col s12 center m-3">
-                    <button class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2" type="submit">
+                    <button
+                        class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2"
+                        type="submit">
                         <i class="material-icons">add</i>Add Personal Checks
                     </button>
                 </div>
