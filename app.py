@@ -845,6 +845,8 @@ def favourites(username):
 
 
 
+#  ----------------ADMIN FUNCTIONALILITIES
+
 @app.route("/manage_users/<username>", methods=["GET"])
 @login_required
 def manage_users(username):
@@ -946,6 +948,7 @@ def delete_user(username, user_name):
     return redirect(url_for("manage_users",  username=session["user"]))
 
 
+#  ----------------Error Handling pages
 
 @app.errorhandler(404)
 def page_not_found(e):
