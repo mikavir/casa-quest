@@ -260,11 +260,13 @@ def view_house(house_id):
         ('Poor', 'Significant damage or deterioration, leaks, structural issues')  # noqa
     ]
 
+    characters = ["A", "B", "C", "D", "E", "F", "G"]
+
     return render_template(
         "house.html", username=username, house=house, house_info=house_info,
         house_check=house_check, house_viewing=house_viewing, traffic=traffic,
         property_facing=property_facing, noise=noise,
-        storage_space=storage_space, roof_condition=roof_condition
+        storage_space=storage_space, roof_condition=roof_condition, characters=characters
     )
 
 
