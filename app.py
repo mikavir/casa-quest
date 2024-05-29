@@ -254,15 +254,11 @@ def view_house(house_id):
     storage_space = ["Minimal", "Moderate", "Abundant"]
 
     roof_condition = [
-            ('Excellent',
-                'Newly installed or recently replaced, no visible damage or wear'),
-            ('Good',
-                'Well-maintained, minor wear and tear, no significant issues'),
-            ('Fair',
-                'Some signs of aging or minor damage, may require maintenance or repairs.'),
-            ('Poor',
-                'Significant damage or deterioration, leaks, structural issues')
-            ]
+        ('Excellent', 'Newly installed or recently replaced, no visible damage or wear'),  # noqa
+        ('Good', 'Well-maintained, minor wear and tear, no significant issues'),  # noqa
+        ('Fair', 'Some signs of aging or minor damage, may require maintenance or repairs.'),  # noqa
+        ('Poor', 'Significant damage or deterioration, leaks, structural issues')  # noqa
+    ]
 
     return render_template(
         "house.html", username=username, house=house, house_info=house_info,
@@ -315,7 +311,7 @@ def new_house():
         parameters = "+".join(address_list)
 
         # Google maps embed:
-        embed_url = f"https://www.google.com/maps/embed/v1/place?key={maps_api}&q={parameters}"
+        embed_url = f"https://www.google.com/maps/embed/v1/place?key={maps_api}&q={parameters}"  # noqa
 
         # Add embedded url to the insert
         house_entry["mapsUrl"] = embed_url
@@ -345,7 +341,7 @@ def new_house():
             house_entry["image_url"] = image_upload["secure_url"]
         else:
             flash("Image unable to be uploaded")
-            temp_image_url = "https://res.cloudinary.com/dpqnw6tkn/image/upload/v1715774209/vnxhz63wmo25sthxvsst.jpg"
+            temp_image_url = "https://res.cloudinary.com/dpqnw6tkn/image/upload/v1715774209/vnxhz63wmo25sthxvsst.jpg"  # noqa
             house_entry["image_url"] = temp_image_url
 
         mongo.db.houses.insert_one(house_entry)
@@ -451,7 +447,7 @@ def add_house_info(house_id):
         tax_band = request.form.get("add_tax_band")
         flood_risk = request.form.get("add_flood_risk")
         internet_speed = request.form.get("add_internet_speed")
-        dedicated_parking = "yes" if request.form.get("add_dedicated_parking") else "no"
+        dedicated_parking = "yes" if request.form.get("add_dedicated_parking") else "no"  # noqa
 
         house_info = {
             "_id": ObjectId(house_id),
@@ -494,7 +490,7 @@ def edit_house_info(house_id):
         tax_band = request.form.get("tax_band")
         flood_risk = request.form.get("flood_risk")
         internet_speed = request.form.get("internet_speed")
-        dedicated_parking = "yes" if request.form.get("dedicated_parking") else "no"
+        dedicated_parking = "yes" if request.form.get("dedicated_parking") else "no"  # noqa
 
         edit_house_info = {
             "_id": ObjectId(house_id),
@@ -540,7 +536,7 @@ def add_house_viewing(house_id):
         facilities = request.form.get("add_facilities")
         traffic = request.form.get("add_traffic")
         other_offers = "yes" if request.form.get("add_offers") else "no"
-        double_glazed_windows = "yes" if request.form.get("add_windows") else "no"
+        double_glazed_windows = "yes" if request.form.get("add_windows") else "no"  # noqa
 
         house_viewing_info = {
             "_id": ObjectId(house_id),
@@ -634,7 +630,7 @@ def add_house_check(house_id):
         boiler_noise = request.form.get("add_boiler_noise")
         storage_space = request.form.get("add_storage_space")
         attic_access = "yes" if request.form.get("add_attic") else "no"
-        electric_ports = "yes" if request.form.get("add_electric_ports") else "no"
+        electric_ports = "yes" if request.form.get("add_electric_ports") else "no"  # noqa
         mould = "yes" if request.form.get("add_mould") else "no"
         damp = "yes" if request.form.get("add_damp") else "no"
         crack = "yes" if request.form.get("add_crack") else "no"
@@ -724,7 +720,9 @@ def edit_house_check(house_id):
 
 
 # Delete house
-@app.route("/profile/<username>#deleteModal<house_id>", methods=["GET", "POST"])
+@app.route(
+    "/profile/<username>#deleteModal<house_id>", methods=["GET", "POST"]
+)
 @login_required
 def delete_house(username, house_id):
     """
@@ -931,7 +929,9 @@ def manage_users(username):
     return render_template('403.html'), 403
 
 
-@app.route("/manage_users/<username>#deleteModal<user_name>", methods=["GET", "POST"])
+@app.route(
+    "/manage_users/<username>#deleteModal<user_name>", methods=["GET", "POST"]
+)
 @login_required
 def delete_user(username, user_name):
     """
@@ -1076,4 +1076,4 @@ def page_forbidden(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=os.environ.get("DEBUG", False))
