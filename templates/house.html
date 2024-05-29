@@ -435,22 +435,36 @@
             class="col s12 teal-text text-darken-2">
             <!-- input field for EPC -->
             <div class="row">
-                <div class="input-field col s12 outlined m-3">
-                    <i class="material-icons prefix">bolt</i>
-                    <input id="epc" name="epc" type="text" class="validate" required value="{{ house_info.epc }}">
-                    <label for="epc">
-                        EPC Rating:</label>
+                 <div class="input-field col s12 outlined m-3">
+                    <select id="epc" name="epc"required>
+                        <option value="" disabled>💡 EPC Rating</option>
+                        {% for chara in characters %}
+                        {% if chara == house_info.epc %}
+                        <option value="{{ chara }}" selected>{{ chara }}</option>
+                        {% else %}
+                        <option value="{{ chara }}">{{ chara }}</option>
+                        {% endif %}
+                        {% endfor %}                        
+                    </select>
+                    
+                    
                 </div>
             </div>
             <!-- input field for Tax-Band -->
             <div class="row">
                 <div class="input-field col s12 outlined m-3">
-                    <i class="material-icons prefix">payments</i>
-                    <input id="tax_band" name="tax_band" type="text" class="validate" required
-                        value="{{ house_info.taxBand }}">
-                    <label for="tax_band">Tax Band</label>
+                    <select id="tax_band" name="tax_band" required>
+                        <option value="" disabled>💳 Tax Band</option>
+                        {% for chara in characters %}
+                        {% if chara == house_info.taxBand %}
+                        <option value="{{ chara }}" selected>{{ chara }}</option>
+                        {% else %}
+                        <option value="{{ chara }}">{{ chara }}</option>
+                        {% endif %}
+                        {% endfor %}                        
+                    </select>                    
+                    
                 </div>
-
             </div>
 
             <!-- input field for flood risk -->
@@ -523,20 +537,30 @@
             <!-- input field for EPC -->
             <div class="row">
                 <div class="input-field col s12 outlined m-3">
-                    <i class="material-icons prefix">bolt</i>
-                    <input id="add_epc" name="add_epc" type="text" class="validate" required>
-                    <label for="add_epc">
-                        EPC Rating:</label>
+                    <select id="add_epc" name="add_epc"required>
+                        <option value="" disabled selected>💡 EPC Rating</option>
+                        {% for chara in characters %}
+                        <option value="{{chara}}">{{chara}}</option>
+                        {% endfor %}
+                        
+                    </select>
+                    
+                    
                 </div>
             </div>
             <!-- input field for Tax-Band -->
             <div class="row">
                 <div class="input-field col s12 outlined m-3">
-                    <i class="material-icons prefix">payments</i>
-                    <input id="add_tax_band" name="add_tax_band" type="text" class="validate" required>
-                    <label for="add_tax_band">Tax Band</label>
+                    <select id="add_tax_band" name="add_tax_band" required>
+                        <option value="" disabled selected>💳 Tax Band</option>
+                        {% for chara in characters %}
+                        <option value="{{chara}}">{{chara}}</option>
+                        {% endfor %}
+                        
+                    </select>
+                    
+                    
                 </div>
-
             </div>
 
             <!-- input field for flood risk -->
