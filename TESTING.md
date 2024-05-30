@@ -478,21 +478,28 @@ This can be used for both "fixed" and "unresolved" issues.
 
 ## Bugs
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
+- White space appearing below footer only on Firefox mobile device.
+    ![screenshot](documentation/bugs/bug01.png)
 
-This section is primarily used for JavaScript and Python applications,
-but feel free to use this section to document any HTML/CSS bugs you might run into.
+    - The `top: 100vh;` property places the footer 100% down from the top of the viewport, positioning it at the bottom of the visible area. However, this did not make any changes.
 
-It's very important to document any bugs you've discovered while developing the project.
-Make sure to include any necessary steps you've implemented to fix the bug(s) as well.
-
-**PRO TIP**: screenshots of bugs are extremely helpful, and go a long way!
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+        ```css
+        body > footer {
+            position: sticky;
+            top: 100vh;
+        }
+        ```
+    - Added padding-bottom to main to increase content and push footer down on smaller devices. It did not make any changes
+        ```css
+        main {
+            padding-bottom: 10vh;
+            }
+        ```
+    - **FIX** After researching more, I came across to a explanation of the error from [StackOverflow](https://stackoverflow.com/questions/14510899/white-space-after-the-footer-only-in-firefox-and-ie). It turns out that the firefox gives less bottom margin to headings. After testing the margins in my footer elements, This caused the elements to overflow whic gave me the idea to change the height of my footer to `min-height` of 30vh to make it more responsive.
 
 - JS Uncaught ReferenceError: `foobar` is undefined/not defined
 
-    ![screenshot](documentation/bugs/bug01.png)
+    ![screenshot](documentation/bugs/bug02.png)
 
     - To fix this, I _____________________.
 
