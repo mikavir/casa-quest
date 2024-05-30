@@ -25,3 +25,18 @@ function validateEditHouseInfo() {
         return false;
     } 
 }
+
+// Form validation for adding House viewing information
+function validateAddHouseViewing() {
+    let sellersSituation = document.forms["add-house-viewing"]["add_sellers-sitaution"].value;
+    let neighbours = document.forms["add-house-viewing"]["add_neighbours"].value;
+    let facilities = document.forms["add-house-viewing"]["add_facilities"].value;
+    let traffic = document.forms["add-house-viewing"]["add_traffic"].value;
+    let errorMessage = document.getElementById("add-house-viewing-error");
+
+    if (sellersSituation == "" || neighbours == "" || facilities == "" || traffic == "") {
+        console.log("validation failed");
+        errorMessage.innerText = "Please fill out all the required fields";
+        return false;
+    } 
+}
