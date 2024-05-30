@@ -35,7 +35,7 @@
 <body>
     <header>
         <nav class="custom-nav">
-            <a href="{{url_for('index')}}" class="brand-logo center logo">Casa Quest</a>
+            <a href="{{url_for('index')}}" class="brand-logo center logo" aria-label="logo and link to index">Casa Quest</a>
 
             <ul class="right hide-on-med-and-down">
                 {% if session.user %}
@@ -57,7 +57,7 @@
                 <li><a href="{{ url_for('change_password') }}" class="teal-text text-darken-4">Change Password</a></li>
                 <li><a href="{{ url_for('logout') }}" class="teal-text text-darken-4">Log Out</a></li>
             </ul>
-            <input id="mobile-menu-toggle" type="checkbox">
+            <input id="mobile-menu-toggle" type="checkbox" aria-label="menu toggle">
             <label class="hamburger right hide-on-large-only" for="mobile-menu-toggle" aria-label="menu">
                 <span></span>
                 <span></span>
