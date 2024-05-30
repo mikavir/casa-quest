@@ -316,6 +316,7 @@ input[type=file]::file-selector-button:hover {
 
 .footer-container {
   background-color: #17353B;
+  bottom: 0;
   height: 30vh;
   color: #FAECD9;
 }
@@ -416,7 +417,7 @@ iframe {
 
 @media screen and (max-width: 450px) {
   main {
-    padding-bottom: 10vh;
+    min-height: 90vh;
   }
   .social-media-icons i {
     font-size: 15px;
