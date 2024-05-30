@@ -19,11 +19,6 @@ main {
   min-height: calc(100vh - 20vh);
 }
 
-/* Allow browser compatibility, as suggested by Tim Nelson */
-body {
-  padding-bottom: env(safe-area-inset-bottom);
-
-}
 
 
 h1,
@@ -313,8 +308,6 @@ input[type=file]::file-selector-button:hover {
   color: #000;
 }
 
-
-
 .footer-container {
   background-color: #17353B;
   bottom: 0;
@@ -419,7 +412,7 @@ iframe {
 
 @media screen and (max-width: 450px) {
   main {
-    min-height: 90vh;
+    min-height: 70vh;
   }
   .social-media-icons i {
     font-size: 15px;
