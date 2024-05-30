@@ -84,7 +84,8 @@ function validateHouseInfo() {
         console.log("validation failed");
         errorMessage.innerText = "Please fill out all the required fields";
         return false;
-    } 
+    }
+    return true; 
 }
 
 function validateEditHouseInfo() {
@@ -98,7 +99,8 @@ function validateEditHouseInfo() {
         console.log("validation failed");
         errorMessage.innerText = "Please fill out all the required fields";
         return false;
-    } 
+    }
+    return true; 
 }
 
 // Form validation for adding House viewing information
@@ -113,7 +115,8 @@ function validateAddHouseViewing() {
         console.log("validation failed");
         errorMessage.innerText = "Please fill out all the required fields";
         return false;
-    } 
+    }
+    return true;
 }
 
 // Form validation for adding House viewing information
@@ -128,5 +131,23 @@ function validateEditHouseViewing() {
         console.log("validation failed");
         errorMessage.innerText = "Please fill out all the required fields";
         return false;
+    }
+    return true; 
+}
+
+// Form validation for adding House checks information
+function validateAddHouseCheck() {
+    let propertyFacing = document.forms["add-house-check"]["add_property_facing"].value;
+    let noiseLevel = document.forms["add-house-check"]["add_noise_level"].value;
+    let boiler = document.forms["add-house-check"]["add_boiler_noise"].value;
+    let storageSpace = document.forms["add-house-check"]["add_storage_space"].value;
+    let roofCondition = document.forms["add-house-check"]["add_roof_condition"].value;
+    let errorMessage = document.getElementById("add-house-check-error");
+
+    if (propertyFacing == "" || noiseLevel == "" || boiler == "" || storageSpace == ""|| roofCondition == "") {
+        console.log("validation failed");
+        errorMessage.innerText = "Please fill out all the required fields";
+        return false;
     } 
+    return true;
 }
