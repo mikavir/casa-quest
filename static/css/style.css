@@ -8,6 +8,11 @@ body {
 
 }
 
+body > footer {
+    position: sticky;
+    top: 100vh;
+}
+
 /* https://stackoverflow.com/questions/42294/how-do-you-get-the-footer-to-stay-at-the-bottom-of-a-web-page */
 main {
   overflow-x: hidden;
