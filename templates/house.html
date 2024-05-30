@@ -1215,79 +1215,8 @@
 </div>
 {% endblock %}
 {% block javascript %}
-<!-- script -->
 
-<script>
-    addInfoBtnDisplay();
-    houseViewDisplay();
-    houseCheckDisplay();
-
-
-    function isThereHouseContent(houseContent) {
-
-        for (const content of houseContent) {
-            if (content.innerText !== "") {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    function addInfoBtnDisplay() {
-        const addInfoBtn = document.getElementById("add-houseinfo-btn");
-        const editInfoBtn = document.getElementById("edit-houseinfo-btn");
-        const houseInfoDiv = document.getElementById("house-info");
-        const houseInfoContent = document.querySelectorAll(".house-info-content");
-
-        if (isThereHouseContent(houseInfoContent)) {
-            houseInfoDiv.style.display = "block";
-            editInfoBtn.style.display = "block";
-            addInfoBtn.style.display = "none";
-
-        } else {
-            houseInfoDiv.style.display = "none"
-            editInfoBtn.style.display = "none";
-            addInfoBtn.style.display = "block";
-        }
-    }
-
-    function houseViewDisplay() {
-        const addInfoBtn = document.getElementById("add-houseviewing-btn");
-        const editInfoBtn = document.getElementById("edit-houseviewing-btn");
-        const houseViewingDiv = document.getElementById("house-viewing");
-        const houseViewingContent = document.querySelectorAll(".house-viewing-content");
-
-        if (isThereHouseContent(houseViewingContent)) {
-            houseViewingDiv.style.display = "block";
-            editInfoBtn.style.display = "block";
-            addInfoBtn.style.display = "none";
-
-        } else {
-            houseViewingDiv.style.display = "none";
-            editInfoBtn.style.display = "none";
-            addInfoBtn.style.display = "block";
-        }
-    }
-
-    function houseCheckDisplay() {
-        const addInfoBtn = document.getElementById("add-housecheck-btn");
-        const editInfoBtn = document.getElementById("edit-housecheck-btn");
-        const houseCheckDiv = document.getElementById("house-check");
-        const houseCheckContent = document.querySelectorAll(".house-check-content");
-
-        if (isThereHouseContent(houseCheckContent)) {
-            houseCheckDiv.style.display = "block";
-            editInfoBtn.style.display = "block";
-            addInfoBtn.style.display = "none";
-
-        } else {
-            houseCheckDiv.style.display = "none";
-            editInfoBtn.style.display = "none";
-            addInfoBtn.style.display = "block";
-        }
-    }
-</script>
-<script src="{{ url_for('static', filename='js/validation.js') }}">
+<script src="{{ url_for('static', filename='js/house.js') }}">
 </script>
 
 {% endblock %}
