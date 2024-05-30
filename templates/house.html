@@ -524,6 +524,8 @@
             <div class="row">
                 <div class="col s10 left-align">
                     <h6>Capture Your Future Home's Details</h6>
+                    <p id="add-house-info-error" class="red-text text-darken-4"></p>
+                    
                 </div>
                 <div class="col s2 right-align">
                     <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i
@@ -532,8 +534,9 @@
                 </div>
             </div>
         </div>
+        
         <form action="{{ url_for('add_house_info', house_id=house._id) }}" method="POST"
-            class="teal-text text-darken-2 col s12">
+            class="teal-text text-darken-2 col s12" name="add_house_info" onsubmit="return validateHouseInfo()">
             <!-- input field for EPC -->
             <div class="row">
                 <div class="input-field col s12 outlined m-3">
@@ -1206,7 +1209,8 @@
 
     </div>
 </div>
-
+{% endblock %}
+{% block javascript %}
 <!-- script -->
 
 <script>
@@ -1279,6 +1283,7 @@
         }
     }
 </script>
-
+<script src="{{ url_for('static', filename='js/validation.js') }}">
+</script>
 
 {% endblock %}
