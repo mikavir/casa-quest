@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     houseCheckDisplay();
 });
 
-
+//  -------------DISPLAY OF MODAL FUNCTIONS------
 
 function isThereHouseContent(houseContent) {
 
@@ -71,7 +71,7 @@ function houseCheckDisplay() {
     }
 }
 
-
+// -------- Form validation of forms in house.html
 
 function validateHouseInfo() {
     let epc = document.forms["add_house_info"]["add_epc"].value;
@@ -117,12 +117,12 @@ function validateAddHouseViewing() {
 }
 
 // Form validation for adding House viewing information
-function validateAddHouseViewing() {
-    let sellersSituation = document.forms["add-house-viewing"]["add_sellers-sitaution"].value;
-    let neighbours = document.forms["add-house-viewing"]["add_neighbours"].value;
-    let facilities = document.forms["add-house-viewing"]["add_facilities"].value;
-    let traffic = document.forms["add-house-viewing"]["add_traffic"].value;
-    let errorMessage = document.getElementById("add-house-viewing-error");
+function validateEditHouseViewing() {
+    let sellersSituation = document.forms["edit-house-viewing"]["sellers-sitaution"].value;
+    let neighbours = document.forms["edit-house-viewing"]["neighbours"].value;
+    let facilities = document.forms["edit-house-viewing"]["facilities"].value;
+    let traffic = document.forms["edit-house-viewing"]["traffic"].value;
+    let errorMessage = document.getElementById("edit-house-viewing-error");
 
     if (sellersSituation == "" || neighbours == "" || facilities == "" || traffic == "") {
         console.log("validation failed");

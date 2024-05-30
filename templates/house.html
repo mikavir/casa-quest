@@ -619,6 +619,7 @@
                 <div class="col s10 left-align">
                     <h6 class="m-0">Navigate Your Home Search</h6>
                     <p>Edit the answers</p>
+                    <p id="edit-house-viewing-error" class="red-text text-darken-4"></p>
                 </div>
                 <div class="col s2 right-align">
                     <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i
@@ -629,8 +630,8 @@
         </div>
         <!-- FORM FOR EDIT HOUSE VIEWING -->
         <form action="{{ url_for('edit_house_viewing', house_id=house._id) }}" method="POST"
-            class="col s12 teal-text text-darken-2">
-
+            class="col s12 teal-text text-darken-2" name="edit-house-viewing" onsubmit="return validateEditHouseViewing()">
+            <!-- Input field for seller's situation -->
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
                     <i class="material-icons prefix">people_outline</i>
@@ -640,6 +641,7 @@
                 </div>
 
             </div>
+            <!-- Input field for neighbours -->
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
                     <i class="material-icons prefix">person_search</i>
@@ -647,8 +649,8 @@
                         value=" {{ house_viewing.neighbours }}" required>
                     <label for="neighbours">How are the neighbours?</label>
                 </div>
-
             </div>
+            <!-- Input field for facilities -->
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
                     <i class="material-icons prefix">explore</i>
@@ -656,8 +658,8 @@
                         value=" {{ house_viewing.facilities}}" required>
                     <label for="facilities">What are the facilities nearby?</label>
                 </div>
-
             </div>
+            <!-- Input field for traffic -->
             <div class="row">
                 <div class="col s12 left-align">
                     <p>How's the traffic?</p>
@@ -673,14 +675,13 @@
                             <input name="traffic" id="edit{{severity}}" type="radio" value="{{ severity }}" />
                             <span>{{ severity }}</span>
                             {% endif %}
-
                         </label>
                     </span>
                     {% endfor %}
                 </div>
-
             </div>
             <div class="row">
+                <!-- Input field for offers -->
                 <div class="col s12 m6 m-4">
                     <label for="offers">
                         {% if house_viewing.otherOffers == "yes" %}
@@ -691,6 +692,7 @@
                         <span>Has there been other offers?</span>
                     </label>
                 </div>
+                <!-- Input field for windows -->
                 <div class="col s12 m6 m-4">
                     <label for="windows">
                         {% if house_viewing.windows == "yes" %}
@@ -703,6 +705,7 @@
                     </label>
                 </div>
             </div>
+            <!-- SUBMIT BUTTON -->
             <div class="row center">
                 <div class="col s12">
                     <button
