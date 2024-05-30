@@ -188,16 +188,26 @@ Blog
 
 - **Call out message and button**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - Having a callout button simplifies navigation by prompting users to take action. For example, the 'Start Your Casa Quest Now' button encourages users to create an account.
 
 ![screenshot](documentation/feature/casa-quest-feature-callout.png)
 
 - **Dashboard**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - Having a dashboard of houses with key information provides centralized access to property details. Users can view all relevant information about various properties in one place, eliminating the need to switch between different pages or apps. This setup allows for quick and easy comparison of multiple properties based on criteria such as price, location, number of bedrooms, and features
 
 ![screenshot](documentation/feature/casa-quest-feature-dashboard.png)
+- **Favourite**
 
+    - Users can mark properties as favorites, which then appear on a dedicated favorites page for easy access and review. This feature allows users to keep all their preferred properties in one place, simplifying the management and review process. By maintaining a favorites list, users can quickly compare their top choices without needing to search for them again
+
+![screenshot](documentation/feature/casa-quest-feature-favourite.png)
+
+- **Manage Account**
+
+    - A centralized place to manage account settings reduces complexity, making it easy for users to update their password or logout.
+
+![screenshot](documentation/feature/casa-quest-feature-manage-account.png)
 
 ### Future Features
 
