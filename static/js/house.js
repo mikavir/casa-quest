@@ -151,3 +151,20 @@ function validateAddHouseCheck() {
     } 
     return true;
 }
+
+// Form validation for editing House checks information
+function validateEditHouseCheck() {
+    let propertyFacing = document.forms["edit-house-check"]["property_facing"].value;
+    let noiseLevel = document.forms["edit-house-check"]["noise_level"].value;
+    let boiler = document.forms["edit-house-check"]["boiler_noise"].value;
+    let storageSpace = document.forms["edit-house-check"]["storage_space"].value;
+    let roofCondition = document.forms["edit-house-check"]["roof_condition"].value;
+    let errorMessage = document.getElementById("edit-house-check-error");
+
+    if (propertyFacing == "" || noiseLevel == "" || boiler == "" || storageSpace == ""|| roofCondition == "") {
+        console.log("validation failed");
+        errorMessage.innerText = "Please fill out all the required fields";
+        return false;
+    } 
+    return true;
+}
