@@ -22,6 +22,7 @@ main {
 /* Allow browser compatibility, as suggested by Tim Nelson */
 body {
   padding-bottom: env(safe-area-inset-bottom);
+  overflow: hidden;
 }
 
 
