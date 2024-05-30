@@ -415,7 +415,9 @@ iframe {
 
 
 @media screen and (max-width: 450px) {
-  
+  main {
+    padding-bottom: 10vh;
+  }
   .social-media-icons i {
     font-size: 15px;
     margin: 5px;
@@ -427,6 +429,7 @@ iframe {
   .add-modal, .add-modal-view {
     width: 250px; 
   }
+  
 
 }
 
