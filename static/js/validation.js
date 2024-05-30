@@ -11,3 +11,17 @@ function validateHouseInfo() {
         return false;
     } 
 }
+
+function validateEditHouseInfo() {
+    let epc = document.forms["edit-house-info"]["epc"].value;
+    let taxBand = document.forms["edit-house-info"]["tax_band"].value;
+    let floodRisk = document.forms["edit-house-info"]["flood_risk"].value;
+    let internetSpeed = document.forms["edit-house-info"]["internet_speed"].value;
+    let errorMessage = document.getElementById("edit-house-info-error");
+
+    if (epc == "" || taxBand == "" || floodRisk == "" || internetSpeed == "") {
+        console.log("validation failed");
+        errorMessage.innerText = "Please fill out all the required fields";
+        return false;
+    } 
+}

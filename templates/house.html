@@ -423,6 +423,7 @@
             <div class="row">
                 <div class="col s10 left-align">
                     <h6>Refine Your Future Home's Details</h6>
+                    <p id="edit-house-info-error" class="red-text text-darken-4"></p>
                 </div>
                 <div class="col s2 right-align">
                     <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i
@@ -431,8 +432,8 @@
                 </div>
             </div>
         </div>
-        <form action="{{ url_for('edit_house_info', house_id=house._id) }}" method="POST" id="edit-info"
-            class="col s12 teal-text text-darken-2">
+        <form action="{{ url_for('edit_house_info', house_id=house._id) }}" method="POST" id="edit-house-info"
+            class="col s12 teal-text text-darken-2" name="edit-house-info" onsubmit="return validateEditHouseInfo()">
             <!-- input field for EPC -->
             <div class="row">
                  <div class="input-field col s12 outlined m-3">
