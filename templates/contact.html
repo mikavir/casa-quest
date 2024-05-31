@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 <!-- Title -->
 {% block header %}
-  <title>{% block title %}Get in touch!{% endblock %}</title>
+<title>{% block title %}Get in touch!{% endblock %}</title>
 {% endblock %}
 <!-- Main Content -->
 {% block content %}
@@ -21,45 +21,50 @@
                     <h5>
                         Thanks for reaching out to Casa Quest! Your dream home awaits!
                     </h5>
-                </div>                
+                </div>
 
             </div>
             <div class="row">
                 <div class="col s12 teal-text text-darken-4">
-                    <p>Thank you for reaching out to Casa Quest, your premier destination for all things house hunting!</p>
+                    <p>Thank you for reaching out to Casa Quest, your premier destination for all things house hunting!
+                    </p>
 
                     <p>Your message is important to us, and we're excited to assist you in finding your dream home. </p>
-                    <p>Our team is working diligently to review your inquiry and will get back to you as soon as possible.</p>
-                        
-                    <p>In the meantime, feel free to explore our website for helpful resources to streamline your house-hunting journey.</p>
-                        
+                    <p>Our team is working diligently to review your inquiry and will get back to you as soon as
+                        possible.</p>
+
+                    <p>In the meantime, feel free to explore our website for helpful resources to streamline your
+                        house-hunting journey.</p>
+
                     <p>Thank you for choosing Casa Quest. We look forward to connecting with you soon!</p>
-                        
+
                     <p>Warm regards,</p>
-                        
+
                     <p>Casa Quest Team</p>
-                    
+
                 </div>
             </div>
             <div class="row">
                 <div class="col s12 center">
-                    <a class="btn orange-text text-lighten-4 teal darken-4 rounded waves-effect waves-light" href="{{url_for('index')}}">Home</a>
+                    <a class="btn orange-text text-lighten-4 teal darken-4 rounded waves-effect waves-light"
+                        href="{{url_for('index')}}">Home</a>
                 </div>
             </div>
 
         </div>
-        
+
     </div>
-    <!-- Contact Form -->  
+    <!-- Contact Form -->
     <div class="row">
-        <form class="card-panel custom-card col s12 m8 offset-m2 p-5" name="contactForm" id="contactForm" onsubmit="return sendMail(this);"> 
+        <form class="card-panel custom-card col s12 m8 offset-m2 p-5" name="contactForm" id="contactForm"
+            onsubmit="return sendMail(this);">
             <!-- Name -->
             <div class="row my-4">
                 <div class="col s12 input-field">
                     <i class="fas fa-user-plus prefix green-text text-darken-4"></i>
                     <input id="name" name="name" type="text" class="validate" required>
                     <label for="name">Name</label>
-                    <small>(It will be helpful if you provide us with your username)</small>                   
+                    <small>(It will be helpful if you provide us with your username)</small>
                 </div>
             </div>
             <!-- Email -->
@@ -68,30 +73,31 @@
                     <i class="fas fa-user-plus prefix green-text text-darken-4"></i>
                     <input id="email" name="email" type="text" class="validate" required>
                     <label for="email">Email</label>
-                    <small>(Share Your Email, and We'll Reach Out to You ASAP!)</small>                   
+                    <small>(Share Your Email, and We'll Reach Out to You ASAP!)</small>
                 </div>
             </div>
             <!-- Message -->
             <div class="row my-4">
                 <div class="input-field col s12">
-                  <textarea id="message" name="message" class="materialize-textarea" placeholder="Message"></textarea>
-                  <label for="message"><i class="fa-solid fa-message green-text text-darken-4"></i> </label>
-                  <small>(How Can We Assist You Today? Let Us Know!)</small>
+                    <textarea id="message" name="message" class="materialize-textarea" placeholder="Message"></textarea>
+                    <label for="message"><i class="fa-solid fa-message green-text text-darken-4"></i> </label>
+                    <small>(How Can We Assist You Today? Let Us Know!)</small>
                 </div>
             </div>
             <!-- Submit button -->
             <div class="row my-5">
                 <div class="col s12 center">
-                    <button class="btn teal darken-4 orange-text orange-lighten-4 rounded waves-effect waves-light">Get in touch!</button>
+                    <button class="btn teal darken-4 orange-text orange-lighten-4 rounded waves-effect waves-light">Get
+                        in touch!</button>
                 </div>
-            </div>             
+            </div>
         </form>
     </div>
 </div>
 {% endblock %}
 <!-- Script tags -->
 {% block javascript %}
-    <script src="{{ url_for('static', filename='js/email.js') }}">
-    </script>
-   
+<script src="{{ url_for('static', filename='js/email.js') }}">
+</script>
+
 {% endblock %}
