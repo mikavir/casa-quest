@@ -72,6 +72,14 @@ These are the HTML files that I valdiated by copying and pasting the HTML code a
 | 403.html | ![screenshot](documentation/validation/html-validation/html-validation-403.png) | No errors found|
 | 500.html | ![screenshot](documentation/validation/html-validation/html-validation-500.png) | No errors found|
 
+### CSS
+
+I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
+
+| Directory | File | Screenshot | Notes |
+| --- | --- | --- | --- |
+| static | style.css | ![screenshot](documentation/validation/css-validation/casa-quest-css-validation.png) ![screenshot](documentation/validation/css-validation/casa-quest-css-validation-direct-input.png) | No error on style.css file, errors marked from the libraries used |
+
 
 ### Python
 
