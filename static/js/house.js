@@ -1,4 +1,6 @@
+/* jshint esversion: 11, jquery: true */
 
+// Main Function
 document.addEventListener("DOMContentLoaded", () => {
     addInfoBtnDisplay();
     houseViewDisplay();
@@ -7,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //  -------------DISPLAY OF MODAL FUNCTIONS------
 
+/** Checks if there is house content, returns a boolean */ 
 function isThereHouseContent(houseContent) {
 
     for (const content of houseContent) {
@@ -17,6 +20,7 @@ function isThereHouseContent(houseContent) {
     return false;
 }
 
+/** Toggle display of the house info content */ 
 function addInfoBtnDisplay() {
     const addInfoBtn = document.getElementById("add-houseinfo-btn");
     const editInfoBtn = document.getElementById("edit-houseinfo-btn");
@@ -29,12 +33,13 @@ function addInfoBtnDisplay() {
         addInfoBtn.style.display = "none";
 
     } else {
-        houseInfoDiv.style.display = "none"
+        houseInfoDiv.style.display = "none";
         editInfoBtn.style.display = "none";
         addInfoBtn.style.display = "block";
     }
 }
 
+/** Toggle display of the content of house viewing */ 
 function houseViewDisplay() {
     const addInfoBtn = document.getElementById("add-houseviewing-btn");
     const editInfoBtn = document.getElementById("edit-houseviewing-btn");
@@ -53,6 +58,7 @@ function houseViewDisplay() {
     }
 }
 
+/** Toggle display of the content of house checks*/ 
 function houseCheckDisplay() {
     const addInfoBtn = document.getElementById("add-housecheck-btn");
     const editInfoBtn = document.getElementById("edit-housecheck-btn");
@@ -72,13 +78,15 @@ function houseCheckDisplay() {
 }
 
 // -------- Form validation of forms in house.html
+// https://www.w3schools.com/js/js_validation.asp
 
+/** Form validation for adding House information */ 
 function validateHouseInfo() {
-    let epc = document.forms["add_house_info"]["add_epc"].value;
-    let taxBand = document.forms["add_house_info"]["add_tax_band"].value;
-    let floodRisk = document.forms["add_house_info"]["add_flood_risk"].value;
-    let internetSpeed = document.forms["add_house_info"]["add_internet_speed"].value;
-    let errorMessage = document.getElementById("add-house-info-error");
+    const epc = document.forms["add_house_info"]["add_epc"].value;
+    const taxBand = document.forms["add_house_info"]["add_tax_band"].value;
+    const floodRisk = document.forms["add_house_info"]["add_flood_risk"].value;
+    const internetSpeed = document.forms["add_house_info"]["add_internet_speed"].value;
+    const errorMessage = document.getElementById("add-house-info-error");
 
     if (epc == "" || taxBand == "" || floodRisk == "" || internetSpeed == "") {
         console.log("validation failed");
@@ -88,12 +96,13 @@ function validateHouseInfo() {
     return true; 
 }
 
+/** Form validation for editing House information */ 
 function validateEditHouseInfo() {
-    let epc = document.forms["edit-house-info"]["epc"].value;
-    let taxBand = document.forms["edit-house-info"]["tax_band"].value;
-    let floodRisk = document.forms["edit-house-info"]["flood_risk"].value;
-    let internetSpeed = document.forms["edit-house-info"]["internet_speed"].value;
-    let errorMessage = document.getElementById("edit-house-info-error");
+    const epc = document.forms["edit-house-info"]["epc"].value;
+    const taxBand = document.forms["edit-house-info"]["tax_band"].value;
+    const floodRisk = document.forms["edit-house-info"]["flood_risk"].value;
+    const internetSpeed = document.forms["edit-house-info"]["internet_speed"].value;
+    const errorMessage = document.getElementById("edit-house-info-error");
 
     if (epc == "" || taxBand == "" || floodRisk == "" || internetSpeed == "") {
         console.log("validation failed");
@@ -103,13 +112,13 @@ function validateEditHouseInfo() {
     return true; 
 }
 
-// Form validation for adding House viewing information
+/** Form validation for adding House viewing information */ 
 function validateAddHouseViewing() {
-    let sellersSituation = document.forms["add-house-viewing"]["add_sellers-sitaution"].value;
-    let neighbours = document.forms["add-house-viewing"]["add_neighbours"].value;
-    let facilities = document.forms["add-house-viewing"]["add_facilities"].value;
-    let traffic = document.forms["add-house-viewing"]["add_traffic"].value;
-    let errorMessage = document.getElementById("add-house-viewing-error");
+    const sellersSituation = document.forms["add-house-viewing"]["add_sellers-sitaution"].value;
+    const neighbours = document.forms["add-house-viewing"]["add_neighbours"].value;
+    const facilities = document.forms["add-house-viewing"]["add_facilities"].value;
+    const traffic = document.forms["add-house-viewing"]["add_traffic"].value;
+    const errorMessage = document.getElementById("add-house-viewing-error");
 
     if (sellersSituation == "" || neighbours == "" || facilities == "" || traffic == "") {
         console.log("validation failed");
@@ -119,13 +128,13 @@ function validateAddHouseViewing() {
     return true;
 }
 
-// Form validation for adding House viewing information
+/** Form validation for adding House viewing information */ 
 function validateEditHouseViewing() {
-    let sellersSituation = document.forms["edit-house-viewing"]["sellers-sitaution"].value;
-    let neighbours = document.forms["edit-house-viewing"]["neighbours"].value;
-    let facilities = document.forms["edit-house-viewing"]["facilities"].value;
-    let traffic = document.forms["edit-house-viewing"]["traffic"].value;
-    let errorMessage = document.getElementById("edit-house-viewing-error");
+    const sellersSituation = document.forms["edit-house-viewing"]["sellers-sitaution"].value;
+    const neighbours = document.forms["edit-house-viewing"]["neighbours"].value;
+    const facilities = document.forms["edit-house-viewing"]["facilities"].value;
+    const traffic = document.forms["edit-house-viewing"]["traffic"].value;
+    const errorMessage = document.getElementById("edit-house-viewing-error");
 
     if (sellersSituation == "" || neighbours == "" || facilities == "" || traffic == "") {
         console.log("validation failed");
@@ -135,14 +144,14 @@ function validateEditHouseViewing() {
     return true; 
 }
 
-// Form validation for adding House checks information
+/** Form validation for adding House checks information */ 
 function validateAddHouseCheck() {
-    let propertyFacing = document.forms["add-house-check"]["add_property_facing"].value;
-    let noiseLevel = document.forms["add-house-check"]["add_noise_level"].value;
-    let boiler = document.forms["add-house-check"]["add_boiler_noise"].value;
-    let storageSpace = document.forms["add-house-check"]["add_storage_space"].value;
-    let roofCondition = document.forms["add-house-check"]["add_roof_condition"].value;
-    let errorMessage = document.getElementById("add-house-check-error");
+    const propertyFacing = document.forms["add-house-check"]["add_property_facing"].value;
+    const noiseLevel = document.forms["add-house-check"]["add_noise_level"].value;
+    const boiler = document.forms["add-house-check"]["add_boiler_noise"].value;
+    const storageSpace = document.forms["add-house-check"]["add_storage_space"].value;
+    const roofCondition = document.forms["add-house-check"]["add_roof_condition"].value;
+    const errorMessage = document.getElementById("add-house-check-error");
 
     if (propertyFacing == "" || noiseLevel == "" || boiler == "" || storageSpace == ""|| roofCondition == "") {
         console.log("validation failed");
@@ -152,14 +161,14 @@ function validateAddHouseCheck() {
     return true;
 }
 
-// Form validation for editing House checks information
+/** Form validation for editing House checks information */ 
 function validateEditHouseCheck() {
-    let propertyFacing = document.forms["edit-house-check"]["property_facing"].value;
-    let noiseLevel = document.forms["edit-house-check"]["noise_level"].value;
-    let boiler = document.forms["edit-house-check"]["boiler_noise"].value;
-    let storageSpace = document.forms["edit-house-check"]["storage_space"].value;
-    let roofCondition = document.forms["edit-house-check"]["roof_condition"].value;
-    let errorMessage = document.getElementById("edit-house-check-error");
+    const propertyFacing = document.forms["edit-house-check"]["property_facing"].value;
+    const noiseLevel = document.forms["edit-house-check"]["noise_level"].value;
+    const boiler = document.forms["edit-house-check"]["boiler_noise"].value;
+    const storageSpace = document.forms["edit-house-check"]["storage_space"].value;
+    const roofCondition = document.forms["edit-house-check"]["roof_condition"].value;
+    const errorMessage = document.getElementById("edit-house-check-error");
 
     if (propertyFacing == "" || noiseLevel == "" || boiler == "" || storageSpace == ""|| roofCondition == "") {
         console.log("validation failed");

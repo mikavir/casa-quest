@@ -7,13 +7,12 @@ const feedback = document.getElementById("thank-you-feedback");
 
 initTextArea();
 
+/** Initialise Materialize text area */
 function initTextArea(){
-    message = document.querySelector('#message')
+    const message = document.querySelector('#message');
     M.Forms.InitTextarea(message);
     M.Forms.textareaAutoResize(message);
 }
-
-
 
 /** Function to send mail once validated using emailjs */
 function sendMail(contactForm){
@@ -26,7 +25,6 @@ function sendMail(contactForm){
                 (response) => {
                     form.style.display = "none";
                     feedback.style.display = "block";
-                    console.log("Success")
                 },
                 (error) => {
                     console.log("FAILED", error);
