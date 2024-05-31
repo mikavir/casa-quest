@@ -42,12 +42,12 @@ button {
 
 .push-container {
   height: 70vh;
-  margin-top: 5vh;
+  margin-top: 10vh;
 }
 
 
 .page-container {
-  margin-top: 5rem;
+  margin-top: 4rem;
 }
 
 
@@ -66,7 +66,7 @@ a.logo {
   text-align: left;
   overflow: hidden;
   position: absolute;
-  z-index: 3;
+  z-index: 4;
 }
 
 
@@ -74,7 +74,7 @@ a.logo {
 
 .custom-nav {
   background-color: #FAECD9;
-  z-index: 3;
+  z-index: 4;
   position: fixed;
   top: 0;
 }
@@ -111,7 +111,7 @@ nav ul:not(.dropdown-content)>li>a {
   left: 100%;
   width: 50%;
   height: 100vh;
-  z-index: 2;
+  z-index: 3;
   background-color: #587E7B;
   transition: left .3s;
   display: none;
@@ -181,9 +181,8 @@ input:checked~.hamburger span:nth-child(3) {
 /* FLASH MESSAGES */
 
 aside.flash {
-  margin-top: 6rem;
+  margin-top: 65px;
   z-index: 1;
-  margin-bottom:1rem;
 }
 
 
@@ -197,7 +196,7 @@ aside#hero-image {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero-callout {
@@ -406,8 +405,8 @@ iframe {
 
 /* MEDIA QUERIES FOR RESPONSIVENESS */
 @media screen and (max-width: 700px) {
-  section.flash {
-    margin-top: 40px;
+  aside.flash {
+    margin-top: 55px;
   }
   .rooms {
     font-size: smaller;
@@ -426,12 +425,10 @@ iframe {
     margin: 5px;
     
   }
-  section.flash {
-    margin-top: 40px;
-  }
   .add-modal, .add-modal-view {
     width: 250px; 
   }
+
   
 
 }
