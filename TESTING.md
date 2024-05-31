@@ -87,7 +87,7 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 | Directory | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-|  | app.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/mikavir/casa-quest/main/app.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+|  | app.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/mikavir/casa-quest/main/app.py) | ![screenshot](documentation/validation/python-validation/python-validation.png) | Some lines were too long to break due to being strings, Therefore, I added # noqa. |
 
 ## Browser Compatibility
 
