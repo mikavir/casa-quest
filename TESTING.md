@@ -81,6 +81,26 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 | static | style.css | ![screenshot](documentation/validation/css-validation/casa-quest-css-validation.png) ![screenshot](documentation/validation/css-validation/casa-quest-css-validation-direct-input.png) | No error on style.css file, errors marked from the libraries used |
 
 
+### JavaScript
+
+I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
+
+| Directory | File | Screenshot | Notes |
+| --- | --- | --- | --- |
+| static | script.js | ![screenshot](documentation/validation/javascript-validation/js-validation-script.png) |  Undefined variable of `M` from materialize initiation |
+| static | house.js | ![screenshot](documentation/validation/javascript-validation/js-validation-house.png) | Recommendations to use dot notation with my form validation function |
+| static | email.js | ![screenshot](documentation/validation/javascript-validation/js-validation-email.png) | Undefined variable of `emailjs` and `M` from materialize. Unused variable of `sendmail`. This function was called in the contact.html. Recommendations to use dot notation with my form validation function |
+
+I used separate script tags in certain HTML files to target only those specific id's in those pages.
+
+| Directory | File | Screenshot | Notes |
+| --- | --- | --- | --- |
+| templates | profile.html | ![screenshot](documentation/validation/javascript-validation/js-validation-profile.png) |  No errors |
+| templates | favourites.html | ![screenshot](documentation/validation/javascript-validation/js-validation-favourites.png) | No errors |
+| templates | new_house.html | ![screenshot](documentation/validation/javascript-validation/js-validation-new-house.png) | Undefined variable of `google` from google API. Unused variable of `formValidation()`. This function will be called in once form is submitted.  Unused variable of `initAutoComplete()`. This function initialises google's autocomplete API. Recommendations to use dot notation with my form validation function |
+| templates | edit_new_house.html | ![screenshot](documentation/validation/javascript-validation/js-validation-edit_house.png) | Undefined variable of `google` from google API. Unused variable of `formValidation()`. This function will be called in once form is submitted.  Unused variable of `initAutoComplete()`. This function initialises google's autocomplete API. Recommendations to use dot notation with my form validation function |
+           
+
 ### Python
 
 I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
