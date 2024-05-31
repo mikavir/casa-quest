@@ -6,8 +6,9 @@ $(document).ready(function(){
   initialiseModal();
   initialiseToolTipped();
   initialiseDropdown();
+  manageAccount();
 
-  
+ 
 });
 
 function selectForm(){
@@ -63,3 +64,10 @@ function initialiseDropdown(){
     coverTrigger: false,
   });
 }
+
+function manageAccount() {
+  $(".manage-account-link").hover(
+    function(){$("#manage-account").addClass("hovered teal-text text-darken-4")},
+    function(){$("#manage-account").removeClass("hovered teal-text text-darken-4")}
+)}
+

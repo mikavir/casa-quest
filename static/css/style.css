@@ -135,6 +135,12 @@ nav ul:not(.dropdown-content)>li>a:hover:not(.active) {
   background-color: #FAECD9;
   color:#17353B;
 }
+
+.hovered {
+  background-color: rgba(250,236,217, 0.4);
+  color:#17353B;
+}
+
 /* inspired from The Great Wall of Gratitude https://github.com/VCGithubCode/Gratidudes */
 /* Mobile menu trigger button */
 .hamburger {
@@ -169,6 +175,8 @@ input:checked~.hamburger span:nth-child(2) {
 input:checked~.hamburger span:nth-child(3) {
   transform: translateY(-12px) rotate(45deg);
 }
+
+
 
 /* FLASH MESSAGES */
 
