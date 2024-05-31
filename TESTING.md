@@ -111,43 +111,15 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 ## Browser Compatibility
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
+I've tested my deployed project on multiple browsers to check for compatibility issues. As my project contains many pages, I will be splitting it into two tables
+| Browser | Landing page(index) | Register | Log in  | Profile | House | Contact | Favourites | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Chrome |![screenshot](documentation/testing/browsers/chrome/chrome-landing-page.png) |![screenshot](documentation/testing/browsers/chrome/chrome-registration-1.png) ![screenshot](documentation/testing/browsers/chrome/chrome-registration-2.png) |![screenshot](documentation/testing/browsers/chrome/chrome-login.png) | ![screenshot](documentation/testing/browsers/chrome/chrome-profile-1.png) ![screenshot](documentation/testing/browsers/chrome/chrome-profile-2.png) | ![screenshot](documentation/testing/browsers/chrome/chrome-house-1.png)![screenshot](documentation/testing/browsers/chrome/chrome-house-2.png) ![screenshot](documentation/testing/browsers/chrome/chrome-house-3.png) | ![screenshot](documentation/testing/browsers/chrome/chrome-contact.png) | ![screenshot](documentation/testing/browsers/chrome/chrome-favourites.png) | Works as expected |
 
-Use this space to discuss testing the live/deployed site on various browsers.
+| Browser | New House | Edit new house | Change Password  | Manage_users | 404 | 500 | 403 | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Chrome |![screenshot](documentation/testing/browsers/chrome/chrome-new-house-1.png)  ![screenshot](documentation/testing/browsers/chrome/chrome-new-house-2.png)| ![screenshot](documentation/testing/browsers/chrome/chrome-edit-house-1.png) ![screenshot](documentation/testing/browsers/chrome/chrome-edit-house-2.png) |![screenshot](documentation/testing/browsers/chrome/chrome-change-password.png) | ![screenshot](documentation/testing/browsers/chrome/chrome-manage_users.png) | ![screenshot](documentation/testing/browsers/chrome/chrome-404.png) |![screenshot](documentation/testing/browsers/chrome/chrome-500.png)| ![screenshot](documentation/testing/browsers/chrome/chrome-403.png) | works as expected |
 
-Consider testing AT LEAST 3 different browsers, if available on your system.
-
-You DO NOT need to use all of the browsers below, just pick any 3 (minimum).
-
-Recommended browsers to consider:
-- [Chrome](https://www.google.com/chrome)
-- [Firefox (Developer Edition)](https://www.mozilla.org/firefox/developer)
-- [Edge](https://www.microsoft.com/edge)
-- [Safari](https://support.apple.com/downloads/safari)
-- [Brave](https://brave.com/download)
-- [Opera](https://www.opera.com/download)
-
-**IMPORTANT**: You must provide screenshots of the tested browsers, to "prove" that you've actually tested them.
-
-Please note, there are services out there that can test multiple browser compatibilities at the same time.
-Some of these are paid services, but some are free.
-If you use these, you must provide a link to the source used for attribution, and multiple screenshots of the results.
-
-Sample browser testing documentation:
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-I've tested my deployed project on multiple browsers to check for compatibility issues.
-
-| Browser | Home | About | Contact | etc | Notes |
-| --- | --- | --- | --- | --- | --- |
-| Chrome | ![screenshot](documentation/browsers/browser-chrome-home.png) | ![screenshot](documentation/browsers/browser-chrome-about.png) | ![screenshot](documentation/browsers/browser-chrome-contact.png) | ![screenshot](documentation/browsers/browser-chrome-etc.png) | Works as expected |
-| Firefox | ![screenshot](documentation/browsers/browser-firefox-home.png) | ![screenshot](documentation/browsers/browser-firefox-about.png) | ![screenshot](documentation/browsers/browser-firefox-contact.png) | ![screenshot](documentation/browsers/browser-firefox-etc.png) | Works as expected |
-| Edge | ![screenshot](documentation/browsers/browser-edge-home.png) | ![screenshot](documentation/browsers/browser-edge-about.png) | ![screenshot](documentation/browsers/browser-chrome-edge.png) | ![screenshot](documentation/browsers/browser-edge-etc.png) | Works as expected |
-| Safari | ![screenshot](documentation/browsers/browser-safari-home.png) | ![screenshot](documentation/browsers/browser-safari-about.png) | ![screenshot](documentation/browsers/browser-safari-contact.png) | ![screenshot](documentation/browsers/browser-safari-etc.png) | Minor CSS differences |
-| Brave | ![screenshot](documentation/browsers/browser-brave-home.png) | ![screenshot](documentation/browsers/browser-brave-about.png) | ![screenshot](documentation/browsers/browser-brave-contact.png) | ![screenshot](documentation/browsers/browser-brave-etc.png) | Works as expected |
-| Opera | ![screenshot](documentation/browsers/browser-opera-home.png) | ![screenshot](documentation/browsers/browser-opera-about.png) | ![screenshot](documentation/browsers/browser-opera-contact.png) | ![screenshot](documentation/browsers/browser-opera-etc.png) | Minor differences |
-| repeat for any other tested browsers | x | x | x | x | x |
 
 ## Responsiveness
 
