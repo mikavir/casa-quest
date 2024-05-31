@@ -689,7 +689,7 @@
                     {% for severity in ammount %}
                     <span>
                         <label for="edit{{severity}}">
-                            {% if house_viewing.traffic == severity %}
+                            {% if house_viewing.traffic == severity + ' Traffic' %}
                             <input name="traffic" id="edit{{severity}}" type="radio" value="{{ severity }} Traffic"
                                 checked>
                             <span>{{ severity }} Traffic</span>
@@ -869,7 +869,7 @@
                             {% for direction in property_facing %}
                             <span>
                                 <label for="{{ direction }}">
-                                    {% if house_check.propertyFacing == direction %}
+                                    {% if house_check.propertyFacing == direction +' Facing' %}
                                     <input name="property_facing" id="{{ direction }}" type="radio"
                                         value="{{ direction }} Facing" checked>
                                     <span>{{ direction }} Facing</span>
@@ -892,7 +892,7 @@
                             {% for level in ammount %}
                             <span>
                                 <label for="noise_{{ level }}">
-                                    {% if house_check.noisePollution == level %}
+                                    {% if house_check.noisePollution == level + ' Noise' %}
                                     <input name="noise_level" id="noise_{{ level }}" type="radio"
                                         value="{{ level }} Noise" checked="checked">
                                     <span>{{ level }} Noise</span>
@@ -916,7 +916,7 @@
                             {% for level in ammount %}
                             <span>
                                 <label for="boiler_{{ level }}">
-                                    {% if house_check.boilerNoise == level %}
+                                    {% if house_check.boilerNoise == level + ' Noise' %}
                                     <input name="boiler_noise" id="boiler_{{ level }}" type="radio"
                                         value="{{ level }} Noise" checked="checked">
                                     <span>{{ level }} Noise</span>
