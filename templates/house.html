@@ -436,7 +436,7 @@
             class="col s12 teal-text text-darken-2" name="edit-house-info" onsubmit="return validateEditHouseInfo()">
             <!-- input field for EPC -->
             <div class="row">
-                 <div class="input-field col s12 outlined m-3">
+                <div class="input-field col s12 outlined m-3">
                     <select id="epc" name="epc" required>
                         <option value="" disabled>💡 EPC Rating</option>
                         {% for chara in characters %}
@@ -445,10 +445,10 @@
                         {% else %}
                         <option value="{{ chara }}">{{ chara }}</option>
                         {% endif %}
-                        {% endfor %}                        
+                        {% endfor %}
                     </select>
-                    
-                    
+
+
                 </div>
             </div>
             <!-- input field for Tax-Band -->
@@ -462,9 +462,9 @@
                         {% else %}
                         <option value="{{ chara }}">{{ chara }}</option>
                         {% endif %}
-                        {% endfor %}                        
-                    </select>                    
-                    
+                        {% endfor %}
+                    </select>
+
                 </div>
             </div>
 
@@ -526,7 +526,7 @@
                 <div class="col s10 left-align">
                     <h6>Capture Your Future Home's Details</h6>
                     <p id="add-house-info-error" class="red-text text-darken-4"></p>
-                    
+
                 </div>
                 <div class="col s2 right-align">
                     <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i
@@ -535,7 +535,7 @@
                 </div>
             </div>
         </div>
-        
+
         <form action="{{ url_for('add_house_info', house_id=house._id) }}" method="POST"
             class="teal-text text-darken-2 col s12" name="add_house_info" onsubmit="return validateHouseInfo()">
             <!-- input field for EPC -->
@@ -546,10 +546,10 @@
                         {% for chara in characters %}
                         <option value="{{chara}}">{{chara}}</option>
                         {% endfor %}
-                        
+
                     </select>
-                    
-                    
+
+
                 </div>
             </div>
             <!-- input field for Tax-Band -->
@@ -560,10 +560,10 @@
                         {% for chara in characters %}
                         <option value="{{chara}}">{{chara}}</option>
                         {% endfor %}
-                        
+
                     </select>
-                    
-                    
+
+
                 </div>
             </div>
 
@@ -630,7 +630,8 @@
         </div>
         <!-- FORM FOR EDIT HOUSE VIEWING -->
         <form action="{{ url_for('edit_house_viewing', house_id=house._id) }}" method="POST"
-            class="col s12 teal-text text-darken-2" name="edit-house-viewing" onsubmit="return validateEditHouseViewing()">
+            class="col s12 teal-text text-darken-2" name="edit-house-viewing"
+            onsubmit="return validateEditHouseViewing()">
             <!-- Input field for seller's situation -->
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
@@ -669,7 +670,8 @@
                     <span>
                         <label for="edit{{severity}}">
                             {% if house_viewing.traffic == severity %}
-                            <input name="traffic" id="edit{{severity}}" type="radio" value="{{ severity }} Traffic" checked>
+                            <input name="traffic" id="edit{{severity}}" type="radio" value="{{ severity }} Traffic"
+                                checked>
                             <span>{{ severity }} Traffic</span>
                             {% else %}
                             <input name="traffic" id="edit{{severity}}" type="radio" value="{{ severity }} Traffic">
@@ -739,7 +741,8 @@
         </div>
         <!-- FORM FOR ADDING INFORMATION ON HOUSE VIEWING -->
         <form action="{{ url_for('add_house_viewing', house_id=house._id) }}" method="POST"
-            class="col s12 teal-text text-darken-2" name="add-house-viewing" onsubmit="return validateAddHouseViewing()">
+            class="col s12 teal-text text-darken-2" name="add-house-viewing"
+            onsubmit="return validateAddHouseViewing()">
             <!-- Input field for seller's situation -->
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
@@ -775,8 +778,8 @@
                     {% for severity in ammount %}
                     <span>
                         <label for="{{ severity }}_traffic">
-                            <input name="add_traffic" id="{{ severity }}_traffic" type="radio" value="{{ severity }} Traffic"
-                                required>
+                            <input name="add_traffic" id="{{ severity }}_traffic" type="radio"
+                                value="{{ severity }} Traffic" required>
                             <span>{{severity}} Traffic</span>
                         </label>
                     </span>
@@ -794,8 +797,7 @@
                 <!-- Input field for windows -->
                 <div class="col s12 m6 m-4">
                     <label for="add_windows">
-                        <input name="add_windows" id="add_windows" type="checkbox" class="filled-in"
-                            checked="checked">
+                        <input name="add_windows" id="add_windows" type="checkbox" class="filled-in" checked="checked">
                         <span>Are the windows double-glazed?</span>
                     </label>
                 </div>
@@ -1012,17 +1014,16 @@
                                     <div class="row">
                                         {% for condition in roof_condition %}
                                         <span class="col s12 m6 l3">
+                                            <button class="btn p-3 rounded teal darken-2 tooltipped" type="button"
+                                                data-position="bottom" data-tooltip="{{condition[1]}}"><i
+                                                    class="fa-sharp fa-solid fa-circle-info"></i></button>
 
                                             <label for="{{ 'edit' + condition[0] }}">
 
-                                                <button class="btn p-3 rounded teal darken-2 tooltipped" type="button"
-                                                    clickable="false" data-position="bottom"
-                                                    data-tooltip="{{condition[1]}}"><i
-                                                        class="fa-sharp fa-solid fa-circle-info"></i></button>
+
                                                 {% if house_check.roofCondition == condition[0] %}
                                                 <input name="roof_condition" id="{{ 'edit' + condition[0] }}"
-                                                    type="radio" value="{{ condition[0] }}" checked="checked"
-                                                    required>
+                                                    type="radio" value="{{ condition[0] }}" checked="checked" required>
                                                 <span>{{ condition[0] }} </span>
                                                 {% else %}
                                                 <input name="roof_condition" id="{{'edit' + condition[0] }}"
@@ -1165,7 +1166,7 @@
                             </label>
                         </div>
                     </div>
-                     
+
                     <div class="row">
                         <div class="col s12 m6 m-4">
                             <!-- Input field for mould -->
@@ -1204,12 +1205,10 @@
                                     <div class="row">
                                         {% for condition in roof_condition %}
                                         <span class="col s12 m6 l3">
+                                            <button class="btn p-3 rounded teal darken-2 tooltipped" type="button"
+                                                data-position="bottom" data-tooltip="{{condition[1]}}"><i
+                                                    class="fa-sharp fa-solid fa-circle-info"></i></button>
                                             <label for="{{ 'addCondition' + condition[0] }}">
-
-                                                <button class="btn p-3 rounded teal darken-2 tooltipped" type="button"
-                                                    clickable="false" data-position="bottom"
-                                                    data-tooltip="{{condition[1]}}"><i
-                                                        class="fa-sharp fa-solid fa-circle-info"></i></button>
                                                 <input name="add_roof_condition"
                                                     id="{{ 'addCondition' + condition[0] }}" type="radio"
                                                     value="{{ condition[0] }}" required>
