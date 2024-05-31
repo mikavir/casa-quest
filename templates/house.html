@@ -259,7 +259,7 @@
                     </div>
 
                 </div>
-                <div class="col s12 p-5 mx-auto" id="add-house-check">
+                <div class="col s12 p-5 mx-auto">
                     <a href="#addHouseViewingModal" class="add-modal-view modal-trigger row center"
                         id="add-houseviewing-btn">
                         <div class="add-modal-content orange-text text-lighten-4 col s12">
@@ -437,7 +437,7 @@
             <!-- input field for EPC -->
             <div class="row">
                  <div class="input-field col s12 outlined m-3">
-                    <select id="epc" name="epc"required>
+                    <select id="epc" name="epc" required>
                         <option value="" disabled>💡 EPC Rating</option>
                         {% for chara in characters %}
                         {% if chara == house_info.epc %}
@@ -495,9 +495,9 @@
                     <label for="dedicated_parking">
                         {% if house_info.dedicatedParking == "yes" %}
                         <input name="dedicated_parking" id="dedicated_parking" type="checkbox" class="filled-in"
-                            checked="checked" />
+                            checked="checked">
                         {% else %}
-                        <input name="dedicated_parking" id="dedicated_parking" type="checkbox" class="filled-in" />
+                        <input name="dedicated_parking" id="dedicated_parking" type="checkbox" class="filled-in">
                         {% endif %}
                         <span>Dedicated Parking</span>
                     </label>
@@ -541,7 +541,7 @@
             <!-- input field for EPC -->
             <div class="row">
                 <div class="input-field col s12 outlined m-3">
-                    <select id="add_epc" name="add_epc"required>
+                    <select id="add_epc" name="add_epc" required>
                         <option value="" disabled selected>💡 EPC Rating</option>
                         {% for chara in characters %}
                         <option value="{{chara}}">{{chara}}</option>
@@ -591,7 +591,7 @@
                 <div class="col s12  center">
                     <label for="add_dedicated_parking">
                         <input name="add_dedicated_parking" id="add_dedicated_parking" type="checkbox" class="filled-in"
-                            checked="checked" />
+                            checked="checked">
                         <span>Dedicated Parking</span>
                     </label>
                 </div>
@@ -669,11 +669,11 @@
                     <span>
                         <label for="edit{{severity}}">
                             {% if house_viewing.traffic == severity %}
-                            <input name="traffic" id="edit{{severity}}" type="radio" value="{{ severity }}" checked />
-                            <span>{{ severity }}</span>
+                            <input name="traffic" id="edit{{severity}}" type="radio" value="{{ severity }} traffic" checked>
+                            <span>{{ severity }} Traffic</span>
                             {% else %}
-                            <input name="traffic" id="edit{{severity}}" type="radio" value="{{ severity }}" />
-                            <span>{{ severity }}</span>
+                            <input name="traffic" id="edit{{severity}}" type="radio" value="{{ severity }} traffic">
+                            <span>{{ severity }} Traffic</span>
                             {% endif %}
                         </label>
                     </span>
@@ -685,9 +685,9 @@
                 <div class="col s12 m6 m-4">
                     <label for="offers">
                         {% if house_viewing.otherOffers == "yes" %}
-                        <input name="offers" id="offers" type="checkbox" class="filled-in" checked="checked" />
+                        <input name="offers" id="offers" type="checkbox" class="filled-in" checked="checked">
                         {% else %}
-                        <input name="offers" id="offers" type="checkbox" class="filled-in" />
+                        <input name="offers" id="offers" type="checkbox" class="filled-in">
                         {% endif %}
                         <span>Has there been other offers?</span>
                     </label>
@@ -696,9 +696,9 @@
                 <div class="col s12 m6 m-4">
                     <label for="windows">
                         {% if house_viewing.windows == "yes" %}
-                        <input name="windows" id="windows" type="checkbox" class="filled-in" checked="checked" />
+                        <input name="windows" id="windows" type="checkbox" class="filled-in" checked="checked">
                         {% else %}
-                        <input name="windows" id="windows" type="checkbox" class="filled-in" />
+                        <input name="windows" id="windows" type="checkbox" class="filled-in">
                         {% endif %}
 
                         <span>Are the windows double-glazed?</span>
@@ -775,9 +775,9 @@
                     {% for severity in traffic %}
                     <span>
                         <label for="{{ severity }}">
-                            <input name="add_traffic" id="{{ severity }}" type="radio" value="{{ severity }}"
-                                required />
-                            <span>{{severity}}</span>
+                            <input name="add_traffic" id="{{ severity }}" type="radio" value="{{ severity }} traffic"
+                                required>
+                            <span>{{severity}} Traffic</span>
                         </label>
                     </span>
                     {% endfor %}
@@ -787,7 +787,7 @@
                 <!-- Input field for offers -->
                 <div class="col s12 m6 m-4">
                     <label for="add_offers">
-                        <input name="add_offers" id="add_offers" type="checkbox" class="filled-in" checked="checked" />
+                        <input name="add_offers" id="add_offers" type="checkbox" class="filled-in" checked="checked">
                         <span>Has there been other offers?</span>
                     </label>
                 </div>
@@ -795,7 +795,7 @@
                 <div class="col s12 m6 m-4">
                     <label for="add_windows">
                         <input name="add_windows" id="add_windows" type="checkbox" class="filled-in"
-                            checked="checked" />
+                            checked="checked">
                         <span>Are the windows double-glazed?</span>
                     </label>
                 </div>
@@ -849,11 +849,11 @@
                                 <label for="{{ direction }}">
                                     {% if house_check.propertyFacing == direction %}
                                     <input name="property_facing" id="{{ direction }}" type="radio"
-                                        value="{{ direction }}" checked />
+                                        value="{{ direction }}" checked>
                                     <span>{{ direction }}</span>
                                     {% else %}
                                     <input name="property_facing" id="{{ direction }}" type="radio"
-                                        value="{{ direction }}" />
+                                        value="{{ direction }}">
                                     <span>{{ direction }}</span>
                                     {% endif %}
                                 </label>
@@ -872,11 +872,11 @@
                                 <label for="{{ 'noisePollution' + level }}">
                                     {% if house_check.noisePollution == level %}
                                     <input name="noise_level" id="{{ 'noisePollution' + level }}" type="radio"
-                                        value="{{ level }}" checked="checked" />
+                                        value="{{ level }}" checked="checked">
                                     <span>{{ level }}</span>
                                     {% else %}
                                     <input name="noise_level" id="{{ 'noisePollution' + level }}" type="radio"
-                                        value="{{ level }}" />
+                                        value="{{ level }}">
                                     <span>{{ level }}</span>
                                     {% endif %}
 
@@ -896,11 +896,11 @@
                                 <label for="{{ 'boiler' + level }}">
                                     {% if house_check.boilerNoise == level %}
                                     <input name="boiler_noise" id="{{'boiler' + level }}" type="radio"
-                                        value="{{ level }}" checked="checked" />
+                                        value="{{ level }}" checked="checked">
                                     <span>{{ level }}</span>
                                     {% else %}
                                     <input name="boiler_noise" id="{{'boiler' + level }}" type="radio"
-                                        value="{{ level }}" />
+                                        value="{{ level }}">
                                     <span>{{ level }}</span>
                                     {% endif %}
 
@@ -920,10 +920,10 @@
                                 <label for="{{ amount }}">
                                     {% if house_check.storageSpace == amount %}
                                     <input name="storage_space" id="{{ amount }}" type="radio" value="{{ amount }}"
-                                        checked="checked" />
+                                        checked="checked">
                                     <span>{{ amount }}</span>
                                     {% else %}
-                                    <input name="storage_space" id="{{ amount }}" type="radio" value="{{ amount }}" />
+                                    <input name="storage_space" id="{{ amount }}" type="radio" value="{{ amount }}">
                                     <span>{{ amount }}</span>
                                     {% endif %}
 
@@ -937,10 +937,10 @@
                         <div class="col s12 m6 m-4">
                             <label for="attic">
                                 {% if house_check.atticAccess == "yes" %}
-                                <input name="attic" id="attic" type="checkbox" class="filled-in" checked="checked" />
+                                <input name="attic" id="attic" type="checkbox" class="filled-in" checked="checked">
                                 <span>Is there easy access to the attic?</span>
                                 {% else %}
-                                <input name="attic" id="attic" type="checkbox" class="filled-in" />
+                                <input name="attic" id="attic" type="checkbox" class="filled-in">
                                 <span>Is there easy access to the attic?</span>
                                 {% endif %}
                             </label>
@@ -949,10 +949,10 @@
                             <label for="electric_ports">
                                 {% if house_check.atticAccess == "yes" %}
                                 <input name="electric_ports" id="electric_ports" type="checkbox" class="filled-in"
-                                    checked />
+                                    checked>
                                 <span>Are there decent amounts of electric port?</span>
                                 {% else %}
-                                <input name="electric_ports" id="electric_ports" type="checkbox" class="filled-in" />
+                                <input name="electric_ports" id="electric_ports" type="checkbox" class="filled-in">
                                 <span>Are there decent amounts of electric port?</span>
                                 {% endif %}
                             </label>
@@ -963,10 +963,10 @@
                         <div class="col s12 m6 m-4">
                             <label for="mould">
                                 {% if house_check.mould == "yes" %}
-                                <input name="mould" id="mould" type="checkbox" class="filled-in" checked="checked" />
+                                <input name="mould" id="mould" type="checkbox" class="filled-in" checked="checked">
                                 <span>Are there signs of mould?</span>
                                 {% else %}
-                                <input name="mould" id="mould" type="checkbox" class="filled-in" />
+                                <input name="mould" id="mould" type="checkbox" class="filled-in">
                                 <span>Are there signs of mould?</span>
                                 {% endif %}
                             </label>
@@ -975,10 +975,10 @@
                         <div class="col s12 m6 m-4">
                             <label for="damp">
                                 {% if house_check.damp == "yes" %}
-                                <input name="damp" id="damp" type="checkbox" class="filled-in" checked="checked" />
+                                <input name="damp" id="damp" type="checkbox" class="filled-in" checked="checked">
                                 <span>Are there signs of damp in the walls?</span>
                                 {% else %}
-                                <input name="damp" id="damp" type="checkbox" class="filled-in" />
+                                <input name="damp" id="damp" type="checkbox" class="filled-in">
                                 <span>Are there signs of damp in the walls?</span>
                                 {% endif %}
                             </label>
@@ -990,10 +990,10 @@
                         <div class="col s12">
                             <label for="crack">
                                 {% if house_check.crack == "yes" %}
-                                <input name="crack" id="crack" type="checkbox" class="filled-in" checked="checked" />
+                                <input name="crack" id="crack" type="checkbox" class="filled-in" checked="checked">
                                 <span>Are there signs of wall cracking?</span>
                                 {% else %}
-                                <input name="crack" id="crack" type="checkbox" class="filled-in" />
+                                <input name="crack" id="crack" type="checkbox" class="filled-in">
                                 <span>Are there signs of wall cracking?</span>
                                 {% endif %}
                             </label>
@@ -1022,11 +1022,11 @@
                                                 {% if house_check.roofCondition == condition[0] %}
                                                 <input name="roof_condition" id="{{ 'edit' + condition[0] }}"
                                                     type="radio" value="{{ condition[0] }}" checked="checked"
-                                                    required />
+                                                    required>
                                                 <span>{{ condition[0] }} </span>
                                                 {% else %}
                                                 <input name="roof_condition" id="{{'edit' + condition[0] }}"
-                                                    type="radio" value="{{ condition[0] }}" required />
+                                                    type="radio" value="{{ condition[0] }}" required>
                                                 <span>{{ condition[0] }} </span>
                                                 {% endif %}
                                             </label>
@@ -1090,7 +1090,7 @@
                             <span>
                                 <label for="{{ 'add' + direction }}">
                                     <input name="add_property_facing" id="{{ 'add' + direction }}" type="radio"
-                                        value="{{ direction }}" required/>
+                                        value="{{ direction }}" required>
                                     <span>{{ direction }}</span>
                                 </label>
                             </span>
@@ -1107,7 +1107,7 @@
                             <span>
                                 <label for="{{ 'addnoise' + level }}">
                                     <input name="add_noise_level" id="{{ 'addnoise' + level }}" type="radio"
-                                        value="{{ level }}" required/>
+                                        value="{{ level }}" required>
                                     <span>{{ level }}</span>
                                 </label>
                             </span>
@@ -1124,7 +1124,7 @@
                             <span>
                                 <label for="{{ 'addBoiler' + level }}">
                                     <input name="add_boiler_noise" id="{{ 'addBoiler' + level }}" type="radio"
-                                        value="{{ level }}" required/>
+                                        value="{{ level }}" required>
                                     <span>{{ level }}</span>
                                 </label>
                             </span>
@@ -1141,7 +1141,7 @@
                             <span>
                                 <label for="{{'addStorage' + amount}}">
                                     <input name="add_storage_space" id="{{'addStorage' + amount}}" type="radio"
-                                        value="{{ amount }}" required/>
+                                        value="{{ amount }}" required>
                                     <span>{{ amount }}</span>
                                 </label>
                             </span>
@@ -1160,7 +1160,7 @@
                         <div class="col s12 m6 m-4">
                             <label for="add_electric_ports">
                                 <input name="add_electric_ports" id="add_electric_ports" type="checkbox"
-                                    class="filled-in" />
+                                    class="filled-in">
                                 <span>Are there decent amounts of electric port?</span>
                             </label>
                         </div>
@@ -1170,14 +1170,14 @@
                         <div class="col s12 m6 m-4">
                             <!-- Input field for mould -->
                             <label for="add_mould">
-                                <input name="add_mould" id="add_mould" type="checkbox" class="filled-in" />
+                                <input name="add_mould" id="add_mould" type="checkbox" class="filled-in">
                                 <span>Are there signs of mould?</span>
                             </label>
                         </div>
                         <!-- Input field for damp -->
                         <div class="col s12 m6 m-4">
                             <label for="add_damp">
-                                <input name="add_damp" id="add_damp" type="checkbox" class="filled-in" />
+                                <input name="add_damp" id="add_damp" type="checkbox" class="filled-in">
                                 <span>Are there signs of damp in the walls?</span>
                             </label>
                         </div>
@@ -1187,7 +1187,7 @@
                         <!-- Input field for wall cracking -->
                         <div class="col s12">
                             <label for="add_crack">
-                                <input name="add_crack" id="add_crack" type="checkbox" class="filled-in" />
+                                <input name="add_crack" id="add_crack" type="checkbox" class="filled-in">
                                 <span>Are there signs of wall cracking?</span>
                             </label>
                         </div>
@@ -1212,7 +1212,7 @@
                                                         class="fa-sharp fa-solid fa-circle-info"></i></button>
                                                 <input name="add_roof_condition"
                                                     id="{{ 'addCondition' + condition[0] }}" type="radio"
-                                                    value="{{ condition[0] }}" required />
+                                                    value="{{ condition[0] }}" required>
                                                 <span>{{ condition[0] }} </span>
                                             </label>
 
