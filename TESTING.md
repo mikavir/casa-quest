@@ -47,17 +47,31 @@ If applicable, mention how user feedback has been taken into account and impleme
 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 ## Code Validation
+### HTML
+I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
+These are the files that I was able to validate using the url as the others needed to be logged in to be accessed.
+| Validator| File | Screenshot | Notes |
+| --- | --- | --- | --- |
+|[W3C Validator](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fcasa-quest-853d4c81f9b1.herokuapp.com%2Fcontact)| contact.html | ![screenshot](documentation/validation/html-validation/html-contact.png) | No errors found|
+|[W3C Validator](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fcasa-quest-853d4c81f9b1.herokuapp.com%2F)| index.html | ![screenshot](documentation/validation/html-validation/html-validation-index.png) | No errors found|
+|[W3C Validator](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fcasa-quest-853d4c81f9b1.herokuapp.com%2Flogin)| login.html | ![screenshot](documentation/validation/html-validation/html-validation-login.png) | No errors found|
+|[W3C Validator](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fcasa-quest-853d4c81f9b1.herokuapp.com%2Fregister)| register.html | ![screenshot](documentation/validation/html-validation/html-validation-register.png) | No errors found|
 
-Use the space to discuss code validation for any of your own code files (where applicable).
-You are not required to validate external libraries/frameworks, such as imported Bootstrap, Materialize, Font Awesome, etc.
+These are the HTML files that I valdiated by copying and pasting the HTML code and tested it as a direct input.
+| File | Screenshot | Notes |
+| --- | --- | --- |
+| profile.html | ![screenshot](documentation/validation/html-validation/html-validation-dashboard.png) | No errors found|
+| favourites.html | ![screenshot](documentation/validation/html-validation/html-validation-favourites.png) | No errors found|
+| new_house.html | ![screenshot](documentation/validation/html-validation/html-validation-new-house.png) | No errors found|
+| edit_new_house.html | ![screenshot](documentation/validation/html-validation/html-validation-edit-new-house.png) | No errors found|
+| house.html | ![screenshot](documentation/validation/html-validation/html-validation-house.png) | No errors found|
+| change_password.html | ![screenshot](documentation/validation/html-validation/html-validation-change-password.png) | No errors found|
+| manage_users.html | ![screenshot](documentation/validation/html-validation/html-validation-manage_users.png) | No errors found|
+| 404.html | ![screenshot](documentation/validation/html-validation/html-validation-404.png) | No errors found|
+| 403.html | ![screenshot](documentation/validation/html-validation/html-validation-403.png) | No errors found|
+| 500.html | ![screenshot](documentation/validation/html-validation/html-validation-500.png) | No errors found|
 
-**IMPORTANT**: You must provide a screenshot for each file you validate.
-
-**PRO TIP**: Always validate the live site pages, not your local code. There could be subtle/hidden differences.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 ### Python
 
