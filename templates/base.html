@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <!-- Material Symbols - Outlined Set -->
@@ -12,15 +13,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
     <!-- Material Symbols - Sharp Set -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp" rel="stylesheet" />
+
+    <!-- Materialise Style sheet -->
     <link href="
     https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.0.4/dist/css/materialize.min.css
     " rel="stylesheet">
+
+    <!-- CSS stylesheet -->
+    
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
 
     <!-- FavIvon -->
     <link rel="shortcut icon" type='image/x-icon' href="{{ url_for('static', filename='favicon.ico') }}">
+    
+    <!-- Email Js API initialisation -->
+    
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
+    
     <script>
         (function () {
             emailjs.init({
@@ -29,10 +39,12 @@
         })();
     </script>
 
+    <!-- Title -->
     <title>{% block title %}{% endblock %}</title>
 </head>
 
 <body>
+    <!-- Head and navigation bar -->
     <header>
         <!-- Navigation bar for large screens -->
         <nav class="custom-nav">
@@ -127,16 +139,18 @@
         {% endwith %}
     </section>
 
+    <!-- Main content -->
     <main>
         {% block content %}
         {% endblock %}
     </main>
+    <!-- Footer -->
     <footer>
-
         <div class="row footer-container">
             <div class="col s12 p-1">
                 <div class="row center">
                     <div class="col s12 m6 white-text my-2">
+                        <!-- Social media links -->
                         <ul class="social-media-icons">
                             <li>
                                 <a href="https://en-gb.facebook.com/" target="_blank" rel=noreferrer>
@@ -165,6 +179,7 @@
                             </li>
                         </ul>
                     </div>
+                    <!-- contact -->                
                     <div class="col s12 m6 my-2">
                         <div class="row my-3">
                             <div class="col s12">
@@ -182,13 +197,13 @@
                 </div>
                 <div class="row center my-3">
                     <div class="col s12">
-
                         <p>&copy; Casa Quest All Rights Reserved Copyright 2024 </p>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+    <!-- Script tags -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
