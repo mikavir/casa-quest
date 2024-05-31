@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 {% block header %}
-  <title>{% block title %}500:error{% endblock %}</title>
+<!-- Title -->
+<title>{% block title %}500:error{% endblock %}</title>
 {% endblock %}
+<!-- Main Content -->
 {% block content %}
 <div class="container push-container p-5">
     <div class="row p-5">
+        <!-- Heading -->
         <div class="col s12 card-panel teal darken-4  m8 offset-m2 center">
             <div class="row mb-5">
                 <div class="col s12 orange-text text lighten-2">
@@ -18,20 +21,21 @@
             </div>
             <div class="row mb-5">
                 <div class="col s12 white-text">
-                    <p>It looks like our server is having a bit of trouble. Please try refreshing the page or come back later. In the meantime,
-                         you can head back to our homepage to continue your house hunting journey. Thank you for your patience! 🏡</p>
+                    <p>It looks like our server is having a bit of trouble. Please try refreshing the page or come back
+                        later. In the meantime,
+                        you can head back to our homepage to continue your house hunting journey. Thank you for your
+                        patience! 🏡</p>
                 </div>
             </div>
             <div class="row mb-5">
                 <div class="col s12 center">
-                    <a class="btn orange lighten-4 teal-text text-darken-4 rounded waves-effect waves-light" href="{{url_for('index')}}">Home</a>
+                    <a class="btn orange lighten-4 teal-text text-darken-4 rounded waves-effect waves-light"
+                        href="{{url_for('index')}}">Home</a>
                 </div>
             </div>
-    
+
         </div>
     </div>
 </div>
-
-
 
 {% endblock %}
