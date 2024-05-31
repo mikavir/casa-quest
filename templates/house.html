@@ -1,9 +1,12 @@
 {% extends "base.html" %}
 {% block header %}
+<!-- Title -->
 <title>{% block title %}{{house.address}}{% endblock %}</title>
 {% endblock %}
+<!-- Main content -->
 {% block content %}
 <div class=" page-container">
+    <!-- Button to go back to dashboard -->
     <div class="row mx-4">
         <div class="col s12">
             <a href="{{ url_for('profile', username=session['user']) }}"
@@ -11,12 +14,13 @@
                     class="material-icons">arrow_back</i>Back to Dashboard</a>
         </div>
     </div>
-
+    <!-- House image -->
     <div class="row p-5">
         <div class="col s12 m6">
-            <img src="{{house.image_url}}" class="responsive-img">
+            <img src="{{house.image_url}}" class="responsive-img" alt="{{house.address}}">
         </div>
         <div class="col s12 m6 center m-2">
+            <!-- House Address -->
             <div class="row">
                 <div class="col s12">
                     <h3 class="center-align green-text text-darken-4">
@@ -24,17 +28,19 @@
                     </h3>
                 </div>
             </div>
+            <!-- House Agency -->
             <div class="row">
                 <div class="col s12">
                     <h5>{{ house.agency }} </h5>
                 </div>
-
             </div>
+            <!-- House Property Type -->
             <div class="col s12">
                 <h6 class="center-align black-text text-darken-4">
                     {{ house.propertyType }}
                 </h6>
             </div>
+            <!-- House Price -->
             <div class="row">
                 <div class="col s12">
                     <h6 class="center-align black-text text-darken-4">
@@ -42,6 +48,7 @@
                     </h6>
                 </div>
             </div>
+            <!-- House Viewin -->
             <div class="row m-2">
                 <div class="col s12">
                     <span><i class="fa-solid fa-calendar-days prefix"></i> {{ house.date_viewing }}</span>
@@ -51,6 +58,7 @@
         </div>
 
     </div>
+    <!-- House bedrooms -->
     <div class="row teal darken-2 p-5">
         <div class="col s12 p-5">
             <div class="row">
@@ -58,6 +66,7 @@
                     <div class="row m-4">
                         <div class="col s4">
                             <div class="row">
+                                <!-- House bedrooms -->
                                 <div class="col s12">
                                     <h1>{{ house.bedrooms }}</h1>
 
@@ -70,6 +79,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Bathrooms -->
                         <div class="col s4">
                             <div class="row">
                                 <div class="col s12">
@@ -85,6 +95,7 @@
                             </div>
 
                         </div>
+                        <!-- Parking, only to show if there is parking -->
                         {% if house_info.dedicatedParking == "yes" %}
                         <div class="col s4">
                             <div class="row">
@@ -106,8 +117,9 @@
 
                     </div>
                 </div>
+                <!-- Google maps Iframe -->
                 <div class="col s12 m6">
-                    <iframe src="{{house.mapsUrl}}"></iframe>
+                    <iframe src="{{house.mapsUrl}}" aria-label="map for {{house.address}}"></iframe>
                 </div>
 
             </div>
@@ -122,6 +134,7 @@
             <div class="row teal-text text-darken-4 center">
                 <div class="col s12 right-align">
                     <div class="row">
+                        <!-- Button for edit button  -->
                         <div class="col s1 offset-s11 ">
                             <a href="#editInfoModal"
                                 class="center btn rounded waves-effect waves-light teal darken-4 orange-text text-lighten-4 p-1 modal-trigger"
@@ -132,15 +145,16 @@
                     </div>
 
                 </div>
-
                 <div class="col s12 offset-m2" id="house-info">
                     <div class="row left-align">
+                        <!-- House EPC -->
                         <div class="col s6 m6 m-3 ">
                             <span> <i class="medium material-icons orange-text">bolt</i></span>
                             <h6>EPC: <span class="house-info-content">{{ house_info.epc }}</span>
                             </h6>
 
                         </div>
+                        <!-- Tax band -->
                         <div class="col s6 m6 m-3">
                             <span> <i class="medium material-icons orange-text">payments</i></span>
                             <h6>Tax Band: <span class="house-info-content">{{ house_info.taxBand }}</span>
@@ -149,11 +163,13 @@
                         </div>
                     </div>
                     <div class="row left-align">
+                        <!-- Flood risk -->
                         <div class="col s6 m6 m-3">
                             <span> <i class="medium material-icons orange-text">flood</i></span>
                             <h6>Flood Risk:<span class="house-info-content">{{ house_info.floodRisk }}</span>
                             </h6>
                         </div>
+                        <!-- Internet Speed -->
                         <div class="col s6 m6 m-3">
                             <span><i class="medium material-icons orange-text">wifi</i></span>
                             <h6>Intenet Speed: <span class="house-info-content">{{ house_info.internetSpeed }}</span>
@@ -163,6 +179,7 @@
                     </div>
 
                 </div>
+                <!-- Add Info modal -->
                 <div class="col s12 p-5 mx-auto" id="add-house-info">
                     <a href="#addInfoModal" class="add-modal modal-trigger" id="add-houseinfo-btn">
 
@@ -176,11 +193,12 @@
         </div>
     </div>
 
+    <!-- house viewing -->
     <div class="row my-4">
-        <!-- house viewing -->
         <div class="col s12 m12 l6 mx-2">
             <div class="card-panel teal darken-2 row mx-auto">
                 <div class="col s12 right-align">
+                    <!-- Button for edit house viewing -->
                     <div class="row">
                         <div class="col s1 offset-s11 ">
                             <a href="#editHouseViewingModal"
@@ -190,10 +208,11 @@
                             </a>
                         </div>
                     </div>
-
                 </div>
+                <!-- House viewing content -->
                 <div class="col s12" id="house-viewing">
                     <div class="row m-3">
+                        <!-- Seller's situation -->
                         <div class="col s12 m-2">
                             <h6 class="orange-text text-lighten-4">The seller is...</h6>
                         </div>
@@ -202,6 +221,7 @@
 
                         </div>
                     </div>
+                    <!-- Neighbours situation -->
                     <div class="row m-3">
                         <div class="col s12 m-2">
                             <h6 class="orange-text text-lighten-4">The neighbours are...</h6>
@@ -212,6 +232,7 @@
                         </div>
                     </div>
                     <div class="row m-3">
+                        <!-- Facilities -->
                         <div class="col s12 m-2">
                             <h6 class="orange-text text-lighten-4">The facilities are...</h6>
                         </div>
@@ -220,6 +241,7 @@
 
                         </div>
                     </div>
+                    <!-- Traffic -->
                     <div class="row m-3">
                         {% if house_viewing.traffic == 'No Traffic' %}
                         <div class="col s12 m-2">
@@ -228,7 +250,7 @@
                         </div>
                         {% else %}
                         <div class="col s12 m-2">
-                            <h6 class="orange-text text-lighten-4">The traffic is...</h6>
+                            <h6 class="orange-text text-lighten-4">There is...</h6>
                         </div>
                         <div class="col s12 center">
                             <p class="house-viewing-content white-text">{{ house_viewing.traffic }}</p>
@@ -236,6 +258,7 @@
                         </div>
                         {% endif %}
                     </div>
+                    <!-- Other offers -->
                     <div class="row m-3">
                         <div class="col s12 m-2">
                             {% if house_viewing.otherOffers == "yes" %}
@@ -246,6 +269,7 @@
                             {% endif %}
                         </div>
                     </div>
+                    <!-- windows -->
                     <div class="row m-3">
                         <div class="col s12 m-2">
                             {% if house_viewing.windows == "yes" %}
@@ -257,8 +281,8 @@
                             {% endif %}
                         </div>
                     </div>
-
                 </div>
+                <!-- Add house viewing modal -->
                 <div class="col s12 p-5 mx-auto">
                     <a href="#addHouseViewingModal" class="add-modal-view modal-trigger row center"
                         id="add-houseviewing-btn">
@@ -269,12 +293,13 @@
                     </a>
                 </div>
             </div>
-            <!-- house checks -->
         </div>
+        <!-- house checks -->
         <div class="col s12 m12 l6 mx-2">
             <div class="card-panel teal darken-2 row mx-auto">
                 <div class="col s12 right-align">
                     <div class="row">
+                        <!-- Edit house check button -->
                         <div class="col s1 offset-s11 ">
                             <a href="#editHouseCheckModal"
                                 class="center btn rounded waves-effect waves-light orange teal-text text-darken-4 p-1 modal-trigger"
@@ -283,8 +308,8 @@
                             </a>
                         </div>
                     </div>
-
                 </div>
+                <!-- Property Facing -->
                 <div class="col s12" id="house-check">
                     <div class="row m-3">
                         <div class="col s12 m-2">
@@ -296,6 +321,7 @@
 
                         </div>
                     </div>
+                    <!-- Condition of the rood -->
                     <div class="row m-3">
                         <div class="col s12 m-2">
                             <h6 class="orange-text text-lighten-4"> <span class="material-symbols-outlined">
@@ -308,6 +334,7 @@
 
                         </div>
                     </div>
+                    <!-- storage space -->
                     <div class="row m-3">
                         <div class="col s12 m-2">
                             <h6 class="orange-text text-lighten-4"> The storage space is...</h6>
@@ -317,6 +344,7 @@
 
                         </div>
                     </div>
+                    <!-- Noise pollution -->
                     <div class="row m-3">
                         {% if house_check.noisePollution == "Moderate Noise" %}
                         <div class="col s12 m-2">
@@ -325,7 +353,7 @@
                         </div>
                         {% else %}
                         <div class="col s12 m-2">
-                            <h6 class="orange-text text-lighten-4"> The outside is...</h6>
+                            <h6 class="orange-text text-lighten-4"> The outside has...</h6>
 
                         </div>
                         <div class="col s12 center">
@@ -334,9 +362,8 @@
                         </div>
                         {% endif %}
                     </div>
-
+                    <!-- Attic Access -->
                     <div class="row m-3">
-
                         <div class="col s12 m-2">
                             {% if house_check.atticAccess == "yes" %}
                             <h6 class="orange-text text-lighten-4"> It is easy to access the attic <i
@@ -346,6 +373,7 @@
                             {% endif %}
                         </div>
                     </div>
+                    <!-- Electric Ports -->
                     <div class="row m-3">
                         <div class="col s12 m-2">
                             {% if house_check.electricPorts == "yes" %}
@@ -357,6 +385,7 @@
                             {% endif %}
                         </div>
                     </div>
+                    <!-- Mould -->
                     <div class="row m-3">
                         <div class="col s12 m-2">
                             {% if house_check.mould == "yes" %}
@@ -368,6 +397,7 @@
                             {% endif %}
                         </div>
                     </div>
+                    <!-- Damp -->
                     <div class="row m-3">
                         <div class="col s12 m-2">
                             {% if house_check.damp == "yes" %}
@@ -378,8 +408,8 @@
                                     class="fa-regular fa-face-smile"></i></h6>
                             {% endif %}
                         </div>
-
                     </div>
+                    <!-- Crack -->
                     <div class="row m-3">
                         <div class="col s12 m-2">
                             {% if house_check.crack == "yes" %}
@@ -391,8 +421,8 @@
                             {% endif %}
                         </div>
                     </div>
-
                 </div>
+                <!-- Add House Check Modal -->
                 <div class="col s12 mx-auto p-5" id="add-house-check">
                     <a href="#addHouseCheckModal" class="add-modal-view modal-trigger row center"
                         id="add-housecheck-btn">
@@ -503,6 +533,7 @@
                     </label>
                 </div>
             </div>
+            <!-- Submit -->
             <div class="row center">
                 <div class="col s12 m-3">
                     <button
@@ -546,10 +577,7 @@
                         {% for chara in characters %}
                         <option value="{{chara}}">{{chara}}</option>
                         {% endfor %}
-
                     </select>
-
-
                 </div>
             </div>
             <!-- input field for Tax-Band -->
@@ -560,13 +588,9 @@
                         {% for chara in characters %}
                         <option value="{{chara}}">{{chara}}</option>
                         {% endfor %}
-
                     </select>
-
-
                 </div>
             </div>
-
             <!-- input field for flood risk -->
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
@@ -574,9 +598,7 @@
                     <input id="add_flood_risk" name="add_flood_risk" type="text" class="validate" required>
                     <label for="add_flood_risk">Flood Risk</label>
                 </div>
-
             </div>
-
             <!-- input field for wifi -->
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
@@ -584,7 +606,6 @@
                     <input id="add_internet_speed" name="add_internet_speed" type="text" class="validate" required>
                     <label for="add_internet_speed">Internet Speed:</label>
                 </div>
-
             </div>
             <!-- input field for parking -->
             <div class="row">
@@ -605,12 +626,11 @@
                     </button>
                 </div>
             </div>
-
-
         </form>
-
     </div>
 </div>
+
+
 <!-- Edit house viewing Modal -->
 <div id="editHouseViewingModal" class="modal custom-card">
     <div class="modal-content row">
@@ -1239,6 +1259,7 @@
     </div>
 </div>
 {% endblock %}
+<!-- Script Tags -->
 {% block javascript %}
 
 <script src="{{ url_for('static', filename='js/house.js') }}">
