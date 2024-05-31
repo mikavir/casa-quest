@@ -18,7 +18,6 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
-
 # Configurations for MONGO DB
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
@@ -249,8 +248,6 @@ def view_house(house_id):
         "South", "North", "West", "East"
         ]
 
-    
-
     storage_space = ["Minimal", "Moderate", "Abundant"]
 
     roof_condition = [
@@ -265,8 +262,8 @@ def view_house(house_id):
     return render_template(
         "house.html", username=username, house=house, house_info=house_info,
         house_check=house_check, house_viewing=house_viewing, ammount=ammount,
-        property_facing=property_facing,
-        storage_space=storage_space, roof_condition=roof_condition, characters=characters
+        property_facing=property_facing, storage_space=storage_space,
+        roof_condition=roof_condition, characters=characters
     )
 
 
@@ -444,7 +441,6 @@ def add_house_info(house_id):
 
     """
     if request.method == "POST":
-        house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
         epc = request.form.get("add_epc")
         tax_band = request.form.get("add_tax_band")
         flood_risk = request.form.get("add_flood_risk")
@@ -487,7 +483,6 @@ def edit_house_info(house_id):
 
     """
     if request.method == "POST":
-        house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
         epc = request.form.get("epc")
         tax_band = request.form.get("tax_band")
         flood_risk = request.form.get("flood_risk")
@@ -510,12 +505,11 @@ def edit_house_info(house_id):
         if house_data is None:
             error_message = "Unable to edit a house that does not exist"
             return render_template("404.html", error_message=error_message)
-        else:
-            mongo.db.houseInformation.update_one(
-                {"_id": ObjectId(house_id)}, {"$set": edit_house_info}
-                )
-            flash("House info edited")
-            return redirect(url_for("view_house", house_id=house_id))
+        mongo.db.houseInformation.update_one(
+            {"_id": ObjectId(house_id)}, {"$set": edit_house_info}
+            )
+        flash("House info edited")
+        return redirect(url_for("view_house", house_id=house_id))
     else:
         return redirect(url_for("view_house", house_id=house_id))
 
@@ -532,7 +526,6 @@ def add_house_viewing(house_id):
 
     """
     if request.method == "POST":
-        house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
         sellers_situation = request.form.get("add_sellers-sitaution")
         neighbours = request.form.get("add_neighbours")
         facilities = request.form.get("add_facilities")
@@ -557,9 +550,8 @@ def add_house_viewing(house_id):
             mongo.db.houseViewing.insert_one(house_viewing_info)
             flash("House viewing info added")
             return redirect(url_for("view_house", house_id=house_id))
-        else:
-            error_message = "House viewing information already exists"
-            return render_template("500.html", error_message=error_message)
+        error_message = "House viewing information already exists"
+        return render_template("500.html", error_message=error_message)
 
     else:
         return redirect(url_for("view_house", house_id=house_id))
@@ -577,7 +569,6 @@ def edit_house_viewing(house_id):
 
     """
     if request.method == "POST":
-        house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
         sellers_situation = request.form.get("sellers-sitaution")
         neighbours = request.form.get("neighbours")
         facilities = request.form.get("facilities")
@@ -603,13 +594,12 @@ def edit_house_viewing(house_id):
         if house_data is None:
             error_message = "Unable to edit a house that does not exist"
             return render_template("404.html", error_message=error_message)
-        else:
-            # else: Allow to update database
-            mongo.db.houseViewing.update_one(
-                {"_id": ObjectId(house_id)}, {"$set": edit_house_viewing_info}
-                )
-            flash("House viewing info edited")
-            return redirect(url_for("view_house", house_id=house_id))
+        # else: Allow to update database
+        mongo.db.houseViewing.update_one(
+            {"_id": ObjectId(house_id)}, {"$set": edit_house_viewing_info}
+            )
+        flash("House viewing info edited")
+        return redirect(url_for("view_house", house_id=house_id))
     else:
         return redirect(url_for("view_house", house_id=house_id))
 
@@ -626,7 +616,6 @@ def add_house_check(house_id):
 
     """
     if request.method == "POST":
-        house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
         property_facing = request.form.get("add_property_facing")
         noise_level = request.form.get("add_noise_level")
         boiler_noise = request.form.get("add_boiler_noise")
@@ -659,9 +648,8 @@ def add_house_check(house_id):
             mongo.db.houseChecks.insert_one(add_house_check_info)
             flash("Personal House Checks Added")
             return redirect(url_for("view_house", house_id=house_id))
-        else:
-            error_message = "House Check Information already exists"
-            return render_template("500.html", error_message=error_message)
+        error_message = "House Check Information already exists"
+        return render_template("500.html", error_message=error_message)
     else:
         return redirect(url_for("view_house", house_id=house_id))
 
@@ -678,7 +666,6 @@ def edit_house_check(house_id):
 
     """
     if request.method == "POST":
-        house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
         property_facing = request.form.get("property_facing")
         noise_level = request.form.get("noise_level")
         boiler_noise = request.form.get("boiler_noise")
@@ -711,14 +698,12 @@ def edit_house_check(house_id):
         if house_data is None:
             error_message = "Unable to edit a house that does not exist"
             return render_template("404.html", error_message=error_message)
-        else:
-            mongo.db.houseChecks.update_one(
-                {"_id": ObjectId(house_id)}, {"$set": edit_house_check_info}
-                )
-            flash("House checks info edited")
-            return redirect(url_for("view_house", house_id=house_id))
-    else:
+        mongo.db.houseChecks.update_one(
+            {"_id": ObjectId(house_id)}, {"$set": edit_house_check_info}
+            )
+        flash("House checks info edited")
         return redirect(url_for("view_house", house_id=house_id))
+    return redirect(url_for("view_house", house_id=house_id))
 
 
 # Delete house
@@ -776,8 +761,7 @@ def delete_house(username, house_id):
                 )
             flash("House Deleted")
         return redirect(url_for("profile", username=username))
-    else:
-        return redirect(url_for("profile", username=username))
+    return redirect(url_for("profile", username=username))
 
 
 @app.route("/change_password", methods=["GET", "POST"])
@@ -851,8 +835,6 @@ def add_to_favourites(username, house_id):
         username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
 
-        house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
-
         # Update is favourite in the house
         update_favourite = {"is_favourite": "yes"}
         mongo.db.houses.update_one(
@@ -882,8 +864,6 @@ def remove_from_favourites(username, house_id):
     if request.method == "POST":
         username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
-
-        house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
 
         # Update is favourite in the house
         update_favourite = {"is_favourite": "no"}
