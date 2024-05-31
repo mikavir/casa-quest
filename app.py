@@ -57,6 +57,14 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/500", methods=["GET"])
+def text500():
+    """
+    Function to render to 500.html for testing purposes
+    """
+    return render_template("500.html")
+
+
 @app.route("/contact", methods=["GET"])
 def contact():
     """
