@@ -1,15 +1,18 @@
 {% extends "base.html" %}
+<!-- Title -->
 {% block header %}
   <title>{% block title %}Log In{% endblock %}</title>
-
 {% endblock %}
+<!-- Main Content -->
 {% block content %}
 <div class="container page-container push-container">
+    <!-- Heading -->
     <div class="row">
         <div class="col s12">
             <h5 class="center-align">Continue Your Casa Adventure: Log In Here!</h5>
         </div>
     </div>
+    <!-- If user does not have an account->Link to register page -->
     <div class="row">
         <div class="col s12">
             <p class="center-align">
@@ -18,8 +21,7 @@
             </p>
         </div>
     </div>
-    
-
+    <!-- Login Form -->
     <div class="row">
         <form class="card-panel custom-card col s12 m8 offset-m2 p-5 mb-5" method="POST" action="{{ url_for('login') }}">        
             <!-- username -->
