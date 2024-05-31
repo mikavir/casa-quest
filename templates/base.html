@@ -97,19 +97,21 @@
                                     href="{{ url_for('favourites', username=session['user']) }}">Favourites</a></li>
                             <li class="nav-link"><a href="{{ url_for('contact') }}">Contact us</a></li>
                             <li class="nav-link"><a href="#" id="manage-account">Manage Account</a></li>
-                            <ul class="mobile-list">
-                                <!-- Navigation bar shown when system admin is signed in -->
-                                {% if session.user == "systemadmin" %}
-                                <li class="nav-link manage-account-link"><a
-                                        href="{{ url_for('manage_users', username=session['user']) }}">Manage Users</a>
-                                </li>
-                                {% endif %}
-                                <!-- Navigation bar shown if normal user is signed in  -->
-                                <li class="nav-link manage-account-link"><a
-                                        href="{{ url_for('change_password') }}">Change Password</a></li>
-                                <li class="nav-link manage-account-link"><a href="{{ url_for('logout') }}">Log Out</a>
-                                </li>
-                            </ul>
+                            <li>
+                                <ul class="mobile-list">
+                                    <!-- Navigation bar shown when system admin is signed in -->
+                                    {% if session.user == "systemadmin" %}
+                                    <li class="nav-link manage-account-link"><a
+                                            href="{{ url_for('manage_users', username=session['user']) }}">Manage Users</a>
+                                    </li>
+                                    {% endif %}
+                                    <!-- Navigation bar shown if normal user is signed in  -->
+                                    <li class="nav-link manage-account-link"><a
+                                            href="{{ url_for('change_password') }}">Change Password</a></li>
+                                    <li class="nav-link manage-account-link"><a href="{{ url_for('logout') }}">Log Out</a>
+                                    </li>
+                                </ul>
+                            </li>
                             {% else %}
                             <!-- Navigation bar shown when user is not signed in -->
                             <li class="nav-link"><a href="{{ url_for('contact') }}">Contact us!</a></li>
@@ -121,8 +123,6 @@
                 </div>
             </div>
         </div>
-
-
     </header>
     <aside class="container flash">
         <!-- flash messages -->
