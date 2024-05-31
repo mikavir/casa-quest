@@ -1,12 +1,15 @@
 {% extends "base.html" %}
+<!-- Title -->
 {% block header %}
-  <title>{% block title %}403: Forbidden {% endblock %}</title>
+<title>{% block title %}403: Forbidden {% endblock %}</title>
 {% endblock %}
+<!-- Main content -->
 {% block content %}
 
 <div class="container push-container p-5">
-    <div class="row p-5">
+    <div class="row p-2">
         <div class="col s12 card-panel teal darken-4 m8 offset-m2 center ">
+            <!-- Heading -->
             <div class="row mb-4">
                 <div class="col s12 orange-text text-lighten 4">
                     <h3>403</h3>
@@ -19,16 +22,18 @@
             </div>
             <div class="row mb-4">
                 <div class="col s12 white-text">
-                    <p>Sorry, you don't have permission to enter this page. Please head back to the homepage 
+                    <p>Sorry, you don't have permission to enter this page. Please head back to the homepage
                         or try logging in with the appropriate credentials. Happy house hunting! 🏡</p>
                 </div>
             </div>
+            <!-- Button to redirect back to home -->
             <div class="row mb-4">
                 <div class="col s12 center">
-                    <a class="btn orange lighten-4 teal-text text-darken-4 rounded waves-effect waves-light" href="{{url_for('index')}}">Home</a>
+                    <a class="btn orange lighten-4 teal-text text-darken-4 rounded waves-effect waves-light"
+                        href="{{url_for('index')}}">Home</a>
                 </div>
             </div>
-    
+
         </div>
     </div>
 </div>
