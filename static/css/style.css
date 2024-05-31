@@ -402,6 +402,9 @@ iframe {
   display: none;
 }
 
+#no-house-display{
+  display: none;
+}
 
 /* MEDIA QUERIES FOR RESPONSIVENESS */
 @media screen and (max-width: 700px) {

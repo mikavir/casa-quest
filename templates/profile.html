@@ -28,11 +28,27 @@
             </a>
         </div>
     </div>
+    <!-- Only displayed if there is no house -->
+    <div class="row p-5 mx-auto" id="no-house-display">
+        <div class="col s12 m8 offset-m2 card-panel orange lighten-5">
+            <div class="row my-5 p-5">
+                <div class="col s12 green-text text-darken-4 center">
+                    <h3>Your Dream Home Awaits! ⭐</h3>
+                </div>
+            </div>
+            <div class="row my-5 p-5">
+                <div class="col s12">
+                    <p>Don't let your dream home slip away! Start adding your properties now
+                        to keep track and make your house-hunting journey unforgettable! 🏡✨</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Houses card -->
     <div class="row">
         {% for house in houses %}
-        <div class="col s12 card-panel custom-card ">
+        <div class="col s12 card-panel custom-card house-card">
             <!-- If systemadmin, to show who created the post -->
             {% if username == "systemadmin" %}
             <div class="row">
@@ -185,5 +201,26 @@
     </div>
 </div>
 
+{% endblock %}
+<!-- Script tags -->
+{% block javascript %}
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        displayCard();
+    });
+
+    function displayCard() {
+        const noCardDisplayCard = document.getElementById("no-house-display");
+        const Properties = document.querySelectorAll(".house-card");
+
+        if (Properties.length == 0) {
+            noCardDisplayCard.style.display = "block";
+        } else {
+            noCardDisplayCard.style.display = "none";
+
+        }
+    }
+</script>
 
 {% endblock %}
