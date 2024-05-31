@@ -1,7 +1,9 @@
 {% extends "base.html" %}
+<!-- Title -->
 {% block header %}
 <title>{% block title %}Edit new house{% endblock %}</title>
 {% endblock %}
+<!-- Main content -->
 {% block content %}
 <div class="container page-container">
   <div class="row my-4">
@@ -10,6 +12,7 @@
       <p> Edit Your Dream Home Entry</p>
     </div>
   </div>
+  <!-- Button back to dashboard -->
   <div class="row my-4">
     <div class="col s12">
       <a href="{{ url_for('profile', username=session['user']) }}"
@@ -17,9 +20,11 @@
           class="material-icons">arrow_back</i>Back to Dashboard</a>
     </div>
   </div>
-  <section class="card-panel custom-card row">   
+  <aside class="card-panel custom-card row">
     <div class="col s12 p-4">
+      <!-- Error message for form validation -->
       <p id="edit-house-error" class="red-text text-darken-4"></p>
+      <!-- Edit  new house form -->
       <form action="{{ url_for('edit_new_house', house_id=house._id) }}" method="POST" enctype="multipart/form-data"
         class="teal-text text-darken-4" name="edit_house" onsubmit="return validateForm()">
         <!-- input field for address of the house -->
@@ -27,7 +32,7 @@
           <div class="input-field col s12 m6 outlined m-3">
             <i class="material-icons prefix">pin_drop</i>
             <input id="address" name="address" type="text" class="validate" value="{{house.address}}" required>
-            <label for="addresss">Address</label>
+            <label for="address">Address</label>
           </div>
           <!-- input field for agency -->
           <div class="input-field col s12 m6 outlined m-3">
@@ -41,7 +46,7 @@
           <div class="input-field outlined col s12 m6 m-3">
             <i class="material-icons prefix">location_city</i>
             <select name="property_type" id="property_type" required>
-              <option value="" disabled selected>Property Type</option>
+              <option value="" disabled>Property Type</option>
               {% for type in types %}
               {% if type == house.propertyType %}
               <option value="{{ type }}" selected>{{ type }}</option>
@@ -50,16 +55,15 @@
               {% endif %}
 
               {% endfor %}
-              <label for="{{type}}">{{type}}</label>
             </select>
           </div>
           <!-- input field for chain free -->
           <div class="col s12 m6 m-3 center">
             <label for="chain_free">
               {% if house.chainFree == "yes" %}
-              <input name="chain_free" id="chain_free" type="checkbox" class="filled-in" checked="checked" required />
+              <input name="chain_free" id="chain_free" type="checkbox" class="filled-in" checked="checked" required>
               {% else %}
-              <input name="chain_free" id="chain_free" type="checkbox" class="filled-in" required />
+              <input name="chain_free" id="chain_free" type="checkbox" class="filled-in" required>
               {% endif %}
               <span><i class="fa-solid fa-link"></i> Chain Free</span>
             </label>
@@ -125,17 +129,20 @@
     </div>
 
 
-  </section>
+  </aside>
 </div>
 
 {% endblock %}
+<!-- Javascript -->
 {% block javascript %}
+<!-- Google Maps autocomplate API -->
 <script async
   src="https://maps.googleapis.com/maps/api/js?key={{maps_api}}&loading=async&libraries=places&callback=initAutocomplete">
 </script>
 <script>
   let autocomplete;
-
+  // Initialise autocomplete 
+  // https://developers.google.com/maps/documentation/javascript/place-autocomplete
   function initAutocomplete() {
     autocomplete = new google.maps.places.Autocomplete(
       document.getElementById("address"), {
@@ -161,22 +168,23 @@
   }
   // Validate form
   function validateForm() {
-  
-  let address = document.forms["edit_house"]["address"].value;
-  let agency = document.forms["edit_house"]["agency"].value;
-  let propertyType = document.forms["edit_house"]["property_type"].value;
-  let noBedrooms = document.forms["edit_house"]["no_bedrooms"].value;
-  let noBathrooms = document.forms["edit_house"]["no_bathrooms"].value;
-  let housePrice = document.forms["edit_house"]["house_price"].value;
-  let dateViewing = document.forms["edit_house"]["date_viewing"].value;
-  let errorMessage = document.getElementById("edit-house-error");
 
-  if (address == "" || agency == "" || propertyType == "" || noBathrooms == ""|| noBedrooms == "" ||housePrice == "" || dateViewing == ""  ) {
+    let address = document.forms["edit_house"]["address"].value;
+    let agency = document.forms["edit_house"]["agency"].value;
+    let propertyType = document.forms["edit_house"]["property_type"].value;
+    let noBedrooms = document.forms["edit_house"]["no_bedrooms"].value;
+    let noBathrooms = document.forms["edit_house"]["no_bathrooms"].value;
+    let housePrice = document.forms["edit_house"]["house_price"].value;
+    let dateViewing = document.forms["edit_house"]["date_viewing"].value;
+    let errorMessage = document.getElementById("edit-house-error");
+
+    if (address == "" || agency == "" || propertyType == "" || noBathrooms == "" || noBedrooms == "" || housePrice ==
+      "" || dateViewing == "") {
       console.log("validation failed");
       errorMessage.innerText = "Please fill out all the required fields";
       return false;
-  } 
-  return true;
-}
+    }
+    return true;
+  }
 </script>
 {% endblock %}
