@@ -318,7 +318,7 @@
                         </div>
                     </div>
                     <div class="row m-3">
-                        {% if house_check.noisePollution == "Some Noise" %}
+                        {% if house_check.noisePollution == "Moderate Noise" %}
                         <div class="col s12 m-2">
                             <h6 class="orange-text text-lighten-4"> The outside can be noisy.</h6>
 
@@ -665,14 +665,14 @@
                     <p>How's the traffic?</p>
                 </div>
                 <div class="input-field col s12 m-3 center">
-                    {% for severity in traffic %}
+                    {% for severity in ammount %}
                     <span>
                         <label for="edit{{severity}}">
                             {% if house_viewing.traffic == severity %}
-                            <input name="traffic" id="edit{{severity}}" type="radio" value="{{ severity }} traffic" checked>
+                            <input name="traffic" id="edit{{severity}}" type="radio" value="{{ severity }} Traffic" checked>
                             <span>{{ severity }} Traffic</span>
                             {% else %}
-                            <input name="traffic" id="edit{{severity}}" type="radio" value="{{ severity }} traffic">
+                            <input name="traffic" id="edit{{severity}}" type="radio" value="{{ severity }} Traffic">
                             <span>{{ severity }} Traffic</span>
                             {% endif %}
                         </label>
@@ -772,10 +772,10 @@
                     <p>How's the traffic?</p>
                 </div>
                 <div class="input-field col s12 m-3 center">
-                    {% for severity in traffic %}
+                    {% for severity in ammount %}
                     <span>
-                        <label for="{{ severity }}">
-                            <input name="add_traffic" id="{{ severity }}" type="radio" value="{{ severity }} traffic"
+                        <label for="{{ severity }}_traffic">
+                            <input name="add_traffic" id="{{ severity }}_traffic" type="radio" value="{{ severity }} Traffic"
                                 required>
                             <span>{{severity}} Traffic</span>
                         </label>
@@ -849,12 +849,12 @@
                                 <label for="{{ direction }}">
                                     {% if house_check.propertyFacing == direction %}
                                     <input name="property_facing" id="{{ direction }}" type="radio"
-                                        value="{{ direction }}" checked>
-                                    <span>{{ direction }}</span>
+                                        value="{{ direction }} Facing" checked>
+                                    <span>{{ direction }} Facing</span>
                                     {% else %}
                                     <input name="property_facing" id="{{ direction }}" type="radio"
-                                        value="{{ direction }}">
-                                    <span>{{ direction }}</span>
+                                        value="{{ direction }} Facing">
+                                    <span>{{ direction }} Facing</span>
                                     {% endif %}
                                 </label>
                             </span>
@@ -867,17 +867,17 @@
                             <p>How much can you hear outside?</p>
                         </div>
                         <div class="input-field col s12">
-                            {% for level in noise %}
+                            {% for level in ammount %}
                             <span>
-                                <label for="{{ 'noisePollution' + level }}">
+                                <label for="noise_{{ level }}">
                                     {% if house_check.noisePollution == level %}
-                                    <input name="noise_level" id="{{ 'noisePollution' + level }}" type="radio"
-                                        value="{{ level }}" checked="checked">
-                                    <span>{{ level }}</span>
+                                    <input name="noise_level" id="noise_{{ level }}" type="radio"
+                                        value="{{ level }} Noise" checked="checked">
+                                    <span>{{ level }} Noise</span>
                                     {% else %}
-                                    <input name="noise_level" id="{{ 'noisePollution' + level }}" type="radio"
-                                        value="{{ level }}">
-                                    <span>{{ level }}</span>
+                                    <input name="noise_level" id="noise_{{ level }}" type="radio"
+                                        value="{{ level }} Noise">
+                                    <span>{{ level }} Noise</span>
                                     {% endif %}
 
                                 </label>
@@ -891,17 +891,17 @@
                             <p>How noisy is the boiler?</p>
                         </div>
                         <div class="input-field col s12">
-                            {% for level in noise %}
+                            {% for level in ammount %}
                             <span>
-                                <label for="{{ 'boiler' + level }}">
+                                <label for="boiler_{{ level }}">
                                     {% if house_check.boilerNoise == level %}
-                                    <input name="boiler_noise" id="{{'boiler' + level }}" type="radio"
-                                        value="{{ level }}" checked="checked">
-                                    <span>{{ level }}</span>
+                                    <input name="boiler_noise" id="boiler_{{ level }}" type="radio"
+                                        value="{{ level }} Noise" checked="checked">
+                                    <span>{{ level }} Noise</span>
                                     {% else %}
-                                    <input name="boiler_noise" id="{{'boiler' + level }}" type="radio"
-                                        value="{{ level }}">
-                                    <span>{{ level }}</span>
+                                    <input name="boiler_noise" id="boiler_{{ level }}" type="radio"
+                                        value="{{ level }} Noise">
+                                    <span>{{ level }} Noise</span>
                                     {% endif %}
 
                                 </label>
@@ -1088,10 +1088,10 @@
                         <div class="input-field col s12">
                             {% for direction in property_facing %}
                             <span>
-                                <label for="{{ 'add' + direction }}">
-                                    <input name="add_property_facing" id="{{ 'add' + direction }}" type="radio"
-                                        value="{{ direction }}" required>
-                                    <span>{{ direction }}</span>
+                                <label for="add_{{ direction }}">
+                                    <input name="add_property_facing" id="add_{{ direction }}" type="radio"
+                                        value="{{ direction }} Facing" required>
+                                    <span>{{ direction }} Facing</span>
                                 </label>
                             </span>
                             {% endfor %}
@@ -1103,12 +1103,12 @@
                             <p>How much can you hear outside?</p>
                         </div>
                         <div class="input-field col s12">
-                            {% for level in noise %}
+                            {% for level in ammount %}
                             <span>
-                                <label for="{{ 'addnoise' + level }}">
-                                    <input name="add_noise_level" id="{{ 'addnoise' + level }}" type="radio"
-                                        value="{{ level }}" required>
-                                    <span>{{ level }}</span>
+                                <label for="add_noise{{ level }}">
+                                    <input name="add_noise_level" id="add_noise{{ level }}" type="radio"
+                                        value="{{ level }} Noise" required>
+                                    <span>{{ level }} Noise</span>
                                 </label>
                             </span>
                             {% endfor %}
@@ -1120,12 +1120,12 @@
                             <p>How noisy is the boiler?</p>
                         </div>
                         <div class="input-field col s12">
-                            {% for level in noise %}
+                            {% for level in ammount %}
                             <span>
-                                <label for="{{ 'addBoiler' + level }}">
-                                    <input name="add_boiler_noise" id="{{ 'addBoiler' + level }}" type="radio"
-                                        value="{{ level }}" required>
-                                    <span>{{ level }}</span>
+                                <label for="add_boiler_{{ level }}">
+                                    <input name="add_boiler_noise" id="add_boiler_{{ level }}" type="radio"
+                                        value="{{ level }} Noise" required>
+                                    <span>{{ level }} Noise</span>
                                 </label>
                             </span>
                             {% endfor %}
@@ -1152,7 +1152,7 @@
                         <!-- Input field for attic access -->
                         <div class="col s12 m6 m-4">
                             <label for="add_attic">
-                                <input name="add_attic" id="add_attic" type="checkbox" class="filled-in" />
+                                <input name="add_attic" id="add_attic" type="checkbox" class="filled-in">
                                 <span>Is there easy access to the attic?</span>
                             </label>
                         </div>

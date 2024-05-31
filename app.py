@@ -243,13 +243,13 @@ def view_house(house_id):
         {"_id": ObjectId(house_id)}
     )
 
-    traffic = ["Heavy Traffic", "Moderate Traffic", "No Traffic"]
+    ammount = ["Heavy", "Moderate", "No"]
 
     property_facing = [
-        "South Facing", "North Facing", "West Facing", "East Facing"
+        "South", "North", "West", "East"
         ]
 
-    noise = ["Quiet", "Some Noise", "Very Noisy"]
+    
 
     storage_space = ["Minimal", "Moderate", "Abundant"]
 
@@ -264,8 +264,8 @@ def view_house(house_id):
 
     return render_template(
         "house.html", username=username, house=house, house_info=house_info,
-        house_check=house_check, house_viewing=house_viewing, traffic=traffic,
-        property_facing=property_facing, noise=noise,
+        house_check=house_check, house_viewing=house_viewing, ammount=ammount,
+        property_facing=property_facing,
         storage_space=storage_space, roof_condition=roof_condition, characters=characters
     )
 
