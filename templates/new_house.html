@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+<!-- Title -->
 {% block header %}
 <title>{% block title %}Add New Entry{% endblock %}</title>
 {% endblock %}
@@ -30,7 +31,7 @@
           <div class="input-field col s12 m6 outlined m-3">
             <i class="material-icons prefix">pin_drop</i>
             <input id="address" name="address" type="text" class="validate" required>
-            <label for="addresss">Address</label>
+            <label for="address">Address</label>
           </div>
           <!-- input field for agency -->
           <div class="input-field col s12 m6 outlined m-3">
@@ -49,12 +50,11 @@
               <option value="{{ type }}">{{ type }}</option>
               {% endfor %}
             </select>
-            <label for="{{type}}">{{type}}</label>
           </div>
           <!-- input field for chain free -->
           <div class="col s12 m6 m-3 center">
             <label for="chain_free">
-              <input name="chain_free" id="chain_free" type="checkbox" class="filled-in" checked="checked" />
+              <input name="chain_free" id="chain_free" type="checkbox" class="filled-in" checked="checked">
               <span><i class="fa-solid fa-link"></i> Chain Free</span>
             </label>
           </div>
@@ -113,11 +113,15 @@
   </div>
 </section>
 {% endblock %}
+<!-- Javascript  -->
 {% block javascript %}
+<!-- Google Maps API -->
 <script async
   src="https://maps.googleapis.com/maps/api/js?key={{maps_api}}&loading=async&libraries=places&callback=initAutocomplete">
 </script>
 <script>
+  // Initialise Google maps autocomplete
+  // https://developers.google.com/maps/documentation/javascript/place-autocomplete
   let autocomplete;
 
   function initAutocomplete() {
@@ -144,8 +148,9 @@
     }
   }
 
+  // Validate form
   function validateForm() {
-  
+
     let address = document.forms["add_house"]["address"].value;
     let agency = document.forms["add_house"]["agency"].value;
     let propertyType = document.forms["add_house"]["property_type"].value;
@@ -155,14 +160,13 @@
     let dateViewing = document.forms["add_house"]["date_viewing"].value;
     let errorMessage = document.getElementById("add-house-error");
 
-    if (address == "" || agency == "" || propertyType == "" || noBathrooms == ""|| noBedrooms == "" ||housePrice == "" || dateViewing == ""  ) {
-        console.log("validation failed");
-        errorMessage.innerText = "Please fill out all the required fields";
-        return false;
-    } 
+    if (address == "" || agency == "" || propertyType == "" || noBathrooms == "" || noBedrooms == "" || housePrice ==
+      "" || dateViewing == "") {
+      console.log("validation failed");
+      errorMessage.innerText = "Please fill out all the required fields";
+      return false;
+    }
     return true;
-}
-
-
+  }
 </script>
 {% endblock %}
