@@ -88,8 +88,8 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
 | static | script.js | ![screenshot](documentation/validation/javascript-validation/js-validation-script.png) |  Undefined variable of `M` from materialize initiation |
-| static | house.js | ![screenshot](documentation/validation/javascript-validation/js-validation-house.png) | Recommendations to use dot notation with my form validation function |
-| static | email.js | ![screenshot](documentation/validation/javascript-validation/js-validation-email.png) | Undefined variable of `emailjs` and `M` from materialize. Unused variable of `sendmail`. This function was called in the contact.html. Recommendations to use dot notation with my form validation function |
+| static | house.js | ![screenshot](documentation/validation/javascript-validation/js-validation-house.png) ![screenshot](documentation/validation/javascript-validation/jshint-fix-house.png)| Recommendations to use dot notation with my form validation function Fix: (second screenshot) I have changed it to dot notation as recommended. Unused functions called into house template|
+| static | email.js | ![screenshot](documentation/validation/javascript-validation/js-validation-email.png) | Undefined variable of `emailjs` and `M` from materialize. Unused variable of `sendmail`. This function was called in the contact.html|
 
 I used separate script tags in certain HTML files to target only those specific id's in those pages.
 
@@ -97,8 +97,8 @@ I used separate script tags in certain HTML files to target only those specific 
 | --- | --- | --- | --- |
 | templates | profile.html | ![screenshot](documentation/validation/javascript-validation/js-validation-profile.png) |  No errors |
 | templates | favourites.html | ![screenshot](documentation/validation/javascript-validation/js-validation-favourites.png) | No errors |
-| templates | new_house.html | ![screenshot](documentation/validation/javascript-validation/js-validation-new-house.png) | Undefined variable of `google` from google API. Unused variable of `formValidation()`. This function will be called in once form is submitted.  Unused variable of `initAutoComplete()`. This function initialises google's autocomplete API. Recommendations to use dot notation with my form validation function |
-| templates | edit_new_house.html | ![screenshot](documentation/validation/javascript-validation/js-validation-edit_house.png) | Undefined variable of `google` from google API. Unused variable of `formValidation()`. This function will be called in once form is submitted.  Unused variable of `initAutoComplete()`. This function initialises google's autocomplete API. Recommendations to use dot notation with my form validation function |
+| templates | new_house.html | ![screenshot](documentation/validation/javascript-validation/js-validation-new-house.png) ![screenshot](documentation/validation/javascript-validation/js-hint-fix-new_house.png)| Undefined variable of `google` from google API. Unused variable of `formValidation()`. This function will be called in once form is submitted.  Unused variable of `initAutoComplete()`. This function initialises google's autocomplete API. Recommendations to use dot notation with my form validation function Fix: (second screenshot) I have changed it to dot notation as recommended. |
+| templates | edit_new_house.html | ![screenshot](documentation/validation/javascript-validation/js-validation-edit-house.png) ![screenshot](documentation/validation/javascript-validation/js-hint-fix-edit_new_house.png) | Undefined variable of `google` from google API. Unused variable of `formValidation()`. This function will be called in once form is submitted.  Unused variable of `initAutoComplete()`. This function initialises google's autocomplete API. Recommendations to use dot notation with my form validation function Fix: (second screenshot) I have changed it to dot notation as recommended. |
            
 
 ### Python
