@@ -180,6 +180,12 @@ Blog
 
 ### Existing Features
 
+- **Logo**
+
+    - The logo prominently features a house alongside the name of the web application. This strategic implementation enables users to instantly connect the web application with the concept of houses, effectively targeting the house-hunting audience. This plays a pivotal role in establishing a strong brand identity, as users quickly recognize and associate the logo with the platform's core purpose.
+
+![screenshot](documentation/feature/feature-logo.png)
+
 - **Landing Page**
 
     - The landing page creates the first impression of the website, conveying the core message and purpose of the web application. It establishes the theme for the entire site and strengthens the brand image. Featuring a hero image of a family, it suggests the idea of families finding a home together, enhancing the emotional connection with visitors.
@@ -209,14 +215,118 @@ Blog
 
 ![screenshot](documentation/feature/casa-quest-feature-manage-account.png)
 
+- **Change Password**
+
+    -Implementing a password change feature will enhance profile security by enabling users to update their passwords regularly. Additionally, the passwords must meet stringent security requirements.
+
+![screenshot](documentation/feature/casa-quest-feature-change-password.png)
+
+- **Registration Page**
+
+    - By having a registration page, users can create a secure account with us. This allows them to save their property searches within their own account, ensuring easy access and review at any time.
+
+![screenshot](documentation/feature/feature-registration.png)
+
+- **Log in Page**
+
+    - Having a login page allows users to easily return to their accounts. This enables them to access their saved property searches, ensuring convenient and quick review whenever needed
+
+![screenshot](documentation/feature/feature-login.png)
+
+- **Contact page**
+
+    - Having a contact page allows users to easily get in touch with the admin. This enables them to reach out for assistance with account maintenance or to report any bugs. A contact page enhances trust in the website, making users feel more at ease.
+
+![screenshot](documentation/feature/casa-quest-feature-contact.png)
+
+- **House**
+
+    - A dedicated page for house information contains all the necessary questions and forms to capture comprehensive details about the property.
+
+![screenshot](documentation/feature/feature-house.png)
+- **Add House**
+
+    - Introducing a dedicated page for users to seamlessly add new houses with essential information and images significantly enhances the platform's functionality and user experience
+
+![screenshot](documentation/feature/feature-add-house.png)
+- **Edit a house**
+
+    - Allowing users to edit the information they've provided is crucial for ensuring accuracy and relevance over time. This feature empowers users to keep their property details up-to-date, reflecting any changes accurately. It enhances user experience by offering flexibility and control, fostering a sense of ownership and satisfaction with the platform.
+
+![screenshot](documentation/feature/feature-edit-house.png)
+
+- **Embedded map of the house**
+
+    - Users can view a map of the house they've inputted, enabling them to visualize the property's surroundings and nearby facilities. This feature enhances their decision-making process by providing valuable insights into the neighborhood, nearby amenities, and accessibility, ultimately aiding in finding the ideal property.
+
+![screenshot](documentation/feature/feature-map.png)
+- **Add house details button**
+
+    - This button serves to activate modals featuring forms essential for house viewing, providing house information, and conducting house checks during property inspections. The modal prompts users to input additional information, ensuring clarity by specifying which add button corresponds to each form. This intuitive design streamlines the process, guiding users efficiently through the necessary steps and enhancing their experience.
+
+![screenshot](documentation/feature/feature-add-details-button.png)
+- **Edit House details button**
+
+    - This button activates modals containing essential forms for updating house information and making adjustments during property inspections. These modals prompt users to modify additional details, empowering them with the flexibility to provide accurate and up-to-date information at any time.
+![screenshot](documentation/feature/feature-edit-button.png)
+
+- **Log out button**
+
+    - Users have the ability to log out from their accounts. This logout button plays a critical role in ensuring the security and privacy of user accounts. By logging out, users effectively terminate their current session, preventing unauthorized access to their account by others who might have access to the same device. 
+
+![screenshot](documentation/feature/feature-logout.png)
+- **Delete house button and delete house modal**
+
+    - Users have the ability to delete houses they've created by using the 'x' button. Upon clicking, a modal prompts them to confirm the deletion, preventing accidental removals. This confirmation step ensures users are fully aware that deleting a house will permanently remove all associated data. This feature enhances user control while safeguarding against unintended data loss.
+
+![screenshot](documentation/feature/feature-delete-house.png)
+- **'404' page**
+
+    - A '404' significantly enhances user experience by guiding users back to relevant content, reducing frustration, and improving site navigation
+
+
+![screenshot](documentation/feature/feature-404.png)
+- **'403' page**
+
+    - A '403' enhances user experience and security. When users encounter restricted access, a well-designed 403 page clearly communicates that the content is off-limits, reducing confusion and frustration. 
+
+![screenshot](documentation/feature/feature-403.png)
+- **'500' page**
+
+    - A '500' enhances user experience and maintains trust during server errors. When users encounter an internal server error, a well-designed 500 page reassures them that the issue is recognized and being addressed, reducing frustration. This page supports consistent branding and professionalism, ensuring the site's look and feel are maintained even during technical difficulties.
+
+![screenshot](documentation/feature/feature-500.png)
+
+
+### Admin Features
+- **Manage Users**
+
+    - Admins have the ability to manage users by monitoring the total number of users on the platform. This feature enables admins to assess user activity and growth, providing valuable insights into the platform's performance.
+
+![screenshot](documentation/feature/feature-manage-users.png)
+
+- **Deactivate user account**
+
+    - Admins have the ability to deactivate user accounts. This feature allows them to respond to user requests for account deletion and manage users who violate the platform's rules. By providing this functionality, admins can ensure compliance with user preferences and maintain a safe, respectful community environment A modal prompts admin to confirm their deletion, preventing accidental account deletions.
+
+![screenshot](documentation/feature/feature-deactivate-account.png)
+
+- **'Created By'**
+
+    - Admins have the ability to identify the creators of posts. This functionality allows them to monitor user activity and take appropriate action against users who violate the platform's guidelines or misuse the web application.
+
+
+![screenshot](documentation/feature/feature-createdby.png)
+
+
+
 ### Future Features
 
-- YOUR-TITLE-FOR-FUTURE-FEATURE-#1
-    - Any additional notes about this feature.
-- YOUR-TITLE-FOR-FUTURE-FEATURE-#2
-    - Any additional notes about this feature.
-- YOUR-TITLE-FOR-FUTURE-FEATURE-#3
-    - Any additional notes about this feature.
+- Blog commmunity
+    - As indicated in the database below, my initial plan was to incorporate a blog community as an additional feature for this project. However, integrating this feature at this stage would deviate from the minimum viable product (MVP) and consume valuable time that could be better utilized for rigorous testing and establishing a robust foundation for the project. Consequently, I made the challenging decision to prioritize the MVP and postpone the implementation of this feature for future consideration.
+- Customised questions
+    - A feature where users can create their own custom questions and inputs alongside the predetermined ones. This empowers users in their house-hunting journey, enabling them to include criteria that they prioritize personally. However, this feature is earmarked for future implementation, as it may necessitate a more robust database to efficiently store these user-generated questions.
+
 
 ## Tools & Technologies Used
 - [![Markdown Builder](https://img.shields.io/badge/Markdown_Builder-grey?logo=markdown&logoColor=000000)](https://tim.2bn.dev/markdown-builder) used to generate README and TESTING templates.
@@ -531,11 +641,7 @@ You can fork this repository by using the following steps:
 
 ### Local VS Deployment
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Use this space to discuss any differences between the local version you've developed, and the live deployment site on Heroku.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+There is no difference between the local version and the deployed version.
 
 ## Credits
 
