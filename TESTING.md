@@ -99,33 +99,27 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 | Desktop |![screenshot](documentation/testing/browsers/chrome/chrome-new-house-1.png)  ![screenshot](documentation/testing/browsers/chrome/chrome-new-house-2.png)| ![screenshot](documentation/testing/browsers/chrome/chrome-edit-house-1.png) ![screenshot](documentation/testing/browsers/chrome/chrome-edit-house-2.png) |![screenshot](documentation/testing/browsers/chrome/chrome-change-password.png) | ![screenshot](documentation/testing/browsers/chrome/chrome-manage_users.png) | ![screenshot](documentation/testing/browsers/chrome/chrome-404.png) |![screenshot](documentation/testing/browsers/chrome/chrome-500.png)| ![screenshot](documentation/testing/browsers/chrome/chrome-403.png) | works as expected |
 | Iphone13 (Own device) |![screenshot](documentation/responsiveness/iphone13-add-house.PNG)  ![screenshot](documentation/responsiveness/iphone13-add-house.PNG)| ![screenshot](documentation/responsiveness/iphone13-edit-house.PNG) ![screenshot](documentation/responsiveness/iphone13-edithouse-2.PNG) |![screenshot](documentation/responsiveness/iphone13-changepassword.PNG) | ![screenshot](documentation/responsiveness/iphone13-manage-users.PNG) | ![screenshot](documentation/responsiveness/iphone13-404.PNG) |![screenshot](documentation/responsiveness/iphone13-500.PNG)| ![screenshot](documentation/responsiveness/iphone13-403.PNG) | works as expected |
 
+
 ## Lighthouse Audit
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Use this space to discuss testing the live/deployed site's Lighthouse Audit reports.
-Avoid testing the local version (especially if developing in Gitpod), as this can have knock-on effects of performance.
-
-If you don't have Lighthouse in your Developer Tools,
-it can be added as an [extension](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk).
-
-Don't just test the home page (unless it's a single-page application).
-Make sure to test the Lighthouse Audit results for all of your pages.
-
-**IMPORTANT**: You must provide screenshots of the results, to "prove" that you've actually tested them.
-
-Sample Lighthouse testing documentation:
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
 
 | Page | Mobile | Desktop | Notes |
 | --- | --- | --- | --- |
-| Home | ![screenshot](documentation/lighthouse/lighthouse-home-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-home-desktop.png) | Some minor warnings |
-| About | ![screenshot](documentation/lighthouse/lighthouse-about-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-about-desktop.png) | Some minor warnings |
-| Gallery | ![screenshot](documentation/lighthouse/lighthouse-gallery-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-gallery-desktop.png) | Slow response time due to large images |
-| x | x | x | repeat for any other tested pages/sizes |
+| Landing | ![screenshot](documentation/testing/lighthouse/lighthouse-landing-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-landing-desktop.png) | Initially warning on performance level due to image sizes too big. I have compressed the images now and the performance level have become better |
+| Register | ![screenshot](documentation/testing/lighthouse/lighthouse-register-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-register-desktop.png) | No issues |
+| Login | ![screenshot](documentation/testing/lighthouse/lighthouse-login-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-profile-mobile.png) | Slow response time due to large images |
+| Profile | ![screenshot](documentation/testing/lighthouse/lighthouse-profile-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-profile-desktop.png) | Warnings on accessbility due to lack of name for button. Fix: added aria-label to fabourite button. Screenshots are the fixed version |
+| House | ![screenshot](documentation/testing/lighthouse/lighthouse-house-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-house-desktop.png) | Accessibility due to links |
+| Contact | ![screenshot](/workspace/casa-quest/documentation/testing/lighthouse/lighthouse-contact-mobile.png) | ![screenshot](/workspace/casa-quest/documentation/testing/lighthouse/lighthouse-contact-desktop.png) | No Issues |
+| Favourites | ![screenshot](documentation/testing/lighthouse/lighthouse-favourites-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-favourites-desktop.png) | No issues |
+| New Entry | ![screenshot](documentation/testing/lighthouse/lighthouse-add-house-desktop.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-add-house-desktop.png) | Initial warnings on accessbility where some form elements did not have a form. Fix: Add aria-label to those form elements. the screenshots are the update fix version |
+| Edit House | ![screenshot](documentation/testing/lighthouse/lighthouse-edit-house-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-edit-house-desktop.png) | No Issues |
+| Change Password | ![screenshot](documentation/testing/lighthouse/lighthouse-change-password-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-change-password-desktop.png) | No issues |
+| Manage Users | ![screenshot](documentation/testing/lighthouse/lighthouse-manage-users-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-manage-users-desktop.png) | No issues |
+| 404 | ![screenshot](documentation/testing/lighthouse/lighthouse-404-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-404-desktop.png) | No Issues|
+| 500 | ![screenshot](documentation/testing/lighthouse/lighthouse-500-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-500-desktop.png) | No Iss8es |
+| 403 | ![screenshot](documentation/testing/lighthouse/lighthouse-403-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-403-desktop.png) | No Issues |
 
 ## Defensive Programming
 
