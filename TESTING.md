@@ -126,39 +126,21 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 
 ## Responsiveness
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Use this space to discuss testing the live/deployed site on various device sizes.
-
-The minimum requirement is for the following 3 tests:
-- Mobile
-- Tablet
-- Desktop
-
-**IMPORTANT**: You must provide screenshots of the tested responsiveness, to "prove" that you've actually tested them.
-
-Using the "amiresponsive" mockup image (or similar) does not suffice the requirements.
-Consider using some of the built-in device sizes in the Developer Tools.
-
-If you have tested the project on your actual mobile phone or tablet, consider also including screenshots of these as well.
-It showcases a higher level of manual tests, and can be seen as a positive inclusion!
-
-Sample responsiveness testing documentation:
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
 I've tested my deployed project on multiple devices to check for responsiveness issues.
 
-| Device | Home | About | Contact | etc | Notes |
-| --- | --- | --- | --- | --- | --- |
-| Mobile (DevTools) | ![screenshot](documentation/responsiveness/responsive-mobile-home.png) | ![screenshot](documentation/responsiveness/responsive-mobile-about.png) | ![screenshot](documentation/responsiveness/responsive-mobile-contact.png) | ![screenshot](documentation/responsiveness/responsive-mobile-etc.png) | Works as expected |
-| Tablet (DevTools) | ![screenshot](documentation/responsiveness/responsive-tablet-home.png) | ![screenshot](documentation/responsiveness/responsive-tablet-about.png) | ![screenshot](documentation/responsiveness/responsive-tablet-contact.png) | ![screenshot](documentation/responsiveness/responsive-tablet-etc.png) | Works as expected |
-| Desktop | ![screenshot](documentation/responsiveness/responsive-desktop-home.png) | ![screenshot](documentation/responsiveness/responsive-desktop-about.png) | ![screenshot](documentation/responsiveness/responsive-desktop-contact.png) | ![screenshot](documentation/responsiveness/responsive-desktop-etc.png) | Works as expected |
-| XL Monitor | ![screenshot](documentation/responsiveness/responsive-xl-home.png) | ![screenshot](documentation/responsiveness/responsive-xl-about.png) | ![screenshot](documentation/responsiveness/responsive-xl-contact.png) | ![screenshot](documentation/responsiveness/responsive-xl-etc.png) | Scaling starts to have minor issues |
-| 4K Monitor | ![screenshot](documentation/responsiveness/responsive-4k-home.png) | ![screenshot](documentation/responsiveness/responsive-4k-about.png) | ![screenshot](documentation/responsiveness/responsive-4k-contact.png) | ![screenshot](documentation/responsiveness/responsive-4k-etc.png) | Noticeable scaling issues |
-| Google Pixel 7 Pro | ![screenshot](documentation/responsiveness/responsive-pixel-home.png) | ![screenshot](documentation/responsiveness/responsive-pixel-about.png) | ![screenshot](documentation/responsiveness/responsive-pixel-contact.png) | ![screenshot](documentation/responsiveness/responsive-pixel-etc.png) | Works as expected |
-| iPhone 14 | ![screenshot](documentation/responsiveness/responsive-iphone-home.png) | ![screenshot](documentation/responsiveness/responsive-iphone-about.png) | ![screenshot](documentation/responsiveness/responsive-iphone-contact.png) | ![screenshot](documentation/responsiveness/responsive-iphone-etc.png) | Works as expected |
-| repeat for any other tested browsers | x | x | x | x | x |
+| Device | Landing page(index) | Register | Log in  | Profile | House | Contact | Favourites | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Mobile DevTools (320px) |![screenshot](documentation/responsiveness/mobile-landing-page.png) |![screenshot](documentation/responsiveness/mobile-register.png)|![screenshot](documentation/responsiveness/mobile-login.png) | ![screenshot](documentation/responsiveness/mobile-dashboard.png)  | ![screenshot](documentation/responsiveness/mobile-house-2.png) ![screenshot](documentation/responsiveness/mobile-house-3.png)![screenshot](documentation/responsiveness/mobile-house1.png)| ![screenshot](documentation/responsiveness/mobile-contact.png) | ![screenshot](documentation/responsiveness/mobile-favourites.png) | Works as expected |
+| Tablet DevTools (768px) | ![screenshot](documentation/responsiveness/tablet-landing.png)| ![screenshot](documentation/responsiveness/tablet-register.png)  |![screenshot](documentation/responsiveness/tablet-login.png) | ![screenshot](documentation/responsiveness/tablet-dashboard.png) | ![screenshot](documentation/responsiveness/tablet-house.png) |![screenshot](documentation/responsiveness/tablet-favourites.png)| ![screenshot](documentation/responsiveness/tablet-403.png) | works as expected |
+| Desktop |![screenshot](documentation/testing/browsers/chrome/chrome-landing-page.png) |![screenshot](documentation/testing/browsers/chrome/chrome-registration-1.png) ![screenshot](documentation/testing/browsers/chrome/chrome-registration-2.png) |![screenshot](documentation/testing/browsers/chrome/chrome-login.png) | ![screenshot](documentation/testing/browsers/chrome/chrome-profile-1.png) ![screenshot](documentation/testing/browsers/chrome/chrome-profile-2.png) | ![screenshot](documentation/testing/browsers/chrome/chrome-house-1.png)![screenshot](documentation/testing/browsers/chrome/chrome-house-2.png) ![screenshot](documentation/testing/browsers/chrome/chrome-house-3.png) | ![screenshot](documentation/testing/browsers/chrome/chrome-contact.png) | ![screenshot](documentation/testing/browsers/chrome/chrome-favourites.png) | Works as expected |
+| Iphone 13 (Own device) |![screenshot](documentation/responsiveness/iphone13-landing.PNG) ![screenshot](documentation/responsiveness/iphone13-landing-2.PNG) |![screenshot](documentation/responsiveness/iphone-13-register.PNG) ![screenshot](documentation/responsiveness/iphone13-register-2.PNG) |![screenshot](documentation/responsiveness/iphone-13-login.PNG) | ![screenshot](documentation/responsiveness/iphone13-dashboard-1.PNG) ![screenshot](documentation/responsiveness/iphone13-dashboard-2.PNG) ![screenshot](documentation/responsiveness/iphone13-dashboard-3.PNG) | ![screenshot](documentation/responsiveness/iphone13-house1.PNG)![screenshot](documentation/responsiveness/iphone13-house2.PNG) ![screenshot](documentation/responsiveness/iphone13-house3.PNG) | ![screenshot](documentation/responsiveness/iphone13-contact.PNG) | ![screenshot](documentation/responsiveness/iphone13-favourites1.PNG) ![screenshot](documentation/responsiveness/iphone13-favourites2.PNG) ![screenshot](documentation/responsiveness/iphone13-favourites3.PNG)| Flash can be obscured by logo |
+
+| Browser | New House | Edit new house | Change Password  | Manage_users | 404 | 500 | 403 | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Mobile DevTools (320px) |![screenshot](documentation/responsiveness/mobile-new-house.png)| ![screenshot](documentation/responsiveness/mobile-edit-house.png)  |![screenshot](documentation/responsiveness/mobile-change-password.png) | ![screenshot](documentation/responsiveness/mobile-manage-users.png) | ![screenshot](documentation/responsiveness/mobile-404.png) |![screenshot](documentation/responsiveness/mobile-500.png)| ![screenshot](documentation/responsiveness/mobile-403.png) | works as expected |
+| Tablet DevTools (768px) | ![screenshot](documentation/responsiveness/tablet-new-entry.png)| ![screenshot](documentation/responsiveness/tablet-edit-house.png)  |![screenshot](documentation/responsiveness/tablet-change-password.png) | ![screenshot](documentation/responsiveness/tablet-manage-users.png) | ![screenshot](documentation/responsiveness/tablet-404.png) |![screenshot](documentation/responsiveness/tablet-500.png)| ![screenshot](documentation/responsiveness/tablet-403.png) | works as expected |
+| Desktop |![screenshot](documentation/testing/browsers/chrome/chrome-new-house-1.png)  ![screenshot](documentation/testing/browsers/chrome/chrome-new-house-2.png)| ![screenshot](documentation/testing/browsers/chrome/chrome-edit-house-1.png) ![screenshot](documentation/testing/browsers/chrome/chrome-edit-house-2.png) |![screenshot](documentation/testing/browsers/chrome/chrome-change-password.png) | ![screenshot](documentation/testing/browsers/chrome/chrome-manage_users.png) | ![screenshot](documentation/testing/browsers/chrome/chrome-404.png) |![screenshot](documentation/testing/browsers/chrome/chrome-500.png)| ![screenshot](documentation/testing/browsers/chrome/chrome-403.png) | works as expected |
+| Iphone13 (Own device) |![screenshot](documentation/responsiveness/iphone13-add-house.PNG)  ![screenshot](documentation/responsiveness/iphone13-add-house.PNG)| ![screenshot](documentation/responsiveness/iphone13-edit-house.PNG) ![screenshot](documentation/responsiveness/iphone13-edithouse-2.PNG) |![screenshot](documentation/responsiveness/iphone13-changepassword.PNG) | ![screenshot](documentation/responsiveness/iphone13-manage-users.PNG) | ![screenshot](documentation/responsiveness/iphone13-404.PNG) |![screenshot](documentation/responsiveness/iphone13-500.PNG)| ![screenshot](documentation/responsiveness/iphone13-403.PNG) | works as expected |
 
 ## Lighthouse Audit
 
