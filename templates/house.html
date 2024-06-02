@@ -463,7 +463,7 @@
             </div>
         </div>
         <form action="{{ url_for('edit_house_info', house_id=house._id) }}" method="POST" id="edit-house-info"
-            class="col s12 teal-text text-darken-2" name="edit-house-info" onsubmit="return validateEditHouseInfo()">
+            class="col s12 teal-text text-darken-2" name="edit_house_info" onsubmit="return validateEditHouseInfo()">
             <!-- input field for EPC -->
             <div class="row">
                 <div class="input-field col s12 outlined m-3">
@@ -650,15 +650,15 @@
         </div>
         <!-- FORM FOR EDIT HOUSE VIEWING -->
         <form action="{{ url_for('edit_house_viewing', house_id=house._id) }}" method="POST"
-            class="col s12 teal-text text-darken-2" name="edit-house-viewing"
+            class="col s12 teal-text text-darken-2" name="edit_house_viewing"
             onsubmit="return validateEditHouseViewing()">
             <!-- Input field for seller's situation -->
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
                     <i class="material-icons prefix">people_outline</i>
-                    <input id="sellers-sitaution" name="sellers-sitaution" type="text" class="validate"
+                    <input id="sellers_sitaution" name="sellers_sitaution" type="text" class="validate"
                         value="{{ house_viewing.sellersSituation }} " required>
-                    <label for="sellers-sitaution">What is the seller's situation?</label>
+                    <label for="sellers_sitaution">What is the seller's situation?</label>
                 </div>
 
             </div>
@@ -761,15 +761,15 @@
         </div>
         <!-- FORM FOR ADDING INFORMATION ON HOUSE VIEWING -->
         <form action="{{ url_for('add_house_viewing', house_id=house._id) }}" method="POST"
-            class="col s12 teal-text text-darken-2" name="add-house-viewing"
+            class="col s12 teal-text text-darken-2" name="add_house_viewing"
             onsubmit="return validateAddHouseViewing()">
             <!-- Input field for seller's situation -->
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
                     <i class="material-icons prefix">people_outline</i>
-                    <input id="add_sellers-situation" name="add_sellers-sitaution" type="text" class="validate"
+                    <input id="add_sellers_situation" name="add_sellers_sitaution" type="text" class="validate"
                         required>
-                    <label for="add_sellers-situation">What is the seller's situation?</label>
+                    <label for="add_sellers_situation">What is the seller's situation?</label>
                 </div>
 
             </div>
@@ -857,7 +857,7 @@
         </div>
         <!-- Form for editing house check -->
         <form action="{{ url_for('edit_house_check', house_id=house._id) }}" method="POST"
-            class="col s12 teal-text text-darken-4" name="edit-house-check" onsubmit="return validateEditHouseCheck()">
+            class="col s12 teal-text text-darken-4" name="edit_house_check" onsubmit="return validateEditHouseCheck()">
             <div class="row">
                 <div class="col s12 ">
                     <!-- Input field for property facing -->
@@ -871,11 +871,11 @@
                                 <label for="{{ direction }}">
                                     {% if house_check.propertyFacing == direction +' Facing' %}
                                     <input name="property_facing" id="{{ direction }}" type="radio"
-                                        value="{{ direction }} Facing" checked>
+                                        value="{{ direction }} Facing" checked required>
                                     <span>{{ direction }} Facing</span>
                                     {% else %}
                                     <input name="property_facing" id="{{ direction }}" type="radio"
-                                        value="{{ direction }} Facing">
+                                        value="{{ direction }} Facing" required>
                                     <span>{{ direction }} Facing</span>
                                     {% endif %}
                                 </label>
@@ -894,11 +894,11 @@
                                 <label for="noise_{{ level }}">
                                     {% if house_check.noisePollution == level + ' Noise' %}
                                     <input name="noise_level" id="noise_{{ level }}" type="radio"
-                                        value="{{ level }} Noise" checked="checked">
+                                        value="{{ level }} Noise" checked="checked" required>
                                     <span>{{ level }} Noise</span>
                                     {% else %}
                                     <input name="noise_level" id="noise_{{ level }}" type="radio"
-                                        value="{{ level }} Noise">
+                                        value="{{ level }} Noise" required>
                                     <span>{{ level }} Noise</span>
                                     {% endif %}
 
@@ -918,11 +918,11 @@
                                 <label for="boiler_{{ level }}">
                                     {% if house_check.boilerNoise == level + ' Noise' %}
                                     <input name="boiler_noise" id="boiler_{{ level }}" type="radio"
-                                        value="{{ level }} Noise" checked="checked">
+                                        value="{{ level }} Noise" checked="checked" required>
                                     <span>{{ level }} Noise</span>
                                     {% else %}
                                     <input name="boiler_noise" id="boiler_{{ level }}" type="radio"
-                                        value="{{ level }} Noise">
+                                        value="{{ level }} Noise" required>
                                     <span>{{ level }} Noise</span>
                                     {% endif %}
 
@@ -942,10 +942,10 @@
                                 <label for="{{ amount }}">
                                     {% if house_check.storageSpace == amount %}
                                     <input name="storage_space" id="{{ amount }}" type="radio" value="{{ amount }}"
-                                        checked="checked">
+                                        checked="checked" required>
                                     <span>{{ amount }}</span>
                                     {% else %}
-                                    <input name="storage_space" id="{{ amount }}" type="radio" value="{{ amount }}">
+                                    <input name="storage_space" id="{{ amount }}" type="radio" value="{{ amount }}" required>
                                     <span>{{ amount }}</span>
                                     {% endif %}
 
@@ -959,7 +959,7 @@
                         <div class="col s12 m6 m-4">
                             <label for="attic">
                                 {% if house_check.atticAccess == "yes" %}
-                                <input name="attic" id="attic" type="checkbox" class="filled-in" checked="checked">
+                                <input name="attic" id="attic" type="checkbox" class="filled-in" checked="checked" required>
                                 <span>Is there easy access to the attic?</span>
                                 {% else %}
                                 <input name="attic" id="attic" type="checkbox" class="filled-in">
@@ -1098,7 +1098,7 @@
         </div>
         <!-- Form for adding house checks -->
         <form action="{{ url_for('add_house_check', house_id=house._id) }}" method="POST"
-            class="col s12 teal-text text-darken-2" name="add-house-check" onsubmit="return validateAddHouseCheck()">
+            class="col s12 teal-text text-darken-2" name="add_house_check" onsubmit="return validateAddHouseCheck()">
             <div class="row">
                 <div class="col s12 ">
                     <!-- Input field for propertyFacing -->

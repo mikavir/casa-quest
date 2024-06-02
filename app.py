@@ -534,7 +534,7 @@ def add_house_viewing(house_id):
 
     """
     if request.method == "POST":
-        sellers_situation = request.form.get("add_sellers-sitaution")
+        sellers_situation = request.form.get("add_sellers_sitaution")
         neighbours = request.form.get("add_neighbours")
         facilities = request.form.get("add_facilities")
         traffic = request.form.get("add_traffic")
@@ -577,7 +577,7 @@ def edit_house_viewing(house_id):
 
     """
     if request.method == "POST":
-        sellers_situation = request.form.get("sellers-sitaution")
+        sellers_situation = request.form.get("sellers_sitaution")
         neighbours = request.form.get("neighbours")
         facilities = request.form.get("facilities")
         traffic = request.form.get("traffic")
