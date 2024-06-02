@@ -14,7 +14,9 @@ Introducing a responsive web app for house-hunters to efficiently organize and t
 
 ## UX
 
+The inspiration for this idea originated from my recent experiences with house-hunting. I encountered a significant amount of data to consider for each property and initially resorted to organizing it manually on pen and paper, as depicted in the database below. However, I recognized the potential to streamline this process digitally for a more efficient experience. Upon researching existing services, I identified a gap in the market, particularly regarding apps tailored for house-hunters rather than solely surveyors. This realization prompted me to develop this app, aiming to enhance the user experience and simplify the house-hunting process. 
 
+The primary target audience for this service is individuals actively engaged in purchasing homes, seeking to mitigate any unforeseen or undesirable surprises that could potentially arise throughout the buying journey. To enhance user experience (UX) and design, I extensively researched various house-buying websites such as [RightMove](https://www.rightmove.co.uk/) and [Zoopla](https://www.zoopla.co.uk/) for insights and inspiration. I've been particularly impressed by the design of Mr and Mrs Clarke(https://www.mrandmrsclarke.com/), drawing inspiration from their approach. The goal of this project is to elevate data organization and enhance the overall user experience (UX) to facilitate a smoother and more enjoyable house-hunting journey.
 
 ### Colour Scheme
 
