@@ -145,6 +145,8 @@ Defensive programming was manually tested with the below user acceptance testing
 | Index Page | | | | | |
 | | If user has not logged in or registered, call out button should lead to register page | Tested the feature by doing clicking the button | The feature behaved as expected,| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-call-outbtn-1.gif) |
 | | If user is logged in, call out button should lead to profile | Tested the feature by doing clicking the button | The feature behaved as expected,| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-call-outbtn2.gif) |
+| House | | | | | |
+| | If user edits an information that doesnt exist, user is redirected to a 404 page | Tested the feature updating before adding information | The feature behaved as expected,| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-editing-info.gif) |
 
 
 ## User Story Testing
@@ -192,8 +194,23 @@ I fully acknowledge and understand that, in a real-world scenario, an extensive 
 
 ## Bugs
 
+- Tooltipped buttons posting data and making duplicate id.
+    ![gif](documentation/bugs/bug02.gif)
+
+    - To address this issue, I conducted research and found that the default type of a button is set to submit, as discussed on Stack Overflow (https://stackoverflow.com/questions/41904199/whats-the-point-of-button-type-button). Consequently, I added `type="button"` to ensure that the button's behavior aligns with our intentions. Additionally, I implemented defensive measures to prevent duplicate ID post requests.
+
+    ```python
+     if house_data is None:
+            mongo.db.houseChecks.insert_one(add_house_check_info)
+            flash("Personal House Checks Added")
+            return redirect(url_for("view_house", house_id=house_id))
+        error_message = "House Check Information already exists"
+        return render_template("500.html", error_message=error_message)
+    ```
+
+
 - White space appearing below footer only on Firefox mobile device.
-    ![screenshot](documentation/bugs/bug01.png)
+    ![screenshot](documentation/bugs/bug01.PNG)
 
     - The `top: 100vh;` property places the footer 100% down from the top of the viewport, positioning it at the bottom of the visible area. However, this did not make any changes.
 
@@ -242,45 +259,6 @@ I fully acknowledge and understand that, in a real-world scenario, an extensive 
     - To fix this, I _____________________.
 
 ## Unfixed Bugs
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-You will need to mention unfixed bugs and why they were not fixed.
-This section should include shortcomings of the frameworks or technologies used.
-Although time can be a big variable to consider, paucity of time and difficulty understanding
-implementation is not a valid reason to leave bugs unfixed.
-
-If you've identified any unfixed bugs, no matter how small, be sure to list them here.
-It's better to be honest and list them, because if it's not documented and an assessor finds the issue,
-they need to know whether or not you're aware of them as well, and why you've not corrected/fixed them.
-
-Some examples:
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-- On devices smaller than 375px, the page starts to have `overflow-x` scrolling.
-
-    ![screenshot](documentation/bugs/unfixed-bug01.png)
-
-    - Attempted fix: I tried to add additional media queries to handle this, but things started becoming too small to read.
-
-- For PP3, when using a helper `clear()` function, any text above the height of the terminal does not clear, and remains when you scroll up.
-
-    ![screenshot](documentation/bugs/unfixed-bug02.png)
-
-    - Attempted fix: I tried to adjust the terminal size, but it only resizes the actual terminal, not the allowable area for text.
-
-- When validating HTML with a semantic `section` element, the validator warns about lacking a header `h2-h6`. This is acceptable.
-
-    ![screenshot](documentation/bugs/unfixed-bug03.png)
-
-    - Attempted fix: this is a known warning and acceptable, and my section doesn't require a header since it's dynamically added via JS.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-If you legitimately cannot find any unfixed bugs or warnings, then use the following sentence:
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 > [!NOTE]  
 > There are no remaining bugs that I am aware of.
