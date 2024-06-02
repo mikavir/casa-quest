@@ -436,5 +436,10 @@ iframe {
     font-size: small;
     padding: 5px 10px;
   }
+  .add-modal,.add-modal-view{
+    width: 250px;
+    height: 125px;
+
+  }
 }
 
