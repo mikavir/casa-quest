@@ -441,5 +441,12 @@ iframe {
     height: 125px;
 
   }
+  .house-info-content {
+    font-size: small;
+  }
+  .submit-button {
+    font-size: smaller;
+    padding: 5px 10px;
+  }
 }
 
