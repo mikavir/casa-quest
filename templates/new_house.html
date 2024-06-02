@@ -142,7 +142,7 @@
     let place = autocomplete.getPlace();
 
     if (!place.geometry) {
-      document.getElementById('address').placeholder = "Enter an address"
+      document.getElementById('address').placeholder = "Enter an address";
     } else {
       document.getElementById('address').value = place.name;
     }
@@ -151,14 +151,14 @@
   // Validate form
   function validateForm() {
 
-    let address = document.forms["add_house"]["address"].value;
-    let agency = document.forms["add_house"]["agency"].value;
-    let propertyType = document.forms["add_house"]["property_type"].value;
-    let noBedrooms = document.forms["add_house"]["no_bedrooms"].value;
-    let noBathrooms = document.forms["add_house"]["no_bathrooms"].value;
-    let housePrice = document.forms["add_house"]["house_price"].value;
-    let dateViewing = document.forms["add_house"]["date_viewing"].value;
-    let errorMessage = document.getElementById("add-house-error");
+    const address = document.forms.add_house.address.value;
+    const agency = document.forms.add_house.agency.value;
+    const propertyType = document.forms.add_house.property_type.value;
+    const noBedrooms = document.forms.add_house.no_bedrooms.value;
+    const noBathrooms = document.forms.add_house.no_bathrooms.value;
+    const housePrice = document.forms.add_house.house_price.value;
+    const dateViewing = document.forms.add_house.date_viewing.value;
+    const errorMessage = document.getElementById("add-house-error");
 
     if (address == "" || agency == "" || propertyType == "" || noBathrooms == "" || noBedrooms == "" || housePrice ==
       "" || dateViewing == "") {
