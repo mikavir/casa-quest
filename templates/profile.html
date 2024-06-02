@@ -138,7 +138,7 @@
                             <form
                                 action="{{ url_for('remove_from_favourites', username=username, house_id=house._id) }}"
                                 method="POST">
-                                <button class="btn teal darken-2 white-text rounded waves-effect waves-light profile-button"><i
+                                <button class="btn teal darken-2 white-text rounded waves-effect waves-light profile-button" aria-label="Remove from favourite"><i
                                         class="fa-solid fa-heart"></i></button>
 
                             </form>
@@ -147,7 +147,7 @@
                         <div class="col s2 ml-2">
                             <form action="{{ url_for('add_to_favourites', username=username, house_id=house._id) }}"
                                 method="POST">
-                                <button class="btn teal darken-2 white-text rounded waves-effect waves-light profile-button"><i
+                                <button class="btn teal darken-2 white-text rounded waves-effect waves-light profile-button" aria-label="Add to favourite"><i
                                         class="fa-regular fa-heart"></i></button>
                             </form>
                         </div>
