@@ -82,10 +82,24 @@ After researching other home buying websites and gathering ideas, I found signif
 - As a returning site user, I would like to be able to make a post in the community of homebuyers, so that I can share my experience.
 - As a returning site user, I would like to be able to make a comment in a post in the community of homebuyers, so that I can share my experience.
 - As a returning site user, I would like to be able to change my password, so that I can keep my account secure.
+- As a returning site user, I would like to be able to mark some properties as my favourite so that I can keep track of my top choices 
+- As a returning site user, I would like to be able to see all the properties that I have added in one page so I can easily compare them
+- As a returning site user, I would like to be able to log out to keep my session secure from who will be using the same device as me
+- As a returning site user, I would like to be able to see a map of the location of the house so I can see the facilities nearby
+- As a returning site user, I would like the ability to access a dedicated page for each house, allowing me to add and view detailed information specific to that property.
+- As a returning site user, I would like the ability to add information on that specific property.
+- As a returning site user, I would like the ability to edit information on that specific property.
+
 ### Site Admin
 
 - As a site administrator, I would like to keep connected with my users , so that they can report any user experience.
 - As a site administrator, I should be able to delete posts that is against the rules, so that I can ensure that the community is safe.
+- As a site administrator, I should be able to delete users that is violating the rules, so that I can ensure that the community is safe.
+- As a site administrator, I need to manage and view user accounts effectively to ensure control over the user base and monitor user activity.
+- As a site administrator, I should be able to direct users back to home if they have reached a page that is not found.
+- As a site administrator, I should be able to direct users back to home if they have reached a page that is forbidden to access.
+-  As a site administrator, I should be able to direct users back to home if the web application have reached an internal server error.
+-
 
 ## Wireframes
 
