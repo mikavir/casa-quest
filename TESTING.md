@@ -198,16 +198,33 @@ I fully acknowledge and understand that, in a real-world scenario, an extensive 
     
     ![gif](documentation/bugs/bug02.gif)
 
-    - To address this issue, I conducted research and found that the default type of a button is set to submit, as discussed on Stack Overflow (https://stackoverflow.com/questions/41904199/whats-the-point-of-button-type-button). Consequently, I added `type="button"` to ensure that the button's behavior aligns with our intentions. Additionally, I implemented defensive measures to prevent duplicate ID post requests.
+    - To address this issue, I conducted research and found that the default type of a button is set to submit, as discussed on [Stack Overflow](https://stackoverflow.com/questions/41904199/whats-the-point-of-button-type-button). Consequently, I added `type="button"` to ensure that the button's behavior aligns with our intentions. Additionally, I implemented defensive measures to prevent duplicate ID post requests.
 
-    ```python
-     if house_data is None:
-            mongo.db.houseChecks.insert_one(add_house_check_info)
-            flash("Personal House Checks Added")
-            return redirect(url_for("view_house", house_id=house_id))
-        error_message = "House Check Information already exists"
-        return render_template("500.html", error_message=error_message)
-    ```
+        ```python
+            if house_data is None:
+                mongo.db.houseChecks.insert_one(add_house_check_info)
+                flash("Personal House Checks Added")
+                return redirect(url_for("view_house", house_id=house_id))
+            error_message = "House Check Information already exists"
+            return render_template("500.html", error_message=error_message)
+        ```
+
+- Checkboxes are not being filled.
+    ![screenshot](documentation/bugs/bug03.gif)
+
+    - To resolve this issue, I discovered that I had duplicate IDs for checkbox elements, causing interference with their functionality. I rectified this by adjusting the IDs of the duplicate elements, resulting in the proper functioning of the checkboxes.
+
+- Unable to log in.
+
+    ![screenshot](documentation/bugs/bug04.png)
+
+    - To fix this issue, I realised that I have set the code to be:
+        `"password": generate_password_hash("password")`
+
+    - Therefore, I changed the password from a string back to a variable:
+
+        `"password": generate_password_hash(password)`
+
 
 
 - White space appearing below footer only on Firefox mobile device.
