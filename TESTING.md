@@ -195,6 +195,7 @@ I fully acknowledge and understand that, in a real-world scenario, an extensive 
 ## Bugs
 
 - Tooltipped buttons posting data and making duplicate id.
+    
     ![gif](documentation/bugs/bug02.gif)
 
     - To address this issue, I conducted research and found that the default type of a button is set to submit, as discussed on Stack Overflow (https://stackoverflow.com/questions/41904199/whats-the-point-of-button-type-button). Consequently, I added `type="button"` to ensure that the button's behavior aligns with our intentions. Additionally, I implemented defensive measures to prevent duplicate ID post requests.
@@ -210,6 +211,7 @@ I fully acknowledge and understand that, in a real-world scenario, an extensive 
 
 
 - White space appearing below footer only on Firefox mobile device.
+    
     ![screenshot](documentation/bugs/bug01.PNG)
 
     - The `top: 100vh;` property places the footer 100% down from the top of the viewport, positioning it at the bottom of the visible area. However, this did not make any changes.
