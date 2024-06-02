@@ -27,7 +27,7 @@
                 <div class="input-field col s12 m-3">
                     <i class="fas fa-user-plus prefix green-text text-darken-4"></i>
                     <input id="name" name="name" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z]{5,15}$"
-                        class="validate" required>
+                        class="validate" required aria-required="true">
                     <label for="name">Name</label>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                 <div class="input-field col s12 m-3">
                     <i class="fas fa-user-plus prefix green-text text-darken-4"></i>
                     <input id="username" name="username" type="text" minlength="5" maxlength="15"
-                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required aria-required="true">
                     <label for="username">Username</label>
                     <small>(Username must be less than 15 characters)</small>
                 </div>
@@ -46,7 +46,7 @@
                 <div class="input-field col s12 m-3">
                     <i class="fas fa-user-lock prefix green-text text-darken-4"></i>
                     <input id="password" name="password" type="password" minlength="8"
-                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="validate" required>
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="validate" required aria-required="true">
                     <label for="password">Password</label>
                     <small>(Passwords must be more than 8 characters long and contain alphanumeric(ie. 'abc' and '123') and at least one uppercase letter)</small>
                 </div>
@@ -56,7 +56,7 @@
                 <div class="input-field col s12 m-3">
                     <i class="fas fa-user-lock prefix green-text text-darken-4"></i>
                     <input id="confirm_password" name="confirm_password" type="password" minlength="8"
-                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="validate" required>
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="validate" required aria-required="true">
                     <label for="confirm_password">Confirm Password</label>
                     <small>(Passwords must be the same)</small>
     

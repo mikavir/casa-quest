@@ -467,7 +467,7 @@
             <!-- input field for EPC -->
             <div class="row">
                 <div class="input-field col s12 outlined m-3">
-                    <select id="epc" name="epc" required>
+                    <select id="epc" name="epc" required aria-required="true">
                         <option value="" disabled>💡 EPC Rating</option>
                         {% for chara in characters %}
                         {% if chara == house_info.epc %}
@@ -503,7 +503,7 @@
                 <div class="input-field outlined col s12 m-3">
                     <i class="material-icons prefix">flood</i>
                     <input id="flood_risk" name="flood_risk" type="text" class="validate"
-                        value="{{ house_info.floodRisk }}" required>
+                        value="{{ house_info.floodRisk }}" required aria-required="true">
                     <label for="flood_risk">Flood Risk</label>
                 </div>
 
@@ -572,7 +572,7 @@
             <!-- input field for EPC -->
             <div class="row">
                 <div class="input-field col s12 outlined m-3">
-                    <select id="add_epc" name="add_epc" required>
+                    <select id="add_epc" name="add_epc" required aria-required="true">
                         <option value="" disabled selected>💡 EPC Rating</option>
                         {% for chara in characters %}
                         <option value="{{chara}}">{{chara}}</option>
@@ -583,7 +583,7 @@
             <!-- input field for Tax-Band -->
             <div class="row">
                 <div class="input-field col s12 outlined m-3">
-                    <select id="add_tax_band" name="add_tax_band" required>
+                    <select id="add_tax_band" name="add_tax_band" required aria-required="true">
                         <option value="" disabled selected>💳 Tax Band</option>
                         {% for chara in characters %}
                         <option value="{{chara}}">{{chara}}</option>
@@ -595,7 +595,7 @@
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
                     <i class="material-icons prefix">flood</i>
-                    <input id="add_flood_risk" name="add_flood_risk" type="text" class="validate" required>
+                    <input id="add_flood_risk" name="add_flood_risk" type="text" class="validate" aria-required="true">
                     <label for="add_flood_risk">Flood Risk</label>
                 </div>
             </div>
@@ -603,7 +603,7 @@
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
                     <i class="material-icons prefix">wifi</i>
-                    <input id="add_internet_speed" name="add_internet_speed" type="text" class="validate" required>
+                    <input id="add_internet_speed" name="add_internet_speed" type="text" class="validate" required aria-required="true">
                     <label for="add_internet_speed">Internet Speed:</label>
                 </div>
             </div>
@@ -657,7 +657,7 @@
                 <div class="input-field outlined col s12 m-3">
                     <i class="material-icons prefix">people_outline</i>
                     <input id="sellers_sitaution" name="sellers_sitaution" type="text" class="validate"
-                        value="{{ house_viewing.sellersSituation }} " required>
+                        value="{{ house_viewing.sellersSituation }} " required aria-required="true">
                     <label for="sellers_sitaution">What is the seller's situation?</label>
                 </div>
 
@@ -667,7 +667,7 @@
                 <div class="input-field outlined col s12 m-3">
                     <i class="material-icons prefix">person_search</i>
                     <input id="neighbours" name="neighbours" type="text" class="validate"
-                        value=" {{ house_viewing.neighbours }}" required>
+                        value=" {{ house_viewing.neighbours }}" required aria-required="true">
                     <label for="neighbours">How are the neighbours?</label>
                 </div>
             </div>
@@ -676,7 +676,7 @@
                 <div class="input-field outlined col s12 m-3">
                     <i class="material-icons prefix">explore</i>
                     <input id="facilities" name="facilities" type="text" class="validate"
-                        value=" {{ house_viewing.facilities}}" required>
+                        value=" {{ house_viewing.facilities}}" required aria-required="true">
                     <label for="facilities">What are the facilities nearby?</label>
                 </div>
             </div>
@@ -768,7 +768,7 @@
                 <div class="input-field outlined col s12 m-3">
                     <i class="material-icons prefix">people_outline</i>
                     <input id="add_sellers_situation" name="add_sellers_sitaution" type="text" class="validate"
-                        required>
+                        required aria-required="true">
                     <label for="add_sellers_situation">What is the seller's situation?</label>
                 </div>
 
@@ -777,7 +777,7 @@
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
                     <i class="material-icons prefix">person_search</i>
-                    <input id="add_neighbours" name="add_neighbours" type="text" class="validate" required>
+                    <input id="add_neighbours" name="add_neighbours" type="text" class="validate" required aria-required="true">
                     <label for="add_neighbours">How are the neighbours?</label>
                 </div>
             </div>
@@ -785,7 +785,7 @@
             <div class="row">
                 <div class="input-field outlined col s12 m-3">
                     <i class="material-icons prefix">explore</i>
-                    <input id="add_facilities" name="add_facilities" type="text" class="validate" required>
+                    <input id="add_facilities" name="add_facilities" type="text" class="validate" required aria-required="true"> 
                     <label for="add_facilities">What are the facilities nearby?</label>
                 </div>
             </div>
@@ -799,7 +799,7 @@
                     <span>
                         <label for="{{ severity }}_traffic">
                             <input name="add_traffic" id="{{ severity }}_traffic" type="radio"
-                                value="{{ severity }} Traffic" required>
+                                value="{{ severity }} Traffic" required aria-required="true">
                             <span>{{severity}} Traffic</span>
                         </label>
                     </span>
@@ -871,11 +871,11 @@
                                 <label for="{{ direction }}">
                                     {% if house_check.propertyFacing == direction +' Facing' %}
                                     <input name="property_facing" id="{{ direction }}" type="radio"
-                                        value="{{ direction }} Facing" checked required>
+                                        value="{{ direction }} Facing" checked required aria-required="true">
                                     <span>{{ direction }} Facing</span>
                                     {% else %}
                                     <input name="property_facing" id="{{ direction }}" type="radio"
-                                        value="{{ direction }} Facing" required>
+                                        value="{{ direction }} Facing" required aria-required="true">
                                     <span>{{ direction }} Facing</span>
                                     {% endif %}
                                 </label>
@@ -894,11 +894,11 @@
                                 <label for="noise_{{ level }}">
                                     {% if house_check.noisePollution == level + ' Noise' %}
                                     <input name="noise_level" id="noise_{{ level }}" type="radio"
-                                        value="{{ level }} Noise" checked="checked" required>
+                                        value="{{ level }} Noise" checked="checked" required aria-required="true">
                                     <span>{{ level }} Noise</span>
                                     {% else %}
                                     <input name="noise_level" id="noise_{{ level }}" type="radio"
-                                        value="{{ level }} Noise" required>
+                                        value="{{ level }} Noise" required aria-required="true">
                                     <span>{{ level }} Noise</span>
                                     {% endif %}
 
@@ -918,11 +918,11 @@
                                 <label for="boiler_{{ level }}">
                                     {% if house_check.boilerNoise == level + ' Noise' %}
                                     <input name="boiler_noise" id="boiler_{{ level }}" type="radio"
-                                        value="{{ level }} Noise" checked="checked" required>
+                                        value="{{ level }} Noise" checked="checked" required aria-required="true">
                                     <span>{{ level }} Noise</span>
                                     {% else %}
                                     <input name="boiler_noise" id="boiler_{{ level }}" type="radio"
-                                        value="{{ level }} Noise" required>
+                                        value="{{ level }} Noise" required aria-required="true">
                                     <span>{{ level }} Noise</span>
                                     {% endif %}
 
@@ -942,10 +942,10 @@
                                 <label for="{{ amount }}">
                                     {% if house_check.storageSpace == amount %}
                                     <input name="storage_space" id="{{ amount }}" type="radio" value="{{ amount }}"
-                                        checked="checked" required>
+                                        checked="checked" required aria-required="true">
                                     <span>{{ amount }}</span>
                                     {% else %}
-                                    <input name="storage_space" id="{{ amount }}" type="radio" value="{{ amount }}" required>
+                                    <input name="storage_space" id="{{ amount }}" type="radio" value="{{ amount }}" required aria-required="true">
                                     <span>{{ amount }}</span>
                                     {% endif %}
 
@@ -959,7 +959,7 @@
                         <div class="col s12 m6 m-4">
                             <label for="attic">
                                 {% if house_check.atticAccess == "yes" %}
-                                <input name="attic" id="attic" type="checkbox" class="filled-in" checked="checked" required>
+                                <input name="attic" id="attic" type="checkbox" class="filled-in" checked="checked" required aria-required="true">
                                 <span>Is there easy access to the attic?</span>
                                 {% else %}
                                 <input name="attic" id="attic" type="checkbox" class="filled-in">
@@ -1043,11 +1043,11 @@
 
                                                 {% if house_check.roofCondition == condition[0] %}
                                                 <input name="roof_condition" id="{{ 'edit' + condition[0] }}"
-                                                    type="radio" value="{{ condition[0] }}" checked="checked" required>
+                                                    type="radio" value="{{ condition[0] }}" checked="checked" required aria-required="true">
                                                 <span>{{ condition[0] }} </span>
                                                 {% else %}
                                                 <input name="roof_condition" id="{{'edit' + condition[0] }}"
-                                                    type="radio" value="{{ condition[0] }}" required>
+                                                    type="radio" value="{{ condition[0] }}" required aria-required="true">
                                                 <span>{{ condition[0] }} </span>
                                                 {% endif %}
                                             </label>
@@ -1111,7 +1111,7 @@
                             <span>
                                 <label for="add_{{ direction }}">
                                     <input name="add_property_facing" id="add_{{ direction }}" type="radio"
-                                        value="{{ direction }} Facing" required>
+                                        value="{{ direction }} Facing" required aria-required="true">
                                     <span>{{ direction }} Facing</span>
                                 </label>
                             </span>
@@ -1128,7 +1128,7 @@
                             <span>
                                 <label for="add_noise{{ level }}">
                                     <input name="add_noise_level" id="add_noise{{ level }}" type="radio"
-                                        value="{{ level }} Noise" required>
+                                        value="{{ level }} Noise" required aria-required="true">
                                     <span>{{ level }} Noise</span>
                                 </label>
                             </span>
@@ -1145,7 +1145,7 @@
                             <span>
                                 <label for="add_boiler_{{ level }}">
                                     <input name="add_boiler_noise" id="add_boiler_{{ level }}" type="radio"
-                                        value="{{ level }} Noise" required>
+                                        value="{{ level }} Noise" required aria-required="true">
                                     <span>{{ level }} Noise</span>
                                 </label>
                             </span>
@@ -1162,7 +1162,7 @@
                             <span>
                                 <label for="{{'addStorage' + amount}}">
                                     <input name="add_storage_space" id="{{'addStorage' + amount}}" type="radio"
-                                        value="{{ amount }}" required>
+                                        value="{{ amount }}" required aria-required="true">
                                     <span>{{ amount }}</span>
                                 </label>
                             </span>
@@ -1231,7 +1231,7 @@
                                             <label for="{{ 'addCondition' + condition[0] }}">
                                                 <input name="add_roof_condition"
                                                     id="{{ 'addCondition' + condition[0] }}" type="radio"
-                                                    value="{{ condition[0] }}" required>
+                                                    value="{{ condition[0] }}" required aria-required="true">
                                                 <span>{{ condition[0] }} </span>
                                             </label>
 
