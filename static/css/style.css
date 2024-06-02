@@ -432,7 +432,9 @@ iframe {
     width: 250px; 
   }
 
-  
-
+  .profile-button {
+    font-size: small;
+    padding: 5px 10px;
+  }
 }
 
