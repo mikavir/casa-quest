@@ -149,28 +149,38 @@ Defensive programming was manually tested with the below user acceptance testing
 
 ## User Story Testing
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Testing user stories is actually quite simple, once you've already got the stories defined on your README.
-
-Most of your project's **features** should already align with the **user stories**,
-so this should as simple as creating a table with the user story, matching with the re-used screenshot
-from the respective feature.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 | User Story | Screenshot |
 | --- | --- |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature01.png) |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature02.png) |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature03.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature04.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature05.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature06.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/features/feature07.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/features/feature08.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/features/feature09.png) |
-| repeat for all remaining user stories | x |
+| As a new site user, I would like to see a clear logo, so that I can remember the brand. | ![screenshot](documentation/feature/feature-logo.png) |
+| As a new site user, I would like to see a clear message of the web app, so that I can understand the web applicatioon well.| ![screenshot](documentation/feature/casa-quest-feature-callout.png)  ![screenshot](documentation/feature/casa-quest-feature-landing.png)|
+| As a new site user, I would like to see navigation bar, so that I can easily navigate around the site. | ![screenshot](documentation/feature/feature-navigation.png) |
+|  As a new site user, I would like to see a contact page, so that I can get in touch with the administrators of the application if I need help. | ![screenshot](documentation/feature/casa-quest-feature-contact.png) |
+|  As a new site user, I would like to see social media icons so that I can reach out at the other sources.| ![screenshot](documentation/feature/feature-social-media-links.png) |
+| As a returning site user, I would like to be able to register, so that I can have a personal account | ![screenshot](documentation/feature/feature-login.png) |
+| As a returning site user, I would like to be able to make new entries of properties, so that I can keep a log of my properties. | ![screenshot](documentation/feature/feature-add-house.png) |
+| As a returning site user, I would like to edit the information, so that I can have a more accurate information on the property. | ![screenshot](documentation/feature/feature-edit-house.png) |
+| As a returning site user, I would like to delete the entry, so that I can eliminate properties that I'm not interested. | ![screenshot](documentation/feature/feature-delete-house.png) |
+| As a returning site user, I would like to see a community of homebuyers, so that I can learn more about buying houses. | Future feature |
+| As a returning site user, I would like to be able to make a post in the community of homebuyers, so that I can share my experience. | Future feature |
+| As a returning site user, I would like to be able to make a comment in a post in the community of homebuyers, so that I can share my experience. | Future feature |
+| As a returning site user, I would like to be able to see all the properties that I have added in one page so I can easily compare them | ![screenshot](documentation/feature/casa-quest-feature-dashboard.png)|
+| As a returning site user, I would like to be able to mark some properties as my favourite so that I can keep track of my top choices | ![screenshot](documentation/feature/casa-quest-feature-favourite.png)|
+| As a returning site user, I would like the ability to access a dedicated page for each house, allowing me to add and view detailed information specific to that property. | ![screenshot](documentation/feature/feature-house.png)|
+| As a returning site user, I would like the ability to add information on that specific property | ![screenshot](documentation/feature/feature-add-details-button.png)|
+| As a returning site user, I would like the ability to edit information on that specific property | ![screenshot](documentation/feature/feature-edit-button.png)|
+| As a returning site user, I would like to be able to see a map of the location of the house so I can see the facilities nearby | ![screenshot](documentation/feature/feature-map.png)|
+| As a returning site user, I would like to be able to log out to keep my session secure from who will be using the same device as me | ![screenshot](documentation/feature/feature-logout.png)|
+| As a returning site user, I would like to be able to change my password, so that I can keep my account secure | ![screenshot](documentation/feature/casa-quest-feature-change-password.png)|
+| As a site administrator, I would like to keep connected with my users , so that they can report any user experience. | ![screenshot](documentation/feature/casa-quest-feature-contact.png) |
+| As a site administrator, I should be able to view who created the house post so I can monitor the content and account| ![screenshot](documentation/feature/feature-createdby.png)|
+| As a site administrator, I need to manage and view user accounts effectively to ensure control over the user base and monitor user activity.| ![screenshot](documentation/feature/feature-manage-users.png)|
+| As a site administrator, I should be able to delete posts that is against the rules, so that I can ensure that the community is safe. | Future feature |
+| As a site administrator, I should be able to delete users that is violating the rules, so that I can ensure that the community is safe. |  ![screenshot](documentation/feature/feature-deactivate-account.png) |
+| As a site administrator, I should be able to direct users back to home if they have reached a page that is not found |  ![screenshot](documentation/feature/feature-404.png) |
+| As a site administrator, I should be able to direct users back to home if they have reached a page that is forbidden to access. |  ![screenshot](documentation/feature/feature-403.png) |
+| As a site administrator, I should be able to direct users back to home if the web application have reached an internal server error.|  ![screenshot](documentation/feature/feature-500.png) |
+
 
 ## Automated Testing
 
