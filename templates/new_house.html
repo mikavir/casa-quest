@@ -44,7 +44,7 @@
         <div class="row">
           <div class="input-field outlined col s12 m6 m-3">
             <i class="material-icons prefix">location_city</i>
-            <select name="property_type" id="property_type" required aria-required="true">
+            <select name="property_type" id="property_type" required aria-required="true" aria-label="Type of property">
               <option value="" disabled selected>Property Type</option>
               {% for type in types %}
               <option value="{{ type }}">{{ type }}</option>
@@ -94,7 +94,7 @@
         <!-- input field for file image upload -->
         <div class="row">
           <div class="col s12 m-3">
-            <input accept="image/*" name="image-url" id="image-url" type="file" required aria-required="true">
+            <input accept="image/*" name="image-url" id="image-url" type="file" required aria-required="true" aria-label="Image upload">
 
           </div>
         </div>
