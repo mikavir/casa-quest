@@ -223,6 +223,18 @@ Blog
 
 ![screenshot](documentation/feature/casa-quest-feature-favourite.png)
 
+- **Navigation bar**
+
+    - The presence of a navigation bar is crucial as it provides users with a clear and intuitive pathway to navigate through the website, ensuring easy access to desired pages.
+
+![screenshot](documentation/feature/feature-navigation.png)
+
+- **Social Media Links in footer**
+
+    - Incorporating social media links is pivotal for enhancing brand identity and fostering trust among users by expanding points of contact.
+
+![screenshot](documentation/feature/feature-navigation.png)
+
 - **Manage Account**
 
     - A centralized place to manage account settings reduces complexity, making it easy for users to update their password or logout.
