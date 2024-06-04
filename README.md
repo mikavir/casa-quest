@@ -16,7 +16,7 @@ Introducing a responsive web app for house-hunters to efficiently organize and t
 
 The inspiration for this idea originated from my recent experiences with house-hunting. I encountered a significant amount of data to consider for each property and initially resorted to organizing it manually on pen and paper, as depicted in the database below. However, I recognized the potential to streamline this process digitally for a more efficient experience. Upon researching existing services, I identified a gap in the market, particularly regarding apps tailored for house-hunters rather than solely surveyors. This realization prompted me to develop this app, aiming to enhance the user experience and simplify the house-hunting process. 
 
-The primary target audience for this service is individuals actively engaged in purchasing homes, seeking to mitigate any unforeseen or undesirable surprises that could potentially arise throughout the buying journey. To enhance user experience (UX) and design, I extensively researched various house-buying websites such as [RightMove](https://www.rightmove.co.uk/) and [Zoopla](https://www.zoopla.co.uk/) for insights and inspiration. I've been particularly impressed by the design of Mr and Mrs Clarke(https://www.mrandmrsclarke.com/), drawing inspiration from their approach. The goal of this project is to elevate data organization and enhance the overall user experience (UX) to facilitate a smoother and more enjoyable house-hunting journey.
+The primary target audience for this service is individuals actively engaged in purchasing homes, seeking to mitigate any unforeseen or undesirable surprises that could potentially arise throughout the buying journey. To enhance user experience (UX) and design, I extensively researched various house-buying websites such as [RightMove](https://www.rightmove.co.uk/) and [Zoopla](https://www.zoopla.co.uk/) for insights and inspiration. I've been particularly impressed by the design of [Mr and Mrs Clarke](https://www.mrandmrsclarke.com/), drawing inspiration from their approach. The goal of this project is to elevate data organization and enhance the overall user experience (UX) to facilitate a smoother and more enjoyable house-hunting journey.
 
 ### Colour Scheme
 
@@ -68,10 +68,10 @@ After researching other home buying websites and gathering ideas, I found signif
 ### New Site Users
 
 - As a new site user, I would like to see a clear logo, so that I can remember the brand.
-- As a new site user, I would like to see a clear message of the web app, so that I can understand the web applicatioon well.
-- As a new site user, I would like to see navigation bar, so that I can easily navigate around the site.
+- As a new site user, I would like to see a clear message of the web app, so that I can understand the web application well.
+- As a new site user, I would like to see a navigation bar, so that I can easily navigate around the site.
 - As a new site user, I would like to see a contact page, so that I can get in touch with the administrators of the application if I need help.
-- As a new site user, I would like to see social media icons so that I can reach out at the other sources.
+- As a new site user, I would like to see social media icons so that I can reach out to the other sources.
 
 ### Returning Site Users
 
@@ -206,24 +206,24 @@ Blog
 
     - The landing page creates the first impression of the website, conveying the core message and purpose of the web application. It establishes the theme for the entire site and strengthens the brand image. Featuring a hero image of a family, it suggests the idea of families finding a home together, enhancing the emotional connection with visitors.
 
-![screenshot](documentation/feature/casa-quest-feature-landing.png)
+![screenshot](documentation/feature/feature-landing.png)
 
 - **Call out message and button**
 
     - Having a callout button simplifies navigation by prompting users to take action. For example, the 'Start Your Casa Quest Now' button encourages users to create an account.
 
-![screenshot](documentation/feature/casa-quest-feature-callout.png)
+![screenshot](documentation/feature/feature-callout.png)
 
 - **Dashboard**
 
     - Having a dashboard of houses with key information provides centralized access to property details. Users can view all relevant information about various properties in one place, eliminating the need to switch between different pages or apps. This setup allows for quick and easy comparison of multiple properties based on criteria such as price, location, number of bedrooms, and features
 
-![screenshot](documentation/feature/casa-quest-feature-dashboard.png)
+![screenshot](documentation/feature/feature-dashboard.png)
 - **Favourite**
 
     - Users can mark properties as favorites, which then appear on a dedicated favorites page for easy access and review. This feature allows users to keep all their preferred properties in one place, simplifying the management and review process. By maintaining a favorites list, users can quickly compare their top choices without needing to search for them again
 
-![screenshot](documentation/feature/casa-quest-feature-favourite.png)
+![screenshot](documentation/feature/feature-favourite.png)
 
 - **Navigation bar**
 
@@ -235,19 +235,19 @@ Blog
 
     - Incorporating social media links is pivotal for enhancing brand identity and fostering trust among users by expanding points of contact.
 
-![screenshot](documentation/feature/feature-navigation.png)
+![screenshot](documentation/feature/feature-social-media-links.png)
 
 - **Manage Account**
 
     - A centralized place to manage account settings reduces complexity, making it easy for users to update their password or logout.
 
-![screenshot](documentation/feature/casa-quest-feature-manage-account.png)
+![screenshot](documentation/feature/feature-manage-account.png)
 
 - **Change Password**
 
     -Implementing a password change feature will enhance profile security by enabling users to update their passwords regularly. Additionally, the passwords must meet stringent security requirements.
 
-![screenshot](documentation/feature/casa-quest-feature-change-password.png)
+![screenshot](documentation/feature/feature-change-password.png)
 
 - **Registration Page**
 
@@ -265,7 +265,7 @@ Blog
 
     - Having a contact page allows users to easily get in touch with the admin. This enables them to reach out for assistance with account maintenance or to report any bugs. A contact page enhances trust in the website, making users feel more at ease.
 
-![screenshot](documentation/feature/casa-quest-feature-contact.png)
+![screenshot](documentation/feature/feature-contact.png)
 
 - **House**
 

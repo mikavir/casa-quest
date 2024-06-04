@@ -155,9 +155,9 @@ Defensive programming was manually tested with the below user acceptance testing
 | User Story | Screenshot |
 | --- | --- |
 | As a new site user, I would like to see a clear logo, so that I can remember the brand. | ![screenshot](documentation/feature/feature-logo.png) |
-| As a new site user, I would like to see a clear message of the web app, so that I can understand the web applicatioon well.| ![screenshot](documentation/feature/casa-quest-feature-callout.png)  ![screenshot](documentation/feature/casa-quest-feature-landing.png)|
+| As a new site user, I would like to see a clear message of the web app, so that I can understand the web applicatioon well.| ![screenshot](documentation/feature/feature-callout.png)  ![screenshot](documentation/feature/feature-landing.png)|
 | As a new site user, I would like to see navigation bar, so that I can easily navigate around the site. | ![screenshot](documentation/feature/feature-navigation.png) |
-|  As a new site user, I would like to see a contact page, so that I can get in touch with the administrators of the application if I need help. | ![screenshot](documentation/feature/casa-quest-feature-contact.png) |
+|  As a new site user, I would like to see a contact page, so that I can get in touch with the administrators of the application if I need help. | ![screenshot](documentation/feature/feature-contact.png) |
 |  As a new site user, I would like to see social media icons so that I can reach out at the other sources.| ![screenshot](documentation/feature/feature-social-media-links.png) |
 | As a returning site user, I would like to be able to register, so that I can have a personal account | ![screenshot](documentation/feature/feature-login.png) |
 | As a returning site user, I would like to be able to make new entries of properties, so that I can keep a log of my properties. | ![screenshot](documentation/feature/feature-add-house.png) |
@@ -166,15 +166,15 @@ Defensive programming was manually tested with the below user acceptance testing
 | As a returning site user, I would like to see a community of homebuyers, so that I can learn more about buying houses. | Future feature |
 | As a returning site user, I would like to be able to make a post in the community of homebuyers, so that I can share my experience. | Future feature |
 | As a returning site user, I would like to be able to make a comment in a post in the community of homebuyers, so that I can share my experience. | Future feature |
-| As a returning site user, I would like to be able to see all the properties that I have added in one page so I can easily compare them | ![screenshot](documentation/feature/casa-quest-feature-dashboard.png)|
-| As a returning site user, I would like to be able to mark some properties as my favourite so that I can keep track of my top choices | ![screenshot](documentation/feature/casa-quest-feature-favourite.png)|
+| As a returning site user, I would like to be able to see all the properties that I have added in one page so I can easily compare them | ![screenshot](documentation/feature/feature-dashboard.png)|
+| As a returning site user, I would like to be able to mark some properties as my favourite so that I can keep track of my top choices | ![screenshot](documentation/feature/feature-favourite.png)|
 | As a returning site user, I would like the ability to access a dedicated page for each house, allowing me to add and view detailed information specific to that property. | ![screenshot](documentation/feature/feature-house.png)|
 | As a returning site user, I would like the ability to add information on that specific property | ![screenshot](documentation/feature/feature-add-details-button.png)|
 | As a returning site user, I would like the ability to edit information on that specific property | ![screenshot](documentation/feature/feature-edit-button.png)|
 | As a returning site user, I would like to be able to see a map of the location of the house so I can see the facilities nearby | ![screenshot](documentation/feature/feature-map.png)|
 | As a returning site user, I would like to be able to log out to keep my session secure from who will be using the same device as me | ![screenshot](documentation/feature/feature-logout.png)|
-| As a returning site user, I would like to be able to change my password, so that I can keep my account secure | ![screenshot](documentation/feature/casa-quest-feature-change-password.png)|
-| As a site administrator, I would like to keep connected with my users , so that they can report any user experience. | ![screenshot](documentation/feature/casa-quest-feature-contact.png) |
+| As a returning site user, I would like to be able to change my password, so that I can keep my account secure | ![screenshot](documentation/feature/change-password.png)|
+| As a site administrator, I would like to keep connected with my users , so that they can report any user experience. | ![screenshot](documentation/feature/feature-contact.png) |
 | As a site administrator, I should be able to view who created the house post so I can monitor the content and account| ![screenshot](documentation/feature/feature-createdby.png)|
 | As a site administrator, I need to manage and view user accounts effectively to ensure control over the user base and monitor user activity.| ![screenshot](documentation/feature/feature-manage-users.png)|
 | As a site administrator, I should be able to delete posts that is against the rules, so that I can ensure that the community is safe. | Future feature |
