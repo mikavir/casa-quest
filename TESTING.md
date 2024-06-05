@@ -111,7 +111,7 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Login | ![screenshot](documentation/testing/lighthouse/lighthouse-login-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-profile-mobile.png) | Slow response time due to large images |
 | Profile | ![screenshot](documentation/testing/lighthouse/lighthouse-profile-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-profile-desktop.png) | Warnings on accessbility due to lack of name for button. Fix: added aria-label to fabourite button. Screenshots are the fixed version |
 | House | ![screenshot](documentation/testing/lighthouse/lighthouse-house-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-house-desktop.png) | Accessibility due to links |
-| Contact | ![screenshot](/workspace/casa-quest/documentation/testing/lighthouse/lighthouse-contact-mobile.png) | ![screenshot](/workspace/casa-quest/documentation/testing/lighthouse/lighthouse-contact-desktop.png) | No Issues |
+| Contact | ![screenshot](documentation/testing/lighthouse/lighthouse-contact-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-contact-desktop.png) | No Issues |
 | Favourites | ![screenshot](documentation/testing/lighthouse/lighthouse-favourites-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-favourites-desktop.png) | No issues |
 | New Entry | ![screenshot](documentation/testing/lighthouse/lighthouse-add-house-desktop.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-add-house-desktop.png) | Initial warnings on accessbility where some form elements did not have a form. Fix: Add aria-label to those form elements. the screenshots are the update fix version |
 | Edit House | ![screenshot](documentation/testing/lighthouse/lighthouse-edit-house-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-edit-house-desktop.png) | No Issues |
@@ -164,7 +164,7 @@ Defensive programming was manually tested with the below user acceptance testing
 | | When a user clicks on the solid heart button, It would remove the house to favourites. User is redirected back to dashboard | The feature behaved as expected and a flash message appeared to alert that the house has been removed from the favourites | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-unfavourite.gif)  |
 | House | | | | | |
 | | Add button triggers a form modal | The feature behaved as expected | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensuve-programming-add-info.gif)  |
-| | All forms submitted when required field is met | The feature behaved as expected | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensuve-programming-add-info2.gif)  |
+| | All forms submitted when required field is met | The feature behaved as expected | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-add-info2.gif)  |
 
 
 ## User Story Testing
