@@ -8,14 +8,44 @@ $(document).ready(function () {
   initialiseToolTipped();
   initialiseDropdown();
   manageAccount();
-
-
 });
 
 /** Initialisation of Materialize Select elements*/
 function selectForm() {
   const elems = document.querySelectorAll('select');
   M.FormSelect.init(elems);
+
+  // Credits to Tim Nelson for helping fix Materialize select bug
+  // Wait for the Materialize initialization to complete
+  setTimeout(() => {
+    // Select each .select-wrapper.input-field and swap the label and ul if needed
+    $('.select-wrapper.input-field').each(function() {
+      let $parentDiv = $(this);
+
+      // get the label and ul within the parent div
+      let $label = $parentDiv.children('label');
+      let $ul = $parentDiv.children('ul.select-dropdown');
+      let $caret = $parentDiv.find('svg.caret');
+      let $input = $parentDiv.find('input.select-dropdown');
+
+      // move the label before the ul if it's not already
+      if ($label.length && $ul.length && $label.next()[0] !== $ul[0]) {
+          $label.insertBefore($ul);
+      }
+
+      // Ensure the caret triggers the dropdown
+      if ($caret.length && $input.length) {
+          $caret.on('click', function() {
+              $input.trigger('click');
+          });
+      }
+
+      // Close the dropdown when an option is clicked
+      $ul.children('li').on('click', function() {
+        $input.trigger('click');
+      });
+    });
+  }, 0);
 }
 
 
