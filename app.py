@@ -402,6 +402,7 @@ def edit_new_house(house_id):
         if image.filename != '':
             image.seek(0, os.SEEK_END)
 
+            # https://stackoverflow.com/questions/67937305/how-to-get-the-size-of-a-multipart-form-data-binary-file
             # Get the current position of the pointer,
             # which is the size of the file
             image_size = image.tell()

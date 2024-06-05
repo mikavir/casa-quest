@@ -309,7 +309,7 @@ Blog
 
 ![screenshot](documentation/feature/feature-delete-house.png)
 
-- **Auto-replu**
+- **Auto-reply**
 
     - When a user contacts the admin through the contact page, they receive an immediate auto-reply. This ensures that users receive prompt feedback, confirming their message has been received.
 
@@ -686,7 +686,7 @@ There is no difference between the local version and the deployed version.
 | --- | --- | --- |
 | [Markdown Builder](https://tim.2bn.dev/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
 | [StackOverflow](https://stackoverflow.com/questions/67937305/how-to-get-the-size-of-a-multipart-form-data-binary-file) | app.py: `add_new_house()` and `edit_new_house()` | "How to find the size of an image upload" |
-| [StackOver Flow](https://stackoverflow.com/questions/42294/how-do-you-get-the-footer-to-stay-at-the-bottom-of-a-web-page) | entire site | How to bring the footer at the bottom of the HTML |
+| [StackOverflow](https://stackoverflow.com/questions/42294/how-do-you-get-the-footer-to-stay-at-the-bottom-of-a-web-page) | entire site | How to bring the footer at the bottom of the HTML |
 | [Mr and Mrs Clarke](https://www.mrandmrsclarke.com/) | entire site | Inspiration on the design |
 | [study.com](https://study.com/learn/lesson/python-not-equal-conditional-operators.html#:~:text=Python%20Not%20Equal%20Operator,the%20return%20value%20is%20true.) | app.py | Conditional operations |
 | [Code Academy](https://www.codecademy.com/learn/dscp-python-fundamentals/modules/dscp-python-dictionaries/cheatsheet) | app.py: `delete_user(username, user_name)` | To access the house_id key in the dictionary |
@@ -707,6 +707,11 @@ of dictionary|
 | [shecodes.io](https://www.shecodes.io/athena/264269-how-to-order-a-list-vertically-using-css#:~:text=list%20and%20set%20the%20display,items%20vertically%20in%20a%20column.&text=This%20will%20order%20the%20list%20items%20vertically%20instead%20of%20horizontally.) | styles.css | How to order a list vertically |
 | [Great Wall of Gratitude](https://github.com/VCGithubCode/Gratidudes) | styles.css | How to create a toggle animation of hamburger to x sign. |
 | [mikavir](https://github.com/mikavir/rx-decoder) | contact page, email.js | Setting up the emailjs and contact page |
+| [StackOverflow](https://stackoverflow.com/questions/25184310/first-name-validation-using-html-5-pattern) | registration page| Name requirement |
+| [Flask](https://flask.palletsprojects.com/en/2.3.x/patterns/viewdecorators/) | app.py | Ensure user is logged in |
+| [w3 schools](https://www.w3schools.com/python/ref_string_isalnum.asp) | registration page | Form validation |
+| [Stack Overflow](https://stackoverflow.com/questions/67937305/how-to-get-the-size-of-a-multipart-form-data-binary-file) | app.py | File validation |
+
 ### Media
 
 | Source | Location | Type | Notes |
