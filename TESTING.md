@@ -134,8 +134,7 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Users cannot submit an empty form |Tested the form by submitting an empty form by removing the `required` if a bad users do so.  | Form validation worked and an error message appeared | Test concluded and passed | ![screenshot](documentation/testing/defensive-programming/defensive-programming-edit-house.png) |
 | | Users cannot submit an image that is larger than 10mb to cloudinary | Tested the form by submitting an image that is 15mb | Form was submitted but no change to the image was made | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-no-big-file-upload-2.gif) |
 | House | | | | | |
-| | Users cannot submit an empty form |Tested the all the form by submitting an empty form by removing the `required` if a bad users do so.  | Form validation worked and an error message appeared | Test concluded and passed | ![screenshot](documentation/testing/defensive-programming/defensive-programming-house-1.png) 
-![screenshot](documentation/testing/defensive-programming/defensive-programming-house-2.png)|
+| | Users cannot submit an empty form |Tested the all the form by submitting an empty form by removing the `required` if a bad users do so.  | Form validation worked and an error message appeared | Test concluded and passed | ![screenshot](documentation/testing/defensive-programming/defensive-programming-house-1.png) ![screenshot](documentation/testing/defensive-programming/defensive-programming-house-2.png)|
 | Manage Users | | | | | |
 | | Users that is not 'systemadmin' will not be able to access manage users | Tested the feature by brute forcing the url | The feature behaved as expected and I was redirected to a 403 page | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-manage-user-access.gif) |
 | User Access | | | | | |
@@ -200,8 +199,13 @@ I have researched methods for automated testing with Flask and Python, and found
 
 I fully acknowledge and understand that, in a real-world scenario, an extensive set of additional tests would be more comprehensive.
 
-## User Testing
+## User Feedback
 This web application have been tried out by a few individuals. This is a feedback given by a user and the bugs have been fixed since then.
+
+- " It looks really good, you've put a lot of work in. I encountered a few bugs that I thought I would let you know.
+When I first registered it would not accept my name of < user's name > in the 'Name' field no matter how many times I clicked. It kept requesting to be in the correct format but didn't show me the format. It only accepts Name if it is typed lowercase with no spaces, almost like a username, yet I can use capitals in the username. It may need to be set explicitly in your code like you have for username and password.
+The little arrow to the right of the house type options is not clickable to activate the dropdown menu. You can access the houses by clicking on the main field, but not by the arrow.
+When I make a post for a house, I don't have to click 'Chain free' however when I update or edit the post it requires me to click 'Chain Free' to save the edited post, even if I don't want to. Could be a Boolean field that is triggered perhaps in the editing form"
 
 
 
