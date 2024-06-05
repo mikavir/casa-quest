@@ -420,44 +420,68 @@ During the course of developing my project, I realized that the Minimum Viable P
 
 ```mermaid
 erDiagram
-    USERS {
-        int id
-        string username
-        string password
-        string email
+    USER {
+        ObjectId id
+        String Name
+        String Username
+        String Password
     }
-    
-    PROPERTIES {
-        int id
-        string name
-        string description
-        string address
-        float price
-        int owner_id
+
+    HOUSE {
+        ObjectId id
+        String User_id
+        String Address
+        String Agency
+        Integer Bedrooms
+        Integer Bathroom
+        String Property_Type
+        Integer Price
+        Boolean Chain_free
+        String image_url
+        String maps_url
+        Boolean is_favourite
     }
-    
-    BOOKINGS {
-        int id
-        int property_id
-        int user_id
-        date start_date
-        date end_date
-        float total_price
+
+    INFORMATION {
+        Object_id id
+        Object_id House_id
+        Character EPC
+        Character Tax_Band
+        String Flood_Risk
+        String Dedicated_Parking
+        String Internet_Speed
     }
-    
-    REVIEWS {
-        int id
-        int property_id
-        int user_id
-        int rating
-        string comment
+
+    VIEWING {
+        Object_id id
+        Object_id House_id
+        Boolean Other_offers
+        String Sellers_situation
+        String Windows
+        String Neighbours
+        String Facilities
+        String Traffic
     }
-    
-    USERS ||--o{ PROPERTIES: owns
-    USERS ||--o{ BOOKINGS: makes
-    USERS ||--o{ REVIEWS: writes
-    PROPERTIES ||--o{ BOOKINGS: has
-    PROPERTIES ||--o{ REVIEWS: receives
+
+    PERSONAL_CHECKS {
+        ObjectId id
+        Object_id house_id
+        Boolean Mould_damp
+        String property_facing
+        String Noise_pollution
+        Boolean Boiler
+        Boolean Attic
+        Boolean Roof
+        String Electric_ports
+        Boolean Crack
+        Boolean Damo
+        Boolean Storage
+    }
+
+    USER ||--o{ HOUSE: owns
+    HOUSE ||--o{ INFORMATION: has
+    HOUSE ||--o{ VIEWING: has
+    HOUSE ||--o{ PERSONAL_CHECKS: has
 ```
 
 With this, the mongo database have been updated to 5 collections:
