@@ -308,6 +308,13 @@ Blog
     - Users have the ability to delete houses they've created by using the 'x' button. Upon clicking, a modal prompts them to confirm the deletion, preventing accidental removals. This confirmation step ensures users are fully aware that deleting a house will permanently remove all associated data. This feature enhances user control while safeguarding against unintended data loss.
 
 ![screenshot](documentation/feature/feature-delete-house.png)
+
+- **Auto-replu**
+
+    - When a user contacts the admin through the contact page, they receive an immediate auto-reply. This ensures that users receive prompt feedback, confirming their message has been received.
+
+
+![screenshot](documentation/feature/feature-auto-reply.png)
 - **'404' page**
 
     - A '404' significantly enhances user experience by guiding users back to relevant content, reducing frustration, and improving site navigation
