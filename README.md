@@ -420,14 +420,14 @@ During the course of developing my project, I realized that the Minimum Viable P
 
 ```mermaid
 erDiagram
-    USER {
+    users {
         ObjectId id
         String Name
         String Username
         String Password
     }
 
-    HOUSE {
+    houses {
         ObjectId id
         String User_id
         String Address
@@ -442,7 +442,7 @@ erDiagram
         Boolean is_favourite
     }
 
-    INFORMATION {
+    houseInformation {
         Object_id id
         Object_id House_id
         Character EPC
@@ -452,7 +452,7 @@ erDiagram
         String Internet_Speed
     }
 
-    VIEWING {
+    houseViewing {
         Object_id id
         Object_id House_id
         Boolean Other_offers
@@ -463,7 +463,7 @@ erDiagram
         String Traffic
     }
 
-    PERSONAL_CHECKS {
+    houseChecks {
         ObjectId id
         Object_id house_id
         Boolean Mould_damp
@@ -478,10 +478,10 @@ erDiagram
         Boolean Storage
     }
 
-    USER ||--o{ HOUSE: owns
-    HOUSE ||--o{ INFORMATION: has
-    HOUSE ||--o{ VIEWING: has
-    HOUSE ||--o{ PERSONAL_CHECKS: has
+    users ||--o{ houses: owns
+    houses ||--o{ houseInformation: has
+    houses ||--o{ houseViewing: has
+    houses ||--o{ houseChecks: has
 ```
 
 With this, the mongo database have been updated to 5 collections:
