@@ -101,13 +101,14 @@ def register():
         if [name, username, password, confirm_password] is None:
             flash("Registration failed: Please complete the required fields")
             return redirect(url_for("register"))
-        elif len(username) < 5 or len(username) > 30:
+        if len(username) < 5 or len(username) > 30:
             flash("Registration failed: Please complete the required fields")
             return redirect(url_for("register"))
-        elif not password.isalpha() and len(password) < 8:
+        # https://www.w3schools.com/python/ref_string_isalnum.asp
+        if not password.isalnum() and len(password) < 8:
             flash("Registration failed: Please complete the required fields")
             return redirect(url_for("register"))
-        elif password != confirm_password:
+        if password != confirm_password:
             flash("Registration failed: Please complete the required fields")
             return redirect(url_for("register"))
         else:
