@@ -130,7 +130,9 @@ Defensive programming was manually tested with the below user acceptance testing
 | New_house | | | | | |
 | | Users cannot submit an empty form | Tested the form by submitting an empty form by removing the `required` if a bad users do so. | Form validation worked and an error message appeared | Test concluded and passed | ![screenshot](documentation/testing/defensive-programming/defensive-programming-form-validation-addhouse.png) |
 | | Users cannot submit an image that is larger than 10mb to cloudinary | Tested the form by submitting an image that is 15mb | Form was submitted but a placeholder image was instead used and a flash message of error of 'uploading image' | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-no-big-file-upload.gif) |
+| | When users submit a validated form, user is redirected to the dashboard with house | Tested by completing the form and adding the house | The feature behaved as expected | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-add-house.gif) |
 | Edit_new_house | | | | | |
+| | When user submits a validated form, user is redirected back to profile and a flash message appears to confirm update | Tested the form by submitting a validated form | Feature behaved as expected | Test concluded and passed | ![gic](documentation/testing/defensive-programming/defensive-programming-edit-house.gif) |
 | | Users cannot submit an empty form |Tested the form by submitting an empty form by removing the `required` if a bad users do so.  | Form validation worked and an error message appeared | Test concluded and passed | ![screenshot](documentation/testing/defensive-programming/defensive-programming-edit-house.png) |
 | | Users cannot submit an image that is larger than 10mb to cloudinary | Tested the form by submitting an image that is 15mb | Form was submitted but no change to the image was made | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-no-big-file-upload-2.gif) |
 | House | | | | | |
@@ -154,6 +156,15 @@ Defensive programming was manually tested with the below user acceptance testing
 | | If user does not meet the required fields| Tested by making submitting an empty form by removing `required` temporarily | Error appeared that "incorrect username/password" | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-login2.gif) |
 | Contact | | | | | |
 | | When user makes a validated message, user is shown a thank you message and receives an auto-reply | Tested by making a validated message | The feature behaved as expected and received an email| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-contact.gif) ![screenshot](documentation/testing/defensive-programming/defensive-programming-contact2.png) |
+| Dashboard | | | | | |
+| | When a user tries to delete a house, they would be prompted with a delete modal with a confirmation. If confirmed, House is deleted and user is redirected back to dashboard | The feature behaved as expected and a flash message appeared to alert that the house has been deleted| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-dashboard.gif)  |
+| | When a user clicks on the heart button, It would add the house to favourites. User is redirected to favourites | The feature behaved as expected and a flash message appeared to alert that the house has been added to the favourites| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-favourites.gif)  |
+| | When a user clicks on the view more button, they would be redirected to the house page | The feature behaved as expected| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-view-more.gif)  |
+| Favourite/Dashboard | | | | | |
+| | When a user clicks on the solid heart button, It would remove the house to favourites. User is redirected back to dashboard | The feature behaved as expected and a flash message appeared to alert that the house has been removed from the favourites | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-unfavourite.gif)  |
+| House | | | | | |
+| | Add button triggers a form modal | The feature behaved as expected | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensuve-programming-add-info.gif)  |
+| | All forms submitted when required field is met | The feature behaved as expected | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensuve-programming-add-info2.gif)  |
 
 
 ## User Story Testing
