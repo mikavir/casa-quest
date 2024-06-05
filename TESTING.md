@@ -147,6 +147,14 @@ Defensive programming was manually tested with the below user acceptance testing
 | | If user is logged in, call out button should lead to profile | Tested the feature by doing clicking the button | The feature behaved as expected,| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-call-outbtn2.gif) |
 | House | | | | | |
 | | If user edits an information that doesnt exist, user is redirected to a 404 page | Tested the feature updating before adding information | The feature behaved as expected,| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-editing-info.gif) |
+| Register | | | | | |
+| | When all required field is met, user should be redirected to their dashboard | Tested by making an account | The feature behaved as expected,| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-register.gif) |
+| | If user does not meet the required fields | Tested by making not having the same password as the confirmation password | Error appeared that registration failed | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-register2.gif) |
+| Login | | | | | |
+| | When all required field is met, user should be redirected to their dashboard | Tested by making an account | The feature behaved as expected,| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-login.gif) |
+| | If user does not meet the required fields| Tested by making submitting an empty form by removing `required` temporarily | Error appeared that "incorrect username/password" | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-login2.gif) |
+| Contact | | | | | |
+| | When user makes a validated message, user is shown a thank you message and receives an auto-reply | Tested by making a validated message | The feature behaved as expected and received an email| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-contact.gif) ![screenshot](documentation/testing/defensive-programming/defensive-programming-contact2.png) |
 
 
 ## User Story Testing
@@ -192,6 +200,11 @@ I have researched methods for automated testing with Flask and Python, and found
 
 I fully acknowledge and understand that, in a real-world scenario, an extensive set of additional tests would be more comprehensive.
 
+## User Testing
+This web application have been tried out by a few individuals. This is a feedback given by a user and the bugs have been fixed since then.
+
+
+
 ## Bugs
 
 - Tooltipped buttons posting data and making duplicate id.
@@ -208,9 +221,19 @@ I fully acknowledge and understand that, in a real-world scenario, an extensive 
             error_message = "House Check Information already exists"
             return render_template("500.html", error_message=error_message)
         ```
+- Chain free checkboxes is mandatory for edit_new_house:
+    ![screenshot](documentation/bugs/bug04.png)
+
+    - To fix this issue, I removed the `required` attribute to the input.
+
+- Name requirement for registration was not working properly
+    ![screenshot](documentation/bugs/bug06.png)
+
+    - To fix this issue, I went to [stackoverflow](https://stackoverflow.com/questions/19619428/html5-form-validation-pattern-alphanumeric-with-spaces) to find the most appropriate pattern for names and to accept space characters ''. I have change dthe required pattern to the recommended `pattern="[A-Za-z ]{5,32}` and removed `min` and `max` fields.
+
 
 - Checkboxes are not being filled.
-    ![screenshot](documentation/bugs/bug03.gif)
+    ![screenshot](documentation/bugs/bug05.png)
 
     - To resolve this issue, I discovered that I had duplicate IDs for checkbox elements, causing interference with their functionality. I rectified this by adjusting the IDs of the duplicate elements, resulting in the proper functioning of the checkboxes.
 
