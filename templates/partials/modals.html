@@ -1,0 +1,827 @@
+<!--  MODALS -->
+
+
+<!-- Edit house info modal -->
+<div id="editInfoModal" class="modal custom-card">
+    <div class="modal-content row">
+        <div class="col s12 my-2">
+            <div class="row">
+                <div class="col s10 left-align">
+                    <h6>Refine Your Future Home's Details</h6>
+                    <p id="edit-house-info-error" class="red-text text-darken-4"></p>
+                </div>
+                <div class="col s2 right-align">
+                    <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i
+                            class="material-icons">close</i></a>
+
+                </div>
+            </div>
+        </div>
+        <form action="{{ url_for('edit_house_info', house_id=house._id) }}" method="POST" id="edit-house-info"
+            class="col s12 teal-text text-darken-2" name="edit_house_info" onsubmit="return validateEditHouseInfo()">
+            <!-- input field for EPC -->
+            <div class="row">
+                <div class="input-field col s12 outlined m-3">
+                    <select id="epc" name="epc" required aria-required="true" aria-label="Choose EPC rating">
+                        <option value="" disabled>💡 EPC Rating</option>
+                        {% for chara in characters %}
+                        {% if chara == house_info.epc %}
+                        <option value="{{ chara }}" selected>{{ chara }}</option>
+                        {% else %}
+                        <option value="{{ chara }}">{{ chara }}</option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                    <label for="epc">EPC</label>
+
+
+                </div>
+            </div>
+            <!-- input field for Tax-Band -->
+            <div class="row">
+                <div class="input-field col s12 outlined m-3">
+                    <select id="tax_band" name="tax_band" required aria-label="Choose tax band" aria-required="true">
+                        <option value="" disabled>💳 Tax Band</option>
+                        {% for chara in characters %}
+                        {% if chara == house_info.taxBand %}
+                        <option value="{{ chara }}" selected>{{ chara }}</option>
+                        {% else %}
+                        <option value="{{ chara }}">{{ chara }}</option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                    <label for="tax_band">Tax Band</label>
+
+                </div>
+            </div>
+
+            <!-- input field for flood risk -->
+            <div class="row">
+                <div class="input-field outlined col s12 m-3">
+                    <i class="material-icons prefix">flood</i>
+                    <input id="flood_risk" name="flood_risk" type="text" class="validate"
+                        value="{{ house_info.floodRisk }}" required aria-required="true">
+                    <label for="flood_risk">Flood Risk</label>
+                </div>
+
+            </div>
+
+            <!-- input field for wifi -->
+            <div class="row">
+                <div class="input-field outlined col s12 m-3">
+                    <i class="material-icons prefix">wifi</i>
+                    <input id="internet_speed" name="internet_speed" type="text" class="validate"
+                        value="{{ house_info.internetSpeed }}" required>
+                    <label for="internet_speed">Internet Speed:</label>
+                </div>
+
+            </div>
+            <!-- input field for parking -->
+            <div class="row">
+                <div class="col s12  center">
+                    <label for="dedicated_parking">
+                        {% if house_info.dedicatedParking == "yes" %}
+                        <input name="dedicated_parking" id="dedicated_parking" type="checkbox" class="filled-in"
+                            checked="checked">
+                        {% else %}
+                        <input name="dedicated_parking" id="dedicated_parking" type="checkbox" class="filled-in">
+                        {% endif %}
+                        <span>Dedicated Parking</span>
+                    </label>
+                </div>
+            </div>
+            <!-- Submit -->
+            <div class="row center">
+                <div class="col s12 m-3">
+                    <button
+                        class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2 submit-button"
+                        type="submit">
+                        <i class="material-icons">add</i>Update House Information
+                    </button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+<!-- Add house info modal -->
+<div id="addInfoModal" class="modal custom-card">
+    <div class="modal-content row">
+        <div class="col s12 my-2">
+            <div class="row">
+                <div class="col s10 left-align">
+                    <h6>Capture Your Future Home's Details</h6>
+                    <p id="add-house-info-error" class="red-text text-darken-4"></p>
+
+                </div>
+                <div class="col s2 right-align">
+                    <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i
+                            class="material-icons">close</i></a>
+
+                </div>
+            </div>
+        </div>
+
+        <form action="{{ url_for('add_house_info', house_id=house._id) }}" method="POST"
+            class="teal-text text-darken-2 col s12" name="add_house_info" onsubmit="return validateHouseInfo()">
+            <!-- input field for EPC -->
+            <div class="row">
+                <div class="input-field col s12 outlined m-3">
+                    <select id="add_epc" name="add_epc" required aria-required="true" aria-label="Choose EPC rating">
+                        <option value="" disabled selected>💡 EPC Rating</option>
+                        {% for chara in characters %}
+                        <option value="{{chara}}">{{chara}}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="add_epc">EPC</label>
+                </div>
+            </div>
+            <!-- input field for Tax-Band -->
+            <div class="row">
+                <div class="input-field col s12 outlined m-3">
+                    <select id="add_tax_band" name="add_tax_band" required aria-required="true"
+                        aria-label="Choose tax band">
+                        <option value="" disabled selected>💳 Tax Band</option>
+                        {% for chara in characters %}
+                        <option value="{{chara}}">{{chara}}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="add_tax_band">Tax Band</label>
+                </div>
+            </div>
+            <!-- input field for flood risk -->
+            <div class="row">
+                <div class="input-field outlined col s12 m-3">
+                    <i class="material-icons prefix">flood</i>
+                    <input id="add_flood_risk" name="add_flood_risk" type="text" class="validate" aria-required="true">
+                    <label for="add_flood_risk">Flood Risk</label>
+                </div>
+            </div>
+            <!-- input field for wifi -->
+            <div class="row">
+                <div class="input-field outlined col s12 m-3">
+                    <i class="material-icons prefix">wifi</i>
+                    <input id="add_internet_speed" name="add_internet_speed" type="text" class="validate" required
+                        aria-required="true">
+                    <label for="add_internet_speed">Internet Speed:</label>
+                </div>
+            </div>
+            <!-- input field for parking -->
+            <div class="row">
+                <div class="col s12  center">
+                    <label for="add_dedicated_parking">
+                        <input name="add_dedicated_parking" id="add_dedicated_parking" type="checkbox" class="filled-in"
+                            checked="checked">
+                        <span>Dedicated Parking</span>
+                    </label>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="col s12 m-3">
+                    <button
+                        class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2 submit-button"
+                        type="submit">
+                        <i class="material-icons">add</i>Add House Information
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- Edit house viewing Modal -->
+<div id="editHouseViewingModal" class="modal custom-card">
+    <div class="modal-content row">
+        <div class="col s12 my-2">
+            <div class="row">
+                <div class="col s10 left-align">
+                    <h6 class="m-0">Navigate Your Home Search</h6>
+                    <p>Edit the answers</p>
+                    <p id="edit-house-viewing-error" class="red-text text-darken-4"></p>
+                </div>
+                <div class="col s2 right-align">
+                    <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i
+                            class="material-icons">close</i></a>
+
+                </div>
+            </div>
+        </div>
+        <!-- FORM FOR EDIT HOUSE VIEWING -->
+        <form action="{{ url_for('edit_house_viewing', house_id=house._id) }}" method="POST"
+            class="col s12 teal-text text-darken-2" name="edit_house_viewing"
+            onsubmit="return validateEditHouseViewing()">
+            <!-- Input field for seller's situation -->
+            <div class="row">
+                <div class="input-field outlined col s12 m-3">
+                    <i class="material-icons prefix">people_outline</i>
+                    <input id="sellers_sitaution" name="sellers_sitaution" type="text" class="validate"
+                        value="{{ house_viewing.sellersSituation }} " required aria-required="true">
+                    <label for="sellers_sitaution">What is the seller's situation?</label>
+                </div>
+
+            </div>
+            <!-- Input field for neighbours -->
+            <div class="row">
+                <div class="input-field outlined col s12 m-3">
+                    <i class="material-icons prefix">person_search</i>
+                    <input id="neighbours" name="neighbours" type="text" class="validate"
+                        value=" {{ house_viewing.neighbours }}" required aria-required="true">
+                    <label for="neighbours">How are the neighbours?</label>
+                </div>
+            </div>
+            <!-- Input field for facilities -->
+            <div class="row">
+                <div class="input-field outlined col s12 m-3">
+                    <i class="material-icons prefix">explore</i>
+                    <input id="facilities" name="facilities" type="text" class="validate"
+                        value=" {{ house_viewing.facilities}}" required aria-required="true">
+                    <label for="facilities">What are the facilities nearby?</label>
+                </div>
+            </div>
+            <!-- Input field for traffic -->
+            <div class="row">
+                <div class="col s12 left-align">
+                    <p>How's the traffic?</p>
+                </div>
+                <div class="input-field col s12 m-3 center">
+                    {% for severity in ammount %}
+                    <span>
+                        <label for="edit{{severity}}">
+                            {% if house_viewing.traffic == severity + ' Traffic' %}
+                            <input name="traffic" id="edit{{severity}}" type="radio" value="{{ severity }} Traffic"
+                                checked>
+                            <span>{{ severity }} Traffic</span>
+                            {% else %}
+                            <input name="traffic" id="edit{{severity}}" type="radio" value="{{ severity }} Traffic">
+                            <span>{{ severity }} Traffic</span>
+                            {% endif %}
+                        </label>
+                    </span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row">
+                <!-- Input field for offers -->
+                <div class="col s12 m6 m-4">
+                    <label for="offers">
+                        {% if house_viewing.otherOffers == "yes" %}
+                        <input name="offers" id="offers" type="checkbox" class="filled-in" checked="checked">
+                        {% else %}
+                        <input name="offers" id="offers" type="checkbox" class="filled-in">
+                        {% endif %}
+                        <span>Has there been other offers?</span>
+                    </label>
+                </div>
+                <!-- Input field for windows -->
+                <div class="col s12 m6 m-4">
+                    <label for="windows">
+                        {% if house_viewing.windows == "yes" %}
+                        <input name="windows" id="windows" type="checkbox" class="filled-in" checked="checked">
+                        {% else %}
+                        <input name="windows" id="windows" type="checkbox" class="filled-in">
+                        {% endif %}
+
+                        <span>Are the windows double-glazed?</span>
+                    </label>
+                </div>
+            </div>
+            <!-- SUBMIT BUTTON -->
+            <div class="row center">
+                <div class="col s12">
+                    <button
+                        class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2 submit-button"
+                        type="submit">
+                        <i class="material-icons">add</i>Edit House Viewing Information
+                    </button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+<!-- Add house Viewing modal -->
+<div id="addHouseViewingModal" class="modal custom-card">
+    <div class="modal-content row">
+        <div class="col s12 my-2">
+            <div class="row">
+                <div class="col s10 left-align">
+                    <h6 class="m-0">Navigate Your Home Search</h6>
+                    <p>Your Key Questions</p>
+                    <p id="add-house-viewing-error" class="red-text text-darken-4"></p>
+                </div>
+                <div class="col s2 right-align">
+                    <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i
+                            class="material-icons">close</i></a>
+                </div>
+            </div>
+        </div>
+        <!-- FORM FOR ADDING INFORMATION ON HOUSE VIEWING -->
+        <form action="{{ url_for('add_house_viewing', house_id=house._id) }}" method="POST"
+            class="col s12 teal-text text-darken-2" name="add_house_viewing"
+            onsubmit="return validateAddHouseViewing()">
+            <!-- Input field for seller's situation -->
+            <div class="row">
+                <div class="input-field outlined col s12 m-3">
+                    <i class="material-icons prefix">people_outline</i>
+                    <input id="add_sellers_situation" name="add_sellers_sitaution" type="text" class="validate" required
+                        aria-required="true">
+                    <label for="add_sellers_situation">What is the seller's situation?</label>
+                </div>
+
+            </div>
+            <!-- Input field for neighbours -->
+            <div class="row">
+                <div class="input-field outlined col s12 m-3">
+                    <i class="material-icons prefix">person_search</i>
+                    <input id="add_neighbours" name="add_neighbours" type="text" class="validate" required
+                        aria-required="true">
+                    <label for="add_neighbours">How are the neighbours?</label>
+                </div>
+            </div>
+            <!-- Input field for facilities -->
+            <div class="row">
+                <div class="input-field outlined col s12 m-3">
+                    <i class="material-icons prefix">explore</i>
+                    <input id="add_facilities" name="add_facilities" type="text" class="validate" required
+                        aria-required="true">
+                    <label for="add_facilities">What are the facilities nearby?</label>
+                </div>
+            </div>
+            <!-- Input field for traffic -->
+            <div class="row">
+                <div class="col s12 left-align">
+                    <p>How's the traffic?</p>
+                </div>
+                <div class="input-field col s12 m-3 center">
+                    {% for severity in ammount %}
+                    <span>
+                        <label for="{{ severity }}_traffic">
+                            <input name="add_traffic" id="{{ severity }}_traffic" type="radio"
+                                value="{{ severity }} Traffic" required aria-required="true">
+                            <span>{{severity}} Traffic</span>
+                        </label>
+                    </span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row">
+                <!-- Input field for offers -->
+                <div class="col s12 m6 m-4">
+                    <label for="add_offers">
+                        <input name="add_offers" id="add_offers" type="checkbox" class="filled-in" checked="checked">
+                        <span>Has there been other offers?</span>
+                    </label>
+                </div>
+                <!-- Input field for windows -->
+                <div class="col s12 m6 m-4">
+                    <label for="add_windows">
+                        <input name="add_windows" id="add_windows" type="checkbox" class="filled-in" checked="checked">
+                        <span>Are the windows double-glazed?</span>
+                    </label>
+                </div>
+            </div>
+            <!-- SUBMIT BUTTON -->
+            <div class="row center">
+                <div class="col s12">
+                    <button
+                        class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2 submit-button"
+                        type="submit">
+                        <i class="material-icons">add</i>Add House Viewing Information
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<!-- Edit personal house checks -->
+<div id="editHouseCheckModal" class="modal custom-card">
+    <div class="modal-content row">
+        <div class="col s12 my-2">
+            <div class="row">
+                <div class="col s10 left-align">
+                    <h6 class="m-0">Refine Your Home's Details</h6>
+                    <p>Inspection Checklist</p>
+                    <p id="edit-house-check-error" class="red-text text-darken-4"></p>
+                </div>
+                <div class="col s2 right-align">
+                    <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i
+                            class="material-icons">close</i></a>
+
+                </div>
+            </div>
+        </div>
+        <!-- Form for editing house check -->
+        <form action="{{ url_for('edit_house_check', house_id=house._id) }}" method="POST"
+            class="col s12 teal-text text-darken-4" name="edit_house_check" onsubmit="return validateEditHouseCheck()">
+            <div class="row">
+                <div class="col s12 ">
+                    <!-- Input field for property facing -->
+                    <div class="row">
+                        <div class="col s12 left-align">
+                            <p>Which direction does the property face the sun?</p>
+                        </div>
+                        <div class="input-field col s12">
+                            {% for direction in property_facing %}
+                            <span>
+                                <label for="{{ direction }}">
+                                    {% if house_check.propertyFacing == direction +' Facing' %}
+                                    <input name="property_facing" id="{{ direction }}" type="radio"
+                                        value="{{ direction }} Facing" checked required aria-required="true">
+                                    <span>{{ direction }} Facing</span>
+                                    {% else %}
+                                    <input name="property_facing" id="{{ direction }}" type="radio"
+                                        value="{{ direction }} Facing" required aria-required="true">
+                                    <span>{{ direction }} Facing</span>
+                                    {% endif %}
+                                </label>
+                            </span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <!-- Input field for noise pollution -->
+                    <div class="row">
+                        <div class="col s12 left-align">
+                            <p>How much can you hear outside?</p>
+                        </div>
+                        <div class="input-field col s12">
+                            {% for level in ammount %}
+                            <span>
+                                <label for="noise_{{ level }}">
+                                    {% if house_check.noisePollution == level + ' Noise' %}
+                                    <input name="noise_level" id="noise_{{ level }}" type="radio"
+                                        value="{{ level }} Noise" checked="checked" required aria-required="true">
+                                    <span>{{ level }} Noise</span>
+                                    {% else %}
+                                    <input name="noise_level" id="noise_{{ level }}" type="radio"
+                                        value="{{ level }} Noise" required aria-required="true">
+                                    <span>{{ level }} Noise</span>
+                                    {% endif %}
+
+                                </label>
+                            </span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <!-- Input field for boiler noise -->
+                    <div class="row">
+                        <div class="col s12 left-align">
+                            <p>How noisy is the boiler?</p>
+                        </div>
+                        <div class="input-field col s12">
+                            {% for level in ammount %}
+                            <span>
+                                <label for="boiler_{{ level }}">
+                                    {% if house_check.boilerNoise == level + ' Noise' %}
+                                    <input name="boiler_noise" id="boiler_{{ level }}" type="radio"
+                                        value="{{ level }} Noise" checked="checked" required aria-required="true">
+                                    <span>{{ level }} Noise</span>
+                                    {% else %}
+                                    <input name="boiler_noise" id="boiler_{{ level }}" type="radio"
+                                        value="{{ level }} Noise" required aria-required="true">
+                                    <span>{{ level }} Noise</span>
+                                    {% endif %}
+
+                                </label>
+                            </span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <!-- Input field for storage space -->
+                    <div class="row">
+                        <div class="col s12 left-align">
+                            <p>How much storage space does the house have?</p>
+                        </div>
+                        <div class="input-field col s12">
+                            {% for amount in storage_space %}
+                            <span>
+                                <label for="{{ amount }}">
+                                    {% if house_check.storageSpace == amount %}
+                                    <input name="storage_space" id="{{ amount }}" type="radio" value="{{ amount }}"
+                                        checked="checked" required aria-required="true">
+                                    <span>{{ amount }}</span>
+                                    {% else %}
+                                    <input name="storage_space" id="{{ amount }}" type="radio" value="{{ amount }}"
+                                        required aria-required="true">
+                                    <span>{{ amount }}</span>
+                                    {% endif %}
+
+                                </label>
+                            </span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <!-- Input field for property attic access -->
+                    <div class="row">
+                        <div class="col s12 m6 m-4">
+                            <label for="attic">
+                                {% if house_check.atticAccess == "yes" %}
+                                <input name="attic" id="attic" type="checkbox" class="filled-in" checked="checked"
+                                    required aria-required="true">
+                                <span>Is there easy access to the attic?</span>
+                                {% else %}
+                                <input name="attic" id="attic" type="checkbox" class="filled-in">
+                                <span>Is there easy access to the attic?</span>
+                                {% endif %}
+                            </label>
+                        </div>
+                        <div class="col s12 m6 m-4">
+                            <label for="electric_ports">
+                                {% if house_check.atticAccess == "yes" %}
+                                <input name="electric_ports" id="electric_ports" type="checkbox" class="filled-in"
+                                    checked>
+                                <span>Are there decent amounts of electric port?</span>
+                                {% else %}
+                                <input name="electric_ports" id="electric_ports" type="checkbox" class="filled-in">
+                                <span>Are there decent amounts of electric port?</span>
+                                {% endif %}
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Input field for mould -->
+                        <div class="col s12 m6 m-4">
+                            <label for="mould">
+                                {% if house_check.mould == "yes" %}
+                                <input name="mould" id="mould" type="checkbox" class="filled-in" checked="checked">
+                                <span>Are there signs of mould?</span>
+                                {% else %}
+                                <input name="mould" id="mould" type="checkbox" class="filled-in">
+                                <span>Are there signs of mould?</span>
+                                {% endif %}
+                            </label>
+                        </div>
+                        <!-- Input field for damp -->
+                        <div class="col s12 m6 m-4">
+                            <label for="damp">
+                                {% if house_check.damp == "yes" %}
+                                <input name="damp" id="damp" type="checkbox" class="filled-in" checked="checked">
+                                <span>Are there signs of damp in the walls?</span>
+                                {% else %}
+                                <input name="damp" id="damp" type="checkbox" class="filled-in">
+                                <span>Are there signs of damp in the walls?</span>
+                                {% endif %}
+                            </label>
+                        </div>
+
+                    </div>
+                    <!-- Input field for crack -->
+                    <div class="row">
+                        <div class="col s12">
+                            <label for="crack">
+                                {% if house_check.crack == "yes" %}
+                                <input name="crack" id="crack" type="checkbox" class="filled-in" checked="checked">
+                                <span>Are there signs of wall cracking?</span>
+                                {% else %}
+                                <input name="crack" id="crack" type="checkbox" class="filled-in">
+                                <span>Are there signs of wall cracking?</span>
+                                {% endif %}
+                            </label>
+
+                        </div>
+                    </div>
+                    <!-- Input field for roof condition -->
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="row">
+                                <div class="col s12">
+                                    <p>Condition of the roof:
+                                    </p>
+                                </div>
+                                <div class="input-field col s12">
+                                    <div class="row">
+                                        {% for condition in roof_condition %}
+                                        <span class="col s12 m6 l3">
+                                            <button class="btn p-3 rounded teal darken-2 tooltipped" type="button"
+                                                data-position="bottom" data-tooltip="{{condition[1]}}"><i
+                                                    class="fa-sharp fa-solid fa-circle-info"></i></button>
+
+                                            <label for="{{ 'edit' + condition[0] }}">
+
+
+                                                {% if house_check.roofCondition == condition[0] %}
+                                                <input name="roof_condition" id="{{ 'edit' + condition[0] }}"
+                                                    type="radio" value="{{ condition[0] }}" checked="checked" required
+                                                    aria-required="true">
+                                                <span>{{ condition[0] }} </span>
+                                                {% else %}
+                                                <input name="roof_condition" id="{{'edit' + condition[0] }}"
+                                                    type="radio" value="{{ condition[0] }}" required
+                                                    aria-required="true">
+                                                <span>{{ condition[0] }} </span>
+                                                {% endif %}
+                                            </label>
+
+                                        </span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Submit button -->
+                    <div class="row">
+                        <div class="col s12 center m-3">
+                            <button
+                                class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2 submit-button"
+                                type="submit">
+                                <i class="material-icons">add</i>Update Personal Checks
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+
+<!-- Add house checks modal -->
+
+<div id="addHouseCheckModal" class="modal custom-card">
+    <div class="modal-content row">
+        <div class="col s12 my-2">
+            <div class="row">
+                <div class="col s10 left-align">
+                    <h6 class="m-0">Unlock Your Home's Secrets</h6>
+                    <p> Inspection Checklist</p>
+                    <p id="add-house-check-error" class="red-text text-darken-4"></p>
+                </div>
+                <div class="col s2 right-align">
+                    <a href="#!" class="modal-close waves-effect btn rounded red darken-4 p-2"> <i
+                            class="material-icons">close</i></a>
+
+                </div>
+            </div>
+        </div>
+        <!-- Form for adding house checks -->
+        <form action="{{ url_for('add_house_check', house_id=house._id) }}" method="POST"
+            class="col s12 teal-text text-darken-2" name="add_house_check" onsubmit="return validateAddHouseCheck()">
+            <div class="row">
+                <div class="col s12 ">
+                    <!-- Input field for propertyFacing -->
+                    <div class="row">
+                        <div class="col s12 left-align">
+                            <p>Which direction does the property face the sun?</p>
+                        </div>
+                        <div class="input-field col s12">
+                            {% for direction in property_facing %}
+                            <span>
+                                <label for="add_{{ direction }}">
+                                    <input name="add_property_facing" id="add_{{ direction }}" type="radio"
+                                        value="{{ direction }} Facing" required aria-required="true">
+                                    <span>{{ direction }} Facing</span>
+                                </label>
+                            </span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <!-- Input field for noise pollution -->
+                    <div class="row">
+                        <div class="col s12 left-align">
+                            <p>How much can you hear outside?</p>
+                        </div>
+                        <div class="input-field col s12">
+                            {% for level in ammount %}
+                            <span>
+                                <label for="add_noise{{ level }}">
+                                    <input name="add_noise_level" id="add_noise{{ level }}" type="radio"
+                                        value="{{ level }} Noise" required aria-required="true">
+                                    <span>{{ level }} Noise</span>
+                                </label>
+                            </span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <!-- Input field for noise of boiler -->
+                    <div class="row">
+                        <div class="col s12 left-align">
+                            <p>How noisy is the boiler?</p>
+                        </div>
+                        <div class="input-field col s12">
+                            {% for level in ammount %}
+                            <span>
+                                <label for="add_boiler_{{ level }}">
+                                    <input name="add_boiler_noise" id="add_boiler_{{ level }}" type="radio"
+                                        value="{{ level }} Noise" required aria-required="true">
+                                    <span>{{ level }} Noise</span>
+                                </label>
+                            </span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <!-- Input field for storage space -->
+                    <div class="row">
+                        <div class="col s12 left-align">
+                            <p>How much storage space does the house have?</p>
+                        </div>
+                        <div class="input-field col s12">
+                            {% for amount in storage_space %}
+                            <span>
+                                <label for="{{'addStorage' + amount}}">
+                                    <input name="add_storage_space" id="{{'addStorage' + amount}}" type="radio"
+                                        value="{{ amount }}" required aria-required="true">
+                                    <span>{{ amount }}</span>
+                                </label>
+                            </span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Input field for attic access -->
+                        <div class="col s12 m6 m-4">
+                            <label for="add_attic">
+                                <input name="add_attic" id="add_attic" type="checkbox" class="filled-in">
+                                <span>Is there easy access to the attic?</span>
+                            </label>
+                        </div>
+                        <!-- Input field for electric ports -->
+                        <div class="col s12 m6 m-4">
+                            <label for="add_electric_ports">
+                                <input name="add_electric_ports" id="add_electric_ports" type="checkbox"
+                                    class="filled-in">
+                                <span>Are there decent amounts of electric port?</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s12 m6 m-4">
+                            <!-- Input field for mould -->
+                            <label for="add_mould">
+                                <input name="add_mould" id="add_mould" type="checkbox" class="filled-in">
+                                <span>Are there signs of mould?</span>
+                            </label>
+                        </div>
+                        <!-- Input field for damp -->
+                        <div class="col s12 m6 m-4">
+                            <label for="add_damp">
+                                <input name="add_damp" id="add_damp" type="checkbox" class="filled-in">
+                                <span>Are there signs of damp in the walls?</span>
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <!-- Input field for wall cracking -->
+                        <div class="col s12">
+                            <label for="add_crack">
+                                <input name="add_crack" id="add_crack" type="checkbox" class="filled-in">
+                                <span>Are there signs of wall cracking?</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <!-- Input field for condition of roof -->
+                            <div class="row">
+                                <div class="col s12">
+                                    <p>Condition of the roof:
+                                    </p>
+                                </div>
+                                <div class="input-field col s12">
+                                    <div class="row">
+                                        {% for condition in roof_condition %}
+                                        <span class="col s12 m6 l3">
+                                            <button class="btn p-3 rounded teal darken-2 tooltipped" type="button"
+                                                data-position="bottom" data-tooltip="{{condition[1]}}"><i
+                                                    class="fa-sharp fa-solid fa-circle-info"></i></button>
+                                            <label for="{{ 'addCondition' + condition[0] }}">
+                                                <input name="add_roof_condition"
+                                                    id="{{ 'addCondition' + condition[0] }}" type="radio"
+                                                    value="{{ condition[0] }}" required aria-required="true">
+                                                <span>{{ condition[0] }} </span>
+                                            </label>
+
+                                        </span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- SUBMIT -->
+                    <div class="row">
+                        <div class="col s12 center m-3">
+                            <button
+                                class="btn rounded icon-left waves-effect waves-light teal darken-4 orange-text text-lighten-4 m-2 submit-button"
+                                type="submit">
+                                <i class="material-icons">add</i>Add Personal Checks
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
