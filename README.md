@@ -418,6 +418,48 @@ During the course of developing my project, I realized that the Minimum Viable P
 
 ![screenshot](documentation/database/updated_erd.png)
 
+```mermaid
+erDiagram
+    USERS {
+        int id
+        string username
+        string password
+        string email
+    }
+    
+    PROPERTIES {
+        int id
+        string name
+        string description
+        string address
+        float price
+        int owner_id
+    }
+    
+    BOOKINGS {
+        int id
+        int property_id
+        int user_id
+        date start_date
+        date end_date
+        float total_price
+    }
+    
+    REVIEWS {
+        int id
+        int property_id
+        int user_id
+        int rating
+        string comment
+    }
+    
+    USERS ||--o{ PROPERTIES: owns
+    USERS ||--o{ BOOKINGS: makes
+    USERS ||--o{ REVIEWS: writes
+    PROPERTIES ||--o{ BOOKINGS: has
+    PROPERTIES ||--o{ REVIEWS: receives
+```
+
 With this, the mongo database have been updated to 5 collections:
 
 ![screenshot](documentation/database/mongo-collections.png)
