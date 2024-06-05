@@ -376,6 +376,7 @@ def edit_new_house(house_id):
     Redirects back to profile.
 
     """
+    house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
     if request.method == "POST":
         address = request.form.get("address")
         agency = request.form.get("agency")
@@ -387,7 +388,7 @@ def edit_new_house(house_id):
         date_viewing = request.form.get("date_viewing")
 
         edit_house_entry = {
-            "username": session["user"],
+            "username": house["usename"],
             "address": address,
             "price": price,
             "agency": agency,
@@ -416,6 +417,7 @@ def edit_new_house(house_id):
             if image_size_mb < 10:
                 image_upload = cloudinary.uploader.upload(image)
                 edit_house_entry["image_url"] = image_upload["secure_url"]
+            flash("Unable to upload image")
 
         # Check if the id exist:
         house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
@@ -432,7 +434,6 @@ def edit_new_house(house_id):
                             "profile", username=session["user"]))
 
     maps_api = os.environ.get('MAPS_API')
-    house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
     types = ["Detached", "Semi-Detached", "Terraced"]
     return render_template(
         "edit_new_house.html", types=types, house=house, maps_api=maps_api
