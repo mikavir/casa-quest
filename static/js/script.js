@@ -20,13 +20,13 @@ function selectForm() {
   setTimeout(() => {
     // Select each .select-wrapper.input-field and swap the label and ul if needed
     $('.select-wrapper.input-field').each(function() {
-      let $parentDiv = $(this);
+      const $parentDiv = $(this);
 
       // get the label and ul within the parent div
-      let $label = $parentDiv.children('label');
-      let $ul = $parentDiv.children('ul.select-dropdown');
-      let $caret = $parentDiv.find('svg.caret');
-      let $input = $parentDiv.find('input.select-dropdown');
+      const $label = $parentDiv.children('label');
+      const $ul = $parentDiv.children('ul.select-dropdown');
+      const $caret = $parentDiv.find('svg.caret');
+      const $input = $parentDiv.find('input.select-dropdown');
 
       // move the label before the ul if it's not already
       if ($label.length && $ul.length && $label.next()[0] !== $ul[0]) {
