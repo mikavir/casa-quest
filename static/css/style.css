@@ -368,14 +368,21 @@ iframe {
 .add-modal,.add-modal-view {
   width: 300px;
   height: 150px;
-  border: 3px dashed rgba(88, 126, 123, 0.6);
-  border-radius: 15px;
   font-family: "Questrial", sans-serif; 
   font-weight: bold;
-  color: #17353B;
   position: relative;
 }
 
+.add-modal {
+  border: 5px dashed rgba(88, 126, 123);
+  border-radius: 15px;
+}
+
+.add-modal-view {
+  border: 5px dashed #fff9c4 ;
+  border-radius: 15px;
+
+}
 .add-modal-content {
   position: absolute;
   top: 50%;
@@ -385,11 +392,11 @@ iframe {
 }
 
 .add-modal:hover {
-  background-color:rgba(88, 126, 123, 0.3); 
+  background-color:rgba(88, 126, 123, 0.1); 
 }
 
 .add-modal-view:hover {
-  background-color: rgba(250,236,217, 0.4);
+  background-color: rgba(250,236,217, 0.1);
 }
 
 /* CONTACT PAGE */
