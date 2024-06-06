@@ -766,7 +766,6 @@ There is no difference between the local version and the deployed version.
 | [Tedboy](https://tedboy.github.io/flask/generated/werkzeug.check_password_hash.html) | app.py | Documentation on check_password_hash|
 | [StackOverflow](https://stackoverflow.com/questions/28968660/how-to-convert-a-pymongo-cursor-cursor-into-a-dict) | app.py | How to convert a mongodb curser to a list of dictionary|
 | [w3 schools](https://www.w3schools.com/tags/ref_urlencode.ASP) | entire site | used to debug url and the routes|
-of dictionary|
 | [Migelgrinberg](https://blog.miguelgrinberg.com/post/handling-file-uploads-with-flask) | app.py | Handling File Uploads With Flask|
 | [StackOverflow](https://stackoverflow.com/questions/572768/styling-an-input-type-file-button) | styles.css | Styling an input type file button|
 | [Youtube](https://www.youtube.com/watch?v=J39KJ5jzH3E) | app.py | How to add google autocomplete |
@@ -777,6 +776,8 @@ of dictionary|
 | [Flask](https://flask.palletsprojects.com/en/2.3.x/patterns/viewdecorators/) | app.py | Ensure user is logged in |
 | [w3 schools](https://www.w3schools.com/python/ref_string_isalnum.asp) | registration page | Form validation |
 | [Stack Overflow](https://stackoverflow.com/questions/67937305/how-to-get-the-size-of-a-multipart-form-data-binary-file) | app.py | File validation |
+| [Stack Overflow](https://www.w3schools.com/howto/howto_js_toggle_password.asp) | Login, Change_password and register page | Toggle password function |
+| Tim Nelson | script.js | Fixing materialize select bug, calculating 3 months for datepicker |
 
 ### Media
 
