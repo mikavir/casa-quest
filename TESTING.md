@@ -262,7 +262,7 @@ When I make a post for a house, I don't have to click 'Chain free' however when 
 
 
 - Checkboxes are not being filled.
-    ![screenshot](documentation/bugs/bug03.gif)
+    ![gif](documentation/bugs/bug03.gif)
 
     - To resolve this issue, I discovered that I had duplicate IDs for checkbox elements, causing interference with their functionality. I rectified this by adjusting the IDs of the duplicate elements, resulting in the proper functioning of the checkboxes.
 
@@ -298,6 +298,46 @@ When I make a post for a house, I don't have to click 'Chain free' however when 
             }
         ```
     - **FIX** After researching more, I came across to a explanation of the error from [StackOverflow](https://stackoverflow.com/questions/14510899/white-space-after-the-footer-only-in-firefox-and-ie). It turns out that the firefox gives less bottom margin to headings. After testing the margins in my footer elements, This caused the elements to overflow whic gave me the idea to change the height of my footer to `min-height` of 30vh to make it more responsive.
+
+- Label not being displayed with Materialize select and arrow not clickable.
+
+    ![gif](documentation/bugs/bug08.gif)
+
+    - Materialize has a bug in their select label as shown in their [issue#393](https://github.com/materializecss/materialize/issues/393) which causes the label to not display. Their svg carat is also not clickable. To fix this, this code was applied to `selectForm()` in script.js.
+
+    ```js
+        // This time out waits for materialize to initialize and then rearranges the location of the label in the Dom so it can be displayed. The svg also allows for a click trigger.
+        setTimeout(() => {
+            // Select each .select-wrapper.input-field and swap the label and ul if needed
+            $('.select-wrapper.input-field').each(function() {
+            const $parentDiv = $(this);
+
+            // get the label and ul within the parent div
+            const $label = $parentDiv.children('label');
+            const $ul = $parentDiv.children('ul.select-dropdown');
+            const $caret = $parentDiv.find('svg.caret');
+            const $input = $parentDiv.find('input.select-dropdown');
+
+            // move the label before the ul if it's not already
+            if ($label.length && $ul.length && $label.next()[0] !== $ul[0]) {
+                $label.insertBefore($ul);
+            }
+
+            // Ensure the caret triggers the dropdown
+            if ($caret.length && $input.length) {
+                $caret.on('click', function() {
+                    $input.trigger('click');
+                });
+            }
+
+            // Close the dropdown when an option is clicked
+            $ul.children('li').on('click', function() {
+                $input.trigger('click');
+            });
+            });
+        }, 0);
+    ```
+
 
 
 - Editing house leads to a internal sever error
