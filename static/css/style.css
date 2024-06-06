@@ -93,7 +93,7 @@ nav ul:not(.dropdown-content)>li>a {
 }
 
 .mobile-menu nav ul:not(.dropdown-content)>li>a:hover{
-  color:#004d40;
+  color:#17353B;
 }
 
 .mobile-nav {
@@ -112,7 +112,7 @@ nav ul:not(.dropdown-content)>li>a {
   width: 50%;
   height: 100vh;
   z-index: 3;
-  background-color: #00796b;
+  background-color: #17353B;
   transition: left .3s;
   display: none;
   padding-top: 70px;
@@ -123,12 +123,12 @@ nav ul:not(.dropdown-content)>li>a {
   margin-top: 50px;
   left: 70%;
   display: block;
-  color: #17353B;
+ 
 }
 
 
 nav ul:not(.dropdown-content)>li>a:hover:not(.active) {
-  background-color: rgba(88, 126, 123, 0.6)
+  background-color: rgba(88, 126, 123, 0.4)
 }
 
 .nav-link:hover{

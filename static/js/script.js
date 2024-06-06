@@ -107,10 +107,10 @@ function initialiseDropdown() {
 function manageAccount() {
   $(".manage-account-link").hover(
     function () {
-      $("#manage-account").addClass("hovered teal-text text-darken-4");
+      $("#manage-account").addClass("hovered");
     },
     function () {
-      $("#manage-account").removeClass("hovered teal-text text-darken-4");
+      $("#manage-account").removeClass("hovered");
     }
   );
 }
