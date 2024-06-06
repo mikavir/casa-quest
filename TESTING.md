@@ -52,6 +52,7 @@ I used separate script tags in certain HTML files to target only those specific 
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
+| templates | login.html, change_password.html, register.html | ![screenshot](documentation/validation/javascript-validation/jshint-togglepassword.png) |  unused function as it get's called with buttons |
 | templates | profile.html | ![screenshot](documentation/validation/javascript-validation/js-validation-profile.png) |  No errors |
 | templates | favourites.html | ![screenshot](documentation/validation/javascript-validation/js-validation-favourites.png) | No errors |
 | templates | new_house.html | ![screenshot](documentation/validation/javascript-validation/js-validation-new-house.png) ![screenshot](documentation/validation/javascript-validation/js-hint-fix-new_house.png)| Undefined variable of `google` from google API. Unused variable of `formValidation()`. This function will be called in once form is submitted.  Unused variable of `initAutoComplete()`. This function initialises google's autocomplete API. Recommendations to use dot notation with my form validation function Fix: (second screenshot) I have changed it to dot notation as recommended. |
@@ -288,6 +289,7 @@ When I make a post for a house, I don't have to click 'Chain free' however when 
 
 
 - Editing house leads to a internal sever error
+
     ![gif](documentation/bugs/bug07.gif)
 
     - To resolve this issue, I have realised that I have misspelled `house['username']` to `house['usename']` . I have fixed the typo.
