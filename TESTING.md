@@ -90,7 +90,7 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 | Mobile DevTools (320px) |![screenshot](documentation/responsiveness/mobile-landing-page.png) |![screenshot](documentation/responsiveness/mobile-register.png)|![screenshot](documentation/responsiveness/mobile-login.png) | ![screenshot](documentation/responsiveness/mobile-dashboard.png)  | ![screenshot](documentation/responsiveness/mobile-house-2.png) ![screenshot](documentation/responsiveness/mobile-house-3.png)![screenshot](documentation/responsiveness/mobile-house1.png)| ![screenshot](documentation/responsiveness/mobile-contact.png) | ![screenshot](documentation/responsiveness/mobile-favourites.png) | Works as expected |
 | Tablet DevTools (768px) | ![screenshot](documentation/responsiveness/tablet-landing.png)| ![screenshot](documentation/responsiveness/tablet-register.png)  |![screenshot](documentation/responsiveness/tablet-login.png) | ![screenshot](documentation/responsiveness/tablet-dashboard.png) | ![screenshot](documentation/responsiveness/tablet-house.png) |![screenshot](documentation/responsiveness/tablet-favourites.png)| ![screenshot](documentation/responsiveness/tablet-403.png) | works as expected |
 | Desktop |![screenshot](documentation/testing/browsers/chrome/chrome-landing-page.png) |![screenshot](documentation/testing/browsers/chrome/chrome-registration-1.png) ![screenshot](documentation/testing/browsers/chrome/chrome-registration-2.png) |![screenshot](documentation/testing/browsers/chrome/chrome-login.png) | ![screenshot](documentation/testing/browsers/chrome/chrome-profile-1.png) ![screenshot](documentation/testing/browsers/chrome/chrome-profile-2.png) | ![screenshot](documentation/testing/browsers/chrome/chrome-house-1.png)![screenshot](documentation/testing/browsers/chrome/chrome-house-2.png) ![screenshot](documentation/testing/browsers/chrome/chrome-house-3.png) | ![screenshot](documentation/testing/browsers/chrome/chrome-contact.png) | ![screenshot](documentation/testing/browsers/chrome/chrome-favourites.png) | Works as expected |
-| Iphone 13 (Own device) |![screenshot](documentation/responsiveness/iphone13-landing.PNG) ![screenshot](documentation/responsiveness/iphone13-landing-2.PNG) |![screenshot](documentation/responsiveness/iphone-13-register.PNG) ![screenshot](documentation/responsiveness/iphone13-register-2.PNG) |![screenshot](documentation/responsiveness/iphone-13-login.PNG) | ![screenshot](documentation/responsiveness/iphone13-dashboard-1.PNG) ![screenshot](documentation/responsiveness/iphone13-dashboard-2.PNG) ![screenshot](documentation/responsiveness/iphone13-dashboard-3.PNG) | ![screenshot](documentation/responsiveness/iphone13-house1.PNG)![screenshot](documentation/responsiveness/iphone13-house2.PNG) ![screenshot](documentation/responsiveness/iphone13-house3.PNG) | ![screenshot](documentation/responsiveness/iphone13-contact.PNG) | ![screenshot](documentation/responsiveness/iphone13-favourites1.PNG) ![screenshot](documentation/responsiveness/iphone13-favourites2.PNG) ![screenshot](documentation/responsiveness/iphone13-favourites3.PNG)| Flash can be obscured by logo |
+| Iphone 13 (Own device) |![screenshot](documentation/responsiveness/iphone13-landing.PNG) ![screenshot](documentation/responsiveness/iphone13-landing-2.PNG) |![screenshot](documentation/responsiveness/iphone-13-register.PNG) ![screenshot](documentation/responsiveness/iphone13-register-2.PNG) |![screenshot](documentation/responsiveness/iphone-13-login.PNG) | ![screenshot](documentation/responsiveness/iphone13-dashboard-1.PNG) ![screenshot](documentation/responsiveness/iphone13-dashboard-2.PNG) ![screenshot](documentation/responsiveness/iphone13-dashboard-3.PNG) | ![screenshot](documentation/responsiveness/iphone13-house1.PNG)![screenshot](documentation/responsiveness/iphone13-house2.PNG) ![screenshot](documentation/responsiveness/iphone13-house3.PNG) | ![screenshot](documentation/responsiveness/iphone13-contact.PNG) | ![screenshot](documentation/responsiveness/iphone13-favourites1.PNG) ![screenshot](documentation/responsiveness/iphone13-favourites2.PNG) | Flash can be obscured by logo |
 
 | Browser | New House | Edit new house | Change Password  | Manage_users | 404 | 500 | 403 | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -108,7 +108,7 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | --- | --- | --- | --- |
 | Landing | ![screenshot](documentation/testing/lighthouse/lighthouse-landing-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-landing-desktop.png) | Initially warning on performance level due to image sizes too big. I have compressed the images now and the performance level have become better |
 | Register | ![screenshot](documentation/testing/lighthouse/lighthouse-register-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-register-desktop.png) | No issues |
-| Login | ![screenshot](documentation/testing/lighthouse/lighthouse-login-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-profile-mobile.png) | Slow response time due to large images |
+| Login | ![screenshot](documentation/testing/lighthouse/lighthouse-login-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-login-desktop.png) | Slow response time due to large images |
 | Profile | ![screenshot](documentation/testing/lighthouse/lighthouse-profile-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-profile-desktop.png) | Warnings on accessbility due to lack of name for button. Fix: added aria-label to fabourite button. Screenshots are the fixed version |
 | House | ![screenshot](documentation/testing/lighthouse/lighthouse-house-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-house-desktop.png) | Accessibility due to links |
 | Contact | ![screenshot](documentation/testing/lighthouse/lighthouse-contact-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-contact-desktop.png) | No Issues |
@@ -157,14 +157,14 @@ Defensive programming was manually tested with the below user acceptance testing
 | Contact | | | | | |
 | | When user makes a validated message, user is shown a thank you message and receives an auto-reply | Tested by making a validated message | The feature behaved as expected and received an email| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-contact.gif) ![screenshot](documentation/testing/defensive-programming/defensive-programming-contact2.png) |
 | Dashboard | | | | | |
-| | When a user tries to delete a house, they would be prompted with a delete modal with a confirmation. If confirmed, House is deleted and user is redirected back to dashboard | The feature behaved as expected and a flash message appeared to alert that the house has been deleted| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-dashboard.gif)  |
-| | When a user clicks on the heart button, It would add the house to favourites. User is redirected to favourites | The feature behaved as expected and a flash message appeared to alert that the house has been added to the favourites| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-favourites.gif)  |
-| | When a user clicks on the view more button, they would be redirected to the house page | The feature behaved as expected| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-view-more.gif)  |
+| | When a user tries to delete a house, they would be prompted with a delete modal with a confirmation. If confirmed, House is deleted and user is redirected back to dashboard | Tested by clicking the 'x' button and the confirm button |The feature behaved as expected and a flash message appeared to alert that the house has been deleted| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-dashboard.gif)  |
+| | When a user clicks on the heart button, It would add the house to favourites. User is redirected to favourites | Tested by clicking the heart button |The feature behaved as expected and a flash message appeared to alert that the house has been added to the favourites| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-favourites.gif)  |
+| | When a user clicks on the view more button, they would be redirected to the house page |  Tested by clicking the 'view more' button |The feature behaved as expected |Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-view-more.gif)  |
 | Favourite/Dashboard | | | | | |
-| | When a user clicks on the solid heart button, It would remove the house to favourites. User is redirected back to dashboard | The feature behaved as expected and a flash message appeared to alert that the house has been removed from the favourites | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-unfavourite.gif)  |
+| | When a user clicks on the solid heart button, It would remove the house to favourites. User is redirected back to dashboard | Tested by clicking the remove button |The feature behaved as expected and a flash message appeared to alert that the house has been removed from the favourites | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-unfavourite.gif)  |
 | House | | | | | |
-| | Add button triggers a form modal | The feature behaved as expected | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensuve-programming-add-info.gif)  |
-| | All forms submitted when required field is met | The feature behaved as expected | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-add-info2.gif)  |
+| | Add button triggers a form modal | Tested by clicking all the add button |The feature behaved as expected | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensuve-programming-add-info.gif)  |
+| | All forms submitted when required field is met | Tested by submitting all forms |The feature behaved as expected | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-add-info2.gif)  |
 
 
 ## User Story Testing
@@ -241,6 +241,7 @@ When I make a post for a house, I don't have to click 'Chain free' however when 
 
     - To fix this issue, I removed the `required` attribute to the input.
 
+
 - Name requirement for registration was not working properly
     ![screenshot](documentation/bugs/bug06.png)
 
@@ -248,7 +249,7 @@ When I make a post for a house, I don't have to click 'Chain free' however when 
 
 
 - Checkboxes are not being filled.
-    ![screenshot](documentation/bugs/bug05.png)
+    ![screenshot](documentation/bugs/bug03.gif)
 
     - To resolve this issue, I discovered that I had duplicate IDs for checkbox elements, causing interference with their functionality. I rectified this by adjusting the IDs of the duplicate elements, resulting in the proper functioning of the checkboxes.
 
@@ -286,6 +287,23 @@ When I make a post for a house, I don't have to click 'Chain free' however when 
     - **FIX** After researching more, I came across to a explanation of the error from [StackOverflow](https://stackoverflow.com/questions/14510899/white-space-after-the-footer-only-in-firefox-and-ie). It turns out that the firefox gives less bottom margin to headings. After testing the margins in my footer elements, This caused the elements to overflow whic gave me the idea to change the height of my footer to `min-height` of 30vh to make it more responsive.
 
 
+- Editing house leads to a internal sever error
+    ![gif](documentation/bugs/bug07.gif)
+
+    - To resolve this issue, I have realised that I have misspelled `house['username']` to `house['usename']` . I have fixed the typo.
+    ```python
+       edit_house_entry = {
+            "username": house["username"],
+            "address": address,
+            "price": price,
+            "agency": agency,
+            "bathrooms": bathrooms,
+            "bedrooms": bedrooms,
+            "chainFree": chainfree,
+            "propertyType": property_type,
+            "date_viewing": date_viewing,
+        }
+    ```
 ## Unfixed Bugs
 
 > [!NOTE]  
