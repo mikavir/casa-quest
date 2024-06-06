@@ -14,13 +14,13 @@ Introducing a responsive web app for house-hunters to efficiently organize and t
 
 ## UX
 
-The inspiration for this idea originated from my recent experiences with house-hunting. I encountered a significant amount of data to consider for each property and initially resorted to organizing it manually on pen and paper, as depicted in the database below. However, I recognized the potential to streamline this process digitally for a more efficient experience. Upon researching existing services, I identified a gap in the market, particularly regarding apps tailored for house-hunters rather than solely surveyors. This realization prompted me to develop this app, aiming to enhance the user experience and simplify the house-hunting process. 
+The inspiration for this idea came from my recent house-hunting experiences. Faced with a substantial amount of data for each property, I initially organized it manually using pen and paper. However, I soon realized the potential for a more efficient digital solution. This led me to develop this app, designed to streamline the process and enhance the user experience.
 
-The primary target audience for this service is individuals actively engaged in purchasing homes, seeking to mitigate any unforeseen or undesirable surprises that could potentially arise throughout the buying journey. To enhance user experience (UX) and design, I extensively researched various house-buying websites such as [RightMove](https://www.rightmove.co.uk/) and [Zoopla](https://www.zoopla.co.uk/) for insights and inspiration. I've been particularly impressed by the design of [Mr and Mrs Clarke](https://www.mrandmrsclarke.com/), drawing inspiration from their approach. The goal of this project is to elevate data organization and enhance the overall user experience (UX) to facilitate a smoother and more enjoyable house-hunting journey.
+The target audience for this application is people who are actively purchasing homes, aiming to avoid any unforeseen surprises during the buying process. To enhance the user experience (UX) and design, I extensively researched various house-buying websites, including [RightMove](https://www.rightmove.co.uk/) and [Zoopla](https://www.zoopla.co.uk/). I found the design of [Mr and Mrs Clarke](https://www.mrandmrsclarke.com/) particularly inspiring. The goal of this project is to improve data organization and elevate the overall UX, making the house-hunting journey smoother and more enjoyable.
 
 ### Colour Scheme
 
-Initially, these colors were selected to complement our logo. The shades of green and their corresponding hues were chosen for their association with tranquility and harmony. This makes them ideal for a website dedicated to house hunters searching for their perfect, peaceful home.
+Initially, these colours were selected to complement our logo. The shades of green and their corresponding hues were chosen for their association with tranquility and harmony. This makes them ideal for a website dedicated to house hunters searching for their perfect, peaceful home.
 
 - Primary Color: rgb(250, 236, 217) - Hex: #FAECD9
 - Secondary Color: rgb(88, 126, 123) - Hex: #587E7B
@@ -120,7 +120,7 @@ Profile
   - ![screenshot](documentation/wireframes/profile-mobile.png)
 
 House Post
-  - ![screenshot](documentation/wireframes/mobile-contact.png)
+  - ![screenshot](documentation/wireframes/house1-mobile.png)
 
 Login
   - ![screenshot](documentation/wireframes/login-mobile.png)
@@ -147,7 +147,7 @@ Profile
   - ![screenshot](documentation/wireframes/profile-tablet.png)
 
 House Post
-  - ![screenshot](documentation/wireframes/mobile-tablet.png)
+  - ![screenshot](documentation/wireframes/house1-tablet.png)
 
 Login
   - ![screenshot](documentation/wireframes/login-tablet.png)
@@ -175,7 +175,7 @@ Profile
   - ![screenshot](documentation/wireframes/profile-desktop.png)
 
 House Post
-  - ![screenshot](documentation/wireframes/mobile-desktop.png)
+  - ![screenshot](documentation/wireframes/house1-desktop.png)
 
 Login
   - ![screenshot](documentation/wireframes/login-desktop.png)
@@ -198,7 +198,7 @@ Blog
 
 - **Logo**
 
-    - The logo prominently features a house alongside the name of the web application. This strategic implementation enables users to instantly connect the web application with the concept of houses, effectively targeting the house-hunting audience. This plays a pivotal role in establishing a strong brand identity, as users quickly recognize and associate the logo with the platform's core purpose.
+    - The logo displays a house next to the web application's name, forging an immediate connection with house-hunting. This strategic approach effectively targets the intended audience and plays a vital role in solidifying the brand identity. Users swiftly recognize and associate the logo with the platform's fundamental purpose.
 
 ![screenshot](documentation/feature/feature-logo.png)
 
@@ -216,24 +216,25 @@ Blog
 
 - **Dashboard**
 
-    - Having a dashboard of houses with key information provides centralized access to property details. Users can view all relevant information about various properties in one place, eliminating the need to switch between different pages or apps. This setup allows for quick and easy comparison of multiple properties based on criteria such as price, location, number of bedrooms, and features
+    - Offering a dashboard displaying houses with essential details centralizes access to property information. Users can effortlessly view all relevant details about different properties in a single location, eliminating the need to navigate between multiple pages. This streamlined setup facilitates swift and straightforward comparison of multiple properties based on criteria like price, location, number of bedrooms, and features.
 
 ![screenshot](documentation/feature/feature-dashboard.png)
+
 - **Favourite**
 
-    - Users can mark properties as favorites, which then appear on a dedicated favorites page for easy access and review. This feature allows users to keep all their preferred properties in one place, simplifying the management and review process. By maintaining a favorites list, users can quickly compare their top choices without needing to search for them again
+    - Users can mark properties as favourites, which then appear on a dedicated favourites page for easy access and review. This feature allows users to keep all their preferred properties in one place, simplifying the management and review process. By maintaining a favourites list, users can quickly compare their top choices without needing to search for them again
 
 ![screenshot](documentation/feature/feature-favourite.png)
 
 - **Navigation bar**
 
-    - The presence of a navigation bar is crucial as it provides users with a clear and intuitive pathway to navigate through the website, ensuring easy access to desired pages.
+    - The presence of a navigation bar is crucial as it provides users with a clear pathway to navigate through the website, ensuring easy access to desired pages.
 
 ![screenshot](documentation/feature/feature-navigation.png)
 
 - **Social Media Links in footer**
 
-    - Incorporating social media links is pivotal for enhancing brand identity and fostering trust among users by expanding points of contact.
+    - Adding social media links enhances brand identity and builds trust by expanding points of contact.
 
 ![screenshot](documentation/feature/feature-social-media-links.png)
 
@@ -245,13 +246,13 @@ Blog
 
 - **Change Password**
 
-    -Implementing a password change feature will enhance profile security by enabling users to update their passwords regularly. Additionally, the passwords must meet stringent security requirements.
+    - Implementing a password change feature will enhance profile security by enabling users to update their passwords regularly. Additionally, the passwords must meet stringent security requirements.
 
 ![screenshot](documentation/feature/feature-change-password.png)
 
 - **Registration Page**
 
-    - By having a registration page, users can create a secure account with us. This allows them to save their property searches within their own account, ensuring easy access and review at any time.
+    - A registration page enables users to securely create an account, providing them with a dedicated space to save their property searches. This ensures convenient access and allows for easy review whenever needed, enhancing the overall user experience.
 
 ![screenshot](documentation/feature/feature-registration.png)
 
@@ -272,11 +273,13 @@ Blog
     - A dedicated page for house information contains all the necessary questions and forms to capture comprehensive details about the property.
 
 ![screenshot](documentation/feature/feature-house.png)
+
 - **Add House**
 
-    - Introducing a dedicated page for users to seamlessly add new houses with essential information and images significantly enhances the platform's functionality and user experience
+    - Introducing a dedicated page for users to add new houses enhances platform functionality and user experience significantly.
 
 ![screenshot](documentation/feature/feature-add-house.png)
+
 - **Edit a house**
 
     - Allowing users to edit the information they've provided is crucial for ensuring accuracy and relevance over time. This feature empowers users to keep their property details up-to-date, reflecting any changes accurately. It enhances user experience by offering flexibility and control, fostering a sense of ownership and satisfaction with the platform.
@@ -288,14 +291,17 @@ Blog
     - Users can view a map of the house they've inputted, enabling them to visualize the property's surroundings and nearby facilities. This feature enhances their decision-making process by providing valuable insights into the neighborhood, nearby amenities, and accessibility, ultimately aiding in finding the ideal property.
 
 ![screenshot](documentation/feature/feature-map.png)
+
 - **Add house details button**
 
     - This button serves to activate modals featuring forms essential for house viewing, providing house information, and conducting house checks during property inspections. The modal prompts users to input additional information, ensuring clarity by specifying which add button corresponds to each form. This intuitive design streamlines the process, guiding users efficiently through the necessary steps and enhancing their experience.
 
 ![screenshot](documentation/feature/feature-add-details-button.png)
+
 - **Edit House details button**
 
     - This button activates modals containing essential forms for updating house information and making adjustments during property inspections. These modals prompt users to modify additional details, empowering them with the flexibility to provide accurate and up-to-date information at any time.
+
 ![screenshot](documentation/feature/feature-edit-button.png)
 
 - **Log out button**
@@ -303,6 +309,7 @@ Blog
     - Users have the ability to log out from their accounts. This logout button plays a critical role in ensuring the security and privacy of user accounts. By logging out, users effectively terminate their current session, preventing unauthorized access to their account by others who might have access to the same device. 
 
 ![screenshot](documentation/feature/feature-logout.png)
+
 - **Delete house button and delete house modal**
 
     - Users have the ability to delete houses they've created by using the 'x' button. Upon clicking, a modal prompts them to confirm the deletion, preventing accidental removals. This confirmation step ensures users are fully aware that deleting a house will permanently remove all associated data. This feature enhances user control while safeguarding against unintended data loss.
@@ -313,19 +320,20 @@ Blog
 
     - When a user contacts the admin through the contact page, they receive an immediate auto-reply. This ensures that users receive prompt feedback, confirming their message has been received.
 
-
 ![screenshot](documentation/feature/feature-auto-reply.png)
+
 - **'404' page**
 
     - A '404' significantly enhances user experience by guiding users back to relevant content, reducing frustration, and improving site navigation
 
-
 ![screenshot](documentation/feature/feature-404.png)
+
 - **'403' page**
 
     - A '403' enhances user experience and security. When users encounter restricted access, a well-designed 403 page clearly communicates that the content is off-limits, reducing confusion and frustration. 
 
 ![screenshot](documentation/feature/feature-403.png)
+
 - **'500' page**
 
     - A '500' enhances user experience and maintains trust during server errors. When users encounter an internal server error, a well-designed 500 page reassures them that the issue is recognized and being addressed, reducing frustration. This page supports consistent branding and professionalism, ensuring the site's look and feel are maintained even during technical difficulties.
@@ -383,12 +391,15 @@ Blog
 - [![Google Maps API](https://img.shields.io/badge/Google_Maps_API-grey?logo=googlemaps&logoColor=4285F4)](https://developers.google.com/maps) used as an interactive map on my site.
 - [![Font Awesome](https://img.shields.io/badge/Font_Awesome-grey?logo=fontawesome&logoColor=528DD7)](https://fontawesome.com) used for the icons.
 - [![Google Fonts](https://img.shields.io/badge/Google_Fonts-grey?logo=goole&logoColor=528DD7)](https://fonts.google.com/icons) used for the icons and fonts
-
 - [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to make the writing content.
 - [![Email JS](https://img.shields.io/badge/EmailJs-grey?logo=javascript&logoColor=75A99C)](https://www.emailjs.com/) used to send automatic replies to user after contacting.
+
+
 ## User Pathway
 Using Lucidchart, I have illustrated the user pathways as shown below.
 ![screenshot](documentation/database/user-flow-pathway.png)
+
+
 ## Database Design
 
 The data used for Casa Quest was inspired by a list of questions my partner and I compiled while viewing houses. Initially, we organized these questions into a comprehensive table shown below. 
@@ -396,27 +407,8 @@ The idea emerged to transform the table into a more digital, user-friendly forma
 
 ![screenshot](documentation/database/table-questions.png)
 
-Using [Lucid Chart](www.lucidchart.com), I have made an entity relationship diagram to show a physical data model.
-![erd](documentation/database/erd.png)
 
-My project uses a non-relational database with MongoDB, and therefore the database architecture
-doesn't have actual relationships like a relational database would.
-
-My database is called **casa_quest**.
-
-It contains 7 collections:
-
-- **users**
-- **house**
-- **houseInformation**
-- **houseChecks**
-- **houseViewing**
-- **blogPost**
-- **blogComment**
-
-During the course of developing my project, I realized that the Minimum Viable Product (MVP) should focus on organizing house information rather than creating blog posts. This insight led me to eliminate the blog post feature and concentrate on achieving the core MVP. Below is the updated ERD of my project.
-
-![screenshot](documentation/database/updated_erd.png)
+My project utilizes MongoDB, a non-relational database. Despite MongoDB's non-relational nature, there are established relations within this database, particularly with users owning a 'house' and each house 'having' associated information, as depicted in the ERD below crafted from Mermaid. MongoDB's document-based data model offers a flexible schema design. This flexibility proves advantageous when handling entities like houses, accommodating varying attributes or additional information seamlessly without having to change to the entire schema.
 
 ```mermaid
 erDiagram
@@ -484,9 +476,19 @@ erDiagram
     houses ||--o{ houseChecks: has
 ```
 
-With this, the mongo database have been updated to 5 collections:
+My database is called **casa_quest**.
 
-![screenshot](documentation/database/mongo-collections.png)
+It contains 5 collections:
+
+- **users**
+- **house**
+- **houseInformation**
+- **houseChecks**
+- **houseViewing**
+
+Initially, I did have seven collections to accomodate for the feature of a blog. However I realized that the Minimum Viable Product (MVP) should focus on organizing house information rather than creating blog posts. This insight led me to eliminate the blog post feature and concentrate on achieving the core MVP. Below was the initial ERD of my project using [Lucid chart](www.lucidchart.com).
+
+![erd](documentation/database/erd.png)
 
 
 
@@ -705,7 +707,6 @@ os.environ.setdefault("PORT", "5000")
 os.environ.setdefault("SECRET_KEY", "user's own value")
 
 # local environment only (do not include these in production/deployment!)
-os.environ.setdefault("DB_URL", "user's own value")
 os.environ.setdefault("DEBUG", "True")
 os.environ.setdefault("DEVELOPMENT", "True")
 ```
