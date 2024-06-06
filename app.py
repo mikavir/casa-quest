@@ -1019,10 +1019,10 @@ def delete_user(username, user_name):
                 mongo.db.users.delete_one(
                     {"username": user_name}
                     )
+                flash("The user has been deleted")
                 return redirect(url_for(
                     "manage_users",  username=session["user"]
                     ))
-                flash("user deleted!")
             return redirect(url_for(
                 "manage_users",  username=session["user"])
                 )
