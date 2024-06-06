@@ -122,6 +122,17 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | 500 | ![screenshot](documentation/testing/lighthouse/lighthouse-500-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-500-desktop.png) | No Iss8es |
 | 403 | ![screenshot](documentation/testing/lighthouse/lighthouse-403-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-403-desktop.png) | No Issues |
 
+## Accessibility
+I have used [wave](https://wave.webaim.org/) to ensure that the web application complies to accessibility. Only a few pages are included as the other pages are not accessible as login is required.
+
+| Wave Link | Notes |
+|-----------------|-----------------|
+| [Landing Page](https://wave.webaim.org/report#/https://casa-quest-853d4c81f9b1.herokuapp.com/)| No errors, 0 contrast errors |
+| [Contact](https://wave.webaim.org/report#/https://casa-quest-853d4c81f9b1.herokuapp.com/contact)|No errors, 0 contrast errors |
+|[Login](https://wave.webaim.org/report#/https://casa-quest-853d4c81f9b1.herokuapp.com/login) | No errors, 0 contrast errors |
+|[Register](https://wave.webaim.org/report#/https://casa-quest-853d4c81f9b1.herokuapp.com/register) | No errors, 0 contrast errors |
+
+
 ## Defensive Programming
 
 Defensive programming was manually tested with the below user acceptance testing:
@@ -166,6 +177,7 @@ Defensive programming was manually tested with the below user acceptance testing
 | House | | | | | |
 | | Add button triggers a form modal | Tested by clicking all the add button |The feature behaved as expected | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensuve-programming-add-info.gif)  |
 | | All forms submitted when required field is met | Tested by submitting all forms |The feature behaved as expected | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-add-info2.gif)  |
+
 
 
 ## User Story Testing
