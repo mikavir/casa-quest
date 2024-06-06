@@ -388,7 +388,7 @@ def edit_new_house(house_id):
         date_viewing = request.form.get("date_viewing")
 
         edit_house_entry = {
-            "username": house["usename"],
+            "username": house["username"],
             "address": address,
             "price": price,
             "agency": agency,
@@ -417,7 +417,8 @@ def edit_new_house(house_id):
             if image_size_mb < 10:
                 image_upload = cloudinary.uploader.upload(image)
                 edit_house_entry["image_url"] = image_upload["secure_url"]
-            flash("Unable to upload image")
+            else:
+                flash("Unable to upload image")
 
         # Check if the id exist:
         house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
