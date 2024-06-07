@@ -195,6 +195,8 @@ Blog
 ## Features
 
 ### Existing Features
+> [!Disclaimer]
+> The addresses and usernames shown below are not associated with any individuals; they are random placeholder addresses used solely for testing purposes. User privacy and confidentiality have been maintained and strictly adhered to throughout the testing procedure.
 
 - **Logo**
 
