@@ -3,8 +3,9 @@
 > [!NOTE]  
 > Return back to the [README.md](README.md) file.
 
-> [!DISCLAIMER]  
+> [!Disclaimer]
 > The addresses and usernames shown below are not associated with any individuals; they are random placeholder addresses used solely for testing purposes. User privacy and confidentiality have been maintained and strictly adhered to throughout the testing procedure.
+
 
 ## Code Validation
 ### HTML
@@ -58,6 +59,7 @@ I used separate script tags in certain HTML files to target only those specific 
 | templates | login.html, change_password.html, register.html | ![screenshot](documentation/validation/javascript-validation/jshint-togglepassword.png) |  unused function as it get's called with buttons |
 | templates | profile.html | ![screenshot](documentation/validation/javascript-validation/js-validation-profile.png) |  No errors |
 | templates | favourites.html | ![screenshot](documentation/validation/javascript-validation/js-validation-favourites.png) | No errors |
+| templates | change_password.html | ![screenshot](documentation/validation/javascript-validation/jshint-change-password.png) | unused variable validateForm which get's called on submitting the form |
 | templates | new_house.html | ![screenshot](documentation/validation/javascript-validation/js-validation-new-house.png) ![screenshot](documentation/validation/javascript-validation/js-hint-fix-new_house.png)| Undefined variable of `google` from google API. Unused variable of `formValidation()`. This function will be called in once form is submitted.  Unused variable of `initAutoComplete()`. This function initialises google's autocomplete API. Recommendations to use dot notation with my form validation function Fix: (second screenshot) I have changed it to dot notation as recommended. |
 | templates | edit_new_house.html | ![screenshot](documentation/validation/javascript-validation/js-validation-edit-house.png) ![screenshot](documentation/validation/javascript-validation/js-hint-fix-edit_new_house.png) | Undefined variable of `google` from google API. Unused variable of `formValidation()`. This function will be called in once form is submitted.  Unused variable of `initAutoComplete()`. This function initialises google's autocomplete API. Recommendations to use dot notation with my form validation function Fix: (second screenshot) I have changed it to dot notation as recommended. |
            
@@ -181,6 +183,13 @@ Defensive programming was manually tested with the below user acceptance testing
 | House | | | | | |
 | | Add button triggers a form modal | Tested by clicking all the add button |The feature behaved as expected | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensuve-programming-add-info.gif)  |
 | | All forms submitted when required field is met | Tested by submitting all forms |The feature behaved as expected | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-add-info2.gif)  |
+| Change Password | | | | | |
+| | Submitting an empty form should show an error message| Tested by manually removing the required fields and submitting the form with empty inputs | The feature behaved as expected | Test concluded and passed | ![screenshot](documentation/testing/defensive-programming/defensive-programming-change-password1.png)  |
+| | If the current password is incorrect or the new password and confirm password do not match, a flash message should be displayed.| Tested by entering an incorrect current password, followed by testing with a mismatched new password and confirm password.  | The feature behaved as expected | Test concluded and passed | ![screenshot](documentation/testing/defensive-programming/defensive-programming-change-password2.png)  |
+
+| '404', '500', '403 pages | | | | | |
+| | 'Home' button should redirect back to landing page | Tested by clicking all the home button| The feature behaved as expected | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-404.gif)   ![gif](documentation/testing/defensive-programming/defensive-programming-500.gif)  ![gif](documentation/testing/defensive-programming/defensive-programming-403.gif)|
+
 
 
 
