@@ -3,7 +3,7 @@
 > [!NOTE]  
 > Return back to the [README.md](README.md) file.
 
-> [!Disclaimer]
+> [!NOTE]
 > The addresses and usernames shown below are not associated with any individuals; they are random placeholder addresses used solely for testing purposes. User privacy and confidentiality have been maintained and strictly adhered to throughout the testing procedure.
 
 
