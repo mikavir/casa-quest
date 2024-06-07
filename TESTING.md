@@ -68,7 +68,7 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 | Directory | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-|  | app.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/mikavir/casa-quest/main/app.py) | ![screenshot](documentation/validation/python-validation/python-validation.png) | Some lines were too long to break due to being strings, Therefore, I added # noqa. |
+|  | app.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/mikavir/casa-quest/main/app.py) | ![screenshot](documentation/validation/python-validation/python-validation.png) | No issues |
 
 ## Browser Compatibility
 
@@ -130,8 +130,8 @@ I have used [wave](https://wave.webaim.org/) to ensure that the web application 
 
 | Wave Link | Notes |
 |-----------------|-----------------|
-| [Landing Page](https://wave.webaim.org/report#/https://casa-quest-853d4c81f9b1.herokuapp.com/)| No errors, 0 contrast errors |
-| [Contact](https://wave.webaim.org/report#/https://casa-quest-853d4c81f9b1.herokuapp.com/contact)|No errors, 0 contrast errors |
+|[Landing Page](https://wave.webaim.org/report#/https://casa-quest-853d4c81f9b1.herokuapp.com/)| No errors, 0 contrast errors |
+|[Contact](https://wave.webaim.org/report#/https://casa-quest-853d4c81f9b1.herokuapp.com/contact)|No errors, 0 contrast errors |
 |[Login](https://wave.webaim.org/report#/https://casa-quest-853d4c81f9b1.herokuapp.com/login) | No errors, 0 contrast errors |
 |[Register](https://wave.webaim.org/report#/https://casa-quest-853d4c81f9b1.herokuapp.com/register) | No errors, 0 contrast errors |
 
@@ -342,8 +342,6 @@ When I make a post for a house, I don't have to click 'Chain free' however when 
         }, 0);
     ```
 
-
-
 - Editing house leads to a internal sever error
 
     ![gif](documentation/bugs/bug07.gif)
@@ -362,6 +360,29 @@ When I make a post for a house, I don't have to click 'Chain free' however when 
             "date_viewing": date_viewing,
         }
     ```
+
+- Flash is not showing when user is deleted
+    ![gif](documentation/testing/defensive-programming/defensive-programming-manage-users1.gif)
+
+    - To fix this, I had rearrange the flash statement before the return statement as it was initially after the return statement.
+    
+    *original code*
+
+    ```python
+    return redirect(url_for(
+        "manage_users",  username=session["user"]
+        ))
+    flash("The user has been deleted")
+    ```
+
+    *Fixed code*
+    ```python
+    flash("The user has been deleted")
+    return redirect(url_for(
+        "manage_users",  username=session["user"]
+        ))
+    ```
+
 ## Unfixed Bugs
 
 > [!NOTE]  
