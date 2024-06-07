@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 <!-- Title -->
 {% block header %}
-  <title>{% block title %}Log In{% endblock %}</title>
+<title>{% block title %}Log In{% endblock %}</title>
 {% endblock %}
 <!-- Main Content -->
 {% block content %}
@@ -23,13 +23,14 @@
     </div>
     <!-- Login Form -->
     <div class="row">
-        <form class="card-panel custom-card col s12 m8 offset-m2 p-5 mb-5" method="POST" action="{{ url_for('login') }}">        
+        <form class="card-panel custom-card col s12 m8 offset-m2 p-5 mb-5" method="POST"
+            action="{{ url_for('login') }}">
             <!-- username -->
             <div class="row">
                 <div class="input-field col s12 m-3">
                     <i class="fas fa-user-cog prefix green-text text-darken-4"></i>
-                    <input id="username" name="username" type="text" minlength="5"
-                        maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required aria-required="true">
+                    <input id="username" name="username" type="text" minlength="5" maxlength="15"
+                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required aria-required="true">
                     <label for="username">Username</label>
                 </div>
             </div>
@@ -37,7 +38,8 @@
             <div class="row">
                 <div class="input-field col s12 m-3">
                     <i class="fas fa-user-lock prefix green-text text-darken-4"></i>
-                    <i id="passwordIcon" class="material-icons suffix" onclick="togglePasswordVisibility('password','passwordIcon')">visibility_off</i>
+                    <i id="passwordIcon" class="material-icons suffix"
+                        onclick="togglePasswordVisibility('password','passwordIcon')">visibility_off</i>
                     <input id="password" name="password" type="password" minlength="5"
                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="validate" required aria-required="true">
                     <label for="password">Password</label>
@@ -57,13 +59,13 @@
 
 {% endblock %}
 {% block javascript %}
-  <script>
+<script>
     // allow users to toggle password visibility
     // https://www.w3schools.com/howto/howto_js_toggle_password.asp
     function togglePasswordVisibility(inputId, toggleIcon) {
         const inputField = document.getElementById(inputId);
         const icon = document.getElementById(toggleIcon)
-        
+
         if (inputField.type === "password") {
             inputField.type = "text";
             icon.classList.add("green-text", "text-darken-4")
@@ -72,5 +74,5 @@
             icon.classList.remove("green-text", "text-darken-4")
         }
     }
-  </script>
+</script>
 {% endblock %}

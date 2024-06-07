@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block header %}
-  <title>{% block title %}Register{% endblock %}</title>
+<title>{% block title %}Register{% endblock %}</title>
 {% endblock %}
 {% block content %}
 <div class="container page-container">
@@ -18,17 +18,18 @@
                 <a href="{{ url_for('login') }}" class="green-text text-darken-4 link">Log In</a>
             </p>
         </div>
-    </div>    
+    </div>
     <!-- Form -->
     <div class="row">
-        <form class="card-panel custom-card lighten-5 col s12 m8 offset-m2 p-5" method="POST" action="{{ url_for('register') }}" aria-label="registration form">
+        <form class="card-panel custom-card lighten-5 col s12 m8 offset-m2 p-5" method="POST"
+            action="{{ url_for('register') }}" aria-label="registration form">
             <!-- name -->
             <div class="row">
                 <div class="input-field col s12 m-3">
                     <i class="fas fa-user-plus prefix green-text text-darken-4"></i>
                     <!-- https://stackoverflow.com/questions/25184310/first-name-validation-using-html-5-pattern -->
-                    <input id="name" name="name" type="text" pattern="[A-Za-z ]{5,32}"
-                        class="validate" required aria-required="true">
+                    <input id="name" name="name" type="text" pattern="[A-Za-z ]{5,32}" class="validate" required
+                        aria-required="true">
                     <label for="name">Name</label>
                 </div>
             </div>
@@ -46,23 +47,26 @@
             <div class="row">
                 <div class="input-field col s12 m-3">
                     <i class="fas fa-user-lock prefix green-text text-darken-4"></i>
-                    <i id="passwordIcon" class="material-icons suffix" onclick="togglePasswordVisibility('password','passwordIcon')">visibility_off</i>
+                    <i id="passwordIcon" class="material-icons suffix"
+                        onclick="togglePasswordVisibility('password','passwordIcon')">visibility_off</i>
                     <input id="password" name="password" type="password" minlength="8"
                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="validate" required aria-required="true">
                     <label for="password">Password</label>
-                    <small>(Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters)</small>
+                    <small>(Must contain at least one number and one uppercase and lowercase letter, and at least 8 or
+                        more characters)</small>
                 </div>
             </div>
             <!-- Confirm password -->
             <div class="row">
                 <div class="input-field col s12 m-3">
                     <i class="fas fa-user-lock prefix green-text text-darken-4"></i>
-                    <i id="confirmPasswordIcon"class="material-icons suffix" onclick="togglePasswordVisibility('confirm_password','confirmPasswordIcon')">visibility_off</i>
+                    <i id="confirmPasswordIcon" class="material-icons suffix"
+                        onclick="togglePasswordVisibility('confirm_password','confirmPasswordIcon')">visibility_off</i>
                     <input id="confirm_password" name="confirm_password" type="password" minlength="8"
                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="validate" required aria-required="true">
                     <label for="confirm_password">Confirm Password</label>
                     <small>(Passwords must be the same)</small>
-    
+
                 </div>
             </div>
             <!-- register -->
@@ -74,18 +78,18 @@
                 </div>
             </div>
         </form>
-    </div>    
+    </div>
 </div>
 
 {% endblock %}
 {% block javascript %}
-  <script>
+<script>
     // allow users to toggle password visibility
     // https://www.w3schools.com/howto/howto_js_toggle_password.asp
     function togglePasswordVisibility(inputId, toggleIcon) {
         const inputField = document.getElementById(inputId);
         const icon = document.getElementById(toggleIcon)
-        
+
         if (inputField.type === "password") {
             inputField.type = "text";
             icon.classList.add("green-text", "text-darken-4")
@@ -94,6 +98,5 @@
             icon.classList.remove("green-text", "text-darken-4")
         }
     }
-  </script>
+</script>
 {% endblock %}
-
