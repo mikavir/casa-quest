@@ -71,23 +71,23 @@ After researching other home buying websites and gathering ideas, I found signif
 - As a new site user, I would like to see a clear message of the web app, so that I can understand the web application well.
 - As a new site user, I would like to see a navigation bar, so that I can easily navigate around the site.
 - As a new site user, I would like to see a contact page, so that I can get in touch with the administrators of the application if I need help.
-- As a new site user, I would like to see social media icons so that I can reach out to the other sources.
+- As a new site user, I would like to see social media icons so that I can reach out to other sources.
 
 ### Returning Site Users
 
-- As a returning site user, I would like to be able to register, so that I can have a personal account.
+- As a returning site user, I would like to be able to register so that I can have a personal account.
 - As a returning site user, I would like to be able to log in once registered, so that I can keep a track of properties visited.
 - As a returning site user, I would like to be able to make new entries of properties, so that I can keep a log of my properties.
-- As a returning site user, I would like to edit the information, so that I can have a more accurate information on the property.
+- As a returning site user, I would like to edit the information so that I can have more accurate information on the property.
 - As a returning site user, I would like to delete the entry, so that I can eliminate properties that I'm not interested.
-- As a returning site user, I would like to see a community of homebuyers, so that I can learn more about buying houses.
+-  As a returning site user, I would like to see a community of homebuyers so that I can learn more about buying houses.
 - As a returning site user, I would like to be able to make a post in the community of homebuyers, so that I can share my experience.
 - As a returning site user, I would like to be able to make a comment in a post in the community of homebuyers, so that I can share my experience.
 - As a returning site user, I would like to be able to change my password, so that I can keep my account secure.
-- As a returning site user, I would like to be able to mark some properties as my favourite so that I can keep track of my top choices 
-- As a returning site user, I would like to be able to see all the properties that I have added in one page so I can easily compare them
-- As a returning site user, I would like to be able to log out to keep my session secure from who will be using the same device as me
-- As a returning site user, I would like to be able to see a map of the location of the house so I can see the facilities nearby
+- As a returning site user, I would like to be able to mark some properties as my favourite so that I can keep track of my top choices. 
+- As a returning site user, I would like to be able to see all the properties that I have added in one page so I can easily compare them.
+- As a returning site user, I would like to be able to log out to keep my session secure from who will be using the same device as me.
+- As a returning site user, I would like to be able to see a map of the location of the house so I can see the facilities nearby.
 - As a returning site user, I would like the ability to access a dedicated page for each house, allowing me to add and view detailed information specific to that property.
 - As a returning site user, I would like the ability to add information on that specific property.
 - As a returning site user, I would like the ability to edit information on that specific property.
@@ -95,13 +95,12 @@ After researching other home buying websites and gathering ideas, I found signif
 ### Site Admin
 
 - As a site administrator, I would like to keep connected with my users , so that they can report any user experience.
-- As a site administrator, I should be able to delete posts that is against the rules, so that I can ensure that the community is safe.
+- As a site administrator, I should be able to delete posts that are against the rules so that I can ensure that the community is safe.
 - As a site administrator, I should be able to delete users that is violating the rules, so that I can ensure that the community is safe.
 - As a site administrator, I need to manage and view user accounts effectively to ensure control over the user base and monitor user activity.
 - As a site administrator, I should be able to direct users back to home if they have reached a page that is not found.
 - As a site administrator, I should be able to direct users back to home if they have reached a page that is forbidden to access.
--  As a site administrator, I should be able to direct users back to home if the web application have reached an internal server error.
--
+- As a site administrator, I should be able to direct users back to home if the web application has reached an internal server error.
 
 ## Wireframes
 
@@ -375,6 +374,7 @@ Blog
 
 ## Tools & Technologies Used
 - [![Markdown Builder](https://img.shields.io/badge/Markdown_Builder-grey?logo=markdown&logoColor=000000)](https://tim.2bn.dev/markdown-builder) used to generate README and TESTING templates.
+- [![Balsamiq](https://img.shields.io/badge/Balsamiq-grey?logo=barmenia&logoColor=CE0908)](https://balsamiq.com/wireframes) used for creating wireframes.
 - [![Git](https://img.shields.io/badge/Git-grey?logo=git&logoColor=F05032)](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
 - [![GitHub](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=181717)](https://github.com) used for secure online code storage.
 - [![Gitpod](https://img.shields.io/badge/Gitpod-grey?logo=gitpod&logoColor=FFAE33)](https://gitpod.io) used as a cloud-based IDE for development.
@@ -395,6 +395,7 @@ Blog
 - [![Google Fonts](https://img.shields.io/badge/Google_Fonts-grey?logo=goole&logoColor=528DD7)](https://fonts.google.com/icons) used for the icons and fonts
 - [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to make the writing content.
 - [![Email JS](https://img.shields.io/badge/EmailJs-grey?logo=javascript&logoColor=75A99C)](https://www.emailjs.com/) used to send automatic replies to user after contacting.
+- [![Adobe Express](https://img.shields.io/badge/Adobe_Express-grey?logo=Adobe&logoColor=75A99C)](https://www.adobe.com/express/) used to convert screen recording into gifs for documentation.
 
 
 ## User Pathway
@@ -410,7 +411,7 @@ The idea emerged to transform the table into a more digital, user-friendly forma
 ![screenshot](documentation/database/table-questions.png)
 
 
-My project utilizes MongoDB, a non-relational database. Despite MongoDB's non-relational nature, there are established relations within this database, particularly with users owning a 'house' and each house 'having' associated information, as depicted in the ERD below crafted from Mermaid. MongoDB's document-based data model offers a flexible schema design. This flexibility proves advantageous when handling entities like houses, accommodating varying attributes or additional information seamlessly without having to change to the entire schema.
+My project utilizes MongoDB, a non-relational database. Despite MongoDB's non-relational nature, there are established relations within this database, particularly with users owning a 'house' and each house 'having' associated information, as depicted in the ERD below crafted from [Mermaid](https://mermaid.js.org/syntax/entityRelationshipDiagram.html). MongoDB's document-based data model offers a flexible schema design. This flexibility proves advantageous when handling entities like houses, accommodating varying attributes or additional information seamlessly without having to change to the entire schema.
 
 ```mermaid
 erDiagram
