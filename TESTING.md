@@ -264,7 +264,7 @@ When I make a post for a house, I don't have to click 'Chain free' however when 
             return render_template("500.html", error_message=error_message)
         ```
 - Chain free checkboxes is mandatory for edit_new_house:
-    ![screenshot](documentation/bugs/bug04.png)
+    ![screenshot](documentation/bugs/bug05.png)
 
     - To fix this issue, I removed the `required` attribute to the input.
 
