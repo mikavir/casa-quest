@@ -3,6 +3,9 @@
 > [!NOTE]  
 > Return back to the [README.md](README.md) file.
 
+> [!DISCLAIMER]  
+> The addresses and usernames shown below are not associated with any individuals; they are random placeholder addresses used solely for testing purposes. User privacy and confidentiality have been maintained and strictly adhered to throughout the testing procedure.
+
 ## Code Validation
 ### HTML
 I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
@@ -141,16 +144,17 @@ Defensive programming was manually tested with the below user acceptance testing
 | --- | --- | --- | --- | --- | --- |
 | New_house | | | | | |
 | | Users cannot submit an empty form | Tested the form by submitting an empty form by removing the `required` if a bad users do so. | Form validation worked and an error message appeared | Test concluded and passed | ![screenshot](documentation/testing/defensive-programming/defensive-programming-form-validation-addhouse.png) |
-| | Users cannot submit an image that is larger than 10mb to cloudinary | Tested the form by submitting an image that is 15mb | Form was submitted but a placeholder image was instead used and a flash message of error of 'uploading image' | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-no-big-file-upload.gif) |
+| | Users cannot submit an image that is larger than 10mb to cloudinary | Tested the form by submitting an image that is 15mb | Form was submitted but a placeholder image was instead used and a flash message of error of 'uploading image' | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-file-validation.gif) |
 | | When users submit a validated form, user is redirected to the dashboard with house | Tested by completing the form and adding the house | The feature behaved as expected | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-add-house.gif) |
 | Edit_new_house | | | | | |
 | | When user submits a validated form, user is redirected back to profile and a flash message appears to confirm update | Tested the form by submitting a validated form | Feature behaved as expected | Test concluded and passed | ![gic](documentation/testing/defensive-programming/defensive-programming-edit-house.gif) |
 | | Users cannot submit an empty form |Tested the form by submitting an empty form by removing the `required` if a bad users do so.  | Form validation worked and an error message appeared | Test concluded and passed | ![screenshot](documentation/testing/defensive-programming/defensive-programming-edit-house.png) |
-| | Users cannot submit an image that is larger than 10mb to cloudinary | Tested the form by submitting an image that is 15mb | Form was submitted but no change to the image was made | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-no-big-file-upload-2.gif) |
+| | Users cannot submit an image that is larger than 10mb to cloudinary | Tested the form by submitting an image that is 15mb | Form was submitted but no change to the image was made | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-file-validation-2.gif) |
 | House | | | | | |
 | | Users cannot submit an empty form |Tested the all the form by submitting an empty form by removing the `required` if a bad users do so.  | Form validation worked and an error message appeared | Test concluded and passed | ![screenshot](documentation/testing/defensive-programming/defensive-programming-house-1.png) ![screenshot](documentation/testing/defensive-programming/defensive-programming-house-2.png)|
 | Manage Users | | | | | |
 | | Users that is not 'systemadmin' will not be able to access manage users | Tested the feature by brute forcing the url | The feature behaved as expected and I was redirected to a 403 page | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-manage-user-access.gif) |
+| | Deleting a user should prompt a message afterwards that user have been deleted | Tested the feature by deleting a user | No message was shown | Fixed it by rearranging the flash message before the return statement | ![gif](documentation/testing/defensive-programming/defensive-programming-manage-users1.gif) |
 | User Access | | | | | |
 | | User should not be able to access other user's dashboard | Tested the feature by brute forcing the url | The feature behaved as expected and I was redirected back to profile | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-no-access-to-other-profiles.gif) |
 | | User should not be able to access other user's houses | Tested the feature by brute forcing the url | The feature behaved as expected and I was redirected back to profile | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-no-access-to-other-houses.gif) |
