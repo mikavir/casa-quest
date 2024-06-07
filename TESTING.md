@@ -167,6 +167,7 @@ Defensive programming was manually tested with the below user acceptance testing
 | House | | | | | |
 | | If user edits an information that doesnt exist, user is redirected to a 404 page | Tested the feature updating before adding information | The feature behaved as expected,| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-editing-info.gif) |
 | Register | | | | | |
+| | Submitting an empty form should lead to an flash message | Tested by manually removing the required fields and submitting the form with empty inputs | The feature behaved as expected,| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-register3.gif) |
 | | When all required field is met, user should be redirected to their dashboard | Tested by making an account | The feature behaved as expected,| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-register.gif) |
 | | If user does not meet the required fields | Tested by making not having the same password as the confirmation password | Error appeared that registration failed | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-register2.gif) |
 | Login | | | | | |
