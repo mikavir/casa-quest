@@ -52,7 +52,7 @@ This was the colour taken from materialize web for cancel buttons:
 
 ### Typography
 
-After researching other home buying websites and gathering ideas, I found significant inspiration in the design of the [Mr and Mrs Clarke](https://www.mrandmrsclarke.com/) website. The fonts used in the website have been inspired the fonts that they have used.
+After researching other home buying websites and gathering ideas, I found significant inspiration in the design of the [Mr and Mrs Clarke](https://www.mrandmrsclarke.com/) website. The fonts used in the website have been inspired from the fonts that they have used.
 
 
 - [Domine](https://fonts.google.com/specimen/Domine) was used for the primary headers and titles.
@@ -94,7 +94,7 @@ After researching other home buying websites and gathering ideas, I found signif
 
 ### Site Admin
 
-- As a site administrator, I would like to keep connected with my users , so that they can report any user experience.
+- As a site administrator, I would like to keep connected with my users so that they can report any user experience.
 - As a site administrator, I should be able to delete posts that are against the rules so that I can ensure that the community is safe.
 - As a site administrator, I should be able to delete users that is violating the rules, so that I can ensure that the community is safe.
 - As a site administrator, I need to manage and view user accounts effectively to ensure control over the user base and monitor user activity.
@@ -239,29 +239,37 @@ Blog
 
 ![screenshot](documentation/feature/feature-social-media-links.png)
 
-- **Manage Account**
+- **Authentication**
 
-    - A centralized place to manage account settings reduces complexity, making it easy for users to update their password or logout.
+    - Manage Account
 
-![screenshot](documentation/feature/feature-manage-account.png)
+        - A centralized place to manage account settings reduces complexity, making it easy for users to update their password or logout.
 
-- **Change Password**
+      ![screenshot](documentation/feature/feature-manage-account.png)
 
-    - Implementing a password change feature will enhance profile security by enabling users to update their passwords regularly. Additionally, the passwords must meet stringent security requirements.
+    - Change Password
 
-![screenshot](documentation/feature/feature-change-password.png)
+        - Implementing a password change feature will enhance profile security by enabling users to update their passwords regularly. Additionally, the passwords must meet stringent security requirements.
 
-- **Registration Page**
+      ![screenshot](documentation/feature/feature-change-password.png)
 
-    - A registration page enables users to securely create an account, providing them with a dedicated space to save their property searches. This ensures convenient access and allows for easy review whenever needed, enhancing the overall user experience.
+    - Registration Page
 
-![screenshot](documentation/feature/feature-registration.png)
+        - A registration page enables users to securely create an account, providing them with a dedicated space to save their property searches. This ensures convenient access and allows for easy review whenever needed, enhancing the overall user experience.
 
-- **Log in Page**
+      ![screenshot](documentation/feature/feature-registration.png)
 
-    - Having a login page allows users to easily return to their accounts. This enables them to access their saved property searches, ensuring convenient and quick review whenever needed
+    - Log in Page
 
-![screenshot](documentation/feature/feature-login.png)
+        - Having a login page allows users to easily return to their accounts. This enables them to access their saved property searches, ensuring convenient and quick review whenever needed
+
+      ![screenshot](documentation/feature/feature-login.png)
+
+    - Log out button**
+
+      - Users have the ability to log out from their accounts. This logout button plays a critical role in ensuring the security and privacy of user accounts. By logging out, users effectively terminate their current session, preventing unauthorized access to their account by others who might have access to the same device. 
+
+      ![screenshot](documentation/feature/feature-logout.png)
 
 - **Contact page**
 
@@ -305,11 +313,6 @@ Blog
 
 ![screenshot](documentation/feature/feature-edit-button.png)
 
-- **Log out button**
-
-    - Users have the ability to log out from their accounts. This logout button plays a critical role in ensuring the security and privacy of user accounts. By logging out, users effectively terminate their current session, preventing unauthorized access to their account by others who might have access to the same device. 
-
-![screenshot](documentation/feature/feature-logout.png)
 
 - **Delete house button and delete house modal**
 
@@ -754,7 +757,7 @@ There is no difference between the local version and the deployed version.
 
 | Source | Location | Notes |
 | --- | --- | --- |
-| [Markdown Builder](https://tim.2bn.dev/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
+| [Markdown Builder](https://tim.2bn.dev/markdown-builder) | README and TESTING | Tool to help generate the Markdown files |
 | [StackOverflow](https://stackoverflow.com/questions/67937305/how-to-get-the-size-of-a-multipart-form-data-binary-file) | app.py: `add_new_house()` and `edit_new_house()` | "How to find the size of an image upload" |
 | [StackOverflow](https://stackoverflow.com/questions/42294/how-do-you-get-the-footer-to-stay-at-the-bottom-of-a-web-page) | entire site | How to bring the footer at the bottom of the HTML |
 | [Mr and Mrs Clarke](https://www.mrandmrsclarke.com/) | entire site | Inspiration on the design |

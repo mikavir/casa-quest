@@ -19,7 +19,7 @@ These are the files that I was able to validate using the url as the others need
 |[W3C Validator](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fcasa-quest-853d4c81f9b1.herokuapp.com%2Flogin)| login.html | ![screenshot](documentation/validation/html-validation/html-validation-login.png) | No errors found|
 |[W3C Validator](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fcasa-quest-853d4c81f9b1.herokuapp.com%2Fregister)| register.html | ![screenshot](documentation/validation/html-validation/html-validation-register.png) | No errors found|
 
-These are the HTML files that I valdiated by copying and pasting the HTML code and tested it as a direct input.
+These are the HTML files that I validated by copying and pasting the HTML code and tested it as a direct input.
 | File | Screenshot | Notes |
 | --- | --- | --- |
 | profile.html | ![screenshot](documentation/validation/html-validation/html-validation-dashboard.png) | No errors found|
@@ -74,7 +74,8 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 ## Browser Compatibility
 
-I've tested my deployed project on multiple browsers to check for compatibility issues. As my project contains many pages, I will be splitting it into two tables
+I've tested my deployed project on multiple browsers to check for compatibility issues. As my project contains many pages, I will be splitting it into two tables:
+
 | Browser | Landing page(index) | Register | Log in  | Profile | House | Contact | Favourites | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Chrome |![screenshot](documentation/testing/browsers/chrome/chrome-landing-page.png) |![screenshot](documentation/testing/browsers/chrome/chrome-registration-1.png) ![screenshot](documentation/testing/browsers/chrome/chrome-registration-2.png) |![screenshot](documentation/testing/browsers/chrome/chrome-login.png) | ![screenshot](documentation/testing/browsers/chrome/chrome-profile-1.png) ![screenshot](documentation/testing/browsers/chrome/chrome-profile-2.png) | ![screenshot](documentation/testing/browsers/chrome/chrome-house-1.png)![screenshot](documentation/testing/browsers/chrome/chrome-house-2.png) ![screenshot](documentation/testing/browsers/chrome/chrome-house-3.png) | ![screenshot](documentation/testing/browsers/chrome/chrome-contact.png) | ![screenshot](documentation/testing/browsers/chrome/chrome-favourites.png) | Works as expected |
@@ -112,11 +113,11 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 | Page | Mobile | Desktop | Notes |
 | --- | --- | --- | --- |
-| Landing | ![screenshot](documentation/testing/lighthouse/lighthouse-landing-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-landing-desktop.png) | Initially warning on performance level due to image sizes too big. I have compressed the images now and the performance level have become better |
+| Landing | ![screenshot](documentation/testing/lighthouse/lighthouse-landing-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-landing-desktop.png) | Initially, there was a warning on the performance level due to image sizes being too big. Compressing the images improved the performance level. |
 | Register | ![screenshot](documentation/testing/lighthouse/lighthouse-register-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-register-desktop.png) | No issues |
 | Login | ![screenshot](documentation/testing/lighthouse/lighthouse-login-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-login-desktop.png) | Slow response time due to large images |
 | Profile | ![screenshot](documentation/testing/lighthouse/lighthouse-profile-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-profile-desktop.png) | Warnings on accessbility due to lack of name for button. Fix: added aria-label to fabourite button. Screenshots are the fixed version |
-| House | ![screenshot](documentation/testing/lighthouse/lighthouse-house-mobile.png) ![screenshot](documentation/testing/lighthouse/lighthouse-house-mobile-fix.png)| ![screenshot](documentation/testing/lighthouse/lighthouse-house-desktop.png) ![screenshot](documentation/testing/lighthouse/lighthouse-house-desktop-fix.png) | Accessibility due to links and colour contrats. Secons screenshot is the fix after fixing colour contrasts |
+| House | ![screenshot](documentation/testing/lighthouse/lighthouse-house-mobile.png) ![screenshot](documentation/testing/lighthouse/lighthouse-house-mobile-fix.png)| ![screenshot](documentation/testing/lighthouse/lighthouse-house-desktop.png) ![screenshot](documentation/testing/lighthouse/lighthouse-house-desktop-fix.png) | The level on accessibility was low due to links and colour contrasts. Second screenshot shows the new level after fixing colour contrasts |
 | Contact | ![screenshot](documentation/testing/lighthouse/lighthouse-contact-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-contact-desktop.png) | No Issues |
 | Favourites | ![screenshot](documentation/testing/lighthouse/lighthouse-favourites-mobile.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-favourites-desktop.png) | No issues |
 | New Entry | ![screenshot](documentation/testing/lighthouse/lighthouse-add-house-desktop.png) | ![screenshot](documentation/testing/lighthouse/lighthouse-add-house-desktop.png) | Initial warnings on accessbility where some form elements did not have a form. Fix: Add aria-label to those form elements. the screenshots are the update fix version |
@@ -160,23 +161,23 @@ Defensive programming was manually tested with the below user acceptance testing
 | User Access | | | | | |
 | | User should not be able to access other user's dashboard | Tested the feature by brute forcing the url | The feature behaved as expected and I was redirected back to profile | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-no-access-to-other-profiles.gif) |
 | | User should not be able to access other user's houses | Tested the feature by brute forcing the url | The feature behaved as expected and I was redirected back to profile | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-no-access-to-other-houses.gif) |
-| |Users cannot perform CRUD functionality while logged-out | Tested the feature by brute forcing the url while user is logged out | The feature behaved as expected and I was redirected back to logged in page | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-no-access-if-not-logged-in.gif) |
+| |Users cannot perform CRUD functionality while logged-out | Tested the feature by brute forcing the url while user is logged out | The feature behaved as expected and I was redirected back to login page | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-no-access-if-not-logged-in.gif) |
 | Index Page | | | | | |
-| | If user has not logged in or registered, call out button should lead to register page | Tested the feature by doing clicking the button | The feature behaved as expected,| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-call-outbtn-1.gif) |
-| | If user is logged in, call out button should lead to profile | Tested the feature by doing clicking the button | The feature behaved as expected,| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-call-outbtn2.gif) |
+| | If user has not logged in or registered, call out button should lead to register page | Tested the feature by doing clicking the button | The feature behaved as expected | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-call-outbtn-1.gif) |
+| | If user is logged in, call out button should lead to profile | Tested the feature by doing clicking the button | The feature behaved as expected | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-call-outbtn2.gif) |
 | House | | | | | |
-| | If user edits an information that doesnt exist, user is redirected to a 404 page | Tested the feature updating before adding information | The feature behaved as expected,| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-editing-info.gif) |
+| | If user edits an information that doesnt exist, user is redirected to a 404 page | Tested the feature updating before adding information | The feature behaved as expected | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-editing-info.gif) |
 | Register | | | | | |
-| | Submitting an empty form should lead to an flash message | Tested by manually removing the required fields and submitting the form with empty inputs | The feature behaved as expected,| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-register3.gif) |
+| | Submitting an empty form should lead to an flash message | Tested by manually removing the required fields and submitting the form with empty inputs | The feature behaved as expected | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-register3.gif) |
 | | When all required field is met, user should be redirected to their dashboard | Tested by making an account | The feature behaved as expected,| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-register.gif) |
 | | If user does not meet the required fields | Tested by making not having the same password as the confirmation password | Error appeared that registration failed | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-register2.gif) |
 | Login | | | | | |
-| | When all required field is met, user should be redirected to their dashboard | Tested by making an account | The feature behaved as expected,| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-login.gif) |
+| | When all required field is met, user should be redirected to their dashboard | Tested by making an account | The feature behaved as expected | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-login.gif) |
 | | If user does not meet the required fields| Tested by making submitting an empty form by removing `required` temporarily | Error appeared that "incorrect username/password" | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-login2.gif) |
 | Contact | | | | | |
 | | When user makes a validated message, user is shown a thank you message and receives an auto-reply | Tested by making a validated message | The feature behaved as expected and received an email| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-contact.gif) ![screenshot](documentation/testing/defensive-programming/defensive-programming-contact2.png) |
 | Dashboard | | | | | |
-| | When a user tries to delete a house, they would be prompted with a delete modal with a confirmation. If confirmed, House is deleted and user is redirected back to dashboard | Tested by clicking the 'x' button and the confirm button |The feature behaved as expected and a flash message appeared to alert that the house has been deleted| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-dashboard.gif)  |
+| | When a user tries to delete a house, they would be prompted with a delete modal with a confirmation. If confirmed, House is deleted and user is redirected back to dashboard | Tested by clicking the 'x' button and the confirm button | The feature behaved as expected and a flash message appeared to alert that the house has been deleted| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-dashboard.gif)  |
 | | When a user clicks on the heart button, It would add the house to favourites. User is redirected to favourites | Tested by clicking the heart button |The feature behaved as expected and a flash message appeared to alert that the house has been added to the favourites| Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-favourites.gif)  |
 | | When a user clicks on the view more button, they would be redirected to the house page |  Tested by clicking the 'view more' button |The feature behaved as expected |Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-view-more.gif)  |
 | Favourite/Dashboard | | | | | |
@@ -187,7 +188,6 @@ Defensive programming was manually tested with the below user acceptance testing
 | Change Password | | | | | |
 | | Submitting an empty form should show an error message| Tested by manually removing the required fields and submitting the form with empty inputs | The feature behaved as expected | Test concluded and passed | ![screenshot](documentation/testing/defensive-programming/defensive-programming-change-password1.png)  |
 | | If the current password is incorrect or the new password and confirm password do not match, a flash message should be displayed.| Tested by entering an incorrect current password, followed by testing with a mismatched new password and confirm password.  | The feature behaved as expected | Test concluded and passed | ![screenshot](documentation/testing/defensive-programming/defensive-programming-change-password2.png)  |
-
 | '404', '500', '403 pages | | | | | |
 | | 'Home' button should redirect back to landing page | Tested by clicking all the home button| The feature behaved as expected | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-404.gif)   ![gif](documentation/testing/defensive-programming/defensive-programming-500.gif)  ![gif](documentation/testing/defensive-programming/defensive-programming-403.gif)|
 
@@ -352,7 +352,7 @@ When I make a post for a house, I don't have to click 'Chain free' however when 
         }, 0);
     ```
 
-- Editing house leads to a internal sever error
+- Editing house leads to a internal server error
 
     ![gif](documentation/bugs/bug07.gif)
 
