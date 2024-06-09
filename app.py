@@ -111,18 +111,17 @@ def register():
         if password != confirm_password:
             flash("Registration failed: Please complete the required fields")
             return redirect(url_for("register"))
-        else:
-            register = {
-                "name": name,
-                "username": username,
-                "password": generate_password_hash(password)
-            }
-            mongo.db.users.insert_one(register)
+        register = {
+            "name": name,
+            "username": username,
+            "password": generate_password_hash(password)
+        }
+        mongo.db.users.insert_one(register)
 
-            # put the new user into 'session' cookie
-            session["user"] = request.form.get("username")
-            flash("Registration Successful!")
-            return redirect(url_for("profile", username=session["user"]))
+        # put the new user into 'session' cookie
+        session["user"] = request.form.get("username")
+        flash("Registration Successful!")
+        return redirect(url_for("profile", username=session["user"]))
 
     return render_template("registration.html")
 
@@ -250,7 +249,7 @@ def view_house(house_id):
     house_viewing = mongo.db.houseViewing.find_one(
         {"_id": ObjectId(house_id)}
     )
-
+    # Data for selects
     ammount = ["Heavy", "Moderate", "No"]
 
     property_facing = [
@@ -348,12 +347,12 @@ def new_house():
             image_upload = cloudinary.uploader.upload(image)
             house_entry["image_url"] = image_upload["secure_url"]
         else:
-            flash("Image unable to be uploaded")
+            flash("Image upload failed. Please check the file format and size")
             temp_image_url = "https://res.cloudinary.com/dpqnw6tkn/image/upload/v1715774209/vnxhz63wmo25sthxvsst.jpg"  # noqa
             house_entry["image_url"] = temp_image_url
 
         mongo.db.houses.insert_one(house_entry)
-        flash("house added!")
+        flash("House successfully added!")
         return redirect(url_for(
                             "profile", username=session["user"]))
     else:
@@ -418,7 +417,7 @@ def edit_new_house(house_id):
                 image_upload = cloudinary.uploader.upload(image)
                 edit_house_entry["image_url"] = image_upload["secure_url"]
             else:
-                flash("Unable to upload image")
+                flash("Image upload failed")
 
         # Check if the id exist:
         house = mongo.db.houses.find_one({"_id": ObjectId(house_id)})
@@ -430,7 +429,7 @@ def edit_new_house(house_id):
         mongo.db.houses.update_one(
             {"_id": ObjectId(house_id)}, {"$set": edit_house_entry}
             )
-        flash("House Successfully Updated")
+        flash("House Successfully Updated!")
         return redirect(url_for(
                             "profile", username=session["user"]))
 
@@ -474,7 +473,7 @@ def add_house_info(house_id):
 
         if house_data is None:
             mongo.db.houseInformation.insert_one(house_info)
-            flash("House info added")
+            flash("House information added")
             return redirect(url_for("view_house", house_id=house_id))
         else:
             error_message = "House Information already exists"
@@ -515,8 +514,7 @@ def edit_house_info(house_id):
             )
 
         if house_data is None:
-            error_message = "Unable to edit a house that does not exist"
-            return render_template("404.html", error_message=error_message)
+            return render_template("404.html"), 404
         mongo.db.houseInformation.update_one(
             {"_id": ObjectId(house_id)}, {"$set": edit_house_info}
             )
@@ -604,13 +602,12 @@ def edit_house_viewing(house_id):
             )
 
         if house_data is None:
-            error_message = "Unable to edit a house that does not exist"
-            return render_template("404.html", error_message=error_message)
+            return render_template("404.html"), 404
         # else: Allow to update database
         mongo.db.houseViewing.update_one(
             {"_id": ObjectId(house_id)}, {"$set": edit_house_viewing_info}
             )
-        flash("House viewing info edited")
+        flash("House viewing information updated")
         return redirect(url_for("view_house", house_id=house_id))
     else:
         return redirect(url_for("view_house", house_id=house_id))
@@ -708,12 +705,11 @@ def edit_house_check(house_id):
             )
 
         if house_data is None:
-            error_message = "Unable to edit a house that does not exist"
-            return render_template("404.html", error_message=error_message)
+            return render_template("404.html"), 404
         mongo.db.houseChecks.update_one(
             {"_id": ObjectId(house_id)}, {"$set": edit_house_check_info}
             )
-        flash("House checks info edited")
+        flash("House checks information updated")
         return redirect(url_for("view_house", house_id=house_id))
     return redirect(url_for("view_house", house_id=house_id))
 
@@ -771,7 +767,7 @@ def delete_house(username, house_id):
             mongo.db.houses.delete_one(
                 {"_id": ObjectId(house_id)}
                 )
-            flash("House Deleted")
+            flash("House successfully deleted")
         return redirect(url_for("profile", username=username))
     return redirect(url_for("profile", username=username))
 
