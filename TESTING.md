@@ -400,10 +400,18 @@ When I make a post for a house, I don't have to click 'Chain free' however when 
 
 All previously closed/fixed bugs can be tracked [here](https://github.com/mikavir/casa-quest/issues?q=is%3Aissue+is%3Aclosed).
 
+![screenshot](documentation/bug-issues.png)
+
+
 **Open Issues**
 
 [![GitHub issues](https://img.shields.io/github/issues/mikavir/casa-quest)](https://github.com/mikavir/casa-quest/issues)
+
+![screenshot](documentation/open-issues.png)
+
 [![GitHub closed issues](https://img.shields.io/github/issues-closed/mikavir/casa-quest)](https://github.com/mikavir/casa-quest/issues?q=is%3Aissue+is%3Aclosed)
+
+![screenshot](documentation/closed-issues.png)
 
 Any remaining open issues can be tracked [here](https://github.com/mikavir/casa-quest/issues).
 ## Unfixed Bugs
