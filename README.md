@@ -45,7 +45,7 @@ In total, these were the colours that made the website.
 
 This was the colour taken from materialize web for cancel buttons: 
 
--#b71c1c red darken-4
+- #b71c1c red darken-4
 
 ![screenshot](documentation/casa-quest-colour-red.png)
 [coolors.co](https://coolors.co/b71c1c)
@@ -265,7 +265,7 @@ Blog
 
       ![screenshot](documentation/feature/feature-login.png)
 
-    - Log out button**
+    - Log out button
 
       - Users have the ability to log out from their accounts. This logout button plays a critical role in ensuring the security and privacy of user accounts. By logging out, users effectively terminate their current session, preventing unauthorized access to their account by others who might have access to the same device. 
 
@@ -387,18 +387,17 @@ Blog
 - [![jQuery](https://img.shields.io/badge/jQuery-grey?logo=jquery&logoColor=0769AD)](https://jquery.com) used for user interaction on the site.
 - [![Python](https://img.shields.io/badge/Python-grey?logo=python&logoColor=3776AB)](https://www.python.org) used as the back-end programming language.
 - [![Heroku](https://img.shields.io/badge/Heroku-grey?logo=heroku&logoColor=430098)](https://www.heroku.com) used for hosting the deployed back-end site.
-- [![Materialize](https://img.shields.io/badge/Materialize-grey?logo=materialdesign&logoColor=F5A5A8)](https://materializecss.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
+- [![Materialize](https://img.shields.io/badge/Materialize-grey?logo=materialdesign&logoColor=F5A5A8)](https://materializeweb.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
 - [![Flask](https://img.shields.io/badge/Flask-grey?logo=flask&logoColor=000000)](https://flask.palletsprojects.com) used as the Python framework for the site.
 - [![MongoDB](https://img.shields.io/badge/MongoDB-grey?logo=mongodb&logoColor=47A248)](https://www.mongodb.com) used as the non-relational database management with Flask.
 - [![Cloudinary](https://img.shields.io/badge/Cloudinary-grey?logo=cloudinary&logoColor=3448C5)](https://cloudinary.com) used for online static file storage.
-- [![Balsamiq](https://img.shields.io/badge/Balsamiq-grey?logo=barmenia&logoColor=CE0908)](https://balsamiq.com/wireframes) used for creating wireframes.
 - [![Canva](https://img.shields.io/badge/Canva-grey?logo=canva&logoColor=00C4CC)](https://www.canva.com/p/canvawireframes) used for creating logo.
 - [![Google Maps API](https://img.shields.io/badge/Google_Maps_API-grey?logo=googlemaps&logoColor=4285F4)](https://developers.google.com/maps) used as an interactive map on my site.
 - [![Font Awesome](https://img.shields.io/badge/Font_Awesome-grey?logo=fontawesome&logoColor=528DD7)](https://fontawesome.com) used for the icons.
-- [![Google Fonts](https://img.shields.io/badge/Google_Fonts-grey?logo=goole&logoColor=528DD7)](https://fonts.google.com/icons) used for the icons and fonts
+- [![Google Fonts](https://img.shields.io/badge/Google_Fonts-grey?logo=googlefonts&logoColor=4285F4)](https://fonts.google.com/icons) used for the icons and fonts.
 - [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to make the writing content.
-- [![Email JS](https://img.shields.io/badge/EmailJs-grey?logo=javascript&logoColor=75A99C)](https://www.emailjs.com/) used to send automatic replies to user after contacting.
-- [![Adobe Express](https://img.shields.io/badge/Adobe_Express-grey?logo=Adobe&logoColor=75A99C)](https://www.adobe.com/express/) used to convert screen recording into gifs for documentation.
+- [![Email JS](https://img.shields.io/badge/EmailJs-grey?logo=javascript&logoColor=FF8434)](https://www.emailjs.com/) used to send automatic replies to user after contacting.
+- [![Adobe Express](https://img.shields.io/badge/Adobe_Express-grey?logo=adobe&logoColor=4646C6)](https://www.adobe.com/express/) used to convert screen recording into gifs for documentation.
 
 
 ## User Pathway
@@ -535,12 +534,16 @@ Deployment steps are as follows, after account setup:
 
 | Key | Value |
 | --- | --- |
-| `DATABASE_URL` | user's own value |
 | `IP` | 0.0.0.0 |
-| `MONGO_DBNAME` | user's own value |
-| `MONGO_URI` | user's own value |
 | `PORT` | 5000 |
 | `SECRET_KEY` | user's own value |
+| `MONGO_URI` | user's own value |
+| `MONGO_DBNAME` | user's own value |
+| `CLOUDINARY_CLOUD_NAME` | user's own value |
+| `CLOUDINARY_API_SECRET` | user's own value |
+| `CLOUDINARY_API_KEY` | user's own value |
+| `EMAIL_API` | user's own value |
+| `MAPS_API` | user's own value |
 
 Heroku needs three additional files in order to deploy properly.
 
@@ -707,11 +710,19 @@ Sample `env.py` file:
 import os
 
 os.environ.setdefault("IP", "0.0.0.0")
-os.environ.setdefault("MONGO_DBNAME", "user's own value")
-os.environ.setdefault("MONGO_URI", "user's own value")
 os.environ.setdefault("PORT", "5000")
 os.environ.setdefault("SECRET_KEY", "user's own value")
-
+# Mongo
+os.environ.setdefault("MONGO_DBNAME", "user's own value")
+os.environ.setdefault("MONGO_URI", "user's own value")
+# env credentials for cloudinary API
+os.environ.setdefault("CLOUDINARY_CLOUD_NAME", "user's own value")
+os.environ.setdefault("CLOUDINARY_API_KEY", "user's own value")
+os.environ.setdefault("CLOUDINARY_API_SECRET", "user's own value")
+# env credentials for google API
+os.environ.setdefault('MAPS_API',"user's own value")
+# env credentials for emailjs API
+os.environ.setdefault('EMAIL_API', "user's own value")
 # local environment only (do not include these in production/deployment!)
 os.environ.setdefault("DEBUG", "True")
 os.environ.setdefault("DEVELOPMENT", "True")
