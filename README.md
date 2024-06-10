@@ -800,6 +800,7 @@ There is no difference between the local version and the deployed version.
 | [Code Academy](https://www.codecademy.com/learn/dscp-python-fundamentals/modules/dscp-python-dictionaries/cheatsheet) | app.py: `delete_user(username, user_name)` | To access the house_id key in the dictionary |
 | [Geek for geeks](https://www.geeksforgeeks.org/how-to-search-for-an-object-by-its-objectid-in-the-mongo-console/) | app.py | How to searh for object id in mongo |
 | [w3 schools](https://www.w3schools.com/python/ref_list_append.asp) | app.py | How to append to make a list |
+| [Cloudinary](https://cloudinary.com/blog/creating_an_api_with_python_flask_to_upload_files_to_cloudinary) | app.py | Using cloudinary to store user images and using the url created |
 | [Flasks docs](https://flask-docs-ja.readthedocs.io/en/latest/patterns/errorpages/) | app.py | Making routes for error pages |
 | [Google Cloud](https://developers.google.com/maps/documentation/embed/get-started) | app.py | Documentation on Embed maps API |
 | [Flask](https://flask.palletsprojects.com/en/2.3.x/tutorial/templates/) | All templates | Adding titles using jinja syntax on templates |
