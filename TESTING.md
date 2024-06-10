@@ -392,8 +392,22 @@ When I make a post for a house, I don't have to click 'Chain free' however when 
         "manage_users",  username=session["user"]
         ))
     ```
+### GitHub **Issues**
 
+**Fixed Bugs**
+
+[![GitHub issue custom search](https://img.shields.io/github/issues-search?query=repo%3Amikavir%2Fcasa-quest%20label%3Abug&label=bugs)](https://github.com/mikavir/casa-quest/issues?q=is%3Aissue+is%3Aclosed+label%3Abug)
+
+All previously closed/fixed bugs can be tracked [here](https://github.com/mikavir/casa-quest/issues?q=is%3Aissue+is%3Aclosed).
+
+**Open Issues**
+
+[![GitHub issues](https://img.shields.io/github/issues/mikavir/casa-quest)](https://github.com/mikavir/casa-quest/issues)
+[![GitHub closed issues](https://img.shields.io/github/issues-closed/mikavir/casa-quest)](https://github.com/mikavir/casa-quest/issues?q=is%3Aissue+is%3Aclosed)
+
+Any remaining open issues can be tracked [here](https://github.com/mikavir/casa-quest/issues).
 ## Unfixed Bugs
 
 > [!NOTE]  
 > There are no remaining bugs that I am aware of.
+
