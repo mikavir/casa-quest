@@ -495,6 +495,30 @@ Initially, I did have seven collections to accomodate for the feature of a blog.
 
 ![erd](documentation/database/erd.png)
 
+## Agile Development Process
+
+### GitHub Projects
+
+[GitHub Projects](https://github.com/mikavir/casa-quest/projects) served as an Agile tool for this project.
+It isn't a specialized tool, but with the right tags and project creation/issue assignments, it can be made to work.
+
+Through it, issues and tasks were planned, then tracked on a weekly basis using the basic Kanban board.
+
+
+![screenshot](documentation/kanban-board.png)
+
+### GitHub Issues
+
+[GitHub Issues](https://github.com/mikavir/casa-quest/issues) served as an another Agile tool.
+
+
+- [Open Issues](https://github.com/mikavir/casa-quest/issues) [![GitHub issues](https://img.shields.io/github/issues/mikavir/casa-quest)](https://github.com/mikavir/casa-quest/issues)
+
+    ![screenshot](documentation/open-issues.png)
+
+- [Closed Issues](https://github.com/mikavir/casa-quest/issues?q=is%3Aissue+is%3Aclosed) [![GitHub closed issues](https://img.shields.io/github/issues-closed/mikavir/casa-quest)](https://github.com/mikavir/casa-quest/issues?q=is%3Aissue+is%3Aclosed)
+
+    ![screenshot](documentation/closed-issues.png)
 
 
 ## Testing
