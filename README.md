@@ -96,6 +96,7 @@ After researching other home buying websites and gathering ideas, I found signif
 
 - As a site administrator, I would like to keep connected with my users so that they can report any user experience.
 - As a site administrator, I should be able to delete posts that are against the rules so that I can ensure that the community is safe.
+- As a site administrator, I should be able to view who created the house post so I can monitor the content and account.
 - As a site administrator, I should be able to delete users that is violating the rules so that I can ensure that the community is safe.
 - As a site administrator, I need to manage and view user accounts effectively to ensure control over the user base and monitor user activity.
 - As a site administrator, I should be able to direct users back to home if they have reached a page that is not found.
@@ -425,53 +426,50 @@ erDiagram
 
     houses {
         ObjectId id
-        String User_id
-        String Address
-        String Agency
-        Integer Bedrooms
-        Integer Bathroom
-        String Property_Type
-        Integer Price
-        Boolean Chain_free
+        String username
+        String address
+        String agency
+        Integer bedrooms
+        Integer bathroom
+        String propertyType
+        Integer price
+        Boolean chainFree
         String image_url
         String maps_url
         Boolean is_favourite
     }
 
     houseInformation {
-        Object_id id
-        Object_id House_id
-        Character EPC
-        Character Tax_Band
-        String Flood_Risk
-        String Dedicated_Parking
-        String Internet_Speed
+        ObjectId house_id
+        Character epc
+        Character taxBand
+        String floodRisk
+        String dedicatedParking
+        String internetSpeed
     }
 
     houseViewing {
-        Object_id id
-        Object_id House_id
-        Boolean Other_offers
-        String Sellers_situation
-        String Windows
-        String Neighbours
-        String Facilities
-        String Traffic
+        ObjectId house_id
+        Boolean otherOffers
+        String sellersSituation
+        String windows
+        String neighbours
+        String facilities
+        String traffic
     }
 
     houseChecks {
-        ObjectId id
-        Object_id house_id
-        Boolean Mould_damp
-        String property_facing
-        String Noise_pollution
-        Boolean Boiler
-        Boolean Attic
-        Boolean Roof
-        String Electric_ports
-        Boolean Crack
-        Boolean Damo
-        Boolean Storage
+        ObjectId house_id
+        Boolean mould
+        String propertyFacing
+        String noisePollution
+        Boolean boilerNoise
+        Boolean atticAccess
+        Boolean roofCondition
+        String electricPorts
+        Boolean crack
+        Boolean damp
+        Boolean storageSpace
     }
 
     users ||--o{ houses: owns
@@ -650,13 +648,13 @@ emailjs.send(serviceID, templateID, templateParams, options);
 
 ### Obtaining EmbedMaps API 
 
-1. Create a Google Cloud Platform account at [Google Cloud](https://cloud.google.com/?hl=en)
+1. Create a Google Cloud Platform account at [Google Cloud](https://cloud.google.com/?hl=en).
 2. Set up a new project in the Google Cloud Console.
 3. Enable the required Google Maps APIs from the “API & Services” dashboard.
-4. Create API credentials and generate an API key and enable 'Embed Maps API'
+4. Create API credentials and generate an API key and enable 'Embed Maps API'.
 5. Optionally restrict the API key for security under “Application restrictions” and “API restrictions.”
 6. Set up billing in the Google Cloud Console.
-7. Set up your API Key in your env.py
+7. Set up your API Key in your env.py:
 ```python
 
 os.eviron.get("MAPS_API", "user's own value")
@@ -672,7 +670,7 @@ maps_api = os.environ.get('MAPS_API')
 embed_url = f"https://www.google.com/maps/embed/v1/place?key={maps_api}&q={parameters}"
 
 ```
-9. If deployed to Heroku, Add the API key to the config vars
+9. If deployed to Heroku, Add the API key to the config vars.
 
 ### Obtaining Cloudinary API
 1. Sign Up at Cloudinary and verify your email.
@@ -756,11 +754,11 @@ os.environ.setdefault("DEVELOPMENT", "True")
 
 You can clone the repository by following these steps:
 
-1. Go to the [GitHub repository](https://github.com/mikavir/casa-quest) 
-2. Locate the Code button above the list of files and click it 
-3. Select if you prefer to clone using HTTPS, SSH, or GitHub CLI and click the copy button to copy the URL to your clipboard
-4. Open Git shell or Terminal
-5. Change the current working directory to the one where you want the cloned directory
+1. Go to the [GitHub repository](https://github.com/mikavir/casa-quest). 
+2. Locate the Code button above the list of files and click it. 
+3. Select if you prefer to clone using HTTPS, SSH, or GitHub CLI and click the copy button to copy the URL to your clipboard.
+4. Open Git shell or Terminal.
+5. Change the current working directory to the one where you want the cloned directory.
 6. In your IDE Terminal, type the following command to clone my repository:
 	- `git clone https://github.com/mikavir/casa-quest.git`
 7. Press Enter to create your local clone.
@@ -777,7 +775,7 @@ A tutorial on how to do that can be found [here](https://www.gitpod.io/docs/conf
 By forking the GitHub Repository, we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository.
 You can fork this repository by using the following steps:
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/mikavir/casa-quest)
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/mikavir/casa-quest).
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
 
@@ -797,7 +795,7 @@ There is no difference between the local version and the deployed version.
 | [Mr and Mrs Clarke](https://www.mrandmrsclarke.com/) | entire site | Inspiration on the design |
 | [study.com](https://study.com/learn/lesson/python-not-equal-conditional-operators.html#:~:text=Python%20Not%20Equal%20Operator,the%20return%20value%20is%20true.) | app.py | Conditional operations |
 | [Code Academy](https://www.codecademy.com/learn/dscp-python-fundamentals/modules/dscp-python-dictionaries/cheatsheet) | app.py: `delete_user(username, user_name)` | To access the house_id key in the dictionary |
-| [Geek for geeks](https://www.geeksforgeeks.org/how-to-search-for-an-object-by-its-objectid-in-the-mongo-console/) | app.py | How to searh for object id in mongo |
+| [Geek for geeks](https://www.geeksforgeeks.org/how-to-search-for-an-object-by-its-objectid-in-the-mongo-console/) | app.py | How to search for object id in mongo |
 | [w3 schools](https://www.w3schools.com/python/ref_list_append.asp) | app.py | How to append to make a list |
 | [Cloudinary](https://cloudinary.com/blog/creating_an_api_with_python_flask_to_upload_files_to_cloudinary) | app.py | Using cloudinary to store user images and using the url created |
 | [Flasks docs](https://flask-docs-ja.readthedocs.io/en/latest/patterns/errorpages/) | app.py | Making routes for error pages |
@@ -805,10 +803,10 @@ There is no difference between the local version and the deployed version.
 | [Flask](https://flask.palletsprojects.com/en/2.3.x/tutorial/templates/) | All templates | Adding titles using jinja syntax on templates |
 | [W3 Schools](https://www.w3schools.com/tags/att_input_pattern.asp) | Registration page, login page and change password page | Adding pattern requirements on passwords |
 | [StackOverflow](https://stackoverflow.com/questions/3974985/update-mongodb-field-using-value-of-another-field) | app.py | Updating mongodb using field of another field|
-| [Tedboy](https://tedboy.github.io/flask/generated/werkzeug.check_password_hash.html) | app.py | Documentation on check_password_hash|
-| [StackOverflow](https://stackoverflow.com/questions/28968660/how-to-convert-a-pymongo-cursor-cursor-into-a-dict) | app.py | How to convert a mongodb curser to a list of dictionary|
-| [w3 schools](https://www.w3schools.com/tags/ref_urlencode.ASP) | entire site | used to debug url and the routes|
-| [Migelgrinberg](https://blog.miguelgrinberg.com/post/handling-file-uploads-with-flask) | app.py | Handling File Uploads With Flask|
+| [Tedboy](https://tedboy.github.io/flask/generated/werkzeug.check_password_hash.html) | app.py | Documentation on `check_password_hash`|
+| [StackOverflow](https://stackoverflow.com/questions/28968660/how-to-convert-a-pymongo-cursor-cursor-into-a-dict) | app.py | How to convert a mongoDB curser to a list of dictionary|
+| [w3 schools](https://www.w3schools.com/tags/ref_urlencode.ASP) | entire site | Used to debug the URL and the routes|
+| [Migelgrinberg](https://blog.miguelgrinberg.com/post/handling-file-uploads-with-flask) | app.py | Handling file uploads with Flask|
 | [StackOverflow](https://stackoverflow.com/questions/572768/styling-an-input-type-file-button) | styles.css | Styling an input type file button|
 | [Youtube](https://www.youtube.com/watch?v=J39KJ5jzH3E) | app.py | How to add google autocomplete |
 | [shecodes.io](https://www.shecodes.io/athena/264269-how-to-order-a-list-vertically-using-css#:~:text=list%20and%20set%20the%20display,items%20vertically%20in%20a%20column.&text=This%20will%20order%20the%20list%20items%20vertically%20instead%20of%20horizontally.) | styles.css | How to order a list vertically |
@@ -825,10 +823,10 @@ There is no difference between the local version and the deployed version.
 
 | Source | Location | Type | Notes |
 | --- | --- | --- | --- |
-| [FreePik](https://www.freepik.com/free-photo/back-view-family-hugging-admiring-their-home_22426721.htm#query=house&position=49&from_view=keyword&track=sph&uuid=6f9398b1-ef01-41fa-912d-7c88cb9c1d84") | Landing Page |Image | Hero image background- Image by zinkevych |
-| [FreePik](https://www.freepik.com/free-photo/full-shot-woman-with-cute-greyhound-dog_38898080.htm#fromView=search&page=1&position=52&uuid=9ddc6669-3e79-4dc2-a09c-c84210518efc) | Landing Page | image | Image |
-| [Pexels]( https://www.pexels.com/photo/house-lights-turned-on-106399/) | House | placeholder image of a house | Photo by Binyamin Mellish |
-| [Pexels](https://www.pexels.com/photo/beige-bungalow-house-259588/) | House | Placeolder | Photo by Pixabay |
+| [FreePik](https://www.freepik.com/free-photo/back-view-family-hugging-admiring-their-home_22426721.htm#query=house&position=49&from_view=keyword&track=sph&uuid=6f9398b1-ef01-41fa-912d-7c88cb9c1d84") | Landing Page | Image | Hero image background- Image by zinkevych |
+| [FreePik](https://www.freepik.com/free-photo/full-shot-woman-with-cute-greyhound-dog_38898080.htm#fromView=search&page=1&position=52&uuid=9ddc6669-3e79-4dc2-a09c-c84210518efc) | Landing Page | Image | Image |
+| [Pexels]( https://www.pexels.com/photo/house-lights-turned-on-106399/) | House | Placeholder image of a house | Photo by Binyamin Mellish |
+| [Pexels](https://www.pexels.com/photo/beige-bungalow-house-259588/) | House | Placeholder | Photo by Pixabay |
 | [Canvas](https://www.canva.com/) | Logo | Logo | Personalised logo |
 
 
