@@ -186,7 +186,7 @@ Defensive programming was manually tested with the below user acceptance testing
 | Change Password | | | | | |
 | | Submitting an empty form should show an error message| Tested by temporarily removing the `required` attribute and submitting the form with empty inputs | The feature behaved as expected | Test concluded and passed | ![screenshot](documentation/testing/defensive-programming/defensive-programming-change-password1.png)  |
 | | If the current password is incorrect or the new password and confirm password do not match, a flash message should be displayed.| Tested by entering an incorrect current password, followed by testing with a mismatched new password and confirm password.  | The feature behaved as expected | Test concluded and passed | ![screenshot](documentation/testing/defensive-programming/defensive-programming-change-password2.png)  |
-| '404', '500', '403 pages | | | | | |
+| 404, 500, 403 pages | | | | | |
 | | 'Home' button should redirect back to landing page | Tested by clicking all the home button | The feature behaved as expected | Test concluded and passed | ![gif](documentation/testing/defensive-programming/defensive-programming-404.gif)   ![gif](documentation/testing/defensive-programming/defensive-programming-500.gif)  ![gif](documentation/testing/defensive-programming/defensive-programming-403.gif)|
 
 
