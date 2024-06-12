@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Questrial&display=swap');
 
-/*  HTML CSS */
+/* --------------------------------------- HTML CSS */
 html,
 body {
   width: 100%;
@@ -51,7 +51,7 @@ button {
 }
 
 
-/* LOGO  */
+/*  ---------------------------------------LOGO  */
 a.logo {
   width: 100px;
   height: 100px;
@@ -70,7 +70,7 @@ a.logo {
 }
 
 
-/*  NAVIGATION BAR*/
+/* --------------------------------------- NAVIGATION BAR*/
 
 .custom-nav {
   background-color: #FAECD9;
@@ -100,6 +100,7 @@ nav ul:not(.dropdown-content)>li>a {
   height: 0px;
 }
 
+/* https://www.shecodes.io/athena/264269-how-to-order-a-list-vertically-using-css#:~:text=list%20and%20set%20the%20display,items%20vertically%20in%20a%20column.&text=This%20will%20order%20the%20list%20items%20vertically%20instead%20of%20horizontally. */
 .mobile-list {
   display: flex;
   flex-direction: column;
@@ -178,7 +179,7 @@ input:checked~.hamburger span:nth-child(3) {
 
 
 
-/* FLASH MESSAGES */
+/*  --------------------------------------- FLASH MESSAGES */
 
 aside.flash {
   margin-top: 65px;
@@ -187,7 +188,7 @@ aside.flash {
 
 
 
-/* LANDING PAGE */
+/*  --------------------------------------- LANDING PAGE */
 aside#hero-image {
   width: 100vw;
   height: 60vh;
@@ -255,7 +256,8 @@ aside#hero-image {
 }
 
 
-/*  HOUSE  */
+/*  --------------------------------------- HOUSE  */
+/* https://stackoverflow.com/questions/572768/styling-an-input-type-file-button */
 input[type=file]::file-selector-button {
   border: 2px solid #17353B;
   border-radius: 15px;
@@ -398,7 +400,7 @@ iframe {
   background-color: rgba(250,236,217, 0.1);
 }
 
-/* CONTACT PAGE */
+/*  --------------------------------------- CONTACT PAGE */
 
 #thank-you-feedback {
   display: none;
@@ -412,7 +414,7 @@ iframe {
   display: none;
 }
 
-/* MEDIA QUERIES FOR RESPONSIVENESS */
+/*  --------------------------------------- MEDIA QUERIES FOR RESPONSIVENESS */
 @media screen and (max-width: 700px) {
   aside.flash {
     margin-top: 55px;
