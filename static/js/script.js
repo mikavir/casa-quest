@@ -19,7 +19,7 @@ function selectForm() {
   // Wait for the Materialize initialization to complete
   setTimeout(() => {
     // Select each .select-wrapper.input-field and swap the label and ul if needed
-    $('.select-wrapper.input-field').each(function() {
+    $('.select-wrapper.input-field').each(function () {
       const $parentDiv = $(this);
 
       // get the label and ul within the parent div
@@ -30,18 +30,18 @@ function selectForm() {
 
       // move the label before the ul if it's not already
       if ($label.length && $ul.length && $label.next()[0] !== $ul[0]) {
-          $label.insertBefore($ul);
+        $label.insertBefore($ul);
       }
 
       // Ensure the caret triggers the dropdown
       if ($caret.length && $input.length) {
-          $caret.on('click', function() {
-              $input.trigger('click');
-          });
+        $caret.on('click', function () {
+          $input.trigger('click');
+        });
       }
 
       // Close the dropdown when an option is clicked
-      $ul.children('li').on('click', function() {
+      $ul.children('li').on('click', function () {
         $input.trigger('click');
       });
     });
