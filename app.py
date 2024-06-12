@@ -1,12 +1,10 @@
 import os
+from functools import wraps
 from flask import (
     Flask, flash, render_template,
-    redirect, request, session, url_for, g)
-from functools import wraps
+    redirect, request, session, url_for)
 from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
-from pymongo import MongoClient
-from gridfs import GridFS
 from werkzeug.security import generate_password_hash, check_password_hash
 import cloudinary
 import cloudinary.uploader
@@ -55,14 +53,6 @@ def index():
     Function to render to homepage if not logged in
     """
     return render_template("index.html")
-
-
-@app.route("/500", methods=["GET"])
-def text500():
-    """
-    Function to render to 500.html for testing purposes
-    """
-    return render_template("500.html")
 
 
 @app.route("/contact", methods=["GET"])
@@ -613,7 +603,7 @@ def edit_house_viewing(house_id):
         return redirect(url_for("view_house", house_id=house_id))
 
 
-# Add HOUSE PERSONAL CHECK FROM MODAL
+# ADD HOUSE PERSONAL CHECK FROM MODAL
 @app.route("/house/<house_id>#addHouseCheckModal", methods=["GET", "POST"])
 @login_required
 def add_house_check(house_id):
@@ -714,7 +704,7 @@ def edit_house_check(house_id):
     return redirect(url_for("view_house", house_id=house_id))
 
 
-# Delete house
+# DELETE HOUSE
 @app.route(
     "/profile/<username>#deleteModal<house_id>", methods=["GET", "POST"]
 )
@@ -902,6 +892,7 @@ def favourites(username):
 
 #  ----------------ADMIN FUNCTIONALILITIES
 
+# MANAGE USERS TEMPLATE
 @app.route("/manage_users/<username>", methods=["GET"])
 @login_required
 def manage_users(username):
@@ -919,6 +910,7 @@ def manage_users(username):
     return render_template('403.html'), 403
 
 
+# DELETE USER
 @app.route(
     "/manage_users/<username>#deleteModal<user_name>", methods=["GET", "POST"]
 )
@@ -967,7 +959,7 @@ def delete_user(username, user_name):
                 # Find the data per house
                 one_house = mongo.db.houses.find_one(house)
 
-                # extract the id:
+                # Extract the id:
                 house_id = one_house.get("_id")
 
                 # Check the other database:
@@ -984,25 +976,25 @@ def delete_user(username, user_name):
                     {"_id": ObjectId(house_id)}
                     )
 
-                # delete any house_info if it exist
+                # Delete any house_info if it exist
                 if house_info is not None:
                     mongo.db.houseInformation.delete_one(
                         {"_id": ObjectId(house_id)}
                         )
 
-                # delete any house_check if it exist
+                # Delete any house_check if it exist
                 if house_check is not None:
                     mongo.db.houseChecks.delete_one(
                         {"_id": ObjectId(house_id)}
                         )
 
-                # delete any house_check if it exist
+                # Delete any house_check if it exist
                 if house_viewing is not None:
                     mongo.db.houseViewing.delete_one(
                         {"_id": ObjectId(house_id)}
                         )
 
-                # delete any house if it exist
+                # Delete any house if it exist
                 if house is not None:
                     mongo.db.houses.delete_one(
                         {"_id": ObjectId(house_id)}
@@ -1030,6 +1022,7 @@ def delete_user(username, user_name):
 
 #  ----------------Error Handling pages
 
+# 404
 @app.errorhandler(404)
 def page_not_found(e):
     """
@@ -1041,6 +1034,7 @@ def page_not_found(e):
     return render_template('404.html'), 404
 
 
+# 500
 @app.errorhandler(500)
 def internal_server(e):
     """
@@ -1052,6 +1046,7 @@ def internal_server(e):
     return render_template('500.html'), 500
 
 
+# 403
 @app.errorhandler(403)
 def page_forbidden(e):
     """
