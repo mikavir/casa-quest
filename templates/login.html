@@ -64,14 +64,14 @@
     // https://www.w3schools.com/howto/howto_js_toggle_password.asp
     function togglePasswordVisibility(inputId, toggleIcon) {
         const inputField = document.getElementById(inputId);
-        const icon = document.getElementById(toggleIcon)
+        const icon = document.getElementById(toggleIcon);
 
         if (inputField.type === "password") {
             inputField.type = "text";
-            icon.classList.add("green-text", "text-darken-4")
+            icon.classList.add("green-text", "text-darken-4");
         } else {
             inputField.type = "password";
-            icon.classList.remove("green-text", "text-darken-4")
+            icon.classList.remove("green-text", "text-darken-4");
         }
     }
 </script>
