@@ -43,7 +43,7 @@ In total, these were the colours that made the website.
 [coolors.co](https://coolors.co/fdfdfd-faecd9-ffe0b2-587e7b-00796b-004d40-17353b)
 ![screenshot](documentation/casa-quest-full-colours.png)
 
-This was the colour taken from materialize web for cancel buttons: 
+This was the colour taken from Materialize web for cancel buttons: 
 
 - #b71c1c red darken-4
 
@@ -67,28 +67,28 @@ After researching other home buying websites and gathering ideas, I found signif
 
 ### New Site Users
 
-- As a new site user, I would like to see a clear logo, so that I can remember the brand.
-- As a new site user, I would like to see a clear message of the web app, so that I can understand the web application well.
-- As a new site user, I would like to see a navigation bar, so that I can easily navigate around the site.
-- As a new site user, I would like to see a contact page, so that I can get in touch with the administrators of the application if I need help.
+- As a new site user, I would like to see a clear logo so that I can remember the brand.
+- As a new site user, I would like to see a clear message of the web app so that I can understand the web application well.
+- As a new site user, I would like to see a navigation bar so that I can easily navigate around the site.
+- As a new site user, I would like to see a contact page so that I can get in touch with the administrators of the application if I need help.
 - As a new site user, I would like to see social media icons so that I can reach out to other sources.
 
 ### Returning Site Users
 
 - As a returning site user, I would like to be able to register so that I can have a personal account.
-- As a returning site user, I would like to be able to log in once registered, so that I can keep a track of properties visited.
-- As a returning site user, I would like to be able to make new entries of properties, so that I can keep a log of my properties.
+- As a returning site user, I would like to be able to log in once registered so that I can keep a track of properties visited.
+- As a returning site user, I would like to be able to make new entries of properties so that I can keep a log of my properties.
 - As a returning site user, I would like to edit the information so that I can have more accurate information on the property.
-- As a returning site user, I would like to delete the entry, so that I can eliminate properties that I'm not interested.
+- As a returning site user, I would like to delete the entry so that I can eliminate properties that I'm not interested.
 -  As a returning site user, I would like to see a community of homebuyers so that I can learn more about buying houses.
-- As a returning site user, I would like to be able to make a post in the community of homebuyers, so that I can share my experience.
-- As a returning site user, I would like to be able to make a comment in a post in the community of homebuyers, so that I can share my experience.
-- As a returning site user, I would like to be able to change my password, so that I can keep my account secure.
+- As a returning site user, I would like to be able to make a post in the community of homebuyers so that I can share my experience.
+- As a returning site user, I would like to be able to make a comment in a post in the community of homebuyers so that I can share my experience.
+- As a returning site user, I would like to be able to change my password so that I can keep my account secure.
 - As a returning site user, I would like to be able to mark some properties as my favourite so that I can keep track of my top choices. 
 - As a returning site user, I would like to be able to see all the properties that I have added in one page so I can easily compare them.
 - As a returning site user, I would like to be able to log out to keep my session secure from who will be using the same device as me.
 - As a returning site user, I would like to be able to see a map of the location of the house so I can see the facilities nearby.
-- As a returning site user, I would like the ability to access a dedicated page for each house, allowing me to add and view detailed information specific to that property.
+- As a returning site user, I would like the ability to access a dedicated page for each house to add and view detailed information specific to that property.
 - As a returning site user, I would like the ability to add information on that specific property.
 - As a returning site user, I would like the ability to edit information on that specific property.
 
@@ -96,7 +96,7 @@ After researching other home buying websites and gathering ideas, I found signif
 
 - As a site administrator, I would like to keep connected with my users so that they can report any user experience.
 - As a site administrator, I should be able to delete posts that are against the rules so that I can ensure that the community is safe.
-- As a site administrator, I should be able to delete users that is violating the rules, so that I can ensure that the community is safe.
+- As a site administrator, I should be able to delete users that is violating the rules so that I can ensure that the community is safe.
 - As a site administrator, I need to manage and view user accounts effectively to ensure control over the user base and monitor user activity.
 - As a site administrator, I should be able to direct users back to home if they have reached a page that is not found.
 - As a site administrator, I should be able to direct users back to home if they have reached a page that is forbidden to access.
@@ -195,8 +195,7 @@ Blog
 
 ### Existing Features
 > [!NOTE]
-> The addresses and usernames shown below are not associated with any individuals; they are random placeholder addresses used solely for testing purposes. User privacy and confidentiality have been maintained and strictly adhered to throughout the testing procedure.
-
+> The addresses and usernames shown below are not associated with any individuals; they are random placeholder addresses used solely for testing purposes. User privacy and confidentiality have been maintained and strictly adhered to throughout the testing procedure. Usernames have been covered by 'confidential' stickers to maintain confidentiality and are only present in the screenshots.
 - **Logo**
 
     - The logo displays a house next to the web application's name, forging an immediate connection with house-hunting. This strategic approach effectively targets the intended audience and plays a vital role in solidifying the brand identity. Users swiftly recognize and associate the logo with the platform's fundamental purpose.
@@ -233,7 +232,7 @@ Blog
 
 ![screenshot](documentation/feature/feature-navigation.png)
 
-- **Social Media Links in footer**
+- **Social media links in footer**
 
     - Adding social media links enhances brand identity and builds trust by expanding points of contact.
 
@@ -354,11 +353,11 @@ Blog
 
 - **Deactivate user account**
 
-    - Admins have the ability to deactivate user accounts. This feature allows them to respond to user requests for account deletion and manage users who violate the platform's rules. By providing this functionality, admins can ensure compliance with user preferences and maintain a safe, respectful community environment A modal prompts admin to confirm their deletion, preventing accidental account deletions.
+    - Admins have the ability to deactivate user accounts. This feature allows them to respond to user requests for account deletion and manage users who violate the platform's rules. By providing this functionality, admins can ensure compliance with user preferences and maintain a safe, respectful community environment. A modal prompts admin to confirm their deletion, preventing accidental account deletions.
 
 ![screenshot](documentation/feature/feature-deactivate-account.png)
 
-- **'Created By'**
+- **Identification of creator of posts**
 
     - Admins have the ability to identify the creators of posts. This functionality allows them to monitor user activity and take appropriate action against users who violate the platform's guidelines or misuse the web application.
 
@@ -369,10 +368,10 @@ Blog
 
 ### Future Features
 
-- Blog commmunity
+- Blog community
     - As indicated in the database below, my initial plan was to incorporate a blog community as an additional feature for this project. However, integrating this feature at this stage would deviate from the minimum viable product (MVP) and consume valuable time that could be better utilized for rigorous testing and establishing a robust foundation for the project. Consequently, I made the challenging decision to prioritize the MVP and postpone the implementation of this feature for future consideration.
 - Customised questions
-    - A feature where users can create their own custom questions and inputs alongside the predetermined ones. This empowers users in their house-hunting journey, enabling them to include criteria that they prioritize personally. However, this feature is earmarked for future implementation, as it may necessitate a more robust database to efficiently store these user-generated questions.
+    - A feature where users can create their own custom questions and inputs alongside the predetermined ones. This empowers users in their house-hunting journey, enabling them to include criteria that they prioritize personally. However, this feature is marked for future implementation, as it may necessitate a more robust database to efficiently store these user-generated questions.
 
 
 ## Tools & Technologies Used
@@ -401,7 +400,7 @@ Blog
 
 
 ## User Pathway
-Using Lucidchart, I have illustrated the user pathways as shown below.
+Using Lucidchart, I have illustrated the user pathways as shown below:
 ![screenshot](documentation/database/user-flow-pathway.png)
 
 
@@ -491,7 +490,7 @@ It contains 5 collections:
 - **houseChecks**
 - **houseViewing**
 
-Initially, I did have seven collections to accomodate for the feature of a blog. However I realized that the Minimum Viable Product (MVP) should focus on organizing house information rather than creating blog posts. This insight led me to eliminate the blog post feature and concentrate on achieving the core MVP. Below was the initial ERD of my project using [Lucid chart](www.lucidchart.com).
+Initially, I did have seven collections to accomodate for the feature of a blog. However, I realized that the Minimum Viable Product (MVP) should focus on organizing house information rather than creating blog posts. This insight led me to eliminate the blog post feature and concentrate on achieving the core MVP. Below was the initial ERD of my project using [Lucid chart](www.lucidchart.com).
 
 ![erd](documentation/database/erd.png)
 
@@ -820,7 +819,7 @@ There is no difference between the local version and the deployed version.
 | [w3 schools](https://www.w3schools.com/python/ref_string_isalnum.asp) | registration page | Form validation |
 | [Stack Overflow](https://stackoverflow.com/questions/67937305/how-to-get-the-size-of-a-multipart-form-data-binary-file) | app.py | File validation |
 | [w3 schools](https://www.w3schools.com/howto/howto_js_toggle_password.asp) | Login, Change_password and register page | Toggle password function |
-| Tim Nelson | script.js | Fixing materialize select bug, calculating 3 months for datepicker |
+| Tim Nelson | script.js | Fixing Materialize select bug, calculating 3 months for datepicker |
 
 ### Media
 
